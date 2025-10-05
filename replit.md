@@ -2,9 +2,11 @@
 
 ## Overview
 
-KTR Cycle World is a premium cycle showroom website built as a static catalog application. It's a client-side React application that uses Google Sheets as a lightweight CMS for product data, with no backend database or e-commerce functionality. The site showcases cycles, provides detailed product information, and helps users discover the showroom location and services.
+KTR Cycle World is a premium cycle showroom website built as a catalog application. It's a client-side React application that uses Google Sheets as a lightweight CMS for product data, with no backend database or e-commerce functionality. The site showcases cycles, provides detailed product information, and helps users discover the showroom location and services.
 
 The application emphasizes a premium, glassy aesthetic with golden yellow accents, smooth animations, and responsive design optimized for mobile, tablet, and desktop viewing.
+
+**Note**: This project has been configured for local development. See README.md for complete setup instructions including removing Replit-specific dependencies.
 
 ## User Preferences
 
