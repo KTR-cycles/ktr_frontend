@@ -1,0 +1,3 @@
+export const PRODUCTS_URL = `https://script.google.com/macros/s/AKfycbwoX23d_uxE5brVKm3KZTXRzlM4Pq4PBAv9DIdDI_dPITtkcsTfROfitO65t4pKC1AN/exec?sheet=products`;
+export const CATEGORIES_URL = `https://script.google.com/macros/s/AKfycbwoX23d_uxE5brVKm3KZTXRzlM4Pq4PBAv9DIdDI_dPITtkcsTfROfitO65t4pKC1AN/exec?sheet=categories`;
+export const FEATURED_PRODUCTS_URL = `https://script.google.com/macros/s/AKfycbwoX23d_uxE5brVKm3KZTXRzlM4Pq4PBAv9DIdDI_dPITtkcsTfROfitO65t4pKC1AN/exec?sheet=features`;

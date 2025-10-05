@@ -1,6 +1,52 @@
-node_modules
-dist
+# dependencies
+node_modules/
+
+# production
+dist/
+build/
+
+# misc
 .DS_Store
-server/public
-vite.config.ts.*
+*.log
 *.tar.gz
+
+# local env files
+.env
+.env.*
+
+# IDE files
+.vscode/
+.idea/
+
+# test coverage
+coverage/
+
+# server build output
+server/public/
+
+# Vite config artifacts
+vite.config.ts.*
+vite.config.js.*
+
+# npm package lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Mac system files
+Thumbs.db
+
+# SvelteKit (if ever used)
+.svelte-kit/
+
+# Next.js (if ever used)
+.next/
+
+# Storybook
+.storybook-out/
+
+# Optional: ignore all public build artifacts
+public/build/

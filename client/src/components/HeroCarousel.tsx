@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import { useLocation } from "wouter";
+import { PATHS } from "./path";
 
 interface Slide {
   image: string;
@@ -19,6 +21,8 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     Autoplay({ delay: 5000, stopOnInteraction: false }),
   ]);
+  const { PRODUCTS } = PATHS;
+  const [, setLocation] = useLocation();
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const scrollPrev = useCallback(() => {
@@ -78,6 +82,7 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
                         size="lg"
                         className="mt-8 rounded-full px-8 py-6 text-lg shadow-xl"
                         data-testid="button-explore-cycles"
+                        onClick={() => setLocation(PRODUCTS)}
                       >
                         Explore Our Cycles
                       </Button>

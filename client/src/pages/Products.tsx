@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { fetchProducts } from "@/lib/api";
 import { useAppSelector } from "@/store/hooks";
-import type { Product } from "@shared/schema";
+import type { Product } from "../types";
 
 export default function Products() {
   const [, setLocation] = useLocation();
@@ -139,7 +139,7 @@ export default function Products() {
           <div className="lg:col-span-3">
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
               {displayedProducts.map((product, index) => {
-                const images = product.images.split(',').map(img => img.trim());
+                const images = product.images?.split(',').map((img: string) => img.trim()) || [];
                 const uniqueKey = product.id || `product-${index}`;
                 return (
                   <motion.div
