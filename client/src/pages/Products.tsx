@@ -1,154 +1,53 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
+import { useQuery } from "@tanstack/react-query";
 import ProductCard from "@/components/ProductCard";
 import ProductFilters from "@/components/ProductFilters";
+import SkeletonCard from "@/components/SkeletonCard";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
-import bikeImage from '@assets/generated_images/Premium_golden_bike_product_18205e52.png';
+import { fetchProducts } from "@/lib/api";
+import { useAppSelector } from "@/store/hooks";
+import type { Product } from "@shared/schema";
 
 export default function Products() {
   const [, setLocation] = useLocation();
+  const categories = useAppSelector((state) => state.categories.items);
   
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState<[number, number]>([10000, 100000]);
   const [displayCount, setDisplayCount] = useState(9);
 
+  const { data: products = [], isLoading, isError } = useQuery({
+    queryKey: ['/api/products'],
+    queryFn: fetchProducts,
+  });
+
+  const brands = Array.from(new Set(products.map(p => p.brand).filter(Boolean)));
+  const categoryNames = categories.length > 0
+    ? categories.map(c => c.name)
+    : Array.from(new Set(products.map(p => p.category).filter(Boolean)));
+
+  const minPrice = products.length > 0 ? Math.min(...products.map(p => p.currentPrice)) : 10000;
+  const maxPrice = products.length > 0 ? Math.max(...products.map(p => p.currentPrice)) : 100000;
+
+  useEffect(() => {
+    setPriceRange([minPrice, maxPrice]);
+  }, [minPrice, maxPrice]);
+
   const filterOptions = {
-    categories: ['Mountain Bike', 'Road Bike', 'City Bike', 'Electric Bike', 'Kids Bike'],
-    brands: ['KTR Sports', 'KTR Urban', 'KTR Performance', 'KTR Electric', 'KTR Junior'],
-    priceRange: [10000, 100000] as [number, number],
+    categories: categoryNames,
+    brands: brands,
+    priceRange: [minPrice, maxPrice] as [number, number],
   };
 
-  const allProducts = [
-    {
-      id: "1",
-      name: "Mountain Explorer Pro 29",
-      brand: "KTR Sports",
-      image: bikeImage,
-      actualPrice: 45000,
-      discount: 20,
-      currentPrice: 36000,
-      category: "Mountain Bike"
-    },
-    {
-      id: "2",
-      name: "City Cruiser Elite",
-      brand: "KTR Urban",
-      image: bikeImage,
-      actualPrice: 28000,
-      discount: 15,
-      currentPrice: 23800,
-      category: "City Bike"
-    },
-    {
-      id: "3",
-      name: "Road Racer X1",
-      brand: "KTR Performance",
-      image: bikeImage,
-      actualPrice: 55000,
-      discount: 10,
-      currentPrice: 49500,
-      category: "Road Bike"
-    },
-    {
-      id: "4",
-      name: "Electric Glide 500",
-      brand: "KTR Electric",
-      image: bikeImage,
-      actualPrice: 75000,
-      discount: 12,
-      currentPrice: 66000,
-      category: "Electric Bike"
-    },
-    {
-      id: "5",
-      name: "Mountain Trail Master",
-      brand: "KTR Sports",
-      image: bikeImage,
-      actualPrice: 52000,
-      discount: 18,
-      currentPrice: 42640,
-      category: "Mountain Bike"
-    },
-    {
-      id: "6",
-      name: "Urban Commuter Plus",
-      brand: "KTR Urban",
-      image: bikeImage,
-      actualPrice: 32000,
-      discount: 10,
-      currentPrice: 28800,
-      category: "City Bike"
-    },
-    {
-      id: "7",
-      name: "Junior Adventure 24",
-      brand: "KTR Junior",
-      image: bikeImage,
-      actualPrice: 18000,
-      discount: 15,
-      currentPrice: 15300,
-      category: "Kids Bike"
-    },
-    {
-      id: "8",
-      name: "Performance Road Pro",
-      brand: "KTR Performance",
-      image: bikeImage,
-      actualPrice: 68000,
-      discount: 8,
-      currentPrice: 62560,
-      category: "Road Bike"
-    },
-    {
-      id: "9",
-      name: "Electric Turbo 750",
-      brand: "KTR Electric",
-      image: bikeImage,
-      actualPrice: 95000,
-      discount: 10,
-      currentPrice: 85500,
-      category: "Electric Bike"
-    },
-    {
-      id: "10",
-      name: "City Explorer Lite",
-      brand: "KTR Urban",
-      image: bikeImage,
-      actualPrice: 24000,
-      discount: 12,
-      currentPrice: 21120,
-      category: "City Bike"
-    },
-    {
-      id: "11",
-      name: "Mountain Beast 27.5",
-      brand: "KTR Sports",
-      image: bikeImage,
-      actualPrice: 48000,
-      discount: 15,
-      currentPrice: 40800,
-      category: "Mountain Bike"
-    },
-    {
-      id: "12",
-      name: "Junior Racer 20",
-      brand: "KTR Junior",
-      image: bikeImage,
-      actualPrice: 15000,
-      discount: 10,
-      currentPrice: 13500,
-      category: "Kids Bike"
-    },
-  ];
-
-  const filteredProducts = allProducts.filter((product) => {
+  const filteredProducts = products.filter((product) => {
     const categoryMatch =
-      selectedCategories.length === 0 || selectedCategories.includes(product.category!);
+      selectedCategories.length === 0 || selectedCategories.includes(product.category || '');
     const brandMatch =
-      selectedBrands.length === 0 || selectedBrands.includes(product.brand!);
+      selectedBrands.length === 0 || selectedBrands.includes(product.brand || '');
     const priceMatch =
       product.currentPrice >= priceRange[0] && product.currentPrice <= priceRange[1];
     return categoryMatch && brandMatch && priceMatch;
@@ -160,8 +59,46 @@ export default function Products() {
   const handleClearFilters = () => {
     setSelectedCategories([]);
     setSelectedBrands([]);
-    setPriceRange([10000, 100000]);
+    setPriceRange([minPrice, maxPrice]);
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-background via-accent/10 to-background py-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="mb-8">
+            <div className="h-10 bg-muted rounded-lg w-2/3 mb-3 animate-pulse" />
+            <div className="h-6 bg-muted rounded-lg w-1/3 animate-pulse" />
+          </div>
+          <div className="grid lg:grid-cols-4 gap-8">
+            <div className="lg:col-span-1">
+              <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-lg p-6 h-96 animate-pulse" />
+            </div>
+            <div className="lg:col-span-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                {[...Array(9)].map((_, i) => (
+                  <SkeletonCard key={i} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div className="min-h-screen flex items-center justify-center p-4">
+        <div className="text-center">
+          <p className="text-xl text-muted-foreground mb-4">Failed to load products</p>
+          <Button onClick={() => window.location.reload()} variant="default" className="rounded-full">
+            Retry
+          </Button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-accent/10 to-background py-8">
@@ -201,19 +138,29 @@ export default function Products() {
 
           <div className="lg:col-span-3">
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-              {displayedProducts.map((product, index) => (
-                <motion.div
-                  key={product.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.05 * index }}
-                >
-                  <ProductCard
-                    {...product}
-                    onViewDetails={(id) => setLocation(`/products/${id}`)}
-                  />
-                </motion.div>
-              ))}
+              {displayedProducts.map((product, index) => {
+                const images = product.images.split(',').map(img => img.trim());
+                return (
+                  <motion.div
+                    key={product.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.05 * index }}
+                  >
+                    <ProductCard
+                      id={product.id}
+                      name={product.name}
+                      brand={product.brand}
+                      image={images[0]}
+                      actualPrice={product.actualPrice}
+                      discount={product.discount}
+                      currentPrice={product.currentPrice}
+                      category={product.category}
+                      onViewDetails={(id) => setLocation(`/products/${id}`)}
+                    />
+                  </motion.div>
+                );
+              })}
             </div>
 
             {filteredProducts.length === 0 && (
@@ -245,7 +192,6 @@ export default function Products() {
                   onClick={() => setDisplayCount((prev) => prev + 9)}
                   data-testid="button-load-more"
                 >
-                  <Loader2 className="w-5 h-5 mr-2 animate-spin" style={{ display: 'none' }} />
                   Load More Cycles
                 </Button>
               </motion.div>

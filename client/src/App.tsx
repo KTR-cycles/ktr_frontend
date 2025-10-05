@@ -1,10 +1,15 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ErrorBoundary } from "react-error-boundary";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "@/store/store";
+import { fetchCategories } from "@/store/categoriesSlice";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyContactButtons from "@/components/StickyContactButtons";
@@ -58,24 +63,44 @@ function Router() {
   );
 }
 
+function AppContent() {
+  const dispatch = useAppDispatch();
+  const { lastFetched } = useAppSelector((state) => state.categories);
+
+  useEffect(() => {
+    const ONE_DAY = 24 * 60 * 60 * 1000;
+    if (!lastFetched || Date.now() - lastFetched > ONE_DAY) {
+      dispatch(fetchCategories());
+    }
+  }, [dispatch, lastFetched]);
+
+  return (
+    <div className="min-h-screen flex flex-col bg-background">
+      <Header />
+      <main className="flex-1">
+        <Suspense fallback={<LoadingSpinner />}>
+          <Router />
+        </Suspense>
+      </main>
+      <Footer />
+      <StickyContactButtons />
+    </div>
+  );
+}
+
 function App() {
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <div className="min-h-screen flex flex-col bg-background">
-            <Header />
-            <main className="flex-1">
-              <Suspense fallback={<LoadingSpinner />}>
-                <Router />
-              </Suspense>
-            </main>
-            <Footer />
-            <StickyContactButtons />
-          </div>
-          <Toaster />
-        </TooltipProvider>
-      </QueryClientProvider>
+      <Provider store={store}>
+        <PersistGate loading={<LoadingSpinner />} persistor={persistor}>
+          <QueryClientProvider client={queryClient}>
+            <TooltipProvider>
+              <AppContent />
+              <Toaster />
+            </TooltipProvider>
+          </QueryClientProvider>
+        </PersistGate>
+      </Provider>
     </ErrorBoundary>
   );
 }
