@@ -127,14 +127,29 @@ Images must be publicly accessible URLs starting with `http://` or `https://`. F
 https://example.com/image1.jpg, https://example.com/image2.jpg
 ```
 
-### Environment Variables (Optional)
+### Environment Variables
 
-Create a `.env` file in the root directory:
+Copy the template file and configure your environment:
 
 ```bash
+cp .env.template .env
+```
+
+Edit `.env` and update the values:
+
+```bash
+# Server Configuration
 PORT=5000
 NODE_ENV=development
+
+# Session Secret (generate using: node -e "console.log(require('crypto').randomBytes(32).toString('hex'))")
+SESSION_SECRET=your-generated-secret-key
+
+# Google Sheets API URL (optional - can be configured in code)
+VITE_GOOGLE_SHEET_URL=https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec
 ```
+
+**Important**: Never commit your `.env` file to version control. It's already in `.gitignore`.
 
 ## Running Locally
 
