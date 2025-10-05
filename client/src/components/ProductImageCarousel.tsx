@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import { ChevronLeft, ChevronRight, ZoomIn, ImageOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface ProductImageCarouselProps {
@@ -11,36 +11,61 @@ interface ProductImageCarouselProps {
 export default function ProductImageCarousel({ images, productName }: ProductImageCarouselProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
+  const [imageErrors, setImageErrors] = useState<{ [key: number]: boolean }>({});
+
+  const validImages = images.filter(img => img && img.trim() && img.trim().startsWith('http'));
+  const hasValidImages = validImages.length > 0;
 
   const handlePrevious = () => {
-    setSelectedIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setSelectedIndex((prev) => (prev === 0 ? validImages.length - 1 : prev - 1));
   };
 
   const handleNext = () => {
-    setSelectedIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setSelectedIndex((prev) => (prev === validImages.length - 1 ? 0 : prev + 1));
   };
+
+  const handleImageError = (index: number) => {
+    setImageErrors(prev => ({ ...prev, [index]: true }));
+  };
+
+  if (!hasValidImages) {
+    return (
+      <div className="space-y-4">
+        <div className="relative aspect-square rounded-2xl overflow-hidden bg-muted border border-border/50 shadow-lg flex items-center justify-center">
+          <ImageOff className="w-24 h-24 text-muted-foreground/50" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-4">
       <div className="relative aspect-square rounded-2xl overflow-hidden bg-white/80 backdrop-blur-md border border-border/50 shadow-lg group">
         <AnimatePresence mode="wait">
-          <motion.img
-            key={selectedIndex}
-            src={images[selectedIndex]}
-            alt={`${productName} - Image ${selectedIndex + 1}`}
-            className={`w-full h-full object-contain transition-transform duration-300 ${
-              isZoomed ? "scale-150 cursor-zoom-out" : "cursor-zoom-in"
-            }`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            onClick={() => setIsZoomed(!isZoomed)}
-            data-testid="img-product-main"
-          />
+          {imageErrors[selectedIndex] ? (
+            <div className="w-full h-full flex items-center justify-center bg-muted">
+              <ImageOff className="w-24 h-24 text-muted-foreground/50" />
+            </div>
+          ) : (
+            <motion.img
+              key={selectedIndex}
+              src={validImages[selectedIndex]}
+              alt={`${productName} - Image ${selectedIndex + 1}`}
+              className={`w-full h-full object-contain transition-transform duration-300 ${
+                isZoomed ? "scale-150 cursor-zoom-out" : "cursor-zoom-in"
+              }`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => setIsZoomed(!isZoomed)}
+              onError={() => handleImageError(selectedIndex)}
+              data-testid="img-product-main"
+            />
+          )}
         </AnimatePresence>
 
-        {images.length > 1 && (
+        {validImages.length > 1 && !imageErrors[selectedIndex] && (
           <>
             <Button
               variant="outline"
@@ -70,9 +95,9 @@ export default function ProductImageCarousel({ images, productName }: ProductIma
         </div>
       </div>
 
-      {images.length > 1 && (
+      {validImages.length > 1 && (
         <div className="grid grid-cols-4 gap-3">
-          {images.map((image, index) => (
+          {validImages.map((image, index) => (
             <motion.button
               key={index}
               whileHover={{ scale: 1.05 }}
@@ -85,11 +110,18 @@ export default function ProductImageCarousel({ images, productName }: ProductIma
               }`}
               data-testid={`button-thumbnail-${index}`}
             >
-              <img
-                src={image}
-                alt={`${productName} - Thumbnail ${index + 1}`}
-                className="w-full h-full object-contain bg-white/80"
-              />
+              {imageErrors[index] ? (
+                <div className="w-full h-full flex items-center justify-center bg-muted">
+                  <ImageOff className="w-8 h-8 text-muted-foreground/50" />
+                </div>
+              ) : (
+                <img
+                  src={image}
+                  alt={`${productName} - Thumbnail ${index + 1}`}
+                  className="w-full h-full object-contain bg-white/80"
+                  onError={() => handleImageError(index)}
+                />
+              )}
             </motion.button>
           ))}
         </div>

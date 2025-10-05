@@ -6,21 +6,30 @@ const PRODUCTS_API = 'https://script.google.com/macros/s/AKfycbwoX23d_uxE5brVKm3
 export const fetchProducts = async (): Promise<Product[]> => {
   try {
     const response = await axios.get(PRODUCTS_API);
-    return response.data.map((item: any) => ({
-      id: String(item.id || item.ID || item.Id),
-      name: item.name || item.Name || '',
-      brand: item.brand || item.Brand || '',
-      category_name: item.category_name || item.category || item.Category || '',
-      type: item.type || item.Type || '',
-      original_price: Number(item.original_price || item.actualPrice || item.actual_price || 0),
-      discount: Number(item.discount || item.Discount || 0),
-      discounted_price: Number(item.discounted_price || item.currentPrice || item.current_price || 0),
-      description: item.description || item.Description || '',
-      specifications: item.specifications || item.Specifications || '',
-      features: item.features || item.Features || '',
-      images: item.images || item.Images || '',
-      stock: item.stock || item.Stock || 'In Stock',
-    }));
+    
+    if (response.data && response.data.length > 0) {
+      console.log('Sample product from API:', JSON.stringify(response.data[0], null, 2));
+    }
+    
+    return response.data.map((item: any) => {
+      const imagesString = item.images || item.Images || item.image || item.Image || '';
+      
+      return {
+        id: String(item.id || item.ID || item.Id),
+        name: item.name || item.Name || '',
+        brand: item.brand || item.Brand || '',
+        category_name: item.category_name || item.category || item.Category || '',
+        type: item.type || item.Type || '',
+        original_price: Number(item.original_price || item.actualPrice || item.actual_price || 0),
+        discount: Number(item.discount || item.Discount || 0),
+        discounted_price: Number(item.discounted_price || item.currentPrice || item.current_price || 0),
+        description: item.description || item.Description || '',
+        specifications: item.specifications || item.Specifications || '',
+        features: item.features || item.Features || '',
+        images: imagesString,
+        stock: item.stock || item.Stock || 'In Stock',
+      };
+    });
   } catch (error: any) {
     console.error('Error fetching products:', error);
     throw new Error(error.message || 'Failed to fetch products');

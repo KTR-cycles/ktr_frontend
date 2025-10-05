@@ -28,6 +28,8 @@ export default function ProductCard({
   onViewDetails,
 }: ProductCardProps) {
   const [imageError, setImageError] = useState(false);
+  const cleanImageUrl = image?.trim() || '';
+  const hasValidImage = cleanImageUrl && cleanImageUrl.startsWith('http');
 
   return (
     <motion.div
@@ -39,12 +41,14 @@ export default function ProductCard({
       data-testid={`product-card-${id}`}
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-        {!imageError && image ? (
+        {!imageError && hasValidImage ? (
           <img
-            src={image}
+            src={cleanImageUrl}
             alt={name}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            onError={() => setImageError(true)}
+            onError={(e) => {
+              setImageError(true);
+            }}
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
