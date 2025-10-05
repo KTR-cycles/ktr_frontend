@@ -25,10 +25,10 @@ export default function Products() {
     queryFn: fetchProducts,
   });
 
-  const brands = Array.from(new Set((products || []).map(p => p.brand).filter(Boolean)));
+  const brands = Array.from(new Set((products || []).map(p => p.brand).filter(Boolean))) as string[];
   const categoryNames = categories.length > 0
-    ? categories.map(c => c.name)
-    : Array.from(new Set((products || []).map(p => p.category_name).filter(Boolean)));
+    ? categories.map((c: { name: string }) => c.name)
+    : Array.from(new Set((products || []).map(p => p.category_name).filter(Boolean))) as string[];
 
   const minPrice = (products || []).length > 0 ? Math.min(...(products || []).map(p => p.discounted_price)) : 10000;
   const maxPrice = (products || []).length > 0 ? Math.max(...(products || []).map(p => p.discounted_price)) : 100000;
