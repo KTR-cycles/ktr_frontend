@@ -116,8 +116,8 @@ export default function ProductDetail() {
           >
             <div>
               <div className="flex items-start justify-between mb-2">
-                {product.category && (
-                  <Badge className="rounded-full mb-3">{product.category}</Badge>
+                {product.category_name && (
+                  <Badge className="rounded-full mb-3">{product.category_name}</Badge>
                 )}
                 <div className="flex gap-2">
                   <Button variant="outline" size="icon" className="rounded-full" data-testid="button-wishlist">
@@ -136,23 +136,21 @@ export default function ProductDetail() {
 
             <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-lg p-6">
               <div className="flex items-baseline gap-4 mb-3">
-                <span className="text-4xl font-bold text-primary" data-testid="text-current-price">
-                  ₹{product.currentPrice.toLocaleString()}
+                <span className="text-4xl font-bold text-primary" data-testid="text-discounted-price">
+                  ₹{product.discounted_price.toLocaleString()}
+                </span>
+                <span className="text-xl text-muted-foreground line-through" data-testid="text-original-price">
+                  ₹{product.original_price.toLocaleString()}
                 </span>
                 {product.discount && product.discount > 0 && (
-                  <>
-                    <span className="text-xl text-muted-foreground line-through" data-testid="text-original-price">
-                      ₹{product.actualPrice.toLocaleString()}
-                    </span>
-                    <Badge className="bg-chart-2 text-white rounded-full px-3 py-1 text-sm font-bold" data-testid="badge-discount">
-                      {product.discount}% OFF
-                    </Badge>
-                  </>
+                  <Badge className="bg-chart-2 text-white rounded-full px-3 py-1 text-sm font-bold" data-testid="badge-discount">
+                    {product.discount}% OFF
+                  </Badge>
                 )}
               </div>
               {product.discount && product.discount > 0 && (
                 <p className="text-sm text-chart-2 font-medium">
-                  You save ₹{(product.actualPrice - product.currentPrice).toLocaleString()}
+                  You save ₹{(product.original_price - product.discounted_price).toLocaleString()}
                 </p>
               )}
             </div>

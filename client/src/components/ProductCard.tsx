@@ -1,17 +1,18 @@
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Eye } from "lucide-react";
+import { Eye, ImageOff } from "lucide-react";
+import { useState } from "react";
 
 interface ProductCardProps {
   id: string;
   name: string;
   brand?: string;
   image: string;
-  actualPrice: number;
+  originalPrice: number;
   discount?: number;
-  currentPrice: number;
-  category?: string;
+  discountedPrice: number;
+  categoryName?: string;
   onViewDetails?: (id: string) => void;
 }
 
@@ -20,12 +21,14 @@ export default function ProductCard({
   name,
   brand,
   image,
-  actualPrice,
+  originalPrice,
   discount,
-  currentPrice,
-  category,
+  discountedPrice,
+  categoryName,
   onViewDetails,
 }: ProductCardProps) {
+  const [imageError, setImageError] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
@@ -35,12 +38,19 @@ export default function ProductCard({
       className="group bg-white/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-lg overflow-hidden hover-elevate transition-all"
       data-testid={`product-card-${id}`}
     >
-      <div className="relative aspect-[4/3] overflow-hidden">
-        <img
-          src={image}
-          alt={name}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-        />
+      <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+        {!imageError && image ? (
+          <img
+            src={image}
+            alt={name}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            onError={() => setImageError(true)}
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center">
+            <ImageOff className="w-16 h-16 text-muted-foreground/50" />
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         
         {discount && discount > 0 && (
@@ -77,22 +87,20 @@ export default function ProductCard({
               {name}
             </h3>
           </div>
-          {category && (
+          {categoryName && (
             <Badge variant="secondary" className="ml-2 rounded-full">
-              {category}
+              {categoryName}
             </Badge>
           )}
         </div>
 
         <div className="flex items-center gap-3 mt-4">
-          <span className="text-2xl font-bold text-primary" data-testid={`text-current-price-${id}`}>
-            ₹{currentPrice.toLocaleString()}
+          <span className="text-2xl font-bold text-primary" data-testid={`text-discounted-price-${id}`}>
+            ₹{discountedPrice.toLocaleString()}
           </span>
-          {discount && discount > 0 && (
-            <span className="text-sm text-muted-foreground line-through" data-testid={`text-original-price-${id}`}>
-              ₹{actualPrice.toLocaleString()}
-            </span>
-          )}
+          <span className="text-sm text-muted-foreground line-through" data-testid={`text-original-price-${id}`}>
+            ₹{originalPrice.toLocaleString()}
+          </span>
         </div>
       </div>
     </motion.div>

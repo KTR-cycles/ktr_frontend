@@ -28,10 +28,10 @@ export default function Products() {
   const brands = Array.from(new Set((products || []).map(p => p.brand).filter(Boolean)));
   const categoryNames = categories.length > 0
     ? categories.map(c => c.name)
-    : Array.from(new Set((products || []).map(p => p.category).filter(Boolean)));
+    : Array.from(new Set((products || []).map(p => p.category_name).filter(Boolean)));
 
-  const minPrice = (products || []).length > 0 ? Math.min(...(products || []).map(p => p.currentPrice)) : 10000;
-  const maxPrice = (products || []).length > 0 ? Math.max(...(products || []).map(p => p.currentPrice)) : 100000;
+  const minPrice = (products || []).length > 0 ? Math.min(...(products || []).map(p => p.discounted_price)) : 10000;
+  const maxPrice = (products || []).length > 0 ? Math.max(...(products || []).map(p => p.discounted_price)) : 100000;
 
   useEffect(() => {
     setPriceRange([minPrice, maxPrice]);
@@ -45,11 +45,11 @@ export default function Products() {
 
   const filteredProducts = (products || []).filter((product) => {
     const categoryMatch =
-      selectedCategories.length === 0 || selectedCategories.includes(product.category || '');
+      selectedCategories.length === 0 || selectedCategories.includes(product.category_name || '');
     const brandMatch =
       selectedBrands.length === 0 || selectedBrands.includes(product.brand || '');
     const priceMatch =
-      product.currentPrice >= priceRange[0] && product.currentPrice <= priceRange[1];
+      product.discounted_price >= priceRange[0] && product.discounted_price <= priceRange[1];
     return categoryMatch && brandMatch && priceMatch;
   });
 
@@ -153,10 +153,10 @@ export default function Products() {
                       name={product.name}
                       brand={product.brand}
                       image={images[0]}
-                      actualPrice={product.actualPrice}
+                      originalPrice={product.original_price}
                       discount={product.discount}
-                      currentPrice={product.currentPrice}
-                      category={product.category}
+                      discountedPrice={product.discounted_price}
+                      categoryName={product.category_name}
                       onViewDetails={(id) => setLocation(`/products/${id}`)}
                     />
                   </motion.div>
