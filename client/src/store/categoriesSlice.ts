@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import type { Category } from '@shared/schema';
+import type { Category } from '../types';
 import axios from 'axios';
+import { CATEGORIES_URL } from '../utils/config';
 
 interface CategoriesState {
   items: Category[];
@@ -16,7 +17,7 @@ const initialState: CategoriesState = {
   lastFetched: null,
 };
 
-const CATEGORIES_API = 'https://script.google.com/macros/s/AKfycbwoX23d_uxE5brVKm3KZTXRzlM4Pq4PBAv9DIdDI_dPITtkcsTfROfitO65t4pKC1AN/exec?sheet=categories';
+const CATEGORIES_API = `${CATEGORIES_URL}`;
 
 export const fetchCategories = createAsyncThunk(
   'categories/fetch',

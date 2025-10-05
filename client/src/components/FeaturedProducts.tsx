@@ -2,29 +2,33 @@ import { motion } from "framer-motion";
 import ProductCard from "./ProductCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import type { Product } from "../types";
+import { PATHS } from "./path";
+import { useLocation } from "wouter";
+import bikeImage from '@assets/generated_images/Premium_golden_bike_product_18205e52.png';
+import { fetchFeaturedProducts } from "@/lib/api";
+import { useQuery } from "@tanstack/react-query";
+import LoadingSpinner from "./LoadingSpinner";
 
-interface Product {
-  id: string;
-  name: string;
-  brand?: string;
-  image: string;
-  originalPrice: number;
-  discount?: number;
-  discountedPrice: number;
-  categoryName?: string;
-}
 
-interface FeaturedProductsProps {
-  products: Product[];
-  onViewDetails?: (id: string) => void;
-  onViewAll?: () => void;
-}
 
-export default function FeaturedProducts({
-  products,
-  onViewDetails,
-  onViewAll,
-}: FeaturedProductsProps) {
+export default function FeaturedProducts() {
+  const { PRODUCTS } = PATHS;
+  const { data: featuredProducts = [], isLoading, isError } = useQuery({
+    queryKey: ['/api/featured-products'],
+    queryFn: fetchFeaturedProducts,
+  });
+
+  const [, setLocation] = useLocation();
+
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
+
+  if (isError) {
+    return <div>Error loading featured products</div>;
+  }
   return (
     <section className="py-16 md:py-24 bg-gradient-to-br from-background via-accent/10 to-background">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
@@ -44,7 +48,7 @@ export default function FeaturedProducts({
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {products.map((product, index) => (
+          {featuredProducts.map((product, index) => (
             <motion.div
               key={product.id}
               initial={{ opacity: 0, y: 20 }}
@@ -52,7 +56,13 @@ export default function FeaturedProducts({
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 * index }}
             >
-              <ProductCard {...product} onViewDetails={onViewDetails} />
+              <ProductCard 
+                {...product} 
+                originalPrice={product.original_price}
+                discountedPrice={product.discounted_price}
+                categoryName={product.category_name}
+                onViewDetails={(id) => setLocation(`/products/${id}`)} 
+              />
             </motion.div>
           ))}
         </div>
@@ -68,7 +78,7 @@ export default function FeaturedProducts({
             variant="default"
             size="lg"
             className="rounded-full px-8"
-            onClick={onViewAll}
+            onClick={() => setLocation(PRODUCTS)}
             data-testid="button-view-all-products"
           >
             View All Products

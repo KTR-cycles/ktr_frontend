@@ -8,7 +8,7 @@ interface ProductCardProps {
   id: string;
   name: string;
   brand?: string;
-  image: string;
+  images: string;
   originalPrice: number;
   discount?: number;
   discountedPrice: number;
@@ -20,7 +20,7 @@ export default function ProductCard({
   id,
   name,
   brand,
-  image,
+  images,
   originalPrice,
   discount,
   discountedPrice,
@@ -28,8 +28,10 @@ export default function ProductCard({
   onViewDetails,
 }: ProductCardProps) {
   const [imageError, setImageError] = useState(false);
-  const cleanImageUrl = image?.trim() || '';
+  const cleanImageUrl = images?.split(',')[0]?.trim() || '';
   const hasValidImage = cleanImageUrl && cleanImageUrl.startsWith('http');
+  console.log(cleanImageUrl, hasValidImage)
+  // Increased image area height for a more prominent product image
 
   return (
     <motion.div
@@ -37,10 +39,10 @@ export default function ProductCard({
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
-      className="group bg-white/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-lg overflow-hidden hover-elevate transition-all"
+      className="group bg-white/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-lg overflow-hidden hover-elevate transition-all flex flex-col h-[360px] min-h-[360px] max-h-[360px]"
       data-testid={`product-card-${id}`}
     >
-      <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+      <div className="relative aspect-[4/3] overflow-hidden bg-muted flex-shrink-0 h-[180px]">
         {!imageError && hasValidImage ? (
           <img
             src={cleanImageUrl}
@@ -81,23 +83,24 @@ export default function ProductCard({
         </motion.div>
       </div>
 
-      <div className="p-6">
-        <div className="flex items-start justify-between mb-2">
-          <div className="flex-1">
-            {brand && (
-              <p className="text-sm text-muted-foreground font-medium mb-1">{brand}</p>
+      <div className="flex-1 flex flex-col justify-between p-3">
+        <div>
+          <div className="flex items-start justify-between ">
+            <div className="flex-1">
+              {brand && (
+                <p className="text-sm text-muted-foreground font-medium mb-1">{brand}</p>
+              )}
+              <h3 className="text-lg font-semibold text-foreground line-clamp-2" data-testid={`text-product-name-${id}`}>
+                {name}
+              </h3>
+            </div>
+            {categoryName && (
+              <Badge variant="secondary" className="ml-2 rounded-full">
+                {categoryName}
+              </Badge>
             )}
-            <h3 className="text-lg font-semibold text-foreground line-clamp-2" data-testid={`text-product-name-${id}`}>
-              {name}
-            </h3>
           </div>
-          {categoryName && (
-            <Badge variant="secondary" className="ml-2 rounded-full">
-              {categoryName}
-            </Badge>
-          )}
         </div>
-
         <div className="flex items-center gap-3 mt-4">
           <span className="text-2xl font-bold text-primary" data-testid={`text-discounted-price-${id}`}>
             ₹{(discountedPrice || 0).toLocaleString()}

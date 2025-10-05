@@ -9,10 +9,9 @@ export default function ProductCardExample() {
         name="Mountain Explorer Pro 29"
         brand="KTR Sports"
         image={bikeImage}
-        actualPrice={45000}
-        discount={20}
-        currentPrice={36000}
-        category="Mountain Bike"
+        originalPrice={45000}
+        discountedPrice={36000}
+        categoryName="Mountain Bike"
         onViewDetails={(id) => console.log('View details for product:', id)}
       />
     </div>

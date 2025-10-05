@@ -28,16 +28,6 @@ git clone <your-repo-url>
 cd ktr-cycle-world
 ```
 
-### 2. Remove Replit Dependencies (Important for Local Setup)
-
-**Update `package.json`:**
-
-Remove these lines from `devDependencies`:
-```json
-"@replit/vite-plugin-cartographer": "^0.3.1",
-"@replit/vite-plugin-dev-banner": "^0.1.1",
-"@replit/vite-plugin-runtime-error-modal": "^0.0.3",
-```
 
 **Update `vite.config.ts`:**
 

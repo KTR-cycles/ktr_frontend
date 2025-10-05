@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { Link, useRoute } from "wouter";
 import { useQuery } from "@tanstack/react-query";
-import { ChevronRight, Heart, Share2, ShoppingCart, Loader2 } from "lucide-react";
+import { ChevronRight, Heart, Share2, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ProductImageCarousel from "@/components/ProductImageCarousel";
 import ProductReviews from "@/components/ProductReviews";
 import { fetchProductById } from "@/lib/api";
+import LoadingSpinner from "@/components/LoadingSpinner";
 
 export default function ProductDetail() {
   const [match, params] = useRoute("/products/:id");
@@ -46,11 +47,7 @@ export default function ProductDetail() {
   ];
 
   if (isLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-12 h-12 animate-spin text-primary" />
-      </div>
-    );
+    return <LoadingSpinner />;
   }
 
   if (isError || !product) {
@@ -68,16 +65,16 @@ export default function ProductDetail() {
     );
   }
 
-  const images = product.images.split(',').map(img => img.trim());
+  const images = product.images?.split(',').map((img: string) => img.trim()) || [];
   const specifications = product.specifications
-    ? product.specifications.split('\n').map(line => {
-        const [label, value] = line.split(':').map(s => s.trim());
+    ? product.specifications.split('\n').map((line: string) => {
+        const [label, value] = line.split(':').map((s: string) => s.trim());
         return { label: label || '', value: value || '' };
-      }).filter(spec => spec.label && spec.value)
+      }).filter((spec: { label: string; value: string }) => spec.label && spec.value)
     : [];
   
   const features = product.features
-    ? product.features.split('\n').filter(f => f.trim())
+    ? product.features.split('\n').filter((f: string) => f.trim())
     : [];
 
   return (
@@ -195,7 +192,7 @@ export default function ProductDetail() {
               <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-lg p-6 md:p-8">
                 <h2 className="text-2xl font-bold text-foreground mb-6">Specifications</h2>
                 <div className="space-y-4">
-                  {specifications.map((spec, index) => (
+                  {specifications.map((spec: { label: string; value: string }, index: number) => (
                     <div
                       key={index}
                       className="flex justify-between py-3 border-b border-border last:border-b-0"
@@ -213,7 +210,7 @@ export default function ProductDetail() {
               <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-lg p-6 md:p-8">
                 <h2 className="text-2xl font-bold text-foreground mb-6">Key Features</h2>
                 <ul className="space-y-3">
-                  {features.map((feature, index) => (
+                  {features.map((feature: string, index: number) => (
                     <li key={index} className="flex items-start gap-3" data-testid={`feature-${index}`}>
                       <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                       <span className="text-foreground leading-relaxed">{feature}</span>

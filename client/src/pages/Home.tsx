@@ -81,38 +81,6 @@ export default function Home() {
     },
   ];
 
-  const featuredProducts = [
-    {
-      id: "1",
-      name: "Mountain Explorer Pro 29",
-      brand: "KTR Sports",
-      image: bikeImage,
-      originalPrice: 45000,
-      discount: 20,
-      discountedPrice: 36000,
-      categoryName: "Mountain Bike"
-    },
-    {
-      id: "2",
-      name: "City Cruiser Elite",
-      brand: "KTR Urban",
-      image: bikeImage,
-      originalPrice: 28000,
-      discount: 15,
-      discountedPrice: 23800,
-      categoryName: "City Bike"
-    },
-    {
-      id: "3",
-      name: "Road Racer X1",
-      brand: "KTR Performance",
-      image: bikeImage,
-      originalPrice: 55000,
-      discount: 10,
-      discountedPrice: 49500,
-      categoryName: "Road Bike"
-    },
-  ];
 
   const services = [
     {
@@ -145,13 +113,11 @@ export default function Home() {
 
       <MotivationQuotes quotes={motivationQuotes} image={wellnessImage} />
 
+      <FeaturedProducts />
+
       <CyclingBenefits benefits={cyclingBenefits} />
 
-      <FeaturedProducts
-        products={featuredProducts}
-        onViewDetails={(id) => console.log('View product:', id)}
-        onViewAll={() => console.log('View all products')}
-      />
+      
 
       <ServicesSection services={services} />
 

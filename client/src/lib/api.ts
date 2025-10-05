@@ -1,7 +1,8 @@
 import axios from 'axios';
 import type { Product } from '@shared/schema';
+import { FEATURED_PRODUCTS_URL, PRODUCTS_URL } from '../utils/config';
 
-const PRODUCTS_API = 'https://script.google.com/macros/s/AKfycbwoX23d_uxE5brVKm3KZTXRzlM4Pq4PBAv9DIdDI_dPITtkcsTfROfitO65t4pKC1AN/exec?sheet=products';
+const PRODUCTS_API = PRODUCTS_URL;
 
 export const fetchProducts = async (): Promise<Product[]> => {
   try {
@@ -47,4 +48,10 @@ export const fetchProductById = async (id: string): Promise<Product | null> => {
     cacheTimestamp = now;
   }
   return cachedProducts.find((p) => p.id === id) || null;
+};
+
+
+export const fetchFeaturedProducts = async (): Promise<Product[]> => {
+  const response = await axios.get(FEATURED_PRODUCTS_URL);
+  return response.data;
 };
