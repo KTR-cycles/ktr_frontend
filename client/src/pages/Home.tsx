@@ -87,30 +87,30 @@ export default function Home() {
       name: "Mountain Explorer Pro 29",
       brand: "KTR Sports",
       image: bikeImage,
-      actualPrice: 45000,
+      originalPrice: 45000,
       discount: 20,
-      currentPrice: 36000,
-      category: "Mountain Bike"
+      discountedPrice: 36000,
+      categoryName: "Mountain Bike"
     },
     {
       id: "2",
       name: "City Cruiser Elite",
       brand: "KTR Urban",
       image: bikeImage,
-      actualPrice: 28000,
+      originalPrice: 28000,
       discount: 15,
-      currentPrice: 23800,
-      category: "City Bike"
+      discountedPrice: 23800,
+      categoryName: "City Bike"
     },
     {
       id: "3",
       name: "Road Racer X1",
       brand: "KTR Performance",
       image: bikeImage,
-      actualPrice: 55000,
+      originalPrice: 55000,
       discount: 10,
-      currentPrice: 49500,
-      category: "Road Bike"
+      discountedPrice: 49500,
+      categoryName: "Road Bike"
     },
   ];
 

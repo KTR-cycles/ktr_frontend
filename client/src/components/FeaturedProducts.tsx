@@ -8,10 +8,10 @@ interface Product {
   name: string;
   brand?: string;
   image: string;
-  actualPrice: number;
+  originalPrice: number;
   discount?: number;
-  currentPrice: number;
-  category?: string;
+  discountedPrice: number;
+  categoryName?: string;
 }
 
 interface FeaturedProductsProps {

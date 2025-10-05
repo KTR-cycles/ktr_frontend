@@ -96,10 +96,10 @@ export default function ProductCard({
 
         <div className="flex items-center gap-3 mt-4">
           <span className="text-2xl font-bold text-primary" data-testid={`text-discounted-price-${id}`}>
-            ₹{discountedPrice.toLocaleString()}
+            ₹{(discountedPrice || 0).toLocaleString()}
           </span>
           <span className="text-sm text-muted-foreground line-through" data-testid={`text-original-price-${id}`}>
-            ₹{originalPrice.toLocaleString()}
+            ₹{(originalPrice || 0).toLocaleString()}
           </span>
         </div>
       </div>
