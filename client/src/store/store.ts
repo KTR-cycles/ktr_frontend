@@ -4,16 +4,27 @@ import storage from 'redux-persist/lib/storage';
 import CryptoJS from 'crypto-js';
 import categoriesReducer from './categoriesSlice';
 
+const PERSIST_VERSION = 2;
+const STORAGE_VERSION_KEY = 'ktr-persist-version';
+
 const getEncryptionKey = () => {
-  if (typeof window !== 'undefined' && window.crypto) {
-    const stored = localStorage.getItem('ktr-ek');
-    if (stored) return stored;
-    
-    const array = new Uint8Array(32);
-    window.crypto.getRandomValues(array);
-    const key = Array.from(array).map(b => b.toString(16).padStart(2, '0')).join('');
-    localStorage.setItem('ktr-ek', key);
-    return key;
+  if (typeof window !== 'undefined') {
+    const storedVersion = localStorage.getItem(STORAGE_VERSION_KEY);
+    if (storedVersion !== String(PERSIST_VERSION)) {
+      localStorage.clear();
+      localStorage.setItem(STORAGE_VERSION_KEY, String(PERSIST_VERSION));
+    }
+
+    if (window.crypto) {
+      const stored = localStorage.getItem('ktr-ek');
+      if (stored) return stored;
+      
+      const array = new Uint8Array(32);
+      window.crypto.getRandomValues(array);
+      const key = Array.from(array).map(b => b.toString(16).padStart(2, '0')).join('');
+      localStorage.setItem('ktr-ek', key);
+      return key;
+    }
   }
   return 'ktr-cycle-world-fallback-key';
 };
@@ -25,8 +36,18 @@ const encrypt = (text: string): string => {
 };
 
 const decrypt = (ciphertext: string): string => {
-  const bytes = CryptoJS.AES.decrypt(ciphertext, ENCRYPTION_KEY);
-  return bytes.toString(CryptoJS.enc.Utf8);
+  try {
+    const bytes = CryptoJS.AES.decrypt(ciphertext, ENCRYPTION_KEY);
+    const decrypted = bytes.toString(CryptoJS.enc.Utf8);
+    if (!decrypted) {
+      console.warn('Decryption resulted in empty string');
+      return '{}';
+    }
+    return decrypted;
+  } catch (error) {
+    console.error('Decryption error:', error);
+    return '{}';
+  }
 };
 
 const encryptTransform = {

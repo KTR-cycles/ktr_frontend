@@ -25,13 +25,13 @@ export default function Products() {
     queryFn: fetchProducts,
   });
 
-  const brands = Array.from(new Set(products.map(p => p.brand).filter(Boolean)));
+  const brands = Array.from(new Set((products || []).map(p => p.brand).filter(Boolean)));
   const categoryNames = categories.length > 0
     ? categories.map(c => c.name)
-    : Array.from(new Set(products.map(p => p.category).filter(Boolean)));
+    : Array.from(new Set((products || []).map(p => p.category).filter(Boolean)));
 
-  const minPrice = products.length > 0 ? Math.min(...products.map(p => p.currentPrice)) : 10000;
-  const maxPrice = products.length > 0 ? Math.max(...products.map(p => p.currentPrice)) : 100000;
+  const minPrice = (products || []).length > 0 ? Math.min(...(products || []).map(p => p.currentPrice)) : 10000;
+  const maxPrice = (products || []).length > 0 ? Math.max(...(products || []).map(p => p.currentPrice)) : 100000;
 
   useEffect(() => {
     setPriceRange([minPrice, maxPrice]);
@@ -43,7 +43,7 @@ export default function Products() {
     priceRange: [minPrice, maxPrice] as [number, number],
   };
 
-  const filteredProducts = products.filter((product) => {
+  const filteredProducts = (products || []).filter((product) => {
     const categoryMatch =
       selectedCategories.length === 0 || selectedCategories.includes(product.category || '');
     const brandMatch =
@@ -140,9 +140,10 @@ export default function Products() {
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
               {displayedProducts.map((product, index) => {
                 const images = product.images.split(',').map(img => img.trim());
+                const uniqueKey = product.id || `product-${index}`;
                 return (
                   <motion.div
-                    key={product.id}
+                    key={uniqueKey}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: 0.05 * index }}

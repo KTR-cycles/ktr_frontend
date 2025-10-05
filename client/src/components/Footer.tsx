@@ -54,31 +54,31 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-foreground mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/">
-                  <a className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-home">
+                <Link href="/" data-testid="link-footer-home">
+                  <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">
                     Home
-                  </a>
+                  </span>
                 </Link>
               </li>
               <li>
-                <Link href="/products">
-                  <a className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-products">
+                <Link href="/products" data-testid="link-footer-products">
+                  <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">
                     Products
-                  </a>
+                  </span>
                 </Link>
               </li>
               <li>
-                <Link href="/about">
-                  <a className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-about">
+                <Link href="/about" data-testid="link-footer-about">
+                  <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">
                     About Us
-                  </a>
+                  </span>
                 </Link>
               </li>
               <li>
-                <Link href="/contact">
-                  <a className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-footer-contact">
+                <Link href="/contact" data-testid="link-footer-contact">
+                  <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">
                     Contact
-                  </a>
+                  </span>
                 </Link>
               </li>
             </ul>
