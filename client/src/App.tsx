@@ -12,6 +12,8 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import NotFound from "@/pages/not-found";
 
 const Home = lazy(() => import("@/pages/Home"));
+const Products = lazy(() => import("@/pages/Products"));
+const ProductDetail = lazy(() => import("@/pages/ProductDetail"));
 
 function ErrorFallback({ error }: { error: Error }) {
   return (
@@ -49,6 +51,8 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/products" component={Products} />
+      <Route path="/products/:id" component={ProductDetail} />
       <Route component={NotFound} />
     </Switch>
   );

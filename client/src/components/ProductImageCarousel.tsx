@@ -1,0 +1,99 @@
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+interface ProductImageCarouselProps {
+  images: string[];
+  productName: string;
+}
+
+export default function ProductImageCarousel({ images, productName }: ProductImageCarouselProps) {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  const handlePrevious = () => {
+    setSelectedIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setSelectedIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  return (
+    <div className="space-y-4">
+      <div className="relative aspect-square rounded-2xl overflow-hidden bg-white/80 backdrop-blur-md border border-border/50 shadow-lg group">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={selectedIndex}
+            src={images[selectedIndex]}
+            alt={`${productName} - Image ${selectedIndex + 1}`}
+            className={`w-full h-full object-contain transition-transform duration-300 ${
+              isZoomed ? "scale-150 cursor-zoom-out" : "cursor-zoom-in"
+            }`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            onClick={() => setIsZoomed(!isZoomed)}
+            data-testid="img-product-main"
+          />
+        </AnimatePresence>
+
+        {images.length > 1 && (
+          <>
+            <Button
+              variant="outline"
+              size="icon"
+              className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 backdrop-blur-md border-border opacity-0 group-hover:opacity-100 transition-opacity"
+              onClick={handlePrevious}
+              data-testid="button-carousel-prev"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </Button>
+
+            <Button
+              variant="outline"
+              size="icon"
+              className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/80 backdrop-blur-md border-border opacity-0 group-hover:opacity-100 transition-opacity"
+              onClick={handleNext}
+              data-testid="button-carousel-next"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </Button>
+          </>
+        )}
+
+        <div className="absolute bottom-4 right-4 bg-black/60 text-white rounded-full px-3 py-1 text-sm backdrop-blur-sm">
+          <ZoomIn className="w-4 h-4 inline mr-1" />
+          Click to zoom
+        </div>
+      </div>
+
+      {images.length > 1 && (
+        <div className="grid grid-cols-4 gap-3">
+          {images.map((image, index) => (
+            <motion.button
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setSelectedIndex(index)}
+              className={`aspect-square rounded-xl overflow-hidden border-2 transition-all ${
+                index === selectedIndex
+                  ? "border-primary shadow-lg"
+                  : "border-border hover:border-primary/50"
+              }`}
+              data-testid={`button-thumbnail-${index}`}
+            >
+              <img
+                src={image}
+                alt={`${productName} - Thumbnail ${index + 1}`}
+                className="w-full h-full object-contain bg-white/80"
+              />
+            </motion.button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
