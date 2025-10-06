@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Bike } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -16,6 +16,45 @@ export default function Header() {
   ];
 
   const isActive = (href: string) => location === href;
+
+  const scrollToShowroom = () => {
+    // Close mobile menu if open
+    setMobileMenuOpen(false);
+    
+    // Navigate to home page if not already there
+    if (location !== "/") {
+      window.location.href = "/#showroom-map";
+    } else {
+      // Scroll to the map section
+      const mapSection = document.getElementById("showroom-map");
+      if (mapSection) {
+        mapSection.scrollIntoView({ 
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+    }
+  };
+
+  // Handle hash navigation when component mounts or location changes
+  useEffect(() => {
+    const handleHashNavigation = () => {
+      if (location === "/" && window.location.hash === "#showroom-map") {
+        // Small delay to ensure the page has loaded
+        setTimeout(() => {
+          const mapSection = document.getElementById("showroom-map");
+          if (mapSection) {
+            mapSection.scrollIntoView({ 
+              behavior: "smooth",
+              block: "start"
+            });
+          }
+        }, 100);
+      }
+    };
+
+    handleHashNavigation();
+  }, [location]);
 
   return (
     <header className="sticky top-0 z-40 w-full backdrop-blur-lg bg-white/90 border-b border-border">
@@ -44,7 +83,13 @@ export default function Header() {
                 </div>
               </Link>
             ))}
-            <Button variant="default" size="default" className="ml-4 rounded-full" data-testid="button-visit-showroom">
+            <Button 
+              variant="default" 
+              size="default" 
+              className="ml-4 rounded-full" 
+              onClick={scrollToShowroom}
+              data-testid="button-visit-showroom"
+            >
               Visit Showroom
             </Button>
           </div>
@@ -88,7 +133,7 @@ export default function Header() {
                   variant="default"
                   size="default"
                   className="w-full rounded-full mt-2"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={scrollToShowroom}
                   data-testid="button-visit-showroom-mobile"
                 >
                   Visit Showroom
