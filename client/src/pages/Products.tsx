@@ -152,7 +152,7 @@ export default function Products() {
                       id={product.id}
                       name={product.name}
                       brand={product.brand}
-                      image={images[0]}
+                      images={images[0]}
                       originalPrice={product.original_price}
                       discount={product.discount}
                       discountedPrice={product.discounted_price}
