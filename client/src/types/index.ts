@@ -6,6 +6,7 @@ export interface Product {
   original_price: number;
   discounted_price: number;
   currentPrice: number;
+  category_id?: string;
   category_name: string;
   category?: string;
   images?: string;
@@ -18,7 +19,7 @@ export interface Product {
 }
 
 export interface Category {
-  id: string;
+  category_id: string;
   name: string;
   slug: string;
   description?: string;

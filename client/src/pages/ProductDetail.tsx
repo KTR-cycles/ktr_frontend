@@ -8,6 +8,7 @@ import ProductImageCarousel from "@/components/ProductImageCarousel";
 import ProductReviews from "@/components/ProductReviews";
 import { fetchProductById } from "@/lib/api";
 import LoadingSpinner from "@/components/LoadingSpinner";
+import { processImageUrls } from "@/utils/imageUtils";
 
 export default function ProductDetail() {
   const [match, params] = useRoute("/products/:id");
@@ -65,7 +66,7 @@ export default function ProductDetail() {
     );
   }
 
-  const images = product.images?.split(',').map((img: string) => img.trim()) || [];
+  const images = processImageUrls(product.images || '');
   const specifications = product.specifications
     ? product.specifications.split('\n').map((line: string) => {
         const [label, value] = line.split(':').map((s: string) => s.trim());

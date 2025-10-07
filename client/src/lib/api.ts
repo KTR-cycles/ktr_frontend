@@ -15,6 +15,7 @@ export const fetchProducts = async (): Promise<Product[]> => {
     return response.data.map((item: any) => {
       const imagesString = item.images || item.Images || item.image || item.Image || '';
       
+      
       return {
         id: String(item.id || item.ID || item.Id),
         name: item.name || item.Name || '',

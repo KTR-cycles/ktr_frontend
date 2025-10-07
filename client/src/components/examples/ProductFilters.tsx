@@ -7,7 +7,13 @@ export default function ProductFiltersExample() {
   const [priceRange, setPriceRange] = useState<[number, number]>([10000, 100000]);
 
   const options = {
-    categories: ['Mountain Bike', 'Road Bike', 'City Bike', 'Electric Bike', 'Kids Bike'],
+    categories: [
+      { id: '1', name: 'Mountain Bike' },
+      { id: '2', name: 'Road Bike' },
+      { id: '3', name: 'City Bike' },
+      { id: '4', name: 'Electric Bike' },
+      { id: '5', name: 'Kids Bike' },
+    ],
     brands: ['KTR Sports', 'KTR Urban', 'KTR Performance', 'KTR Electric', 'KTR Junior'],
     priceRange: [10000, 100000] as [number, number],
   };

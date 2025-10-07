@@ -2,6 +2,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, ZoomIn, ImageOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { processImageUrls } from "@/utils/imageUtils";
+import ProxyImage from "./ProxyImage";
 
 interface ProductImageCarouselProps {
   images: string[];
@@ -12,8 +14,11 @@ export default function ProductImageCarousel({ images, productName }: ProductIma
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
   const [imageErrors, setImageErrors] = useState<{ [key: number]: boolean }>({});
+  const [imageLoading, setImageLoading] = useState<{ [key: number]: boolean }>({});
 
-  const validImages = images.filter(img => img && img.trim() && img.trim().startsWith('http'));
+  // Process images to convert Google Drive URLs
+  const processedImages = processImageUrls(images.join(','));
+  const validImages = processedImages.filter(img => img && img.trim() && img.trim().startsWith('http'));
   const hasValidImages = validImages.length > 0;
 
   const handlePrevious = () => {
@@ -26,6 +31,15 @@ export default function ProductImageCarousel({ images, productName }: ProductIma
 
   const handleImageError = (index: number) => {
     setImageErrors(prev => ({ ...prev, [index]: true }));
+    setImageLoading(prev => ({ ...prev, [index]: false }));
+  };
+
+  const handleImageLoad = (index: number) => {
+    setImageLoading(prev => ({ ...prev, [index]: false }));
+  };
+
+  const handleImageStart = (index: number) => {
+    setImageLoading(prev => ({ ...prev, [index]: true }));
   };
 
   if (!hasValidImages) {
@@ -47,21 +61,25 @@ export default function ProductImageCarousel({ images, productName }: ProductIma
               <ImageOff className="w-24 h-24 text-muted-foreground/50" />
             </div>
           ) : (
-            <motion.img
+            <motion.div
               key={selectedIndex}
-              src={validImages[selectedIndex]}
-              alt={`${productName} - Image ${selectedIndex + 1}`}
-              className={`w-full h-full object-contain transition-transform duration-300 ${
-                isZoomed ? "scale-150 cursor-zoom-out" : "cursor-zoom-in"
-              }`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
+              className={`w-full h-full cursor-zoom-in ${
+                isZoomed ? "scale-150 cursor-zoom-out" : ""
+              }`}
               onClick={() => setIsZoomed(!isZoomed)}
-              onError={() => handleImageError(selectedIndex)}
-              data-testid="img-product-main"
-            />
+            >
+              <ProxyImage
+                src={validImages[selectedIndex]}
+                alt={`${productName} - Image ${selectedIndex + 1}`}
+                className="w-full h-full object-contain"
+                onLoad={() => handleImageLoad(selectedIndex)}
+                onError={() => handleImageError(selectedIndex)}
+              />
+            </motion.div>
           )}
         </AnimatePresence>
 
@@ -115,10 +133,11 @@ export default function ProductImageCarousel({ images, productName }: ProductIma
                   <ImageOff className="w-8 h-8 text-muted-foreground/50" />
                 </div>
               ) : (
-                <img
+                <ProxyImage
                   src={image}
                   alt={`${productName} - Thumbnail ${index + 1}`}
                   className="w-full h-full object-contain bg-white/80"
+                  onLoad={() => handleImageLoad(index)}
                   onError={() => handleImageError(index)}
                 />
               )}
