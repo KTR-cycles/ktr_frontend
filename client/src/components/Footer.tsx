@@ -1,9 +1,11 @@
 import { Link } from "wouter";
 import { Bike, Mail, Phone, MapPin } from "lucide-react";
 import { SiWhatsapp, SiInstagram, SiFacebook } from "react-icons/si";
+import { PATHS } from "./path";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { HOME, PRODUCTS, ABOUT, CONTACT, PRIVACY_POLICY, TERMS_OF_SERVICE } = PATHS
 
   return (
     <footer className="bg-accent/30 border-t border-border">
@@ -54,28 +56,28 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-foreground mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" data-testid="link-footer-home">
+                <Link href={HOME} data-testid="link-footer-home">
                   <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">
                     Home
                   </span>
                 </Link>
               </li>
               <li>
-                <Link href="/products" data-testid="link-footer-products">
+                <Link href={PRODUCTS} data-testid="link-footer-products">
                   <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">
                     Products
                   </span>
                 </Link>
               </li>
               <li>
-                <Link href="/about" data-testid="link-footer-about">
+                <Link href={ABOUT} data-testid="link-footer-about">
                   <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">
                     About Us
                   </span>
                 </Link>
               </li>
               <li>
-                <Link href="/contact" data-testid="link-footer-contact">
+                <Link href={CONTACT} data-testid="link-footer-contact">
                   <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">
                     Contact
                   </span>
@@ -85,27 +87,17 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-4">Categories</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-4">Policies</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Mountain Bikes
-                </a>
+                <Link href={PRIVACY_POLICY} className="text-muted-foreground hover:text-primary transition-colors">
+                  Privacy Policy
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Road Bikes
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  City Bikes
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Electric Bikes
-                </a>
+                <Link href={TERMS_OF_SERVICE} className="text-muted-foreground hover:text-primary transition-colors">
+                  Terms of Service
+                </Link>
               </li>
             </ul>
           </div>
@@ -116,19 +108,19 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <span className="text-muted-foreground">
-                  123 Cycling Street, Bike City, 560001
+                Nainar kulam road, Tirunelveli, Tamil Nadu, India - 627006
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="tel:+911234567890" className="text-muted-foreground hover:text-primary transition-colors">
-                  +91 12345 67890
+                <a href="tel:+919342727735" className="text-muted-foreground hover:text-primary transition-colors">
+                +91 9342727735
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="mailto:info@ktrcycleworld.com" className="text-muted-foreground hover:text-primary transition-colors">
-                  info@ktrcycleworld.com
+                <a href="mailto:ktrcycleworld@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                ktrcycleworld@gmail.com
                 </a>
               </li>
             </ul>
@@ -140,14 +132,6 @@ export default function Footer() {
             <p className="text-muted-foreground text-sm text-center md:text-left">
               © {currentYear} KTR Cycle World. All rights reserved.
             </p>
-            <div className="flex gap-6 text-sm">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                Terms of Service
-              </a>
-            </div>
           </div>
         </div>
       </div>

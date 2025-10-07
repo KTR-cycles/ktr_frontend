@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { Product } from '@shared/schema';
+import type { Product } from '../types';
 import { FEATURED_PRODUCTS_URL, PRODUCTS_URL } from '../utils/config';
 
 const PRODUCTS_API = PRODUCTS_URL;

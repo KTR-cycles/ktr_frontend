@@ -8,7 +8,7 @@ export default function ProductCardExample() {
         id="1"
         name="Mountain Explorer Pro 29"
         brand="KTR Sports"
-        image={bikeImage}
+        images={bikeImage}
         originalPrice={45000}
         discountedPrice={36000}
         categoryName="Mountain Bike"

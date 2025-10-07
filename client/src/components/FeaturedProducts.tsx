@@ -57,7 +57,10 @@ export default function FeaturedProducts() {
               transition={{ duration: 0.6, delay: 0.1 * index }}
             >
               <ProductCard 
-                {...product} 
+                id={product.id}
+                name={product.name}
+                brand={product.brand}
+                images={product.images || product.image || ''}
                 originalPrice={product.original_price}
                 discountedPrice={product.discounted_price}
                 categoryName={product.category_name}
