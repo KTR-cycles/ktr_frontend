@@ -1,11 +1,16 @@
 import { Link } from "wouter";
-import { Bike, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { SiWhatsapp, SiInstagram, SiFacebook } from "react-icons/si";
 import { PATHS } from "./path";
+import logo from '@assets/generated_images/ktr_cycle_logo.jpg';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const { HOME, PRODUCTS, ABOUT, CONTACT, PRIVACY_POLICY, TERMS_OF_SERVICE } = PATHS
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <footer className="bg-accent/30 border-t border-border">
@@ -13,7 +18,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Bike className="w-8 h-8 text-primary" />
+              <img 
+                src={logo} 
+                alt="KTR Cycle World Logo" 
+                className="w-8 h-8 object-contain"
+              />
               <span className="text-xl font-bold text-foreground">
                 KTR <span className="text-primary">Cycle World</span>
               </span>
@@ -57,28 +66,40 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href={HOME} data-testid="link-footer-home">
-                  <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">
+                  <span 
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                    onClick={scrollToTop}
+                  >
                     Home
                   </span>
                 </Link>
               </li>
               <li>
                 <Link href={PRODUCTS} data-testid="link-footer-products">
-                  <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">
+                  <span 
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                    onClick={scrollToTop}
+                  >
                     Products
                   </span>
                 </Link>
               </li>
               <li>
                 <Link href={ABOUT} data-testid="link-footer-about">
-                  <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">
+                  <span 
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                    onClick={scrollToTop}
+                  >
                     About Us
                   </span>
                 </Link>
               </li>
               <li>
                 <Link href={CONTACT} data-testid="link-footer-contact">
-                  <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">
+                  <span 
+                    className="text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+                    onClick={scrollToTop}
+                  >
                     Contact
                   </span>
                 </Link>
@@ -90,12 +111,12 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-foreground mb-4">Policies</h3>
             <ul className="space-y-2">
               <li>
-                <Link href={PRIVACY_POLICY} className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href={PRIVACY_POLICY} className="text-muted-foreground hover:text-primary transition-colors" onClick={scrollToTop}>
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href={TERMS_OF_SERVICE} className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href={TERMS_OF_SERVICE} className="text-muted-foreground hover:text-primary transition-colors" onClick={scrollToTop}>
                   Terms of Service
                 </Link>
               </li>

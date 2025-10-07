@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Bike } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from '@assets/generated_images/ktr_cycle_logo.jpg';
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
@@ -16,6 +17,10 @@ export default function Header() {
   ];
 
   const isActive = (href: string) => location === href;
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const scrollToShowroom = () => {
     // Close mobile menu if open
@@ -61,9 +66,16 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16">
           <Link href="/" data-testid="link-home">
-            <div className="flex items-center gap-2 hover-elevate active-elevate-2 px-3 py-2 rounded-xl transition-all cursor-pointer">
-              <Bike className="w-8 h-8 text-primary" />
-              <span className="text-xl font-bold text-foreground">
+            <div 
+              className="flex items-center gap-2 hover-elevate active-elevate-2 px-3 py-2 rounded-xl transition-all cursor-pointer"
+              onClick={scrollToTop}
+            >
+              <img 
+                src={logo} 
+                alt="KTR Cycle World Logo" 
+                className="w-8 h-6 sm:w-10 sm:h-8 md:w-12 md:h-10 object-contain"
+              />
+              <span className="text-sm sm:text-base md:text-xl font-bold text-foreground">
                 KTR <span className="text-primary">Cycle World</span>
               </span>
             </div>
@@ -78,6 +90,7 @@ export default function Header() {
                       ? "text-primary bg-primary/10"
                       : "text-foreground"
                   }`}
+                  onClick={scrollToTop}
                 >
                   {link.label}
                 </div>
@@ -123,7 +136,10 @@ export default function Header() {
                           ? "text-primary bg-primary/10"
                           : "text-foreground"
                       }`}
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={() => {
+                        setMobileMenuOpen(false);
+                        scrollToTop();
+                      }}
                     >
                       {link.label}
                     </div>

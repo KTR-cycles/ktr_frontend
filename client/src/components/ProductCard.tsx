@@ -39,10 +39,10 @@ export default function ProductCard({
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
-      className="group bg-white/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-lg overflow-hidden hover-elevate transition-all flex flex-col h-[360px] min-h-[360px] max-h-[360px]"
+      className="group bg-white/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-lg overflow-hidden hover-elevate transition-all flex flex-col h-[280px] sm:h-[320px] md:h-[360px] min-h-[280px] sm:min-h-[320px] md:min-h-[360px] max-h-[280px] sm:max-h-[320px] md:max-h-[360px]"
       data-testid={`product-card-${id}`}
     >
-      <div className="relative aspect-[4/3] overflow-hidden bg-muted flex-shrink-0 h-[180px]">
+      <div className="relative aspect-[4/3] overflow-hidden bg-muted flex-shrink-0 h-[120px] sm:h-[160px] md:h-[180px]">
         {!imageError && hasValidImage ? (
           <img
             src={cleanImageUrl}
@@ -83,29 +83,24 @@ export default function ProductCard({
         </motion.div>
       </div>
 
-      <div className="flex-1 flex flex-col justify-between p-3">
+      <div className="flex-1 flex flex-col justify-between p-2 sm:p-3">
         <div>
           <div className="flex items-start justify-between ">
             <div className="flex-1">
               {brand && (
-                <p className="text-sm text-muted-foreground font-medium mb-1">{brand}</p>
+                <p className="text-xs sm:text-sm text-muted-foreground font-medium mb-1">{brand}</p>
               )}
-              <h3 className="text-lg font-semibold text-foreground line-clamp-2" data-testid={`text-product-name-${id}`}>
+              <h3 className="text-xs sm:text-sm md:text-base font-semibold text-foreground line-clamp-2" data-testid={`text-product-name-${id}`}>
                 {name}
               </h3>
             </div>
-            {categoryName && (
-              <Badge variant="secondary" className="ml-2 rounded-full">
-                {categoryName}
-              </Badge>
-            )}
           </div>
         </div>
-        <div className="flex items-center gap-3 mt-4">
-          <span className="text-2xl font-bold text-primary" data-testid={`text-discounted-price-${id}`}>
+        <div className="flex items-center gap-2 sm:gap-3 mt-3 sm:mt-4">
+          <span className="text-lg sm:text-xl md:text-2xl font-bold text-primary" data-testid={`text-discounted-price-${id}`}>
             ₹{(discountedPrice || 0).toLocaleString()}
           </span>
-          <span className="text-sm text-muted-foreground line-through" data-testid={`text-original-price-${id}`}>
+          <span className="text-xs sm:text-sm text-muted-foreground line-through" data-testid={`text-original-price-${id}`}>
             ₹{(originalPrice || 0).toLocaleString()}
           </span>
         </div>

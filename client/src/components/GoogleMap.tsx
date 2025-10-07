@@ -10,19 +10,19 @@ export default function GoogleMap({ embedUrl }: GoogleMapProps) {
   const hours = "Mon-Sat: 9:00 AM - 8:00 PM | Sun: 10:00 AM - 6:00 PM";
 
   return (
-    <section id="showroom-map" className="py-16 md:py-24 bg-background">
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
+    <section id="showroom-map" className="py-12 sm:py-16 md:py-24 bg-background">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
             Visit Our <span className="text-primary">Showroom</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Come experience our cycles in person at our premium showroom
           </p>
         </motion.div>
@@ -37,7 +37,7 @@ export default function GoogleMap({ embedUrl }: GoogleMapProps) {
           <iframe
             src={embedUrl || defaultUrl}
             width="100%"
-            height="450"
+            height="300"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"

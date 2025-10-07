@@ -1,5 +1,5 @@
  KTR Cycle World Website 
-Build a responsive React + Vite static catalog website for KTR Cycle World, a premium cycle showroom site (no online sales). Use React + Tailwind CSS, Redux Toolkit + Thunk, and Google Sheets (via VITE_GOOGLE_SHEET_URL) as the lightweight CMS.
+Build a responsive React + Vite static catalog website for KTR Cycle World, a premium cycle showroom site (no online sales).Use React + Tailwind CSS, Redux Toolkit + Thunk, and Google Sheets (via VITE_GOOGLE_SHEET_URL) as the lightweight CMS.
 
 🎨 Design & Theme
 * Primary color: Golden Yellow (#FFBF00)
@@ -12,7 +12,7 @@ Build a responsive React + Vite static catalog website for KTR Cycle World, a pr
 
 🧭 Pages
 1. Home Page
-* Hero carousel banner with quote: “Two wheels, endless adventures.”
+* Hero carousel banner with quote:“Two wheels, endless adventures.”
 * Quick preview of most-sold cycles
 * “Our Services” section with icons: Delivery, Pickup, Quality, Experience
 * Embedded Google Map for showroom location
@@ -57,8 +57,8 @@ Build a responsive React + Vite static catalog website for KTR Cycle World, a pr
 * All components should support lazy loading, suspense fallback, and smooth transitions
 
 🌟 Style Keywords
-Premium • Curved • Smooth • Minimal • Elegant • Golden-accented • Responsive • Glassy • Lightweight  Note : The app must be an mobile friendly and focus on more user friendly on mobile screens 
-  product API:  curl --location 'https://script.google.com/macros/s/AKfycbwoX23d_uxE5brVKm3KZTXRzlM4Pq4PBAv9DIdDI_dPITtkcsTfROfitO65t4pKC1AN/exec?sheet=products
+Premium • Curved • Smooth • Minimal • Elegant • Golden-accented • Responsive • Glassy • LightweightNote : The app must be an mobile friendly and focus on more user friendly on mobile screens
+product API:  curl --location 'https://script.google.com/macros/s/AKfycbwoX23d_uxE5brVKm3KZTXRzlM4Pq4PBAv9DIdDI_dPITtkcsTfROfitO65t4pKC1AN/exec?sheet=products
 Categries API : curl --location 'https://script.google.com/macros/s/AKfycbwoX23d_uxE5brVKm3KZTXRzlM4Pq4PBAv9DIdDI_dPITtkcsTfROfitO65t4pKC1AN/exec?sheet=categories
-  This categories api is constant so fetch the data at initial time and save it an redux, make sure the redux should be persistent  Encrypt the redux store data
-Add Error handling page for Error boundaries to switch that pages 
+This categories api is constant so fetch the data at initial time and save it an redux, make sure the redux should be persistent Encrypt the redux store data
+Add Error handling page for Error boundaries to switch that pages
