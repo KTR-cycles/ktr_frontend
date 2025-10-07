@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Filter, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -34,12 +34,27 @@ export default function ProductFilters({
   onPriceChange,
   onClearAll,
 }: ProductFiltersProps) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [expandedSections, setExpandedSections] = useState({
     categories: true,
     brands: true,
     price: true,
   });
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024); // lg breakpoint
+      // On desktop, always keep filters open
+      if (window.innerWidth >= 1024) {
+        setIsOpen(true);
+      }
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const toggleSection = (section: keyof typeof expandedSections) => {
     setExpandedSections((prev) => ({ ...prev, [section]: !prev[section] }));
@@ -67,10 +82,10 @@ export default function ProductFilters({
   return (
     <div className="lg:sticky lg:top-20">
       <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-lg overflow-hidden">
-        <div className="p-6 border-b border-border flex items-center justify-between">
+        <div className="p-4 sm:p-6 border-b border-border flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Filter className="w-5 h-5 text-primary" />
-            <h3 className="text-lg font-semibold text-foreground">Filters</h3>
+            <h3 className="text-base sm:text-lg font-semibold text-foreground">Filters</h3>
             {activeFiltersCount > 0 && (
               <Badge className="rounded-full">{activeFiltersCount}</Badge>
             )}
@@ -100,7 +115,7 @@ export default function ProductFilters({
         </div>
 
         <AnimatePresence>
-          {isOpen && (
+          {(isOpen || !isMobile) && (
             <motion.div
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
@@ -108,14 +123,14 @@ export default function ProductFilters({
               transition={{ duration: 0.3 }}
               className="overflow-hidden"
             >
-              <div className="p-6 space-y-6">
+              <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
                 <div>
                   <button
                     onClick={() => toggleSection("categories")}
                     className="w-full flex items-center justify-between mb-4 hover-elevate active-elevate-2 p-2 rounded-xl transition-all"
                     data-testid="button-toggle-categories"
                   >
-                    <h4 className="text-base font-semibold text-foreground">Categories</h4>
+                    <h4 className="text-sm sm:text-base font-semibold text-foreground">Categories</h4>
                     <ChevronDown
                       className={`w-4 h-4 text-muted-foreground transition-transform ${
                         expandedSections.categories ? "rotate-180" : ""
@@ -140,7 +155,7 @@ export default function ProductFilters({
                             />
                             <Label
                               htmlFor={`category-${category}`}
-                              className="text-sm text-foreground cursor-pointer flex-1"
+                              className="text-xs sm:text-sm text-foreground cursor-pointer flex-1"
                             >
                               {category}
                             </Label>
@@ -157,7 +172,7 @@ export default function ProductFilters({
                     className="w-full flex items-center justify-between mb-4 hover-elevate active-elevate-2 p-2 rounded-xl transition-all"
                     data-testid="button-toggle-brands"
                   >
-                    <h4 className="text-base font-semibold text-foreground">Brands</h4>
+                    <h4 className="text-sm sm:text-base font-semibold text-foreground">Brands</h4>
                     <ChevronDown
                       className={`w-4 h-4 text-muted-foreground transition-transform ${
                         expandedSections.brands ? "rotate-180" : ""
@@ -182,7 +197,7 @@ export default function ProductFilters({
                             />
                             <Label
                               htmlFor={`brand-${brand}`}
-                              className="text-sm text-foreground cursor-pointer flex-1"
+                              className="text-xs sm:text-sm text-foreground cursor-pointer flex-1"
                             >
                               {brand}
                             </Label>
@@ -199,7 +214,7 @@ export default function ProductFilters({
                     className="w-full flex items-center justify-between mb-4 hover-elevate active-elevate-2 p-2 rounded-xl transition-all"
                     data-testid="button-toggle-price"
                   >
-                    <h4 className="text-base font-semibold text-foreground">Price Range</h4>
+                    <h4 className="text-sm sm:text-base font-semibold text-foreground">Price Range</h4>
                     <ChevronDown
                       className={`w-4 h-4 text-muted-foreground transition-transform ${
                         expandedSections.price ? "rotate-180" : ""
@@ -223,7 +238,7 @@ export default function ProductFilters({
                           className="w-full"
                           data-testid="slider-price-range"
                         />
-                        <div className="flex items-center justify-between text-sm">
+                        <div className="flex items-center justify-between text-xs sm:text-sm">
                           <span className="text-foreground font-medium">
                             ₹{priceRange[0].toLocaleString()}
                           </span>

@@ -64,18 +64,18 @@ export default function Products() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-background via-accent/10 to-background py-8">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <div className="mb-8">
-            <div className="h-10 bg-muted rounded-lg w-2/3 mb-3 animate-pulse" />
-            <div className="h-6 bg-muted rounded-lg w-1/3 animate-pulse" />
+      <div className="min-h-screen bg-gradient-to-br from-background via-accent/10 to-background py-6 sm:py-8">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6">
+          <div className="mb-6 sm:mb-8">
+            <div className="h-8 sm:h-10 bg-muted rounded-lg w-2/3 mb-2 sm:mb-3 animate-pulse" />
+            <div className="h-5 sm:h-6 bg-muted rounded-lg w-1/3 animate-pulse" />
           </div>
-          <div className="grid lg:grid-cols-4 gap-8">
-            <div className="lg:col-span-1">
-              <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-lg p-6 h-96 animate-pulse" />
+          <div className="grid lg:grid-cols-4 gap-6 sm:gap-8">
+            <div className="lg:col-span-1 hidden lg:block">
+              <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-lg p-4 sm:p-6 h-80 sm:h-96 animate-pulse" />
             </div>
             <div className="lg:col-span-3">
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                 {[...Array(9)].map((_, i) => (
                   <SkeletonCard key={i} />
                 ))}
@@ -89,10 +89,10 @@ export default function Products() {
 
   if (isError) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-4">
+      <div className="min-h-screen flex items-center justify-center p-3 sm:p-4">
         <div className="text-center">
-          <p className="text-xl text-muted-foreground mb-4">Failed to load products</p>
-          <Button onClick={() => window.location.reload()} variant="default" className="rounded-full">
+          <p className="text-lg sm:text-xl text-muted-foreground mb-3 sm:mb-4">Failed to load products</p>
+          <Button onClick={() => window.location.reload()} variant="default" className="rounded-full text-sm sm:text-base">
             Retry
           </Button>
         </div>
@@ -101,28 +101,28 @@ export default function Products() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-accent/10 to-background py-8">
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
+    <div className="min-h-screen bg-gradient-to-br from-background via-accent/10 to-background py-6 sm:py-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-8"
+          className="mb-6 sm:mb-8"
         >
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2 sm:mb-3">
             Our <span className="text-primary">Cycle Collection</span>
           </h1>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
             Showing {displayedProducts.length} of {filteredProducts.length} cycles
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid lg:grid-cols-4 gap-6 sm:gap-8">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-1"
+            className="lg:col-span-1 hidden lg:block"
           >
             <ProductFilters
               options={filterOptions}
@@ -137,7 +137,21 @@ export default function Products() {
           </motion.div>
 
           <div className="lg:col-span-3">
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            {/* Mobile Filter Toggle */}
+            <div className="lg:hidden mb-6">
+              <ProductFilters
+                options={filterOptions}
+                selectedCategories={selectedCategories}
+                selectedBrands={selectedBrands}
+                priceRange={priceRange}
+                onCategoryChange={setSelectedCategories}
+                onBrandChange={setSelectedBrands}
+                onPriceChange={setPriceRange}
+                onClearAll={handleClearFilters}
+              />
+            </div>
+            
+            <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-6">
               {displayedProducts.map((product, index) => {
                 const images = product.images?.split(',').map((img: string) => img.trim()) || [];
                 const uniqueKey = product.id || `product-${index}`;
