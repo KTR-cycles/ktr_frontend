@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
@@ -25,13 +24,6 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
   const [, setLocation] = useLocation();
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -48,7 +40,7 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="relative w-full min-h-[500px] sm:min-h-[600px] md:min-h-[700px] overflow-hidden rounded-3xl">
+    <div className="relative w-full min-h-[500px] sm:min-h-[600px] md:min-h-[700px] overflow-hidden">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {slides.map((slide, index) => (
@@ -95,25 +87,6 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
         </div>
       </div>
 
-      <Button
-        variant="outline"
-        size="icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white/20 w-12 h-12"
-        onClick={scrollPrev}
-        data-testid="button-carousel-prev"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </Button>
-
-      <Button
-        variant="outline"
-        size="icon"
-        className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white/20 w-12 h-12"
-        onClick={scrollNext}
-        data-testid="button-carousel-next"
-      >
-        <ChevronRight className="w-6 h-6" />
-      </Button>
 
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
         {slides.map((_, index) => (

@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from '@assets/generated_images/ktr_cycle_logo.jpg';
 import { motion, AnimatePresence } from "framer-motion";
+import CategoryCarousel from "./CategoryCarousel";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -62,7 +63,7 @@ export default function Header() {
   }, [location]);
 
   return (
-    <header className="sticky top-0 z-40 w-full backdrop-blur-lg bg-white/90 border-b border-border">
+    <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-lg border-b border-border">
       <nav className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16">
           <Link href="/" data-testid="link-home">
@@ -161,4 +162,13 @@ export default function Header() {
       </nav>
     </header>
   );
+}
+
+// Render CategoryCarousel separately outside the sticky header
+export function HomePageCategoryCarousel() {
+  const [location] = useLocation();
+  
+  if (location !== "/") return null;
+  
+  return <CategoryCarousel />;
 }
