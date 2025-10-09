@@ -125,7 +125,7 @@ export default function Home() {
 
       
 
-      <ServicesSection services={services} />
+      {/* <ServicesSection services={services} /> */}
 
       <GoogleMap />
     </div>

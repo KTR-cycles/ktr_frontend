@@ -9,6 +9,7 @@ import adultCycle from '@assets/generated_images/adult_cycle.jpeg';
 import womenCycle from '@assets/generated_images/cycle_for_women.jpeg';
 import electricCycle from '@assets/generated_images/electric_cycle.jpg';
 import gearedCycle from '@assets/generated_images/geared_cycle.jpeg';
+import { PATHS } from "./path";
 
 // Category image mapping
 const categoryImageMap: Record<string, string> = {
@@ -70,6 +71,7 @@ export default function CategoryCarousel() {
   const [, setLocation] = useLocation();
   const categories = useAppSelector((state) => state.categories.items);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const { PRODUCTS } = PATHS;
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -88,7 +90,7 @@ export default function CategoryCarousel() {
   }, [emblaApi, onSelect]);
 
   const handleCategoryClick = (category: Category) => {
-    setLocation(`/products?category=${encodeURIComponent(category.category_id)}`);
+    setLocation(`${PRODUCTS}?category=${encodeURIComponent(category.category_id)}`);
   };
 
   if (!categories || categories.length === 0) {

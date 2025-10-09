@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { Filter, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -34,6 +35,7 @@ export default function ProductFilters({
   onPriceChange,
   onClearAll,
 }: ProductFiltersProps) {
+  const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [expandedSections, setExpandedSections] = useState({
@@ -41,6 +43,7 @@ export default function ProductFilters({
     brands: true,
     price: true,
   });
+  const hasProcessedUrlParam = useRef(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -55,6 +58,24 @@ export default function ProductFilters({
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  // Check URL parameters for category and add it to selected categories (only once on mount)
+  useEffect(() => {
+    if (hasProcessedUrlParam.current) return;
+    
+    const searchParams = new URLSearchParams(window.location.search);
+    const categoryFromUrl = searchParams.get('category');
+    
+    if (categoryFromUrl && !selectedCategories.includes(categoryFromUrl)) {
+      // Check if the category exists in the options
+      const categoryExists = options.categories.some(cat => cat.id === categoryFromUrl);
+      if (categoryExists) {
+        onCategoryChange([...selectedCategories, categoryFromUrl]);
+      }
+    }
+    
+    hasProcessedUrlParam.current = true;
+  }, [options.categories]);
 
   const toggleSection = (section: keyof typeof expandedSections) => {
     setExpandedSections((prev) => ({ ...prev, [section]: !prev[section] }));
