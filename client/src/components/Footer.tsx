@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import { SiWhatsapp, SiInstagram, SiFacebook } from "react-icons/si";
 import { PATHS } from "./path";
 import logo from '@assets/generated_images/ktr_cycle_logo.jpg';
+import { EMAIL_ID, email_url, whatsapp_url } from "@/utils/config";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -30,35 +31,6 @@ export default function Footer() {
             <p className="text-muted-foreground leading-relaxed mb-4">
               Your premium destination for high-quality cycles. Two wheels, endless adventures.
             </p>
-            <div className="flex gap-3">
-              <a
-                href="https://wa.me/1234567890"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-xl bg-white/80 text-foreground hover-elevate active-elevate-2 transition-all"
-                data-testid="link-whatsapp"
-              >
-                <SiWhatsapp className="w-5 h-5" />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-xl bg-white/80 text-foreground hover-elevate active-elevate-2 transition-all"
-                data-testid="link-instagram"
-              >
-                <SiInstagram className="w-5 h-5" />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-xl bg-white/80 text-foreground hover-elevate active-elevate-2 transition-all"
-                data-testid="link-facebook"
-              >
-                <SiFacebook className="w-5 h-5" />
-              </a>
-            </div>
           </div>
 
           <div>
@@ -140,8 +112,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="mailto:ktrcycleworld@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
-                ktrcycleworld@gmail.com
+                <a href={email_url} className="text-muted-foreground hover:text-primary transition-colors">
+                {EMAIL_ID}
                 </a>
               </li>
             </ul>

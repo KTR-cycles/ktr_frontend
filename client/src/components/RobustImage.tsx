@@ -75,6 +75,7 @@ export default function RobustImage({
           setLoading(false);
           onError?.();
         }}
+        loading="lazy"
       />
     </div>
   );

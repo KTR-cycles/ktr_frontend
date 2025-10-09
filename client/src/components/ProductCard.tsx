@@ -97,9 +97,11 @@ export default function ProductCard({
           <span className="text-lg sm:text-xl md:text-2xl font-bold text-primary" data-testid={`text-discounted-price-${id}`}>
             ₹{(discountedPrice || 0).toLocaleString()}
           </span>
-          <span className="text-xs sm:text-sm text-muted-foreground line-through" data-testid={`text-original-price-${id}`}>
-            ₹{(originalPrice || 0).toLocaleString()}
-          </span>
+          {Number(originalPrice) > 0 && (
+            <span className="text-xs sm:text-sm text-muted-foreground line-through" data-testid={`text-original-price-${id}`}>
+              ₹{Number(originalPrice || 0).toLocaleString()}
+            </span>
+          )}
         </div>
       </div>
     </motion.div>

@@ -9,6 +9,7 @@ import ProductReviews from "@/components/ProductReviews";
 import { fetchProductById } from "@/lib/api";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import { processImageUrls } from "@/utils/imageUtils";
+import { whatsapp_url } from "@/utils/config";
 
 export default function ProductDetail() {
   const [match, params] = useRoute("/products/:id");
@@ -165,7 +166,7 @@ export default function ProductDetail() {
                 size="lg"
                 className="flex-1 rounded-full"
                 data-testid="button-enquire-now"
-                onClick={() => window.open('https://wa.me/1234567890', '_blank')}
+                onClick={() => window.open(whatsapp_url, '_blank')}
               >
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 Enquire Now
