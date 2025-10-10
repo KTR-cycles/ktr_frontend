@@ -9,6 +9,7 @@ import ProductImageCarousel from "@/components/ProductImageCarousel";
 import SharePopup from "@/components/SharePopup";
 import { useAppSelector } from "@/store/hooks";
 import { PATHS } from "@/components/path";
+import { whatsapp_url } from "@/utils/config";
 
 export default function ProductDetail() {
   const { PRODUCTS, PRODUCT_DETAIL, HOME, CONTACT } = PATHS;
@@ -240,7 +241,7 @@ export default function ProductDetail() {
               size="lg"
               className="w-full rounded-full text-lg py-6"
               data-testid="button-enquire-now"
-              onClick={() => window.open('https://wa.me/1234567890', '_blank')}
+              onClick={() => window.open(whatsapp_url, '_blank') as any}
             >
               <ShoppingCart className="w-5 h-5 mr-2" />
               Enquire Now on WhatsApp
