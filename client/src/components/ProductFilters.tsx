@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { Filter, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,14 +9,14 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 
 interface FilterOptions {
-  categories: string[];
+  categories: { id: string, name: string }[];
   brands: string[];
   priceRange: [number, number];
 }
 
 interface ProductFiltersProps {
   options: FilterOptions;
-  selectedCategories: string[];
+  selectedCategories: string[]; // array of category ids
   selectedBrands: string[];
   priceRange: [number, number];
   onCategoryChange: (categories: string[]) => void;
@@ -34,6 +35,7 @@ export default function ProductFilters({
   onPriceChange,
   onClearAll,
 }: ProductFiltersProps) {
+  const [location] = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [expandedSections, setExpandedSections] = useState({
@@ -41,6 +43,7 @@ export default function ProductFilters({
     brands: true,
     price: true,
   });
+  const hasProcessedUrlParam = useRef(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -56,15 +59,34 @@ export default function ProductFilters({
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Check URL parameters for category and add it to selected categories (only once on mount)
+  useEffect(() => {
+    if (hasProcessedUrlParam.current) return;
+    
+    const searchParams = new URLSearchParams(window.location.search);
+    const categoryFromUrl = searchParams.get('category');
+    
+    if (categoryFromUrl && !selectedCategories.includes(categoryFromUrl)) {
+      // Check if the category exists in the options
+      const categoryExists = options.categories.some(cat => cat.id === categoryFromUrl);
+      if (categoryExists) {
+        onCategoryChange([...selectedCategories, categoryFromUrl]);
+      }
+    }
+    
+    hasProcessedUrlParam.current = true;
+  }, [options.categories]);
+
   const toggleSection = (section: keyof typeof expandedSections) => {
     setExpandedSections((prev) => ({ ...prev, [section]: !prev[section] }));
   };
 
-  const handleCategoryToggle = (category: string) => {
-    if (selectedCategories.includes(category)) {
-      onCategoryChange(selectedCategories.filter((c) => c !== category));
+  // Now handleCategoryToggle expects a category id (string)
+  const handleCategoryToggle = (categoryId: string) => {
+    if (selectedCategories.includes(categoryId)) {
+      onCategoryChange(selectedCategories.filter((c) => c !== categoryId));
     } else {
-      onCategoryChange([...selectedCategories, category]);
+      onCategoryChange([...selectedCategories, categoryId]);
     }
   };
 
@@ -77,7 +99,9 @@ export default function ProductFilters({
   };
 
   const activeFiltersCount =
-    selectedCategories.length + selectedBrands.length + (priceRange[0] !== options.priceRange[0] || priceRange[1] !== options.priceRange[1] ? 1 : 0);
+    selectedCategories.length +
+    selectedBrands.length +
+    (priceRange[0] !== options.priceRange[0] || priceRange[1] !== options.priceRange[1] ? 1 : 0);
 
   return (
     <div className="lg:sticky lg:top-20">
@@ -146,18 +170,18 @@ export default function ProductFilters({
                         className="space-y-3 overflow-hidden"
                       >
                         {options.categories.map((category) => (
-                          <div key={category} className="flex items-center gap-3">
+                          <div key={category.id} className="flex items-center gap-3">
                             <Checkbox
-                              id={`category-${category}`}
-                              checked={selectedCategories.includes(category)}
-                              onCheckedChange={() => handleCategoryToggle(category)}
-                              data-testid={`checkbox-category-${category}`}
+                              id={`category-${category.id}`}
+                              checked={selectedCategories.includes(category.id)}
+                              onCheckedChange={() => handleCategoryToggle(category.id)}
+                              data-testid={`checkbox-category-${category.id}`}
                             />
                             <Label
-                              htmlFor={`category-${category}`}
+                              htmlFor={`category-${category.id}`}
                               className="text-xs sm:text-sm text-foreground cursor-pointer flex-1"
                             >
-                              {category}
+                              {category.name}
                             </Label>
                           </div>
                         ))}

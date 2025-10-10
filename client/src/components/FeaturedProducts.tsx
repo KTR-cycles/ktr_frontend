@@ -2,24 +2,25 @@ import { motion } from "framer-motion";
 import ProductCard from "./ProductCard";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import type { Product } from "../types";
 import { PATHS } from "./path";
 import { useLocation } from "wouter";
-import bikeImage from '@assets/generated_images/Premium_golden_bike_product_18205e52.png';
 import { fetchFeaturedProducts } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
 import LoadingSpinner from "./LoadingSpinner";
+import { useAppDispatch } from "@/store/hooks";
+import { setSelectedProduct } from "@/store/productDetailSlice";
 
 
 
 export default function FeaturedProducts() {
-  const { PRODUCTS } = PATHS;
+  const { PRODUCTS, PRODUCT_DETAIL } = PATHS;
   const { data: featuredProducts = [], isLoading, isError } = useQuery({
     queryKey: ['/api/featured-products'],
     queryFn: fetchFeaturedProducts,
   });
 
   const [, setLocation] = useLocation();
+  const dispatch = useAppDispatch();
 
 
   if (isLoading) {
@@ -64,7 +65,10 @@ export default function FeaturedProducts() {
                 originalPrice={product.original_price}
                 discountedPrice={product.discounted_price}
                 categoryName={product.category_name}
-                onViewDetails={(id) => setLocation(`/products/${id}`)} 
+                onViewDetails={(id) => {
+                  dispatch(setSelectedProduct(product));
+                  setLocation(PRODUCT_DETAIL);
+                }} 
               />
             </motion.div>
           ))}

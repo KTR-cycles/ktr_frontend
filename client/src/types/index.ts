@@ -1,24 +1,35 @@
 export interface Product {
   id: string;
+  product_id: string;
   name: string;
   brand: string;
   image: string;
+  images: string;
+  category: string;
+  category_id?: string;
+  category_name?: string;
+  color: string;
   original_price: number;
   discounted_price: number;
-  currentPrice: number;
-  category_name: string;
-  category?: string;
-  images?: string;
+  discount_percent: number;
+  discount?: number;
+  stock: number;
+  featured: boolean;
+  location: string;
+  short_description: string;
+  long_description: string;
+  description?: string;
+  tags: string;
+  varient_label: string;
   specifications?: string;
   features?: string;
-  description?: string;
+  currentPrice?: number;
   rating?: number;
   reviews?: number;
-  discount?: number;
 }
 
 export interface Category {
-  id: string;
+  category_id: string;
   name: string;
   slug: string;
   description?: string;

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import type { Product } from '../types';
-import { FEATURED_PRODUCTS_URL, PRODUCTS_URL } from '../utils/config';
+import { FEATURED_PRODUCTS_URL, PRODUCTS_URL, FEEDBACK_SENDER_URL } from '../utils/config';
 
 const PRODUCTS_API = PRODUCTS_URL;
 
@@ -12,23 +12,36 @@ export const fetchProducts = async (): Promise<Product[]> => {
       console.log('Sample product from API:', JSON.stringify(response.data[0], null, 2));
     }
     
-    return response.data.map((item: any) => {
-      const imagesString = item.images || item.Images || item.image || item.Image || '';
+    return response.data.map((item: any, index: number) => {
+      // Use product_id as primary identifier, fallback to index-based ID
+      const productId = String(item.product_id || item.id || `product-${index + 1}`);
       
       return {
-        id: String(item.id || item.ID || item.Id),
-        name: item.name || item.Name || '',
-        brand: item.brand || item.Brand || '',
-        category_name: item.category_name || item.category || item.Category || '',
-        type: item.type || item.Type || '',
-        original_price: Number(item.original_price || item.actualPrice || item.actual_price || 0),
-        discount: Number(item.discount || item.Discount || 0),
-        discounted_price: Number(item.discounted_price || item.currentPrice || item.current_price || 0),
-        description: item.description || item.Description || '',
-        specifications: item.specifications || item.Specifications || '',
-        features: item.features || item.Features || '',
-        images: imagesString,
-        stock: item.stock || item.Stock || 'In Stock',
+        id: productId,
+        product_id: productId,
+        name: item.name || '',
+        brand: item.brand || '',
+        image: item.images ? item.images.split(',')[0].trim() : '',
+        images: item.images || '',
+        category: item.category || '',
+        category_id: item.category,
+        category_name: item.category_name || '',
+        color: item.color || '',
+        original_price: Number(item.original_price || 0),
+        discounted_price: Number(item.discounted_price || 0),
+        discount_percent: Number(item.discount_percent || 0),
+        discount: Number(item.discount_percent || 0),
+        stock: Number(item.stock || 0),
+        featured: Boolean(item.featured),
+        location: item.location || '',
+        short_description: item.short_description || '',
+        long_description: item.long_description || '',
+        description: item.long_description || item.short_description || '',
+        tags: item.tags || '',
+        varient_label: item.varient_label || '',
+        specifications: item.specifications || '',
+        features: item.features || '',
+        currentPrice: Number(item.discounted_price || 0),
       };
     });
   } catch (error: any) {
@@ -52,6 +65,89 @@ export const fetchProductById = async (id: string): Promise<Product | null> => {
 
 
 export const fetchFeaturedProducts = async (): Promise<Product[]> => {
-  const response = await axios.get(FEATURED_PRODUCTS_URL);
-  return response.data;
+  try {
+    const response = await axios.get(FEATURED_PRODUCTS_URL);
+    
+    return response.data.map((item: any, index: number) => {
+      const productId = String(item.product_id || item.id || `featured-product-${index + 1}`);
+      
+      return {
+        id: productId,
+        product_id: productId,
+        name: item.name || '',
+        brand: item.brand || '',
+        image: item.images ? item.images.split(',')[0].trim() : '',
+        images: item.images || '',
+        category: item.category || '',
+        category_id: item.category,
+        category_name: item.category_name || '',
+        color: item.color || '',
+        original_price: Number(item.original_price || 0),
+        discounted_price: Number(item.discounted_price || 0),
+        discount_percent: Number(item.discount_percent || 0),
+        discount: Number(item.discount_percent || 0),
+        stock: Number(item.stock || 0),
+        featured: Boolean(item.featured),
+        location: item.location || '',
+        short_description: item.short_description || '',
+        long_description: item.long_description || '',
+        description: item.long_description || item.short_description || '',
+        tags: item.tags || '',
+        varient_label: item.varient_label || '',
+        specifications: item.specifications || '',
+        features: item.features || '',
+        currentPrice: Number(item.discounted_price || 0),
+      };
+    });
+  } catch (error: any) {
+    console.error('Error fetching featured products:', error);
+    throw new Error(error.message || 'Failed to fetch featured products');
+  }
+};
+
+// Send feedback/contact form
+export interface FeedbackData {
+  username: string;
+  email: string;
+  phone: string;
+  country: string;
+  message: string;
+}
+
+export const sendFeedback = async (data: FeedbackData): Promise<any> => {
+  try {
+    // Format body as expected by backend
+    const body = `Name: ${data.username}
+Email: ${data.email}
+Phone: ${data.phone}
+Country: ${data.country}
+Message:
+${data.message}`;
+
+    // Send as JSON payload
+    const payload = {
+      username: data.username,
+      email: data.email,
+      phone: data.phone,
+      country: data.country,
+      message: data.message,
+      body: body
+    };
+
+    const response = await fetch(FEEDBACK_SENDER_URL, {
+      method: 'POST',
+      body: JSON.stringify(payload),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      mode: 'no-cors',
+    });
+
+    // Note: no-cors mode doesn't allow reading the response
+    // We'll assume success if no error is thrown
+    return { success: true };
+  } catch (error: any) {
+    console.error('Error sending feedback:', error);
+    throw new Error(error.message || 'Failed to send feedback');
+  }
 };

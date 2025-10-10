@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 import { Button } from "@/components/ui/button";
+import { email_url, whatsapp_url } from "@/utils/config";
 
 export default function StickyContactButtons() {
   return (
@@ -14,7 +15,7 @@ export default function StickyContactButtons() {
         <Button
           size="icon"
           className="w-14 h-14 rounded-full shadow-2xl bg-[#25D366] hover:bg-[#20BA5A] text-white"
-          onClick={() => window.open('https://wa.me/1234567890', '_blank')}
+          onClick={() => window.open(whatsapp_url, '_blank')}
           data-testid="button-sticky-whatsapp"
         >
           <SiWhatsapp className="w-6 h-6" />
@@ -29,7 +30,7 @@ export default function StickyContactButtons() {
         <Button
           size="icon"
           className="w-14 h-14 rounded-full shadow-2xl"
-          onClick={() => window.location.href = 'mailto:info@ktrcycleworld.com'}
+          onClick={() => window.location.href = email_url}
           data-testid="button-sticky-email"
         >
           <Mail className="w-6 h-6" />
