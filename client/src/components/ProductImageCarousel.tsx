@@ -15,6 +15,9 @@ export default function ProductImageCarousel({ images, productName }: ProductIma
   const [isZoomed, setIsZoomed] = useState(false);
   const [imageErrors, setImageErrors] = useState<{ [key: number]: boolean }>({});
   const [imageLoading, setImageLoading] = useState<{ [key: number]: boolean }>({});
+  const [thumbnailStartIndex, setThumbnailStartIndex] = useState(0);
+  
+  const THUMBNAILS_TO_SHOW = 5;
 
   // Process images to convert Google Drive URLs
   const processedImages = processImageUrls(images.join(','));
@@ -41,6 +44,19 @@ export default function ProductImageCarousel({ images, productName }: ProductIma
   const handleImageStart = (index: number) => {
     setImageLoading(prev => ({ ...prev, [index]: true }));
   };
+
+  const handleThumbnailPrev = () => {
+    setThumbnailStartIndex((prev) => Math.max(0, prev - 1));
+  };
+
+  const handleThumbnailNext = () => {
+    setThumbnailStartIndex((prev) => 
+      Math.min(validImages.length - THUMBNAILS_TO_SHOW, prev + 1)
+    );
+  };
+
+  const canScrollThumbnailPrev = thumbnailStartIndex > 0;
+  const canScrollThumbnailNext = thumbnailStartIndex < validImages.length - THUMBNAILS_TO_SHOW;
 
   if (!hasValidImages) {
     return (
@@ -114,35 +130,82 @@ export default function ProductImageCarousel({ images, productName }: ProductIma
       </div>
 
       {validImages.length > 1 && (
-        <div className="grid grid-cols-4 gap-3">
-          {validImages.map((image, index) => (
-            <motion.button
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setSelectedIndex(index)}
-              className={`aspect-square rounded-xl overflow-hidden border-2 transition-all ${
-                index === selectedIndex
-                  ? "border-primary shadow-lg"
-                  : "border-border hover:border-primary/50"
-              }`}
-              data-testid={`button-thumbnail-${index}`}
-            >
-              {imageErrors[index] ? (
-                <div className="w-full h-full flex items-center justify-center bg-muted">
-                  <ImageOff className="w-8 h-8 text-muted-foreground/50" />
-                </div>
-              ) : (
-                <ProxyImage
-                  src={image}
-                  alt={`${productName} - Thumbnail ${index + 1}`}
-                  className="w-full h-full object-contain bg-white/80"
-                  onLoad={() => handleImageLoad(index)}
-                  onError={() => handleImageError(index)}
-                />
-              )}
-            </motion.button>
-          ))}
+        <div className="relative">
+          <div className="flex items-center gap-2">
+            {/* Previous Button */}
+            {validImages.length > THUMBNAILS_TO_SHOW && (
+              <Button
+                variant="outline"
+                size="sm"
+                className="rounded-full flex-shrink-0 disabled:opacity-30 h-8 w-8 p-0"
+                onClick={handleThumbnailPrev}
+                disabled={!canScrollThumbnailPrev}
+                data-testid="button-thumbnail-carousel-prev"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </Button>
+            )}
+
+            {/* Thumbnails Container */}
+            <div className="flex-1 overflow-hidden max-w-lg mx-auto">
+              <motion.div 
+                className="flex gap-2"
+                animate={{ 
+                  x: validImages.length > THUMBNAILS_TO_SHOW 
+                    ? `-${thumbnailStartIndex * (100 / THUMBNAILS_TO_SHOW + (8 / THUMBNAILS_TO_SHOW))}%` 
+                    : 0 
+                }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              >
+                {validImages.map((image, index) => (
+                  <motion.button
+                    key={index}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setSelectedIndex(index)}
+                    style={{ 
+                      minWidth: `calc((100% - ${(THUMBNAILS_TO_SHOW - 1) * 8}px) / ${THUMBNAILS_TO_SHOW})`,
+                      maxWidth: `calc((100% - ${(THUMBNAILS_TO_SHOW - 1) * 8}px) / ${THUMBNAILS_TO_SHOW})`
+                    }}
+                    className={`aspect-square rounded-lg overflow-hidden border-2 transition-all ${
+                      index === selectedIndex
+                        ? "border-primary shadow-lg"
+                        : "border-border hover:border-primary/50"
+                    }`}
+                    data-testid={`button-thumbnail-${index}`}
+                  >
+                    {imageErrors[index] ? (
+                      <div className="w-full h-full flex items-center justify-center bg-muted">
+                        <ImageOff className="w-6 h-6 text-muted-foreground/50" />
+                      </div>
+                    ) : (
+                      <ProxyImage
+                        src={image}
+                        alt={`${productName} - Thumbnail ${index + 1}`}
+                        className="w-full h-full object-contain bg-white/80"
+                        onLoad={() => handleImageLoad(index)}
+                        onError={() => handleImageError(index)}
+                      />
+                    )}
+                  </motion.button>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Next Button */}
+            {validImages.length > THUMBNAILS_TO_SHOW && (
+              <Button
+                variant="outline"
+                size="sm"
+                className="rounded-full flex-shrink-0 disabled:opacity-30 h-8 w-8 p-0"
+                onClick={handleThumbnailNext}
+                disabled={!canScrollThumbnailNext}
+                data-testid="button-thumbnail-carousel-next"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </Button>
+            )}
+          </div>
         </div>
       )}
     </div>

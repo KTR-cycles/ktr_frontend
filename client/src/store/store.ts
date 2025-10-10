@@ -3,6 +3,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import CryptoJS from 'crypto-js';
 import categoriesReducer from './categoriesSlice';
+import productDetailReducer from './productDetailSlice';
 
 const PERSIST_VERSION = 2;
 const STORAGE_VERSION_KEY = 'ktr-persist-version';
@@ -77,11 +78,12 @@ const persistConfig = {
   key: 'ktr-root',
   storage,
   transforms: [encryptTransform],
-  whitelist: ['categories'],
+  whitelist: ['categories', 'productDetail'],
 };
 
 const rootReducer = {
   categories: categoriesReducer,
+  productDetail: productDetailReducer,
 };
 
 const persistedReducer = persistReducer(persistConfig, (state: any = {}, action: any) => {

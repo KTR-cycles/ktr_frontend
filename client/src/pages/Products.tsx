@@ -9,12 +9,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Loader2, Search } from "lucide-react";
 import { fetchProducts } from "@/lib/api";
-import { useAppSelector } from "@/store/hooks";
+import { useAppSelector, useAppDispatch } from "@/store/hooks";
+import { setSelectedProduct } from "@/store/productDetailSlice";
 import type { Product, Category } from "../types";
 import { getFirstImageUrl } from "@/utils/imageUtils";
+import { PATHS } from "@/components/path";
 
 export default function Products() {
   const [, setLocation] = useLocation();
+  const dispatch = useAppDispatch();
   const categories = useAppSelector((state) => state.categories.items);
   
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -46,17 +49,12 @@ export default function Products() {
   };
 
   const filteredProducts = (products || []).filter((product) => {
-    // Map selected category names to category IDs for filtering
-    const selectedCategoryIds = selectedCategories.length > 0 
-      ? categories
-          .filter((cat: Category) => selectedCategories.includes(cat.name))
-          .map((cat: Category) => cat.category_id)
-      : [];
-    
+    // selectedCategories already contains category IDs (e.g., "cat_002")
     const categoryMatch =
       selectedCategories.length === 0 || 
-      (product.category_id && selectedCategoryIds.includes(product.category_id)) ||
-      selectedCategories.includes(product.category_name || '');
+      (product.category && selectedCategories.includes(product.category)) ||
+      (product.category_id && selectedCategories.includes(product.category_id));
+    
     const brandMatch =
       selectedBrands.length === 0 || selectedBrands.includes(product.brand || '');
     const priceMatch =
@@ -290,7 +288,10 @@ export default function Products() {
                       discount={product.discount}
                       discountedPrice={product.discounted_price}
                       categoryName={product.category_name}
-                      onViewDetails={(id) => setLocation(`/products/${id}`)}
+                      onViewDetails={(id) => {
+                        dispatch(setSelectedProduct(product));
+                        setLocation(PATHS.PRODUCT_DETAIL);
+                      }}
                     />
                   </motion.div>
                 );

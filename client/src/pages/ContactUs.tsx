@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, User, Mail } from "lucide-react";
+import { MapPin, Phone, User, Mail, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -13,9 +13,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { sendFeedback } from "@/lib/api";
 
 export default function ContactUs() {
   const { toast } = useToast();
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,19 +26,52 @@ export default function ContactUs() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
-    setFormData({
-      name: "",
-      email: "",
-      country: "",
-      phone: "",
-      message: "",
-    });
+    
+    // Validate all fields are filled
+    if (!formData.name || !formData.email || !formData.country || !formData.phone || !formData.message) {
+      toast({
+        title: "Error",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+    
+    try {
+      await sendFeedback({
+        username: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        country: formData.country,
+        message: formData.message,
+      });
+
+      toast({
+        title: "Message Sent!",
+        description: "We'll get back to you as soon as possible.",
+      });
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        country: "",
+        phone: "",
+        message: "",
+      });
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message || "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -132,19 +167,21 @@ export default function ContactUs() {
                     <Select
                       value={formData.country}
                       onValueChange={(value) => setFormData({ ...formData, country: value })}
+                      required
                     >
                       <SelectTrigger 
                         className="h-12 rounded-full border-2 focus:border-primary"
                         data-testid="select-country"
                       >
-                        <SelectValue placeholder="Country" />
+                        <SelectValue placeholder="Country *" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="india">India</SelectItem>
-                        <SelectItem value="usa">USA</SelectItem>
-                        <SelectItem value="uk">UK</SelectItem>
-                        <SelectItem value="canada">Canada</SelectItem>
-                        <SelectItem value="australia">Australia</SelectItem>
+                        <SelectItem value="India">India</SelectItem>
+                        <SelectItem value="USA">USA</SelectItem>
+                        <SelectItem value="UK">UK</SelectItem>
+                        <SelectItem value="Canada">Canada</SelectItem>
+                        <SelectItem value="Australia">Australia</SelectItem>
+                        <SelectItem value="Other">Other</SelectItem>
                       </SelectContent>
                     </Select>
 
@@ -189,8 +226,16 @@ export default function ContactUs() {
                       variant="default"
                       className="rounded-full px-12 h-12 text-base font-semibold shadow-lg"
                       data-testid="button-submit"
+                      disabled={isLoading}
                     >
-                      Get in Touch
+                      {isLoading ? (
+                        <>
+                          <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        'Get in Touch'
+                      )}
                     </Button>
                   </motion.div>
                 </form>
