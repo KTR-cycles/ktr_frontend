@@ -15,6 +15,7 @@ import StickyContactButtons from "@/components/StickyContactButtons";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import Router from "@/components/Router";
 import ErrorFallback from "@/components/ErrorFallback";
+import ScrollToTop from "@/components/ScrollToTop";
 
 
 function AppContent() {
@@ -30,6 +31,7 @@ function AppContent() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <ScrollToTop />
       <Header />
       <main className="flex-1">
         <Router />
