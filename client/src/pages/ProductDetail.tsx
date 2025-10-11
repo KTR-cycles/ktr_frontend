@@ -1,26 +1,39 @@
 
 import { motion } from "framer-motion";
 import { Link, useRoute } from "wouter";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronRight, Share2, ShoppingCart, Loader2, Package, Shield, Truck, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ProductImageCarousel from "@/components/ProductImageCarousel";
 import SharePopup from "@/components/SharePopup";
-import { useAppSelector } from "@/store/hooks";
+import { useAppSelector, useAppDispatch } from "@/store/hooks";
+import { fetchProductDetail } from "@/store/productDetailSlice";
 import { PATHS } from "@/components/path";
 import { whatsapp_url } from "@/utils/config";
 
 export default function ProductDetail() {
-  const { PRODUCTS, PRODUCT_DETAIL, HOME, CONTACT } = PATHS;
-  const [match] = useRoute(PRODUCT_DETAIL);
+  const { PRODUCTS, PRODUCT_DETAIL_BASE, HOME, CONTACT } = PATHS;
+  const [match, params] = useRoute("/productDetails/:id?");
   const [isShareOpen, setIsShareOpen] = useState(false);
+  const dispatch = useAppDispatch();
 
   const { selectedProduct: product, loading: isLoading, error } = useAppSelector(
     (state) => state.productDetail
   );
 
-  console.log("Hello", product);
+  // Check if there's an ID in the URL params
+  useEffect(() => {
+    if (params?.id) {
+      // Fetch product from API if ID is in URL
+      console.log("Fetching product from API with ID:", params.id);
+      dispatch(fetchProductDetail(params.id));
+    } else {
+      // Use product from store (navigated from product card)
+      console.log("Using product from store:", product);
+    }
+  }, [params?.id, dispatch]);
+
   const isError = !!error;
 
   if (isLoading) {
@@ -339,6 +352,7 @@ export default function ProductDetail() {
         isOpen={isShareOpen}
         onClose={() => setIsShareOpen(false)}
         productName={product.name}
+        productUrl={`${window.location.origin}${PATHS.PRODUCT_DETAIL_BASE}/${product.id}`}
       />
     </div>
   );

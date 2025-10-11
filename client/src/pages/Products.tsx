@@ -290,7 +290,7 @@ export default function Products() {
                       categoryName={product.category_name}
                       onViewDetails={(id) => {
                         dispatch(setSelectedProduct(product));
-                        setLocation(PATHS.PRODUCT_DETAIL);
+                        setLocation(`${PATHS.PRODUCT_DETAIL_BASE}/${product.id}`);
                       }}
                     />
                   </motion.div>
