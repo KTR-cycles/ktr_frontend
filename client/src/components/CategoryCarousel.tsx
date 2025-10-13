@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import { useLocation } from "wouter";
-import { useAppSelector } from "@/store/hooks";
 import type { Category } from "@/types";
 import kidsCycle from '@assets/generated_images/kids_cycle.jpeg';
 import adultCycle from '@assets/generated_images/adult_cycle.jpeg';
@@ -10,6 +9,45 @@ import womenCycle from '@assets/generated_images/cycle_for_women.jpeg';
 import electricCycle from '@assets/generated_images/electric_cycle.jpg';
 import gearedCycle from '@assets/generated_images/geared_cycle.jpeg';
 import { PATHS } from "./path";
+
+// Hardcoded categories data
+const HARDCODED_CATEGORIES: Category[] = [
+  {
+    category_id: "cat_001",
+    name: "Kids Cycle",
+    slug: "kids-cycle",
+    description: "Perfect cycles for children and young riders",
+    image: kidsCycle
+  },
+  {
+    category_id: "cat_002",
+    name: "Adult Cycle", 
+    slug: "adult-cycle",
+    description: "High-quality cycles for adult riders",
+    image: adultCycle
+  },
+  {
+    category_id: "cat_003",
+    name: "Women's Cycle",
+    slug: "womens-cycle", 
+    description: "Specially designed cycles for women",
+    image: womenCycle
+  },
+  {
+    category_id: "cat_004",
+    name: "Electric Cycle",
+    slug: "electric-cycle",
+    description: "Eco-friendly electric cycles for easy riding",
+    image: electricCycle
+  },
+  {
+    category_id: "cat_005",
+    name: "Geared Cycle",
+    slug: "geared-cycle",
+    description: "Multi-speed cycles for varied terrain",
+    image: gearedCycle
+  }
+];
 
 // Category image mapping
 const categoryImageMap: Record<string, string> = {
@@ -69,7 +107,7 @@ export default function CategoryCarousel() {
     }
   });
   const [, setLocation] = useLocation();
-  const categories = useAppSelector((state) => state.categories.items);
+  const categories = HARDCODED_CATEGORIES;
   const [selectedIndex, setSelectedIndex] = useState(0);
   const { PRODUCTS } = PATHS;
 

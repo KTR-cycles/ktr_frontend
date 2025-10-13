@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { useLocation } from "wouter";
+import { useLocation, useSearch } from "wouter";
 import { useQuery } from "@tanstack/react-query";
 import ProductCard from "@/components/ProductCard";
 import ProductFilters from "@/components/ProductFilters";
@@ -9,18 +9,59 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Loader2, Search } from "lucide-react";
 import { fetchProducts } from "@/lib/api";
-import { useAppSelector, useAppDispatch } from "@/store/hooks";
+import { useAppDispatch } from "@/store/hooks";
 import { setSelectedProduct } from "@/store/productDetailSlice";
 import type { Product, Category } from "../types";
 import { getFirstImageUrl } from "@/utils/imageUtils";
 import { PATHS } from "@/components/path";
 
+// Hardcoded categories data (same as CategoryCarousel)
+const HARDCODED_CATEGORIES: Category[] = [
+  {
+    category_id: "cat_001",
+    name: "Kids Cycle",
+    slug: "kids-cycle",
+    description: "Perfect cycles for children and young riders"
+  },
+  {
+    category_id: "cat_002",
+    name: "Adult Cycle", 
+    slug: "adult-cycle",
+    description: "High-quality cycles for adult riders"
+  },
+  {
+    category_id: "cat_003",
+    name: "Women's Cycle",
+    slug: "womens-cycle", 
+    description: "Specially designed cycles for women"
+  },
+  {
+    category_id: "cat_004",
+    name: "Electric Cycle",
+    slug: "electric-cycle",
+    description: "Eco-friendly electric cycles for easy riding"
+  },
+  {
+    category_id: "cat_005",
+    name: "Geared Cycle",
+    slug: "geared-cycle",
+    description: "Multi-speed cycles for varied terrain"
+  }
+];
+
 export default function Products() {
   const [, setLocation] = useLocation();
   const dispatch = useAppDispatch();
-  const categories = useAppSelector((state) => state.categories.items);
+  const categories = HARDCODED_CATEGORIES;
+  const search = useSearch();
   
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  // Parse URL parameters
+  const urlParams = new URLSearchParams(search);
+  const categoryFromUrl = urlParams.get('category');
+  
+  const [selectedCategories, setSelectedCategories] = useState<string[]>(
+    categoryFromUrl ? [categoryFromUrl] : []
+  );
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState<[number, number]>([10000, 100000]);
   const [displayCount, setDisplayCount] = useState(9);
