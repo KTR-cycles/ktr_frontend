@@ -1,11 +1,6 @@
-import { useEffect } from 'react';
-
 export default function LocalSEO() {
-  useEffect(() => {
-    // Add local SEO content to the page
-    const localSEOContent = document.createElement('div');
-    localSEOContent.style.display = 'none'; // Hidden from users but visible to search engines
-    localSEOContent.innerHTML = `
+  return (
+    <div style={{ display: 'none' }} aria-hidden="true">
       <h1>KTR Cycle World - Best Cycles in Tirunelveli, Vannarpettai & Palayankottai</h1>
       <h2>Leading Cycle Shop in South Tamil Nadu</h2>
       <p>KTR Cycle World is the premier destination for high-quality cycles in Tirunelveli, Vannarpettai, and Palayankottai. We offer the best cycles in South Tamil Nadu with expert service and premium products.</p>
@@ -56,16 +51,6 @@ export default function LocalSEO() {
       
       <h3>Keywords for SEO</h3>
       <p>KTR Cycle, KTR Cycle World, best cycle in Tirunelveli, cycles in Vannarpettai, cycles in Palayankottai, best cycle shop Tirunelveli, cycle store South Tamil Nadu, premium cycles Tamil Nadu, mountain bikes Tirunelveli, road bikes Vannarpettai, electric cycles Palayankottai, cycle repair Tirunelveli, bicycle shop Tamil Nadu, best cycles on south tamil nadu, cycles on tirunelveli</p>
-    `;
-    
-    document.body.appendChild(localSEOContent);
-    
-    return () => {
-      if (document.body.contains(localSEOContent)) {
-        document.body.removeChild(localSEOContent);
-      }
-    };
-  }, []);
-
-  return null;
+    </div>
+  );
 }
