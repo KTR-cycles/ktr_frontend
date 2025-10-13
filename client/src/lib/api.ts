@@ -1,6 +1,6 @@
 import axios from 'axios';
 import type { Product } from '../types';
-import { FEATURED_PRODUCTS_URL, PRODUCTS_URL, FEEDBACK_SENDER_URL } from '../utils/config';
+import { PRODUCTS_URL, FEEDBACK_SENDER_URL } from '../utils/config';
 
 const PRODUCTS_API = PRODUCTS_URL;
 
@@ -64,46 +64,6 @@ export const fetchProductById = async (id: string): Promise<Product | null> => {
 };
 
 
-export const fetchFeaturedProducts = async (): Promise<Product[]> => {
-  try {
-    const response = await axios.get(FEATURED_PRODUCTS_URL);
-    
-    return response.data.map((item: any, index: number) => {
-      const productId = String(item.product_id || item.id || `featured-product-${index + 1}`);
-      
-      return {
-        id: productId,
-        product_id: productId,
-        name: item.name || '',
-        brand: item.brand || '',
-        image: item.images ? item.images.split(',')[0].trim() : '',
-        images: item.images || '',
-        category: item.category || '',
-        category_id: item.category,
-        category_name: item.category_name || '',
-        color: item.color || '',
-        original_price: Number(item.original_price || 0),
-        discounted_price: Number(item.discounted_price || 0),
-        discount_percent: Number(item.discount_percent || 0),
-        discount: Number(item.discount_percent || 0),
-        stock: Number(item.stock || 0),
-        featured: Boolean(item.featured),
-        location: item.location || '',
-        short_description: item.short_description || '',
-        long_description: item.long_description || '',
-        description: item.long_description || item.short_description || '',
-        tags: item.tags || '',
-        varient_label: item.varient_label || '',
-        specifications: item.specifications || '',
-        features: item.features || '',
-        currentPrice: Number(item.discounted_price || 0),
-      };
-    });
-  } catch (error: any) {
-    console.error('Error fetching featured products:', error);
-    throw new Error(error.message || 'Failed to fetch featured products');
-  }
-};
 
 // Send feedback/contact form
 export interface FeedbackData {

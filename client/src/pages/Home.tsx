@@ -115,7 +115,7 @@ export default function Home() {
         <HeroCarousel slides={heroSlides} />
       </section>
 
-      {/* <FeaturedProducts /> */}
+      <FeaturedProducts />
 
       <MotivationQuotes quotes={motivationQuotes} image={wellnessImage} />
 

@@ -4,32 +4,18 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { PATHS } from "./path";
 import { useLocation } from "wouter";
-import { fetchFeaturedProducts } from "@/lib/api";
-import { useQuery } from "@tanstack/react-query";
-import LoadingSpinner from "./LoadingSpinner";
 import { useAppDispatch } from "@/store/hooks";
 import { setSelectedProduct } from "@/store/productDetailSlice";
+import { FEATURED_PRODUCTS } from "@/data/featuredProducts";
 
 
 
 export default function FeaturedProducts() {
   const { PRODUCTS, PRODUCT_DETAIL_BASE } = PATHS;
-  const { data: featuredProducts = [], isLoading, isError } = useQuery({
-    queryKey: ['/api/featured-products'],
-    queryFn: fetchFeaturedProducts,
-  });
+  const featuredProducts = FEATURED_PRODUCTS;
 
   const [, setLocation] = useLocation();
   const dispatch = useAppDispatch();
-
-
-  if (isLoading) {
-    return <LoadingSpinner />;
-  }
-
-  if (isError) {
-    return <div>Error loading featured products</div>;
-  }
   return (
     <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-background via-accent/10 to-background">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6">
@@ -61,7 +47,7 @@ export default function FeaturedProducts() {
                 id={product.id}
                 name={product.name}
                 brand={product.brand}
-                images={product.images || product.image || ''}
+                images={product.images}
                 originalPrice={product.original_price}
                 discountedPrice={product.discounted_price}
                 categoryName={product.category_name}
