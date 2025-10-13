@@ -13,7 +13,7 @@ import { setSelectedProduct } from "@/store/productDetailSlice";
 
 
 export default function FeaturedProducts() {
-  const { PRODUCTS, PRODUCT_DETAIL } = PATHS;
+  const { PRODUCTS, PRODUCT_DETAIL_BASE } = PATHS;
   const { data: featuredProducts = [], isLoading, isError } = useQuery({
     queryKey: ['/api/featured-products'],
     queryFn: fetchFeaturedProducts,
@@ -67,7 +67,7 @@ export default function FeaturedProducts() {
                 categoryName={product.category_name}
                 onViewDetails={(id) => {
                   dispatch(setSelectedProduct(product));
-                  setLocation(PRODUCT_DETAIL);
+                  setLocation(`${PRODUCT_DETAIL_BASE}/${product.id}`);
                 }} 
               />
             </motion.div>
