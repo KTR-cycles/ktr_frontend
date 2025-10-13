@@ -73,8 +73,9 @@ export default function Header() {
             >
               <img 
                 src={logo} 
-                alt="KTR Cycle World Logo" 
+                alt="KTR Cycle World - Best Cycles in Tirunelveli, Vannarpettai & Palayankottai" 
                 className="w-8 h-6 sm:w-10 sm:h-8 md:w-12 md:h-10 object-contain"
+                title="KTR Cycle World - Leading Cycle Shop in South Tamil Nadu"
               />
               <span className="text-sm sm:text-base md:text-xl font-bold text-foreground">
                 KTR <span className="text-primary">Cycle World</span>

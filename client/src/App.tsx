@@ -13,6 +13,7 @@ import LoadingSpinner from "@/components/LoadingSpinner";
 import Router from "@/components/Router";
 import ErrorFallback from "@/components/ErrorFallback";
 import ScrollToTop from "@/components/ScrollToTop";
+import LocalSEO from "@/components/LocalSEO";
 
 
 function AppContent() {
@@ -20,6 +21,7 @@ function AppContent() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <ScrollToTop />
+      <LocalSEO />
       <Header />
       <main className="flex-1">
         <Router />

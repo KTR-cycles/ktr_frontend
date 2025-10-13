@@ -17,34 +17,34 @@ export default function Home() {
   const heroSlides = [
     {
       image: mountainImage,
-      quote: "Two wheels, endless adventures.",
+      quote: "Best cycles in Tirunelveli - Two wheels, endless adventures.",
     },
     {
       image: urbanImage,
-      quote: "Life is like riding a bicycle.",
+      quote: "Life is like riding a bicycle - Premium cycles in South Tamil Nadu.",
       author: "Albert Einstein"
     },
     {
       image: groupImage,
-      quote: "Ride together, grow together.",
+      quote: "Ride together, grow together - KTR Cycle World community.",
     },
     {
       image: sunsetImage,
-      quote: "It never gets easier, you just go faster.",
+      quote: "It never gets easier, you just go faster - Best cycle shop in Vannarpettai.",
       author: "Greg LeMond"
     },
   ];
 
   const motivationQuotes = [
     {
-      text: "Cycling is a simple solution to some of the world's most complicated problems.",
+      text: "Cycling is a simple solution to some of the world's most complicated problems - Best cycles in Tirunelveli at KTR Cycle World.",
     },
     {
-      text: "Give a man a fish and feed him for a day. Teach a man to fish and feed him for a lifetime. Teach a man to cycle and he will realize fishing is stupid and boring.",
+      text: "Give a man a fish and feed him for a day. Teach a man to fish and feed him for a lifetime. Teach a man to cycle and he will realize fishing is stupid and boring - Premium cycles in South Tamil Nadu.",
       author: "Desmond Tutu"
     },
     {
-      text: "When the spirits are low, when the day appears dark, when work becomes monotonous, when hope hardly seems worth having, just mount a bicycle and go out for a spin down the road.",
+      text: "When the spirits are low, when the day appears dark, when work becomes monotonous, when hope hardly seems worth having, just mount a bicycle and go out for a spin down the road - Best cycle shop in Vannarpettai.",
       author: "Arthur Conan Doyle"
     },
   ];
@@ -53,32 +53,32 @@ export default function Home() {
     {
       icon: "heart" as const,
       title: "Cardiovascular Health",
-      description: "Strengthen your heart, improve circulation, and reduce the risk of heart disease with regular cycling."
+      description: "Strengthen your heart, improve circulation, and reduce the risk of heart disease with regular cycling. Best cycles in Tirunelveli for your health journey."
     },
     {
       icon: "zap" as const,
       title: "Build Stamina & Strength",
-      description: "Increase your endurance and muscle strength while enjoying the journey."
+      description: "Increase your endurance and muscle strength while enjoying the journey. Premium cycles in South Tamil Nadu for optimal performance."
     },
     {
       icon: "smile" as const,
       title: "Mental Wellbeing",
-      description: "Reduce stress, anxiety, and depression. Cycling releases endorphins that boost your mood."
+      description: "Reduce stress, anxiety, and depression. Cycling releases endorphins that boost your mood. Best cycle shop in Vannarpettai for your mental health."
     },
     {
       icon: "trending" as const,
       title: "Weight Management",
-      description: "Burn calories efficiently and maintain a healthy weight through regular cycling."
+      description: "Burn calories efficiently and maintain a healthy weight through regular cycling. Quality cycles in Palayankottai for fitness goals."
     },
     {
       icon: "users" as const,
       title: "Social Connection",
-      description: "Join cycling groups and communities. Make friends and share adventures together."
+      description: "Join cycling groups and communities. Make friends and share adventures together. KTR Cycle World community in Tirunelveli."
     },
     {
       icon: "leaf" as const,
       title: "Eco-Friendly Transport",
-      description: "Reduce your carbon footprint and contribute to a cleaner, greener environment."
+      description: "Reduce your carbon footprint and contribute to a cleaner, greener environment. Electric cycles in South Tamil Nadu for sustainable commuting."
     },
   ];
 
@@ -87,22 +87,22 @@ export default function Home() {
     {
       icon: "delivery" as const,
       title: "Free Delivery",
-      description: "Get your cycle delivered to your doorstep at no extra cost within city limits."
+      description: "Get your cycle delivered to your doorstep at no extra cost within Tirunelveli, Vannarpettai, and Palayankottai areas."
     },
     {
       icon: "pickup" as const,
       title: "Easy Pickup",
-      description: "Visit our showroom to see and test ride your favorite cycles before purchase."
+      description: "Visit our showroom in Tirunelveli to see and test ride your favorite cycles before purchase. Best cycle shop in South Tamil Nadu."
     },
     {
       icon: "quality" as const,
       title: "Premium Quality",
-      description: "All our cycles undergo rigorous quality checks to ensure the best performance."
+      description: "All our cycles undergo rigorous quality checks to ensure the best performance. Best cycles in Tirunelveli with guaranteed quality."
     },
     {
       icon: "experience" as const,
       title: "Expert Guidance",
-      description: "Our experienced team helps you choose the perfect cycle for your needs."
+      description: "Our experienced team helps you choose the perfect cycle for your needs. Expert service in Vannarpettai and Palayankottai."
     },
   ];
 
