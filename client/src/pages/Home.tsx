@@ -17,22 +17,21 @@ export default function Home() {
   const heroSlides = [
     {
       image: mountainImage,
-      quote: "Best cycles in Tirunelveli - Two wheels, endless adventures.",
+      quote: "Tirunelveli’s best cycles. Start your adventure.",
     },
     {
       image: urbanImage,
-      quote: "Life is like riding a bicycle - Premium cycles in South Tamil Nadu.",
-      author: "Albert Einstein"
+      quote: "Premium rides for South Tamil Nadu.",
     },
     {
       image: groupImage,
-      quote: "Ride together, grow together - KTR Cycle World community.",
+      quote: "Ride together. Grow together.",
     },
     {
       image: sunsetImage,
-      quote: "It never gets easier, you just go faster - Best cycle shop in Vannarpettai.",
-      author: "Greg LeMond"
+      quote: "Go faster with KTR Cycle World.",
     },
+         
   ];
 
   const motivationQuotes = [
