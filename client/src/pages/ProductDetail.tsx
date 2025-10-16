@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { Link, useRoute } from "wouter";
 import { useState, useEffect } from "react";
-import { ChevronRight, Share2, ShoppingCart, Loader2, Package, Shield, Truck, Headphones } from "lucide-react";
+import { ChevronRight, Share2, ShoppingCart, Package, Shield, Truck, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ProductImageCarousel from "@/components/ProductImageCarousel";
@@ -11,6 +11,7 @@ import { useAppSelector, useAppDispatch } from "@/store/hooks";
 import { fetchProductDetail } from "@/store/productDetailSlice";
 import { PATHS } from "@/components/path";
 import { whatsapp_url } from "@/utils/config";
+import LoadingSpinner from "@/components/LoadingSpinner";
 
 export default function ProductDetail() {
   const { PRODUCTS, PRODUCT_DETAIL_BASE, HOME, CONTACT } = PATHS;
@@ -39,7 +40,7 @@ export default function ProductDetail() {
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-12 h-12 animate-spin text-primary" />
+        <LoadingSpinner />
       </div>
     );
   }

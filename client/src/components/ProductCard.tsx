@@ -53,7 +53,7 @@ export default function ProductCard({
       data-testid={`product-card-${id}`}
       onClick={() => onViewDetails?.(id)}
     >
-      <div className="relative aspect-[4/3] overflow-hidden bg-muted flex-shrink-0 h-[120px] sm:h-[160px] md:h-[180px]">
+      <div className="relative aspect-[4/3] overflow-hidden bg-muted flex-shrink-0 h-[150px] sm:h-[200px] md:h-[220px]">
         {hasValidImage ? (
           <ProxyImage
             src={cleanImageUrl}
