@@ -40,11 +40,9 @@ export default function Home() {
     },
     {
       text: "Give a man a fish and feed him for a day. Teach a man to fish and feed him for a lifetime. Teach a man to cycle and he will realize fishing is stupid and boring - Premium cycles in South Tamil Nadu.",
-      author: "Desmond Tutu"
     },
     {
       text: "When the spirits are low, when the day appears dark, when work becomes monotonous, when hope hardly seems worth having, just mount a bicycle and go out for a spin down the road - Best cycle shop in Vannarpettai.",
-      author: "Arthur Conan Doyle"
     },
   ];
 

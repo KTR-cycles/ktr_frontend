@@ -264,7 +264,7 @@ export default function ContactUs() {
                         Visit Our Showroom
                       </h3>
                       <p className="text-base md:text-lg text-foreground leading-relaxed">
-                        Nainar kulam road null, Tirunelveli, Tamil Nadu 627006 India
+                        KTR CYCLE WORLD - Nainar kulam road, Tirunelveli, Tamil Nadu, India - 627006
                       </p>
                     </div>
                   </div>

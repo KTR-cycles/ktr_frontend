@@ -6,7 +6,7 @@ interface GoogleMapProps {
 
 export default function GoogleMap({ embedUrl }: GoogleMapProps) {
   const defaultUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.8!2d77.690064!3d8.7296942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwNDMnNDYuOSJOIDc3wrA0MScyMi4yIkU!5e0!3m2!1sen!2sin!4v1234567890";
-  const address = "KTR CYCLE WORLD - Multi Brand Store, Tirunelveli, Tamil Nadu, India";
+  const address = "KTR CYCLE WORLD - Nainar kulam road, Tirunelveli, Tamil Nadu, India - 627006";
   const hours = "Mon-Sat: 9:00 AM - 8:00 PM | Sun: 10:00 AM - 6:00 PM";
 
   return (

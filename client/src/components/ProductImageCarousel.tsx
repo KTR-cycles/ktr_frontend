@@ -70,7 +70,7 @@ export default function ProductImageCarousel({ images, productName }: ProductIma
 
   return (
     <div className="space-y-4">
-      <div className="relative aspect-square rounded-2xl overflow-hidden bg-white/80 backdrop-blur-md border border-border/50 shadow-lg group">
+      <div className="relative aspect-square rounded-2xl overflow-hidden bg-white/80 backdrop-blur-md border border-border/50 shadow-lg group flex items-center justify-center">
         <AnimatePresence mode="wait">
           {imageErrors[selectedIndex] ? (
             <div className="w-full h-full flex items-center justify-center bg-muted">
@@ -83,7 +83,7 @@ export default function ProductImageCarousel({ images, productName }: ProductIma
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className={`w-full h-full cursor-zoom-in ${
+              className={`flex items-center justify-center w-full h-full cursor-zoom-in ${
                 isZoomed ? "scale-150 cursor-zoom-out" : ""
               }`}
               onClick={() => setIsZoomed(!isZoomed)}
@@ -91,7 +91,8 @@ export default function ProductImageCarousel({ images, productName }: ProductIma
               <ProxyImage
                 src={validImages[selectedIndex]}
                 alt={`${productName} - Image ${selectedIndex + 1}`}
-                className="w-full h-full object-contain"
+                // REDUCE MAIN IMAGE SIZE - constrain to max-w-[70%] and max-h-[70%]
+                className="max-w-[100%] max-h-[100%] w-auto h-auto object-contain"
                 onLoad={() => handleImageLoad(selectedIndex)}
                 onError={() => handleImageError(selectedIndex)}
               />
