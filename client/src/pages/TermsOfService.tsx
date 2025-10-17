@@ -1,61 +1,85 @@
 import { motion } from "framer-motion";
-import { FileCheck, Package, DollarSign, Truck, RefreshCw, Award, Shield, Copyright, Scale, Edit, Link } from "lucide-react";
+import {
+  FileCheck,
+  Package,
+  DollarSign,
+  Truck,
+  RefreshCw,
+  Award,
+  Shield,
+  Copyright,
+  Scale,
+  Edit,
+  Link,
+} from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { PATHS } from "@/components/path";
+import { useLocation } from "wouter";
 
 export default function TermsOfService() {
-  const { CONTACT, PRIVACY_POLICY } = PATHS
+  const { CONTACT, PRIVACY_POLICY } = PATHS;
+  const [, setLocation] = useLocation();
   const sections = [
     {
       icon: Package,
       title: "Product Availability",
-      content: "All products listed on our website or in-store are subject to availability. We strive to keep our inventory up to date, but occasionally items may be out of stock."
+      content:
+        "All products listed on our website or in-store are subject to availability. We strive to keep our inventory up to date, but occasionally items may be out of stock.",
     },
     {
       icon: DollarSign,
       title: "Pricing",
-      content: "Prices of products are subject to change without prior notice. However, once you place an order, the price will remain fixed for that transaction."
+      content:
+        "Prices of products are subject to change without prior notice. However, once you place an order, the price will remain fixed for that transaction.",
     },
     {
       icon: FileCheck,
       title: "Order Confirmation",
-      content: "After placing an order, you will receive an email confirming receipt of your order. This email will only be an acknowledgment and will not constitute acceptance of your order. A contract between us for the purchase of the goods will not be formed until your payment has been approved by us and we have debited your credit or debit card."
+      content:
+        "After placing an order, you will receive an email confirming receipt of your order. This email will only be an acknowledgment and will not constitute acceptance of your order. A contract between us for the purchase of the goods will not be formed until your payment has been approved by us and we have debited your credit or debit card.",
     },
     {
       icon: Truck,
       title: "Delivery",
-      content: "We aim to dispatch all orders within 2 to 3 working days of receiving payment. Delivery times may vary depending on your location and other factors beyond our control. It includes free Shipping."
+      content:
+        "We aim to dispatch all orders within 2 to 3 working days of receiving payment. Delivery times may vary depending on your location and other factors beyond our control. It includes free Shipping.",
     },
     {
       icon: RefreshCw,
       title: "Returns and Refunds",
-      content: "We want you to be completely satisfied with your purchase. If you are not satisfied with your purchase for any reason, please contact us within 5 Working days of receiving your order to arrange for a return and refund."
+      content:
+        "We want you to be completely satisfied with your purchase. If you are not satisfied with your purchase for any reason, please contact us within 5 Working days of receiving your order to arrange for a return and refund.",
     },
     {
       icon: Award,
       title: "Quality Assurance",
-      content: "We take great care in sourcing and packaging our products to ensure they reach you in perfect condition. However, if you receive a product that is damaged or of unsatisfactory quality, please contact us immediately to arrange for a replacement or refund."
+      content:
+        "We take great care in sourcing and packaging our products to ensure they reach you in perfect condition. However, if you receive a product that is damaged or of unsatisfactory quality, please contact us immediately to arrange for a replacement or refund.",
     },
     {
       icon: Shield,
       title: "Privacy Policy",
-      content: "We respect your privacy and are committed to protecting your personal information. Any personal information you provide to us will be used solely for the purpose of processing your order and will not be shared with third parties."
+      content:
+        "We respect your privacy and are committed to protecting your personal information. Any personal information you provide to us will be used solely for the purpose of processing your order and will not be shared with third parties.",
     },
     {
       icon: Copyright,
       title: "Copyright",
-      content: "All content included on our website, such as text, graphics, logos, button icons, images, audio clips, digital downloads, data compilations, and software, is the property of our company or its content suppliers and is protected by international copyright laws."
+      content:
+        "All content included on our website, such as text, graphics, logos, button icons, images, audio clips, digital downloads, data compilations, and software, is the property of our company or its content suppliers and is protected by international copyright laws.",
     },
     {
       icon: Scale,
       title: "Governing Law",
-      content: "These terms and conditions shall be governed by and construed in accordance with the laws of India, and any disputes relating to these terms and conditions shall be subject to the exclusive jurisdiction of the courts of TamilNadu."
+      content:
+        "These terms and conditions shall be governed by and construed in accordance with the laws of India, and any disputes relating to these terms and conditions shall be subject to the exclusive jurisdiction of the courts of TamilNadu.",
     },
     {
       icon: Edit,
       title: "Changes to Terms and Conditions",
-      content: "We reserve the right to update or modify these terms and conditions at any time without prior notice. Your continued use of our website or services following any such changes constitutes your acceptance of the new terms and conditions."
-    }
+      content:
+        "We reserve the right to update or modify these terms and conditions at any time without prior notice. Your continued use of our website or services following any such changes constitutes your acceptance of the new terms and conditions.",
+    },
   ];
 
   return (
@@ -100,7 +124,11 @@ export default function TermsOfService() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 + index * 0.05, duration: 0.6 }}
-                  className={index === sections.length - 1 && sections.length % 2 !== 0 ? "md:col-span-2" : ""}
+                  className={
+                    index === sections.length - 1 && sections.length % 2 !== 0
+                      ? "md:col-span-2"
+                      : ""
+                  }
                 >
                   <Card className="h-full bg-white/80 backdrop-blur-md border-border/50 shadow-lg p-6 md:p-8 hover-elevate transition-all duration-300 group">
                     <div className="flex items-start gap-4 mb-4">
@@ -134,20 +162,22 @@ export default function TermsOfService() {
                 If you have any questions or concerns regarding these terms and conditions, please don't hesitate to contact us
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <a
-                  href={CONTACT}
+                <button
+                  type="button"
                   className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground rounded-full font-semibold hover-elevate active-elevate-2 transition-all"
                   data-testid="link-contact"
+                  onClick={() => setLocation(CONTACT)}
                 >
                   Contact Us
-                </a>
-                <a
-                  href={PRIVACY_POLICY}
+                </button>
+                <button
+                  type="button"
                   className="inline-flex items-center gap-2 px-8 py-3 bg-white/80 text-foreground rounded-full font-semibold hover-elevate active-elevate-2 transition-all border-2 border-border"
                   data-testid="link-privacy"
+                  onClick={() => setLocation(PRIVACY_POLICY)}
                 >
                   Privacy Policy
-                </a>
+                </button>
               </div>
             </div>
           </motion.div>
