@@ -2,9 +2,11 @@ import { motion } from "framer-motion";
 import { Shield, Lock, Eye, FileText } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { PATHS } from "@/components/path";
+import { useLocation } from "wouter";
 
 export default function PrivacyPolicy() {
-  const { CONTACT } = PATHS
+  const { CONTACT } = PATHS;
+  const [, setLocation] = useLocation();
   const sections = [
     {
       icon: FileText,
@@ -169,7 +171,13 @@ export default function PrivacyPolicy() {
                   If you have any questions or concerns about this Privacy Policy or our data practices, please contact us:
                 </p>
                 <div className="flex flex-col gap-4">
-                  <a href={CONTACT} className="text-primary hover:text-primary/80">Contact Us</a>
+                  <button
+                    type="button"
+                    className="text-primary hover:text-primary/80 text-left"
+                    onClick={() => setLocation(CONTACT)}
+                  >
+                    Contact Us
+                  </button>
                 </div>
               </Card>
             </motion.div>
