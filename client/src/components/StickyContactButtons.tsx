@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SiWhatsapp, SiInstagram } from "react-icons/si";
+import { Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { whatsapp_url, instagram_url } from "@/utils/config";
 
@@ -48,16 +49,13 @@ export default function StickyContactButtons() {
       >
         <Button
           size="icon"
-          className="w-14 h-14 rounded-full shadow-2xl bg-primary text-primary-foreground"
+          className="w-14 h-14 rounded-full shadow-2xl bg-yellow-400 hover:bg-yellow-500 text-white"
           onClick={() => setOpen((v) => !v)}
           data-testid="button-sticky-toggle"
           aria-expanded={open}
           aria-label="Open social menu"
         >
-          {/* Simple plus/minus icon using CSS (avoid extra icon deps) */}
-          <span
-            className={`block relative w-6 h-6 after:content-[''] after:absolute after:inset-0 after:m-auto after:h-0.5 after:w-6 after:bg-current before:content-[''] before:absolute before:inset-0 before:m-auto before:h-6 before:w-0.5 before:bg-current transition-transform ${open ? 'rotate-45' : ''}`}
-          />
+          <Share2 className="w-8 h-8 text-white" />
         </Button>
       </motion.div>
     </div>
