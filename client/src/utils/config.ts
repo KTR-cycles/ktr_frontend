@@ -5,3 +5,4 @@ export const EMAIL_ID = 'ktrcycleworld006@gmail.com'
 
 export const whatsapp_url = `https://wa.me/${WHATSAPP_NUMBER}`;
 export const email_url = `mailto:${EMAIL_ID}`;
+export const instagram_url = 'https://www.instagram.com/ktr_cycleworld_tirunelveli?igsh=ZDZ3bjF2M3g3cnkw';
