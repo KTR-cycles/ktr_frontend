@@ -1,4 +1,4 @@
-export const PRODUCTS_URL = `https://script.google.com/macros/s/AKfycbyCoIkmJuiRnBwzq6wPfMOYv5cvqVUchsl-ycvcuVtI28RnzN2-YvVDxzuEndqnUCQu/exec/products`;
+export const PRODUCTS_URL = `https://script.google.com/macros/s/AKfycbyCoIkmJuiRnBwzq6wPfMOYv5cvqVUchsl-ycvcuVtI28RnzN2-YvVDxzuEndqnUCQu/exec?sheet=products`;
 export const FEEDBACK_SENDER_URL = `https://script.google.com/macros/s/AKfycbwOB3uuPMh2R8tvY9Vrrg2bxxeCvZhGXJONWfBEn9LMGDaVSczHPYBHDmVU88VHWMXc/exec`;
 export const WHATSAPP_NUMBER = '9342727735';
 export const EMAIL_ID = 'ktrcycleworld006@gmail.com'
