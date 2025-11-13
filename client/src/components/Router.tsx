@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, Redirect } from "wouter";
 import { PATHS } from "./path";
 import { lazy, Suspense } from "react";
 import LoadingSpinner from "./LoadingSpinner";
@@ -28,7 +28,9 @@ export default function Router() {
                 <Route path={CONTACT} component={Contact} />
                 <Route path={PRIVACY_POLICY} component={PrivacyPolicy} />
                 <Route path={TERMS_OF_SERVICE} component={TermsOfService} />
-                <Route component={NotFound} />
+                <Route>
+                    <Redirect to={HOME} />
+                </Route>
             </Switch>
         </Suspense>
     )
