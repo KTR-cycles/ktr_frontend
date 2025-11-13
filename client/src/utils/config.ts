@@ -6,3 +6,9 @@ export const EMAIL_ID = 'ktrcycleworld006@gmail.com'
 export const whatsapp_url = `https://wa.me/${WHATSAPP_NUMBER}`;
 export const email_url = `mailto:${EMAIL_ID}`;
 export const instagram_url = 'https://www.instagram.com/ktr_cycleworld_tirunelveli?igsh=ZDZ3bjF2M3g3cnkw';
+
+export const DEFAULT_WHATSAPP_MESSAGE =
+  "Hello KTR Cycle World, I would like to know more about your cycles. Could you assist me?";
+
+export const buildWhatsappUrl = (message?: string) =>
+  message ? `${whatsapp_url}?text=${encodeURIComponent(message)}` : whatsapp_url;
