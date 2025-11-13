@@ -10,7 +10,7 @@ import SharePopup from "@/components/SharePopup";
 import { useAppSelector, useAppDispatch } from "@/store/hooks";
 import { fetchProductDetail } from "@/store/productDetailSlice";
 import { PATHS } from "@/components/path";
-import { whatsapp_url } from "@/utils/config";
+import { buildWhatsappUrl } from "@/utils/config";
 import LoadingSpinner from "@/components/LoadingSpinner";
 
 export default function ProductDetail() {
@@ -72,6 +72,38 @@ export default function ProductDetail() {
     ? product.features.split('\n').filter((f: string) => f.trim())
     : [];
 
+    const buildWhatsappMessage = () => {
+      const lines = [
+        "Hello KTR Cycle World 👋",
+        "I'm interested in this bicycle and would love to know more:",
+        "",
+        `🔹 *Name:* ${product.name}`,
+      ];
+    
+      if (product.brand) {
+        lines.push(`🔹 *Brand:* ${product.brand}`);
+      }
+    
+      lines.push(`🔹 *Product ID:* ${product.product_id || product.id}`);
+    
+      if (product.discounted_price) {
+        lines.push(`🔹 *Price:* ₹${product.discounted_price.toLocaleString()}`);
+      }
+    
+      if (product.varient_label) {
+        lines.push(`🔹 *Variant:* ${product.varient_label}`);
+      }
+    
+      lines.push(
+        "",
+        `🔗 *Product Link:* ${window.location.origin}${PATHS.PRODUCT_DETAIL_BASE}/${product.id}`,
+        "",
+        "Could you please confirm availability and share the next steps to proceed? 🙂"
+      );
+    
+      return lines.join("\n");
+    };
+    
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-accent/10 to-background py-8">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
@@ -255,7 +287,10 @@ export default function ProductDetail() {
               size="lg"
               className="w-full rounded-full text-lg py-6"
               data-testid="button-enquire-now"
-              onClick={() => window.open(whatsapp_url, '_blank') as any}
+              onClick={() => {
+                const message = buildWhatsappMessage();
+                window.open(buildWhatsappUrl(message), "_blank");
+              }}
             >
               <ShoppingCart className="w-5 h-5 mr-2" />
               Enquire Now on WhatsApp
