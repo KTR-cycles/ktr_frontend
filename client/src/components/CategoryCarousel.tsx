@@ -34,14 +34,14 @@ const HARDCODED_CATEGORIES: Category[] = [
     image: womenCycle
   },
   {
-    category_id: "cat_003",
+    category_id: "cat_005",
     name: "Electric Cycle",
     slug: "electric-cycle",
     description: "Eco-friendly electric cycles for easy riding",
     image: electricCycle
   },
   {
-    category_id: "cat_005",
+    category_id: "cat_003",
     name: "Geared Cycle",
     slug: "geared-cycle",
     description: "Multi-speed cycles for varied terrain",
