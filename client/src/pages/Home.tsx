@@ -5,7 +5,7 @@ import CyclingBenefits from "@/components/CyclingBenefits";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import ServicesSection from "@/components/ServicesSection";
 import GoogleMap from "@/components/GoogleMap";
-import CategoryCarousel from "@/components/CategoryCarousel";
+import AgeGroupShopNav from "@/components/AgeGroupShopNav";
 import mountainImage from '@assets/generated_images/Mountain_biking_adventure_scene_01077af1.png';
 import urbanImage from '@assets/generated_images/Urban_cycling_lifestyle_shot_0317efee.png';
 import groupImage from '@assets/generated_images/Group_cycling_community_scene_9b549ad4.png';
@@ -105,8 +105,7 @@ export default function Home() {
 
   return (
     <div className="w-full">
-      {/* Category Carousel - Scrolls with page, not sticky */}
-      <CategoryCarousel />
+      <AgeGroupShopNav />
       
       <section className="w-full">
         <HeroCarousel slides={heroSlides} />

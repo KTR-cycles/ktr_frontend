@@ -8,6 +8,7 @@ export interface Product {
   category: string;
   category_id?: string;
   category_name?: string;
+  age_group?: string;
   color: string;
   original_price: number;
   discounted_price: number;
