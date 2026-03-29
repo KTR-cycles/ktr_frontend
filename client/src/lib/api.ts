@@ -26,6 +26,7 @@ export const fetchProducts = async (): Promise<Product[]> => {
         category: item.category || '',
         category_id: item.category,
         category_name: item.category_name || '',
+        age_group: item.age_group ? String(item.age_group).trim() : '',
         color: item.color || '',
         original_price: Number(item.original_price || 0),
         discounted_price: Number(item.discounted_price || 0),

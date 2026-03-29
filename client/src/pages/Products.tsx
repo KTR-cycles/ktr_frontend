@@ -7,15 +7,15 @@ import ProductFilters from "@/components/ProductFilters";
 import SkeletonCard from "@/components/SkeletonCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Loader2, Search } from "lucide-react";
 import { fetchProducts } from "@/lib/api";
+import { isValidAgeGroup, filterOptionsForFilters } from "@/constants/ageGroups";
 import { useAppDispatch } from "@/store/hooks";
 import { setSelectedProduct } from "@/store/productDetailSlice";
 import type { Product, Category } from "../types";
 import { getFirstImageUrl } from "@/utils/imageUtils";
 import { PATHS } from "@/components/path";
 
-// Hardcoded categories data (same as CategoryCarousel)
+// Hardcoded categories for filters (legacy product categories)
 const HARDCODED_CATEGORIES: Category[] = [
   {
     category_id: "cat_001",
@@ -58,10 +58,15 @@ export default function Products() {
   // Parse URL parameters
   const urlParams = new URLSearchParams(search);
   const categoryFromUrl = urlParams.get('category');
-  
+  const ageGroupsFromUrl = Array.from(
+    new Set(urlParams.getAll("age_group").filter(isValidAgeGroup)),
+  );
+
   const [selectedCategories, setSelectedCategories] = useState<string[]>(
     categoryFromUrl ? [categoryFromUrl] : []
   );
+  const [selectedAgeGroups, setSelectedAgeGroups] =
+    useState<string[]>(ageGroupsFromUrl);
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState<[number, number]>([10000, 100000]);
   const [displayCount, setDisplayCount] = useState(9);
@@ -83,8 +88,17 @@ export default function Products() {
     setPriceRange([minPrice, maxPrice]);
   }, [minPrice, maxPrice]);
 
+  useEffect(() => {
+    const params = new URLSearchParams(search);
+    const nextAges = Array.from(
+      new Set(params.getAll("age_group").filter(isValidAgeGroup)),
+    );
+    setSelectedAgeGroups(nextAges);
+  }, [search]);
+
   const filterOptions = {
     categories: categoryDetails,
+    ageGroups: filterOptionsForFilters(),
     brands: brands,
     priceRange: [minPrice, maxPrice] as [number, number],
   };
@@ -96,6 +110,12 @@ export default function Products() {
       (product.category && selectedCategories.includes(product.category)) ||
       (product.category_id && selectedCategories.includes(product.category_id));
     
+    const ageGroupMatch =
+      selectedAgeGroups.length === 0 ||
+      (product.age_group !== undefined &&
+        product.age_group !== "" &&
+        selectedAgeGroups.includes(product.age_group));
+
     const brandMatch =
       selectedBrands.length === 0 || selectedBrands.includes(product.brand || '');
     const priceMatch =
@@ -103,13 +123,14 @@ export default function Products() {
     const searchMatch =
       searchQuery === '' || product.name.toLowerCase().includes(searchQuery.toLowerCase());
     
-    return categoryMatch && brandMatch && priceMatch && searchMatch;
+    return categoryMatch && ageGroupMatch && brandMatch && priceMatch && searchMatch;
   });
 
   const displayedProducts = filteredProducts.slice(0, displayCount);
   const hasMore = displayCount < filteredProducts.length;
   const handleClearFilters = () => {
     setSelectedCategories([]);
+    setSelectedAgeGroups([]);
     setSelectedBrands([]);
     setPriceRange([minPrice, maxPrice]);
     setSearchQuery("");
@@ -285,9 +306,11 @@ export default function Products() {
             <ProductFilters
               options={filterOptions}
               selectedCategories={selectedCategories}
+              selectedAgeGroups={selectedAgeGroups}
               selectedBrands={selectedBrands}
               priceRange={priceRange}
               onCategoryChange={setSelectedCategories}
+              onAgeGroupChange={setSelectedAgeGroups}
               onBrandChange={setSelectedBrands}
               onPriceChange={setPriceRange}
               onClearAll={handleClearFilters}
@@ -300,9 +323,11 @@ export default function Products() {
               <ProductFilters
                 options={filterOptions}
                 selectedCategories={selectedCategories}
+                selectedAgeGroups={selectedAgeGroups}
                 selectedBrands={selectedBrands}
                 priceRange={priceRange}
                 onCategoryChange={setSelectedCategories}
+                onAgeGroupChange={setSelectedAgeGroups}
                 onBrandChange={setSelectedBrands}
                 onPriceChange={setPriceRange}
                 onClearAll={handleClearFilters}

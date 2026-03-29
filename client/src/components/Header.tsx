@@ -1,10 +1,17 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from '@assets/generated_images/ktr_cycle_logo.jpg';
 import { motion, AnimatePresence } from "framer-motion";
-import CategoryCarousel from "./CategoryCarousel";
+import { AGE_GROUP_OPTIONS } from "@/constants/ageGroups";
+import { PATHS } from "@/components/path";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -98,6 +105,31 @@ export default function Header() {
                 </div>
               </Link>
             ))}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="rounded-xl border-border/80 gap-1 font-medium"
+                  data-testid="button-shop-by-age"
+                >
+                  Shop by age
+                  <ChevronDown className="h-4 w-4 opacity-70" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48 rounded-xl z-50">
+                {AGE_GROUP_OPTIONS.map((opt) => (
+                  <DropdownMenuItem key={opt.value} asChild className="rounded-lg cursor-pointer">
+                    <Link
+                      href={`${PATHS.PRODUCTS}?age_group=${encodeURIComponent(opt.value)}`}
+                      onClick={scrollToTop}
+                    >
+                      {opt.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Button 
               variant="default" 
               size="default" 
@@ -147,6 +179,26 @@ export default function Header() {
                     </div>
                   </Link>
                 ))}
+                <p className="px-4 pt-2 text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                  Shop by age
+                </p>
+                {AGE_GROUP_OPTIONS.map((opt) => (
+                  <Link
+                    key={opt.value}
+                    href={`${PATHS.PRODUCTS}?age_group=${encodeURIComponent(opt.value)}`}
+                    data-testid={`link-mobile-age-${opt.value.replace("+", "plus")}`}
+                  >
+                    <div
+                      className="block px-4 py-2.5 rounded-xl text-sm font-medium text-foreground hover:bg-primary/10 hover:text-primary transition-all cursor-pointer"
+                      onClick={() => {
+                        setMobileMenuOpen(false);
+                        scrollToTop();
+                      }}
+                    >
+                      {opt.label}
+                    </div>
+                  </Link>
+                ))}
                 <Button
                   variant="default"
                   size="default"
@@ -163,13 +215,4 @@ export default function Header() {
       </nav>
     </header>
   );
-}
-
-// Render CategoryCarousel separately outside the sticky header
-export function HomePageCategoryCarousel() {
-  const [location] = useLocation();
-  
-  if (location !== "/") return null;
-  
-  return <CategoryCarousel />;
 }
