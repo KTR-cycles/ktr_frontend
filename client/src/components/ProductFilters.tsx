@@ -9,7 +9,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 
 interface FilterOptions {
-  categories: { id: string, name: string }[];
+  categories: { id: string; name: string }[];
+  ageGroups: { id: string; name: string }[];
   brands: string[];
   priceRange: [number, number];
 }
@@ -17,9 +18,11 @@ interface FilterOptions {
 interface ProductFiltersProps {
   options: FilterOptions;
   selectedCategories: string[]; // array of category ids
+  selectedAgeGroups: string[];
   selectedBrands: string[];
   priceRange: [number, number];
   onCategoryChange: (categories: string[]) => void;
+  onAgeGroupChange: (ageGroups: string[]) => void;
   onBrandChange: (brands: string[]) => void;
   onPriceChange: (range: [number, number]) => void;
   onClearAll: () => void;
@@ -28,9 +31,11 @@ interface ProductFiltersProps {
 export default function ProductFilters({
   options,
   selectedCategories,
+  selectedAgeGroups,
   selectedBrands,
   priceRange,
   onCategoryChange,
+  onAgeGroupChange,
   onBrandChange,
   onPriceChange,
   onClearAll,
@@ -40,6 +45,7 @@ export default function ProductFilters({
   const [isMobile, setIsMobile] = useState(false);
   const [expandedSections, setExpandedSections] = useState({
     categories: true,
+    ageGroups: true,
     brands: true,
     price: true,
   });
@@ -59,23 +65,32 @@ export default function ProductFilters({
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Check URL parameters for category and add it to selected categories (only once on mount)
+  // Check URL parameters for category / age_group (only once when options are ready)
   useEffect(() => {
     if (hasProcessedUrlParam.current) return;
-    
+
     const searchParams = new URLSearchParams(window.location.search);
-    const categoryFromUrl = searchParams.get('category');
-    
+    const categoryFromUrl = searchParams.get("category");
+
     if (categoryFromUrl && !selectedCategories.includes(categoryFromUrl)) {
-      // Check if the category exists in the options
-      const categoryExists = options.categories.some(cat => cat.id === categoryFromUrl);
+      const categoryExists = options.categories.some(
+        (cat) => cat.id === categoryFromUrl,
+      );
       if (categoryExists) {
         onCategoryChange([...selectedCategories, categoryFromUrl]);
       }
     }
-    
+
+    const agesFromUrl = searchParams.getAll("age_group");
+    const validIds = new Set(options.ageGroups.map((g) => g.id));
+    const toAdd = agesFromUrl.filter((a) => validIds.has(a));
+    const missing = toAdd.filter((a) => !selectedAgeGroups.includes(a));
+    if (missing.length > 0) {
+      onAgeGroupChange([...selectedAgeGroups, ...missing]);
+    }
+
     hasProcessedUrlParam.current = true;
-  }, [options.categories]);
+  }, [options.categories, options.ageGroups]);
 
   const toggleSection = (section: keyof typeof expandedSections) => {
     setExpandedSections((prev) => ({ ...prev, [section]: !prev[section] }));
@@ -90,6 +105,14 @@ export default function ProductFilters({
     }
   };
 
+  const handleAgeGroupToggle = (ageId: string) => {
+    if (selectedAgeGroups.includes(ageId)) {
+      onAgeGroupChange(selectedAgeGroups.filter((a) => a !== ageId));
+    } else {
+      onAgeGroupChange([...selectedAgeGroups, ageId]);
+    }
+  };
+
   const handleBrandToggle = (brand: string) => {
     if (selectedBrands.includes(brand)) {
       onBrandChange(selectedBrands.filter((b) => b !== brand));
@@ -100,6 +123,7 @@ export default function ProductFilters({
 
   const activeFiltersCount =
     selectedCategories.length +
+    selectedAgeGroups.length +
     selectedBrands.length +
     (priceRange[0] !== options.priceRange[0] || priceRange[1] !== options.priceRange[1] ? 1 : 0);
 
@@ -182,6 +206,51 @@ export default function ProductFilters({
                               className="text-xs sm:text-sm text-foreground cursor-pointer flex-1"
                             >
                               {category.name}
+                            </Label>
+                          </div>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                <div className="border-t border-border pt-6">
+                  <button
+                    type="button"
+                    onClick={() => toggleSection("ageGroups")}
+                    className="w-full flex items-center justify-between mb-4 hover-elevate active-elevate-2 p-2 rounded-xl transition-all"
+                    data-testid="button-toggle-age-groups"
+                  >
+                    <h4 className="text-sm sm:text-base font-semibold text-foreground">
+                      Age group
+                    </h4>
+                    <ChevronDown
+                      className={`w-4 h-4 text-muted-foreground transition-transform ${
+                        expandedSections.ageGroups ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  <AnimatePresence>
+                    {expandedSections.ageGroups && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="space-y-3 overflow-hidden"
+                      >
+                        {options.ageGroups.map((ag) => (
+                          <div key={ag.id} className="flex items-center gap-3">
+                            <Checkbox
+                              id={`age-group-${ag.id}`}
+                              checked={selectedAgeGroups.includes(ag.id)}
+                              onCheckedChange={() => handleAgeGroupToggle(ag.id)}
+                              data-testid={`checkbox-age-${ag.id.replace("+", "plus")}`}
+                            />
+                            <Label
+                              htmlFor={`age-group-${ag.id}`}
+                              className="text-xs sm:text-sm text-foreground cursor-pointer flex-1"
+                            >
+                              {ag.name}
                             </Label>
                           </div>
                         ))}

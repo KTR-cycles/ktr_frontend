@@ -8,6 +8,7 @@ export interface Product {
   category: string;
   category_id?: string;
   category_name?: string;
+  age_group?: string;
   color: string;
   original_price: number;
   discounted_price: number;
@@ -34,6 +35,32 @@ export interface Category {
   slug: string;
   description?: string;
   image?: string;
+}
+
+export interface HeroSlide {
+  image: string;
+  quote?: string; // nullable — omit for image-only slides
+  author?: string;
+}
+
+export interface MotivationQuote {
+  text: string;
+}
+
+export type BenefitIcon = 'heart' | 'zap' | 'smile' | 'trending' | 'users' | 'leaf';
+
+export interface CyclingBenefit {
+  icon: BenefitIcon;
+  title: string;
+  description: string;
+}
+
+export type ServiceIcon = 'delivery' | 'pickup' | 'quality' | 'experience';
+
+export interface HomeService {
+  icon: ServiceIcon;
+  title: string;
+  description: string;
 }
 
 export interface ProductCardProps {

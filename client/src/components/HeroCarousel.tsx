@@ -5,10 +5,11 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useLocation } from "wouter";
 import { PATHS } from "./path";
+import ProxyImage from "./ProxyImage";
 
 interface Slide {
   image: string;
-  quote: string;
+  quote?: string;
   author?: string;
 }
 
@@ -46,7 +47,7 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
           {slides.map((slide, index) => (
             <div key={index} className="flex-[0_0_100%] min-w-0 relative">
               <div className="relative w-full h-[500px] sm:h-[600px] md:h-[700px]">
-                <img
+                <ProxyImage
                   src={slide.image}
                   alt={`Slide ${index + 1}`}
                   className="absolute inset-0 w-full h-full object-cover"
@@ -61,9 +62,11 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
                       transition={{ duration: 0.6 }}
                       className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
                     >
-                      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-4 drop-shadow-2xl max-w-4xl px-4">
-                        {slide.quote}
-                      </h1>
+                      {slide.quote && (
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-4 drop-shadow-2xl max-w-4xl px-4">
+                          {slide.quote}
+                        </h1>
+                      )}
                       {slide.author && (
                         <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-white/90 font-light italic drop-shadow-lg px-4">
                           — {slide.author}
