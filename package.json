@@ -4,8 +4,8 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "node scripts/fetch-home-data.mjs && vite",
+    "build": "node scripts/fetch-home-data.mjs && tsc && vite build",
     "preview": "vite preview",
     "check": "tsc"
   },

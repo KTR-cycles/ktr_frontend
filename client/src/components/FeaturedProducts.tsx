@@ -6,16 +6,17 @@ import { PATHS } from "./path";
 import { useLocation } from "wouter";
 import { useAppDispatch } from "@/store/hooks";
 import { setSelectedProduct } from "@/store/productDetailSlice";
-import { FEATURED_PRODUCTS } from "@/data/featuredProducts";
-
-
+import { popularProducts } from "@/data/homeContentDynamic";
 
 export default function FeaturedProducts() {
   const { PRODUCTS, PRODUCT_DETAIL_BASE } = PATHS;
-  const featuredProducts = FEATURED_PRODUCTS;
+  const featuredProducts = popularProducts;
 
   const [, setLocation] = useLocation();
   const dispatch = useAppDispatch();
+
+  if (featuredProducts.length === 0) return null;
+
   return (
     <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-background via-accent/10 to-background">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6">
