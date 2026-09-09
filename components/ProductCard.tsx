@@ -41,7 +41,7 @@ export default function ProductCard({
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
-      className="group bg-white/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-lg overflow-hidden hover-elevate transition-all flex flex-col h-[280px] sm:h-[320px] md:h-[360px] min-h-[280px] sm:min-h-[320px] md:min-h-[360px] max-h-[280px] sm:max-h-[320px] md:max-h-[360px] cursor-pointer hover:shadow-xl hover:scale-[1.02]"
+      className="group bg-white/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-lg overflow-hidden hover-elevate transition-all flex flex-col h-[280px] sm:h-[320px] md:h-[360px] min-h-[280px] sm:min-h-[320px] md:min-h-[360px] max-h-[280px] sm:max-h-[320px] md:max-h-[360px] cursor-pointer hover:shadow-xl hover:scale-[1.02] content-visibility-auto"
       data-testid={`product-card-${id}`}
       onClick={() => onViewDetails?.(targetIdentifier)}
     >

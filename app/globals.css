@@ -113,4 +113,8 @@
   .hover-elevate:hover {
     transform: translateY(-2px);
   }
+  .content-visibility-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 320px;
+  }
 }

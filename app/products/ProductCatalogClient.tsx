@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo, Suspense } from "react";
+import { useState, useEffect, useMemo, useRef, Suspense } from "react";
 import { motion } from "framer-motion";
 import { useRouter, useSearchParams } from "next/navigation";
 import ProductCard from "@/components/ProductCard";
@@ -14,6 +14,7 @@ import { getCategories } from "@/lib/categories";
 function ProductCatalogContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const loadMoreRef = useRef<HTMLDivElement>(null);
   
   const categoryFromUrl = searchParams.get('category');
   
@@ -51,6 +52,11 @@ function ProductCatalogContent() {
     }
   }, [categoryFromUrl]);
 
+  // Reset display count when filters or search change
+  useEffect(() => {
+    setDisplayCount(12);
+  }, [selectedCategories, selectedBrands, priceRange, searchQuery]);
+
   const categoryDetails = useMemo(() => {
     return categories.map((c) => ({ id: c.category_id, name: c.name }));
   }, [categories]);
@@ -86,6 +92,31 @@ function ProductCatalogContent() {
       return categoryMatch && brandMatch && priceMatch && searchMatch;
     });
   }, [products, selectedCategories, selectedBrands, priceRange, searchQuery]);
+
+  // Automatic Infinite Scroll loading trigger
+  useEffect(() => {
+    if (displayCount >= filteredProducts.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setDisplayCount((prev) => Math.min(prev + 12, filteredProducts.length));
+        }
+      },
+      { rootMargin: "250px" }
+    );
+
+    const currentRef = loadMoreRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, [displayCount, filteredProducts.length]);
 
   const handleClearFilters = () => {
     setSelectedCategories([]);
@@ -151,7 +182,7 @@ function ProductCatalogContent() {
               </div>
             ) : (
               <>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 mb-12">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 mb-8">
                   {filteredProducts.slice(0, displayCount).map((product) => (
                     <ProductCard
                       key={product.id}
@@ -169,14 +200,11 @@ function ProductCatalogContent() {
                 </div>
 
                 {displayCount < filteredProducts.length && (
-                  <div className="text-center mt-8">
-                    <Button
-                      onClick={() => setDisplayCount((prev) => prev + 12)}
-                      variant="outline"
-                      className="rounded-full px-8 py-6"
-                    >
-                      Load More Cycles
-                    </Button>
+                  <div ref={loadMoreRef} className="py-8 flex items-center justify-center">
+                    <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 text-muted-foreground text-sm font-medium border border-border/40">
+                      <span className="w-2 h-2 rounded-full bg-primary animate-ping" />
+                      Loading more cycles...
+                    </div>
                   </div>
                 )}
               </>

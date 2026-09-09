@@ -34,6 +34,9 @@ export interface Product {
   currentPrice?: number;
   rating?: number;
   reviews?: number;
+  meta_title?: string;
+  meta_description?: string;
+  meta_keywords?: string[];
 }
 
 export interface Category {

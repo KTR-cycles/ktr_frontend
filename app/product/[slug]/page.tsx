@@ -29,8 +29,8 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     };
   }
 
-  const title = `${product.name} | Best Price in Tirunelveli | KTR Cycle World`;
-  const description = product.short_description || product.description || `Buy ${product.name} at KTR Cycle World, Tirunelveli, Vannarpettai. Premium quality and best price guaranteed.`;
+  const title = product.meta_title || `${product.name} | Best Price in Tirunelveli | KTR Cycle World`;
+  const description = product.meta_description || product.short_description || product.description || `Buy ${product.name} at KTR Cycle World, Tirunelveli, Vannarpettai. Premium quality and best price guaranteed.`;
   const imageUrl = product.image ? `https://ktrcycleworld.com${product.image}` : 'https://ktrcycleworld.com/assets/generated_images/ktr_cycle_logo.jpg';
   const canonicalUrl = `https://ktrcycleworld.com/product/${product.slug || product.id}`;
 
