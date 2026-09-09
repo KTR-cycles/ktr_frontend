@@ -39,26 +39,87 @@ export const metadata: Metadata = {
     'cycle store South Tamil Nadu',
     'electric cycles Palayankottai',
     'mountain bikes Tirunelveli',
+    'road bikes Vannarpettai',
+    'bicycle shop Tamil Nadu',
   ],
+  authors: [{ name: 'KTR Cycle World' }],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://ktrcycleworld.com',
+  },
+  icons: {
+    icon: '/assets/generated_images/ktr_cycle_logo.jpg',
+    apple: '/assets/generated_images/ktr_cycle_logo.jpg',
+  },
   openGraph: {
-    title: 'KTR Cycle World - Best Cycles in Tirunelveli',
+    title: 'KTR Cycle World - Best Cycles in Tirunelveli | Premium Bikes in South Tamil Nadu',
     description:
-      'Premium bicycle showroom offering top brand cycles in Tirunelveli, Vannarpettai & Palayankottai.',
+      'Premium bicycle showroom offering top brand mountain, road, kids and electric cycles in Tirunelveli, Vannarpettai & Palayankottai.',
     url: 'https://ktrcycleworld.com',
     siteName: 'KTR Cycle World',
+    images: [
+      {
+        url: 'https://ktrcycleworld.com/assets/generated_images/ktr_cycle_logo.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'KTR Cycle World Tirunelveli',
+      },
+    ],
     locale: 'en_IN',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'KTR Cycle World - Best Cycles in Tirunelveli',
+    description: 'Leading cycle shop in Tirunelveli, Vannarpettai & Palayankottai. Best cycles in South Tamil Nadu.',
+    images: ['https://ktrcycleworld.com/assets/generated_images/ktr_cycle_logo.jpg'],
+  },
+  other: {
+    'geo.region': 'IN-TN',
+    'geo.placename': 'Tirunelveli, Tamil Nadu, India',
+    'geo.position': '8.7296942;77.690064',
+    'ICBM': '8.7296942, 77.690064',
+  },
 };
+
+import Script from 'next/script';
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
   return (
     <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`}>
       <body className="min-h-screen flex flex-col bg-background font-sans antialiased">
+        {gaId && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gaId}');
+              `}
+            </Script>
+          </>
+        )}
         <Providers>
           <NavigationLoader />
           <ScrollToTop />

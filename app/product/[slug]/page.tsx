@@ -31,15 +31,45 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 
   const title = `${product.name} | Best Price in Tirunelveli | KTR Cycle World`;
   const description = product.short_description || product.description || `Buy ${product.name} at KTR Cycle World, Tirunelveli, Vannarpettai. Premium quality and best price guaranteed.`;
-  const imageUrl = product.image ? `https://ktrcycleworld.com${product.image}` : undefined;
+  const imageUrl = product.image ? `https://ktrcycleworld.com${product.image}` : 'https://ktrcycleworld.com/assets/generated_images/ktr_cycle_logo.jpg';
+  const canonicalUrl = `https://ktrcycleworld.com/product/${product.slug || product.id}`;
 
   return {
     title,
     description,
+    keywords: [
+      product.name,
+      product.brand,
+      product.category_name || 'Bicycle',
+      'KTR Cycle World',
+      'cycles in Tirunelveli',
+      'buy cycle Tirunelveli',
+      'Vannarpettai cycle shop',
+      'Palayankottai cycles',
+    ],
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title,
       description,
-      images: imageUrl ? [{ url: imageUrl }] : [],
+      url: canonicalUrl,
+      siteName: 'KTR Cycle World',
+      images: [
+        {
+          url: imageUrl,
+          width: 800,
+          height: 600,
+          alt: `${product.name} at KTR Cycle World Tirunelveli`,
+        },
+      ],
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [imageUrl],
     },
   };
 }
@@ -52,5 +82,72 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
     notFound();
   }
 
-  return <ProductDetailClient product={product} />;
+  const currentPrice = product.discounted_price || product.original_price || 0;
+  const imageUrl = product.image ? `https://ktrcycleworld.com${product.image}` : 'https://ktrcycleworld.com/assets/generated_images/ktr_cycle_logo.jpg';
+
+  const productSchema = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": product.name,
+    "image": [imageUrl],
+    "description": product.short_description || product.description || product.name,
+    "sku": product.id || product.product_id,
+    "mpn": product.product_id || product.id,
+    "brand": {
+      "@type": "Brand",
+      "name": product.brand || "KTR"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": `https://ktrcycleworld.com/product/${product.slug || product.id}`,
+      "priceCurrency": "INR",
+      "price": currentPrice,
+      "priceValidUntil": "2027-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "KTR Cycle World"
+      }
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ktrcycleworld.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Products",
+        "item": "https://ktrcycleworld.com/products"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": product.name,
+        "item": `https://ktrcycleworld.com/product/${product.slug || product.id}`
+      }
+    ]
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <ProductDetailClient product={product} />
+    </>
+  );
 }

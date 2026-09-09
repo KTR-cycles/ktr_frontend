@@ -8,19 +8,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const products = getProducts();
   const categories = getCategories();
 
-  const productUrls = products.map((product) => ({
-    url: `${baseUrl}/product/${product.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }));
+  const productUrls = products
+    .filter((product) => product.slug || product.id)
+    .map((product) => ({
+      url: `${baseUrl}/product/${product.slug || product.id}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    }));
 
-  const categoryUrls = categories.map((cat) => ({
-    url: `${baseUrl}/category/${cat.slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }));
+  const categoryUrls = categories
+    .filter((cat) => cat.slug || cat.category_id)
+    .map((cat) => ({
+      url: `${baseUrl}/category/${cat.slug || cat.category_id}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    }));
 
   const staticUrls = [
     {

@@ -12,6 +12,36 @@ export default function HomePage() {
   const sunsetImage = '/assets/generated_images/Inspirational_cycling_sunset_silhouette_5fa0f6c8.png';
   const wellnessImage = '/assets/generated_images/Peaceful_cycling_wellness_moment_d0d89c90.png';
 
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "KTR Cycle World",
+    "url": "https://ktrcycleworld.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://ktrcycleworld.com/products?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "KTR Cycle World",
+    "url": "https://ktrcycleworld.com",
+    "logo": "https://ktrcycleworld.com/assets/generated_images/ktr_cycle_logo.jpg",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9342727735",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Tamil"]
+    },
+    "sameAs": [
+      "https://www.instagram.com/ktr_cycleworld_tirunelveli"
+    ]
+  };
+
   const heroSlides = [
     {
       image: mountainImage,
@@ -77,20 +107,30 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="w-full">
-      <CategoryCarousel />
-      
-      <section className="w-full">
-        <HeroCarousel slides={heroSlides} />
-      </section>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <div className="w-full">
+        <CategoryCarousel />
+        
+        <section className="w-full">
+          <HeroCarousel slides={heroSlides} />
+        </section>
 
-      <FeaturedProducts />
+        <FeaturedProducts />
 
-      <MotivationQuotes quotes={motivationQuotes} image={wellnessImage} />
+        <MotivationQuotes quotes={motivationQuotes} image={wellnessImage} />
 
-      <CyclingBenefits benefits={cyclingBenefits} />
+        <CyclingBenefits benefits={cyclingBenefits} />
 
-      <GoogleMap />
-    </div>
+        <GoogleMap />
+      </div>
+    </>
   );
 }

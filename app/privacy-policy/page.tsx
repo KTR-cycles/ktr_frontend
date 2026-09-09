@@ -1,9 +1,15 @@
-"use client";
-
-import { motion } from "framer-motion";
+import type { Metadata } from 'next';
 import { Shield, Lock, Eye, FileText } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | KTR Cycle World Tirunelveli',
+  description: 'Read the privacy policy for KTR Cycle World. Learn how we handle and protect customer inquiry and showroom information.',
+  alternates: {
+    canonical: 'https://ktrcycleworld.com/privacy-policy',
+  },
+};
 
 export default function PrivacyPolicyPage() {
   const sections = [
@@ -59,31 +65,20 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-accent/10 to-background py-16">
       <div className="max-w-4xl mx-auto px-4 md:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Privacy <span className="text-primary">Policy</span>
           </h1>
           <p className="text-muted-foreground text-lg">
             How KTR Cycle World respects and protects your personal information
           </p>
-        </motion.div>
+        </div>
 
         <div className="space-y-8">
-          {sections.map((section, idx) => {
+          {sections.map((section) => {
             const Icon = section.icon;
             return (
-              <motion.div
-                key={section.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-              >
+              <div key={section.title}>
                 <Card className="p-8 border-border/50 bg-white/80 backdrop-blur-md shadow-lg">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="p-3 rounded-xl bg-primary/10 text-primary">
@@ -110,7 +105,7 @@ export default function PrivacyPolicyPage() {
                     </div>
                   ))}
                 </Card>
-              </motion.div>
+              </div>
             );
           })}
         </div>

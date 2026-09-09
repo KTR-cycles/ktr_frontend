@@ -1,6 +1,26 @@
-"use client";
-
+import type { Metadata } from 'next';
 import { Truck, Wrench, ShieldCheck, Award } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: 'About Us | Best Cycle Showroom in Tirunelveli',
+  description: 'Learn about KTR Cycle World, the leading bicycle store in Tirunelveli, Vannarpettai & Palayankottai. Premium bikes, doorstep delivery, repair service, and quality guarantee.',
+  keywords: [
+    'about KTR Cycle World',
+    'cycle store Tirunelveli',
+    'bicycle shop Vannarpettai',
+    'best cycle showroom South Tamil Nadu',
+  ],
+  alternates: {
+    canonical: 'https://ktrcycleworld.com/about',
+  },
+  openGraph: {
+    title: 'About KTR Cycle World | Premier Cycle Store in Tirunelveli',
+    description: 'South Tamil Nadu’s premier cycling destination offering top-grade bicycles, accessories, and expert maintenance.',
+    url: 'https://ktrcycleworld.com/about',
+    siteName: 'KTR Cycle World',
+    type: 'website',
+  },
+};
 
 const services = [
   {
