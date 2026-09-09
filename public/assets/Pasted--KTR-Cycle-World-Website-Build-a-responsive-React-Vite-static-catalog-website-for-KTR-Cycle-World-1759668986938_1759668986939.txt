@@ -1,0 +1,64 @@
+ KTR Cycle World Website 
+Build a responsive React + Vite static catalog website for KTR Cycle World, a premium cycle showroom site (no online sales).Use React + Tailwind CSS, Redux Toolkit + Thunk, and Google Sheets (via VITE_GOOGLE_SHEET_URL) as the lightweight CMS.
+
+🎨 Design & Theme
+* Primary color: Golden Yellow (#FFBF00)
+* Background: White
+* Style: Premium, glassy, smooth transitions
+* Elements: Rounded corners, soft shadows, modern typography (Poppins / Inter)
+* Logo: Display KTR logo on all pages
+* Browser title: “KTR Cycle World”
+* Use glassy shadows for all cards, modals, and borders
+
+🧭 Pages
+1. Home Page
+* Hero carousel banner with quote:“Two wheels, endless adventures.”
+* Quick preview of most-sold cycles
+* “Our Services” section with icons: Delivery, Pickup, Quality, Experience
+* Embedded Google Map for showroom location
+* Footer: About, Contact, WhatsApp, Email, and Copyright
+2. Product List Page
+* Trendy grid layout with filters (brand, type, price, etc.)
+* Hover effect with glassy “View Details” animation
+* Implement lazy loading for product images and pagination
+* Skeleton loaders during data fetch
+* Infinite scroll or “Load More” option
+3. Product Description Page
+* Breadcrumb navigation
+* Image carousel
+* Price breakdown: discount %, original, and current price
+* Product details and specifications
+* Feedback section with visible user reviews and “Give Feedback” button
+* Smooth scroll and fade transitions
+* If more then one images then change the image view add some small thumbmail to click to view that image
+* While in the image session if its spilt at comma, then more then 1 value that means it have multiple images
+* We have an actual price, discount and offer details, make sure everything should be heighlighted
+
+⚙️ Performance & Loading Enhancements
+* Use React Suspense + lazy loading for all page components
+* Add engaging fallback loader:
+    * Full-screen vector cycle animation while the app initializes
+    * During scroll or route change → show animated skeleton loaders
+    * Add directional slide/fade transition between page navigations
+* Keep-alive caching: retain scroll state when navigating back
+* Ensure low latency and lightweight performance optimization
+
+💬 Responsive Behavior
+* Mobile: Single-column, swipeable carousel, sticky contact icons (WhatsApp/Email)
+* Tablet: Two-column grid layout, medium hero banner
+* Desktop: Three/four-column layout, wide banner, and hover animations
+
+🚀 Tech Requirements
+* Framework: React + Vite
+* Styling: Tailwind CSS
+* State: Redux Toolkit + Thunk
+* Data: Google Sheets (fetch from VITE_GOOGLE_SHEET_URL)
+* Add meta tags and structured data for SEO (use KTR Cycle World as title)
+* All components should support lazy loading, suspense fallback, and smooth transitions
+
+🌟 Style Keywords
+Premium • Curved • Smooth • Minimal • Elegant • Golden-accented • Responsive • Glassy • LightweightNote : The app must be an mobile friendly and focus on more user friendly on mobile screens
+product API:  curl --location 'https://script.google.com/macros/s/AKfycbwoX23d_uxE5brVKm3KZTXRzlM4Pq4PBAv9DIdDI_dPITtkcsTfROfitO65t4pKC1AN/exec?sheet=products
+Categries API : curl --location 'https://script.google.com/macros/s/AKfycbwoX23d_uxE5brVKm3KZTXRzlM4Pq4PBAv9DIdDI_dPITtkcsTfROfitO65t4pKC1AN/exec?sheet=categories
+This categories api is constant so fetch the data at initial time and save it an redux, make sure the redux should be persistent Encrypt the redux store data
+Add Error handling page for Error boundaries to switch that pages
