@@ -29,6 +29,8 @@
     "description": "Alpha Bombay 26 VB",
     "specifications": "",
     "features": "",
+    "seo_title": "Alpha Bombay 26 VB - KTR Cycle World",
+    "seo_description": "Alpha Bombay 26 VB",
     "currentPrice": 6950
   },
   {
@@ -61,6 +63,8 @@
     "description": "kids cycle for 7 TO 11 years",
     "specifications": "",
     "features": "",
+    "seo_title": "SKYWALK 20\" - KTR Cycle World",
+    "seo_description": "kids cycle for 7 TO 11 years",
     "currentPrice": 11200
   },
   {
@@ -93,6 +97,8 @@
     "description": "kids cycle for 7 TO 11 years",
     "specifications": "",
     "features": "",
+    "seo_title": "CALIX 20\" - KTR Cycle World",
+    "seo_description": "kids cycle for 7 TO 11 years",
     "currentPrice": 11200
   },
   {
@@ -126,6 +132,8 @@
     "description": "kids cycle for 7 TO 11 years",
     "specifications": "",
     "features": "",
+    "seo_title": "WAVE with IBC 20\" - KTR Cycle World",
+    "seo_description": "kids cycle for 7 TO 11 years",
     "currentPrice": 6400
   },
   {
@@ -155,9 +163,11 @@
     "age_group": "",
     "short_description": "",
     "long_description": "",
-    "description": "91 Alpha Cairo 24T D2TX 3.0 ",
+    "description": "91 Alpha Cairo 24T D2TX 3.0",
     "specifications": "",
     "features": "",
+    "seo_title": "91 Alpha Cairo 24T D2TX 3.0 - KTR Cycle World",
+    "seo_description": "91 Alpha Cairo 24T D2TX 3.0",
     "currentPrice": 9950
   },
   {
@@ -190,6 +200,8 @@
     "description": "Elevate your cycling experience with the Cairo bicycle, featuring double disc brakes, suspension 3.0 tire",
     "specifications": "",
     "features": "",
+    "seo_title": "ALPHA CAIRO 26T FSDD 3.00 - KTR Cycle World",
+    "seo_description": "Elevate your cycling experience with the Cairo bicycle, featuring double disc brakes, suspension 3.0 tire",
     "currentPrice": 10150
   },
   {
@@ -222,6 +234,8 @@
     "description": "Alpha Serenity 26",
     "specifications": "",
     "features": "",
+    "seo_title": "Alpha Serenity 26 - KTR Cycle World",
+    "seo_description": "Alpha Serenity 26",
     "currentPrice": 7550
   },
   {
@@ -254,6 +268,8 @@
     "description": "Ninety-one zuri 24 ( Blue With Pink )",
     "specifications": "",
     "features": "",
+    "seo_title": "Ninety-one zuri 24 ( Blue With Pink ) - KTR Cycle World",
+    "seo_description": "Ninety-one zuri 24 ( Blue With Pink )",
     "currentPrice": 8250
   },
   {
@@ -286,6 +302,8 @@
     "description": "AVON CAMILA IBC 26T",
     "specifications": "",
     "features": "",
+    "seo_title": "AVON CAMILA IBC 26T - KTR Cycle World",
+    "seo_description": "AVON CAMILA IBC 26T",
     "currentPrice": 7350
   },
   {
@@ -320,6 +338,8 @@
     "description": "21 Speed gear cycle Double Disc Front suspension",
     "specifications": "",
     "features": "",
+    "seo_title": "AVON ECHO 26T - KTR Cycle World",
+    "seo_description": "21 Speed gear cycle Double Disc Front suspension",
     "currentPrice": 13250
   },
   {
@@ -353,6 +373,8 @@
     "description": "DOUBLE SUSPENSION POWER BRAKE",
     "specifications": "",
     "features": "",
+    "seo_title": "AVON INSPIRO 20T - KTR Cycle World",
+    "seo_description": "DOUBLE SUSPENSION POWER BRAKE",
     "currentPrice": 7650
   },
   {
@@ -387,6 +409,8 @@
     "description": "AVON RABIA IBC 24T",
     "specifications": "",
     "features": "",
+    "seo_title": "AVON RABIA IBC 24T - KTR Cycle World",
+    "seo_description": "AVON RABIA IBC 24T",
     "currentPrice": 7550
   },
   {
@@ -409,8 +433,8 @@
     "color": "",
     "original_price": 0,
     "discounted_price": 0,
-    "discount_percent": null,
-    "discount": null,
+    "discount_percent": 0,
+    "discount": 0,
     "stock": 0,
     "featured": false,
     "location": "Tirunelveli",
@@ -421,6 +445,8 @@
     "description": "AVON YAMA FAT BIKE 26X4.00 21 SPEED GEAR CYCLE",
     "specifications": "",
     "features": "",
+    "seo_title": "AVON YAMA 26T FAT - KTR Cycle World",
+    "seo_description": "AVON YAMA FAT BIKE 26X4.00 21 SPEED GEAR CYCLE",
     "currentPrice": 0
   },
   {
@@ -453,6 +479,8 @@
     "description": "kids cycle for under 5 years",
     "specifications": "",
     "features": "",
+    "seo_title": "BSA Champ 12T - KTR Cycle World",
+    "seo_description": "kids cycle for under 5 years",
     "currentPrice": 4150
   },
   {
@@ -485,6 +513,8 @@
     "description": "kids cycle under 5 years",
     "specifications": "",
     "features": "",
+    "seo_title": "BSA Champ 14T - KTR Cycle World",
+    "seo_description": "kids cycle under 5 years",
     "currentPrice": 4250
   },
   {
@@ -517,6 +547,8 @@
     "description": "kids cycle under 8 years",
     "specifications": "",
     "features": "",
+    "seo_title": "BSA Champ 16T - KTR Cycle World",
+    "seo_description": "kids cycle under 8 years",
     "currentPrice": 4650
   },
   {
@@ -549,6 +581,8 @@
     "description": "kids cycle for under 10 years",
     "specifications": "",
     "features": "",
+    "seo_title": "BSA Kinder 20T - KTR Cycle World",
+    "seo_description": "kids cycle for under 10 years",
     "currentPrice": 5200
   },
   {
@@ -581,6 +615,8 @@
     "description": "kids cycle for boys under 10 years",
     "specifications": "",
     "features": "",
+    "seo_title": "BSA Rocket IC 20T - KTR Cycle World",
+    "seo_description": "kids cycle for boys under 10 years",
     "currentPrice": 5050
   },
   {
@@ -613,6 +649,8 @@
     "description": "Front suspension Double Disc",
     "specifications": "",
     "features": "",
+    "seo_title": "Hercules Redeem 26T DD IBC - KTR Cycle World",
+    "seo_description": "Front suspension Double Disc",
     "currentPrice": 8150
   },
   {
@@ -645,6 +683,8 @@
     "description": "Keysto CYLER SS 24T",
     "specifications": "",
     "features": "",
+    "seo_title": "Keysto CYLER SS 24T - KTR Cycle World",
+    "seo_description": "Keysto CYLER SS 24T",
     "currentPrice": 12250
   },
   {
@@ -678,6 +718,8 @@
     "description": "Motor : 36V-250W - BLDC",
     "specifications": "",
     "features": "",
+    "seo_title": "Montra Hypno Pro - KTR Cycle World",
+    "seo_description": "Mileage charge : Upto 50+kms on Throttle Mode & 55+kms on Pedal Assist",
     "currentPrice": 38000
   },
   {
@@ -712,6 +754,8 @@
     "description": "Motor : 36V 250W Rear Hub Motor",
     "specifications": "",
     "features": "",
+    "seo_title": "BSA VIONA 26T - KTR Cycle World",
+    "seo_description": "Battery : 6 AH Removable LFP Battery",
     "currentPrice": 24000
   },
   {
@@ -744,6 +788,8 @@
     "description": "WIFI NO WIRES 29T",
     "specifications": "",
     "features": "",
+    "seo_title": "WIFI NO WIRES 29T - KTR Cycle World",
+    "seo_description": "WIFI NO WIRES 29T",
     "currentPrice": 12250
   },
   {
@@ -778,6 +824,8 @@
     "description": "Front Suspension, Double Disc Brake, Full barring Hubs Bearing Sealed 36H Steel with Front Q/R",
     "specifications": "",
     "features": "",
+    "seo_title": "RALEIGH NAVARRO ONE 29T (D/Disc) - KTR Cycle World",
+    "seo_description": "Front Suspension, Double Disc Brake, Full barring Hubs Bearing Sealed 36H Steel with Front Q/R",
     "currentPrice": 13925
   },
   {
@@ -810,6 +858,8 @@
     "description": "Mileage charge : Upto 30+kms on Throttle Mode & 35+kms on Pedal Assist",
     "specifications": "",
     "features": "",
+    "seo_title": "MAEVE 26T - KTR Cycle World",
+    "seo_description": "Motor : 36V 250W,Battery : Removable 8Ah LFP",
     "currentPrice": 31000
   },
   {
@@ -842,6 +892,8 @@
     "description": "MODEL NO : 26 306 RO",
     "specifications": "",
     "features": "",
+    "seo_title": "RETRO IBC 26 T BICYCLE - KTR Cycle World",
+    "seo_description": "MODEL NO : 26 306 RO",
     "currentPrice": 9749
   },
   {
@@ -874,6 +926,8 @@
     "description": "TORONTO FRASER 29\" 21 Speed",
     "specifications": "",
     "features": "",
+    "seo_title": "TORONTO FRASER 29\" 21 Speed - KTR Cycle World",
+    "seo_description": "TORONTO FRASER 29\" 21 Speed",
     "currentPrice": 20150
   },
   {
@@ -906,6 +960,8 @@
     "description": "All our frames for MTBs are made of high-tensile steel, the tyres are hartex-hi traction tyres, and the rims are made of double-wall alloys.",
     "specifications": "",
     "features": "",
+    "seo_title": "WIFI Domain 29T - KTR Cycle World",
+    "seo_description": "All our frames for MTBs are made of high-tensile steel, the tyres are hartex-hi traction tyres, and the rims are made of double-wall alloys.",
     "currentPrice": 18750
   },
   {
@@ -938,6 +994,8 @@
     "description": "Light and Horn : Integrated Light & Horn",
     "specifications": "",
     "features": "",
+    "seo_title": "BRUTE FSDD - KTR Cycle World",
+    "seo_description": "36V 250W Rear Hub Motor, 8Ah LFP Removable Battery,",
     "currentPrice": 29000
   },
   {
@@ -970,6 +1028,8 @@
     "description": "POPSTAR FLORENCE 20T",
     "specifications": "",
     "features": "",
+    "seo_title": "POPSTAR FLORENCE 20T - KTR Cycle World",
+    "seo_description": "POPSTAR FLORENCE 20T",
     "currentPrice": 4950
   },
   {
@@ -1002,6 +1062,8 @@
     "description": "NINETY ONE  CHAMP 20T",
     "specifications": "",
     "features": "",
+    "seo_title": "NINETY ONE  CHAMP 20T - KTR Cycle World",
+    "seo_description": "NINETY ONE  CHAMP 20T",
     "currentPrice": 6950
   },
   {
@@ -1034,6 +1096,8 @@
     "description": "Light and Horn : Integrated Light & Horn,",
     "specifications": "",
     "features": "",
+    "seo_title": "HERCULES HARDSTYLE PRO 27T - KTR Cycle World",
+    "seo_description": "Motor : 36V 250W Rear Hub Motor,Battery : 8Ah LFP Removable Battery",
     "currentPrice": 27500
   },
   {
@@ -1066,6 +1130,8 @@
     "description": "HERCULES REDEEM 27T DD 21S",
     "specifications": "",
     "features": "",
+    "seo_title": "HERCULES REDEEM 27T DD 21S - KTR Cycle World",
+    "seo_description": "HERCULES REDEEM 27T DD 21S",
     "currentPrice": 13250
   },
   {
@@ -1098,6 +1164,8 @@
     "description": "HERCULES REDEEM 26T VB IBC",
     "specifications": "",
     "features": "",
+    "seo_title": "HERCULES REDEEM 26T VB IBC - KTR Cycle World",
+    "seo_description": "HERCULES REDEEM 26T VB IBC",
     "currentPrice": 6550
   },
   {
@@ -1130,6 +1198,8 @@
     "description": "PILLER TUSCAN 14T DLX",
     "specifications": "",
     "features": "",
+    "seo_title": "PILLER TUSCAN 14T DLX - KTR Cycle World",
+    "seo_description": "PILLER TUSCAN 14T DLX",
     "currentPrice": 3250
   },
   {
@@ -1162,6 +1232,8 @@
     "description": "PILLER TUSCAN 20T DLX",
     "specifications": "",
     "features": "",
+    "seo_title": "PILLER TUSCAN 20T DLX - KTR Cycle World",
+    "seo_description": "PILLER TUSCAN 20T DLX",
     "currentPrice": 3950
   },
   {
@@ -1194,6 +1266,8 @@
     "description": "PILLER TUSCAN 16T DLX",
     "specifications": "",
     "features": "",
+    "seo_title": "PILLER TUSCAN 16T DLX - KTR Cycle World",
+    "seo_description": "PILLER TUSCAN 16T DLX",
     "currentPrice": 3350
   },
   {
@@ -1226,6 +1300,8 @@
     "description": "HAVOC ZX 26T FSDD",
     "specifications": "",
     "features": "",
+    "seo_title": "HAVOC ZX 26T FSDD - KTR Cycle World",
+    "seo_description": "HAVOC ZX 26T FSDD",
     "currentPrice": 7950
   },
   {
@@ -1255,9 +1331,11 @@
     "age_group": "",
     "short_description": "",
     "long_description": "",
-    "description": "Hercules Rift IC FX DD 24T ",
+    "description": "Hercules Rift IC FX DD 24T",
     "specifications": "",
     "features": "",
+    "seo_title": "Hercules Rift IC FX DD 24T - KTR Cycle World",
+    "seo_description": "Hercules Rift IC FX DD 24T",
     "currentPrice": 7850
   },
   {
@@ -1287,9 +1365,11 @@
     "age_group": "",
     "short_description": "",
     "long_description": "",
-    "description": "Hercules Rift IC FX DD 26T ",
+    "description": "Hercules Rift IC FX DD 26T",
     "specifications": "",
     "features": "",
+    "seo_title": "Hercules Rift IC FX DD 26T - KTR Cycle World",
+    "seo_description": "Hercules Rift IC FX DD 26T",
     "currentPrice": 7950
   },
   {
@@ -1319,9 +1399,11 @@
     "age_group": "",
     "short_description": "",
     "long_description": "",
-    "description": "Hercules Rift IC RF VB 24T ",
+    "description": "Hercules Rift IC RF VB 24T",
     "specifications": "",
     "features": "",
+    "seo_title": "Hercules Rift IC RF VB 24T - KTR Cycle World",
+    "seo_description": "Hercules Rift IC RF VB 24T",
     "currentPrice": 6650
   },
   {
@@ -1354,6 +1436,8 @@
     "description": "HERCULES REDEEM 26T FSDD 21 GEAR",
     "specifications": "",
     "features": "",
+    "seo_title": "HERCULES REDEEM 26T FSDD 21 GEAR - KTR Cycle World",
+    "seo_description": "HERCULES REDEEM 26T FSDD 21 GEAR",
     "currentPrice": 12750
   },
   {
@@ -1386,6 +1470,8 @@
     "description": "Mileage charge : Upto 2O+kms on Throttle Mode & 25+kms on Pedal Assist",
     "specifications": "",
     "features": "",
+    "seo_title": "Hercules Shurveer - KTR Cycle World",
+    "seo_description": "Battery : 6Ah Removable LFP Battery,Motor : 36V-250W - BLDC,Battery Position : Detachable Battery Mounted,Tires : 28T x 1.5T - Cotton Tires ,Max Speed : Upto 25kms/hr",
     "currentPrice": 22000
   },
   {
@@ -1418,6 +1504,8 @@
     "description": "RALEIGH E-SURGE S/S ECO",
     "specifications": "",
     "features": "",
+    "seo_title": "RALEIGH E-SURGE S/S ECO - KTR Cycle World",
+    "seo_description": "RALEIGH E-SURGE S/S ECO",
     "currentPrice": 30400
   },
   {
@@ -1450,6 +1538,8 @@
     "description": "E CYCLE",
     "specifications": "",
     "features": "",
+    "seo_title": "Ninety-one zx - KTR Cycle World",
+    "seo_description": "E CYCLE",
     "currentPrice": 32000
   },
   {
@@ -1482,6 +1572,8 @@
     "description": "FRIENDS 20T",
     "specifications": "",
     "features": "",
+    "seo_title": "FRIENDS 20T - KTR Cycle World",
+    "seo_description": "FRIENDS 20T",
     "currentPrice": 5650
   },
   {
@@ -1514,6 +1606,8 @@
     "description": "HAZEL LADY BIRLD 24T",
     "specifications": "",
     "features": "",
+    "seo_title": "HAZEL LADY BIRLD 24T - KTR Cycle World",
+    "seo_description": "HAZEL LADY BIRLD 24T",
     "currentPrice": 7550
   },
   {
@@ -1543,9 +1637,11 @@
     "age_group": "",
     "short_description": "",
     "long_description": "",
-    "description": "HURRICANE 26T ",
+    "description": "HURRICANE 26T",
     "specifications": "",
     "features": "",
+    "seo_title": "HURRICANE 26T - KTR Cycle World",
+    "seo_description": "HURRICANE 26T",
     "currentPrice": 13950
   },
   {
@@ -1578,6 +1674,8 @@
     "description": "EXALT 29T SS",
     "specifications": "",
     "features": "",
+    "seo_title": "EXALT 29T SS - KTR Cycle World",
+    "seo_description": "EXALT 29T SS",
     "currentPrice": 13500
   },
   {
@@ -1610,6 +1708,8 @@
     "description": "BIKE FUN 26T  21 speed",
     "specifications": "",
     "features": "",
+    "seo_title": "BIKE FUN 26T  21 speed - KTR Cycle World",
+    "seo_description": "BIKE FUN 26T  21 speed",
     "currentPrice": 16800
   },
   {
@@ -1642,6 +1742,8 @@
     "description": "SUPER KIDS S/S IBC",
     "specifications": "",
     "features": "",
+    "seo_title": "SUPER KIDS S/S IBC - KTR Cycle World",
+    "seo_description": "SUPER KIDS S/S IBC",
     "currentPrice": 4400
   },
   {
@@ -1674,6 +1776,8 @@
     "description": "NAVARRO ONE M/S",
     "specifications": "",
     "features": "",
+    "seo_title": "NAVARRO ONE M/S - KTR Cycle World",
+    "seo_description": "NAVARRO ONE M/S",
     "currentPrice": 19400
   },
   {
@@ -1706,6 +1810,8 @@
     "description": "ARACHER M/S",
     "specifications": "",
     "features": "",
+    "seo_title": "ARACHER M/S - KTR Cycle World",
+    "seo_description": "ARACHER M/S",
     "currentPrice": 15200
   },
   {
@@ -1738,6 +1844,8 @@
     "description": "NEUTRON 26 M/S",
     "specifications": "",
     "features": "",
+    "seo_title": "NEUTRON 26 M/S - KTR Cycle World",
+    "seo_description": "NEUTRON 26 M/S",
     "currentPrice": 12800
   },
   {
@@ -1771,6 +1879,8 @@
     "description": "750Wh Removable Battery",
     "specifications": "",
     "features": "",
+    "seo_title": "Street Mamba - KTR Cycle World",
+    "seo_description": "105 KM Range,5 Hr Charge Time",
     "currentPrice": 62000
   },
   {
@@ -1801,9 +1911,11 @@
     "age_group": "",
     "short_description": "",
     "long_description": "",
-    "description": "NAVARRO ONE ",
+    "description": "NAVARRO ONE",
     "specifications": "",
     "features": "",
+    "seo_title": "NAVARRO ONE - KTR Cycle World",
+    "seo_description": "NAVARRO ONE",
     "currentPrice": 13000
   },
   {
@@ -1836,6 +1948,8 @@
     "description": "Alpha Bombay 26 FSDD",
     "specifications": "",
     "features": "",
+    "seo_title": "Alpha Bombay 26 FSDD - KTR Cycle World",
+    "seo_description": "Alpha Bombay 26 FSDD",
     "currentPrice": 8500
   },
   {
@@ -1868,6 +1982,8 @@
     "description": "Alpha Bombay 24 VB",
     "specifications": "",
     "features": "",
+    "seo_title": "Alpha Bombay 24 VB - KTR Cycle World",
+    "seo_description": "Alpha Bombay 24 VB",
     "currentPrice": 7300
   },
   {
@@ -1900,6 +2016,8 @@
     "description": "Alpha Bombay24 FSDD",
     "specifications": "",
     "features": "",
+    "seo_title": "Alpha Bombay24 FSDD - KTR Cycle World",
+    "seo_description": "Alpha Bombay24 FSDD",
     "currentPrice": 8200
   },
   {
@@ -1932,6 +2050,8 @@
     "description": "VANCOUVER 24\"21 Speed",
     "specifications": "",
     "features": "",
+    "seo_title": "VANCOUVER 24\"21 Speed - KTR Cycle World",
+    "seo_description": "VANCOUVER 24\"21 Speed",
     "currentPrice": 17200
   },
   {
@@ -1964,6 +2084,8 @@
     "description": "NITRON 29\"",
     "specifications": "",
     "features": "",
+    "seo_title": "NITRON 29\" - KTR Cycle World",
+    "seo_description": "NITRON 29\"",
     "currentPrice": 12200
   },
   {
@@ -1996,6 +2118,8 @@
     "description": "PHASE PRO S/S",
     "specifications": "",
     "features": "",
+    "seo_title": "PHASE PRO S/S - KTR Cycle World",
+    "seo_description": "PHASE PRO S/S",
     "currentPrice": 12800
   },
   {
@@ -2028,6 +2152,8 @@
     "description": "NYTRO S/S 29T",
     "specifications": "",
     "features": "",
+    "seo_title": "NYTRO S/S 29T - KTR Cycle World",
+    "seo_description": "NYTRO S/S 29T",
     "currentPrice": 11500
   },
   {
@@ -2060,6 +2186,8 @@
     "description": "750Wh Removable Battery",
     "specifications": "",
     "features": "",
+    "seo_title": "Street Ghost - KTR Cycle World",
+    "seo_description": "105 KM Range,5 Hr Charge Time",
     "currentPrice": 73000
   }
 ]

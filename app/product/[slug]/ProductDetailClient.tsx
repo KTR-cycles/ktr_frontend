@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { 
@@ -21,6 +21,7 @@ import SharePopup from "@/components/SharePopup";
 import ProductReviews from "@/components/ProductReviews";
 import ProductCard from "@/components/ProductCard";
 import { getProductsByCategory } from "@/lib/products";
+import { trackProductView, trackWhatsAppLead } from "@/lib/analytics";
 import type { Product } from "@/types";
 
 interface ProductDetailClientProps {
@@ -30,6 +31,13 @@ interface ProductDetailClientProps {
 export default function ProductDetailClient({ product }: ProductDetailClientProps) {
   const router = useRouter();
   const [shareOpen, setShareOpen] = useState(false);
+
+  // Track product page view
+  useEffect(() => {
+    if (product) {
+      trackProductView(product);
+    }
+  }, [product]);
 
   // Normalize images list
   const images = Array.isArray(product.images_list) && product.images_list.length > 0
@@ -201,7 +209,14 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
               <Button
                 size="lg"
                 className="flex-1 rounded-full text-base font-bold py-6 shadow-xl bg-[#25D366] hover:bg-[#20BA5A] text-white gap-2"
-                onClick={() => window.open(buildWhatsappUrl(whatsappMessage), "_blank")}
+                onClick={() => {
+                  trackWhatsAppLead("product_detail", {
+                    product_id: product.id || product.product_id,
+                    product_name: product.name,
+                    price: currentPrice,
+                  });
+                  window.open(buildWhatsappUrl(whatsappMessage), "_blank");
+                }}
                 data-testid="button-whatsapp-inquiry"
               >
                 <MessageCircle className="w-6 h-6" />

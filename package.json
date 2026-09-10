@@ -7,7 +7,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "excel:template": "node scripts/generate-excel-template.cjs",
+    "excel:import": "node scripts/import-excel-to-json.cjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -71,6 +73,7 @@
     "tw-animate-css": "^1.2.5",
     "vaul": "^1.1.2",
     "wouter": "^3.3.5",
+    "xlsx": "^0.18.5",
     "zod": "^3.24.2",
     "zod-validation-error": "^3.4.0"
   },

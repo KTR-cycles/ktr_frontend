@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import { getProducts } from "@/lib/products";
 import { getCategories } from "@/lib/categories";
+import { trackFilterApply } from "@/lib/analytics";
 
 function ProductCatalogContent() {
   const router = useRouter();
@@ -92,6 +93,23 @@ function ProductCatalogContent() {
       return categoryMatch && brandMatch && priceMatch && searchMatch;
     });
   }, [products, selectedCategories, selectedBrands, priceRange, searchQuery]);
+
+  // Track catalog filter application analytics
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      trackFilterApply(
+        {
+          categories: selectedCategories,
+          brands: selectedBrands,
+          priceRange,
+          searchQuery,
+        },
+        filteredProducts.length
+      );
+    }, 600);
+
+    return () => clearTimeout(timer);
+  }, [selectedCategories, selectedBrands, priceRange, searchQuery, filteredProducts.length]);
 
   // Automatic Infinite Scroll loading trigger
   useEffect(() => {

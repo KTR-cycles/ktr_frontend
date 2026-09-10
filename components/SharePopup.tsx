@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X as CloseIcon, Check, Link2, MessageCircle, Facebook, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { trackWhatsAppLead } from "@/lib/analytics";
 
 // X (Twitter) Icon Component
 const XIcon = ({ className }: { className?: string }) => (
@@ -147,7 +148,12 @@ export default function SharePopup({ isOpen, onClose, productName, productUrl }:
                         key={option.name}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
-                        onClick={() => handleShare(option.url)}
+                        onClick={() => {
+                          if (option.name === 'WhatsApp') {
+                            trackWhatsAppLead('share_popup', { product_name: productName });
+                          }
+                          handleShare(option.url);
+                        }}
                         className="flex flex-col items-center gap-2 group"
                       >
                         <div className={`w-12 h-12 rounded-full ${option.color} flex items-center justify-center text-white transition-all shadow-lg`}>

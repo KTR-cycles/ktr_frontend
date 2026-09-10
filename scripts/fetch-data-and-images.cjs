@@ -5,8 +5,8 @@ const https = require('https');
 const PRODUCTS_URL = "https://script.google.com/macros/s/AKfycbyCoIkmJuiRnBwzq6wPfMOYv5cvqVUchsl-ycvcuVtI28RnzN2-YvVDxzuEndqnUCQu/exec?sheet=products";
 const CATEGORIES_URL = "https://script.google.com/macros/s/AKfycbyCoIkmJuiRnBwzq6wPfMOYv5cvqVUchsl-ycvcuVtI28RnzN2-YvVDxzuEndqnUCQu/exec?sheet=categories";
 
-const PUBLIC_IMG_DIR = path.join(__dirname, '..', 'client', 'public', 'images', 'products');
-const DATA_DIR = path.join(__dirname, '..', 'client', 'src', 'data');
+const PUBLIC_IMG_DIR = path.join(__dirname, '..', 'public', 'images', 'products');
+const DATA_DIR = path.join(__dirname, '..', 'data');
 
 // Ensure directories exist
 fs.mkdirSync(PUBLIC_IMG_DIR, { recursive: true });

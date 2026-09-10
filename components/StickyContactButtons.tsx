@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, Instagram, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { buildWhatsappUrl, DEFAULT_WHATSAPP_MESSAGE, instagram_url } from "@/utils/config";
+import { trackWhatsAppLead } from "@/lib/analytics";
 
 export default function StickyContactButtons() {
   const [open, setOpen] = useState(false);
@@ -23,7 +24,10 @@ export default function StickyContactButtons() {
             <Button
               size="icon"
               className="w-12 h-12 rounded-full shadow-2xl bg-[#25D366] hover:bg-[#20BA5A] text-white"
-              onClick={() => window.open(buildWhatsappUrl(DEFAULT_WHATSAPP_MESSAGE), "_blank")}
+              onClick={() => {
+                trackWhatsAppLead("sticky_floating_button");
+                window.open(buildWhatsappUrl(DEFAULT_WHATSAPP_MESSAGE), "_blank");
+              }}
               data-testid="button-sticky-menu-whatsapp"
               aria-label="Open WhatsApp"
             >

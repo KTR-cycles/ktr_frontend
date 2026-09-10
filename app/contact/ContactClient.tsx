@@ -10,6 +10,7 @@ import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import GoogleMap from "@/components/GoogleMap";
 import { EMAIL_ID, whatsapp_url } from "@/utils/config";
+import { trackWhatsAppLead } from "@/lib/analytics";
 
 export default function ContactClient() {
   const { toast } = useToast();
@@ -30,6 +31,8 @@ export default function ContactClient() {
       });
       return;
     }
+
+    trackWhatsAppLead("contact_form_submit");
 
     const text = `Hello KTR Cycle World 👋\nName: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nMessage: ${formData.message}`;
     const targetUrl = `${whatsapp_url}?text=${encodeURIComponent(text)}`;

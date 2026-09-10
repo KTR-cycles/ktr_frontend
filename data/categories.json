@@ -4,41 +4,53 @@
     "category_id": "cat_001",
     "name": "Kids Cycle",
     "slug": "kids-cycle",
-    "description": "Kids Cycle available at KTR Cycle World, Tirunelveli."
+    "description": "Kids Cycle available at KTR Cycle World, Tirunelveli.",
+    "seo_title": "Kids Cycle | KTR Cycle World",
+    "seo_description": "Kids Cycle available at KTR Cycle World, Tirunelveli."
   },
   {
     "id": "cat_002",
     "category_id": "cat_002",
     "name": "Adult Cycle",
     "slug": "adult-cycle",
-    "description": "Adult Cycle available at KTR Cycle World, Tirunelveli."
+    "description": "Adult Cycle available at KTR Cycle World, Tirunelveli.",
+    "seo_title": "Adult Cycle | KTR Cycle World",
+    "seo_description": "Adult Cycle available at KTR Cycle World, Tirunelveli."
   },
   {
     "id": "cat_003",
     "category_id": "cat_003",
     "name": "Geared Cycle",
     "slug": "geared-cycle",
-    "description": "Geared Cycle available at KTR Cycle World, Tirunelveli."
+    "description": "Geared Cycle available at KTR Cycle World, Tirunelveli.",
+    "seo_title": "Geared Cycle | KTR Cycle World",
+    "seo_description": "Geared Cycle available at KTR Cycle World, Tirunelveli."
   },
   {
     "id": "cat_004",
     "category_id": "cat_004",
     "name": "Girls Cycle",
     "slug": "girls-cycle",
-    "description": "Girls Cycle available at KTR Cycle World, Tirunelveli."
+    "description": "Girls Cycle available at KTR Cycle World, Tirunelveli.",
+    "seo_title": "Girls Cycle | KTR Cycle World",
+    "seo_description": "Girls Cycle available at KTR Cycle World, Tirunelveli."
   },
   {
     "id": "cat_005",
     "category_id": "cat_005",
     "name": "Electric Cycle",
     "slug": "electric-cycle",
-    "description": "Electric Cycle available at KTR Cycle World, Tirunelveli."
+    "description": "Electric Cycle available at KTR Cycle World, Tirunelveli.",
+    "seo_title": "Electric Cycle | KTR Cycle World",
+    "seo_description": "Electric Cycle available at KTR Cycle World, Tirunelveli."
   },
   {
     "id": "cat_006",
     "category_id": "cat_006",
     "name": "Offer cycle",
     "slug": "offer-cycle",
-    "description": "Offer cycle available at KTR Cycle World, Tirunelveli."
+    "description": "Offer cycle available at KTR Cycle World, Tirunelveli.",
+    "seo_title": "Offer cycle | KTR Cycle World",
+    "seo_description": "Offer cycle available at KTR Cycle World, Tirunelveli."
   }
 ]
