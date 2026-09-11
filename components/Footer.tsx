@@ -25,8 +25,8 @@ export default function Footer() {
                 alt="KTR Cycle World Logo" 
                 className="w-8 h-8 object-contain"
               />
-              <span className="text-xl font-bold text-foreground">
-                KTR <span className="text-primary">Cycle World</span>
+              <span className="text-xl font-heading font-black text-foreground">
+                KTR <span className="text-primary font-black">Cycle World</span>
               </span>
             </div>
             <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
@@ -35,7 +35,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-4">Quick Links</h3>
+            <h3 className="text-sm font-heading font-bold uppercase tracking-wider text-foreground mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/" data-testid="link-footer-home" onClick={scrollToTop}>
@@ -69,7 +69,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-4">Our Showrooms</h3>
+            <h3 className="text-sm font-heading font-bold uppercase tracking-wider text-foreground mb-4">Our Showrooms</h3>
             <ul className="space-y-2 text-sm">
               {STORE_LOCATIONS.map((loc) => (
                 <li key={loc.id}>
@@ -89,7 +89,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-4">Contact Us</h3>
+            <h3 className="text-sm font-heading font-bold uppercase tracking-wider text-foreground mb-4">Contact Us</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />

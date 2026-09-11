@@ -31,10 +31,10 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Our <span className="text-primary">Services</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-black tracking-tight text-foreground mb-4">
+            Our <span className="text-primary font-black">Services</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
             We're committed to providing exceptional service at every step
           </p>
         </motion.div>
@@ -55,7 +55,7 @@ export default function ServicesSection({ services }: ServicesSectionProps) {
                 <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mx-auto rounded-xl bg-primary/10 mb-4 sm:mb-6 group-hover:scale-110 group-hover:bg-primary/20 transition-all">
                   <IconComponent className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-primary" />
                 </div>
-                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-foreground mb-2 sm:mb-3">
+                <h3 className="text-lg sm:text-xl font-heading font-bold text-foreground mb-2 sm:mb-3">
                   {service.title}
                 </h3>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">

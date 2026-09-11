@@ -56,10 +56,10 @@ export default function ContactClient() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Get in <span className="text-primary">Touch</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight text-foreground mb-4">
+            Get in <span className="text-primary font-black">Touch</span>
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
             Have questions about our cycles, prices, or service? We're here to help!
           </p>
         </motion.div>
@@ -72,7 +72,7 @@ export default function ContactClient() {
             transition={{ duration: 0.6 }}
           >
             <Card className="p-8 border-border/50 bg-white/80 backdrop-blur-md shadow-xl">
-              <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+              <h2 className="text-2xl font-heading font-extrabold mb-6">Send Us a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="contact-name" className="text-sm font-medium mb-1 block">

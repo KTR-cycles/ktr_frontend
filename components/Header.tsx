@@ -83,8 +83,8 @@ export default function Header() {
                 className="w-8 h-6 sm:w-10 sm:h-8 md:w-12 md:h-10 object-contain"
                 title="KTR Cycle World - Leading Cycle Shop in South Tamil Nadu"
               />
-              <span className="text-sm sm:text-base md:text-xl font-bold text-foreground">
-                KTR <span className="text-primary">Cycle World</span>
+              <span className="text-base sm:text-lg md:text-xl font-heading font-black tracking-tight text-foreground">
+                KTR <span className="text-primary font-black">Cycle World</span>
               </span>
             </div>
           </Link>
@@ -93,10 +93,10 @@ export default function Header() {
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} data-testid={`link-${link.label.toLowerCase()}`}>
                 <div
-                  className={`px-4 py-2 rounded-xl font-medium transition-all hover-elevate active-elevate-2 cursor-pointer ${
+                  className={`px-4 py-2 rounded-xl font-semibold text-sm tracking-wide transition-all hover-elevate active-elevate-2 cursor-pointer ${
                     isActive(link.href)
-                      ? "text-primary bg-primary/10"
-                      : "text-foreground"
+                      ? "text-primary bg-primary/10 font-bold"
+                      : "text-foreground hover:text-primary"
                   }`}
                   onClick={scrollToTop}
                 >

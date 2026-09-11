@@ -58,8 +58,8 @@ export default function AboutUsPage() {
     <div className="min-h-screen bg-gradient-to-br from-background via-accent/10 to-background py-16">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-            About <span className="text-primary">KTR Cycle World</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight text-foreground mb-6">
+            About <span className="text-primary font-black">KTR Cycle World</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Welcome to South Tamil Nadu’s premier cycling destination. Located in Tirunelveli, we provide top-grade bicycles, accessories, and expert maintenance services.

@@ -73,27 +73,27 @@ export default function ProductCard({
         ) : null}
       </div>
 
-      <div className="flex-1 flex flex-col justify-between p-2 sm:p-3">
+      <div className="flex-1 flex flex-col justify-between p-3 sm:p-4">
         <div>
           <div className="flex items-start justify-between">
             <div className="flex-1">
               <div className="flex items-center justify-between gap-1 mb-1">
                 {brand ? (
-                  <p className="text-xs sm:text-sm text-muted-foreground font-medium">{brand}</p>
+                  <p className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold">{brand}</p>
                 ) : <div />}
               </div>
-              <h3 className="text-xs sm:text-sm md:text-base font-semibold text-foreground line-clamp-2" data-testid={`text-product-name-${id}`}>
+              <h3 className="text-sm sm:text-base font-heading font-bold text-foreground line-clamp-2 leading-snug group-hover:text-amber-600 transition-colors" data-testid={`text-product-name-${id}`}>
                 {name}
               </h3>
             </div>
           </div>
         </div>
         <div className="flex items-center gap-2 sm:gap-3 mt-3 sm:mt-4">
-          <span className="text-lg sm:text-xl md:text-2xl font-bold text-primary" data-testid={`text-discounted-price-${id}`}>
+          <span className="text-lg sm:text-xl md:text-2xl font-heading font-extrabold text-primary" data-testid={`text-discounted-price-${id}`}>
             ₹{(discountedPrice || 0).toLocaleString()}
           </span>
           {Number(originalPrice) > 0 && Number(originalPrice) > Number(discountedPrice) && (
-            <span className="text-xs sm:text-sm text-muted-foreground line-through" data-testid={`text-original-price-${id}`}>
+            <span className="text-xs sm:text-sm text-muted-foreground/80 font-medium line-through" data-testid={`text-original-price-${id}`}>
               ₹{Number(originalPrice || 0).toLocaleString()}
             </span>
           )}

@@ -1,4 +1,4 @@
-import AnimatedCycleHero from "@/components/AnimatedCycleHero";
+import HeroCarousel from "@/components/HeroCarousel";
 import MotivationQuotes from "@/components/MotivationQuotes";
 import CyclingBenefits from "@/components/CyclingBenefits";
 import FeaturedProducts from "@/components/FeaturedProducts";
@@ -7,9 +7,33 @@ import CategoryCarousel from "@/components/CategoryCarousel";
 import AnimatedStats from "@/components/AnimatedStats";
 import WhyRideSection from "@/components/WhyRideSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import InstagramReelsSection from "@/components/InstagramReelsSection";
 
 export default function HomePage() {
+  const mountainImage = '/assets/generated_images/Mountain_biking_adventure_scene_01077af1.png';
+  const urbanImage = '/assets/generated_images/Urban_cycling_lifestyle_shot_0317efee.png';
+  const groupImage = '/assets/generated_images/Group_cycling_community_scene_9b549ad4.png';
+  const sunsetImage = '/assets/generated_images/Inspirational_cycling_sunset_silhouette_5fa0f6c8.png';
   const wellnessImage = '/assets/generated_images/Peaceful_cycling_wellness_moment_d0d89c90.png';
+
+  const heroSlides = [
+    {
+      image: mountainImage,
+      quote: "Tirunelveli's best cycles. Start your adventure.",
+    },
+    {
+      image: urbanImage,
+      quote: "Premium rides for South Tamil Nadu.",
+    },
+    {
+      image: groupImage,
+      quote: "Ride together. Grow together.",
+    },
+    {
+      image: sunsetImage,
+      quote: "Go faster with KTR Cycle World.",
+    },
+  ];
 
   const websiteSchema = {
     "@context": "https://schema.org",
@@ -94,9 +118,9 @@ export default function HomePage() {
         {/* Category quick-access strip */}
         <CategoryCarousel />
 
-        {/* Animated Cycle Hero Banner */}
+        {/* Hero Carousel Banner */}
         <section className="w-full" aria-label="Featured highlights">
-          <AnimatedCycleHero />
+          <HeroCarousel slides={heroSlides} />
         </section>
 
         {/* Animated trust stats — dark band */}
@@ -110,6 +134,9 @@ export default function HomePage() {
 
         {/* Cycling lifestyle quotes */}
         <MotivationQuotes quotes={motivationQuotes} image={wellnessImage} />
+
+        {/* Instagram Reels & Video Showcase with adaptive network resolution */}
+        <InstagramReelsSection />
 
         {/* Community testimonials carousel */}
         <TestimonialsSection />

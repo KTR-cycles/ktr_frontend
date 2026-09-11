@@ -156,10 +156,10 @@ export default function WhyRideSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-14"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
-            Why <span className="text-primary">Ride With Us?</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-black tracking-tight text-foreground mb-3 sm:mb-4">
+            Why <span className="text-primary font-black">Ride With Us?</span>
           </h2>
-          <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
             Join thousands of riders who chose KTR Cycle World for their journey
           </p>
         </motion.div>
@@ -200,7 +200,7 @@ export default function WhyRideSection() {
                   <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
 
-                <h3 className="text-base sm:text-lg font-bold text-foreground mb-2">
+                <h3 className="text-lg sm:text-xl font-heading font-extrabold text-foreground mb-2">
                   {feature.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">

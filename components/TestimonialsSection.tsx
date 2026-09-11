@@ -135,8 +135,8 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-14"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-3">
-            What Our <span className="text-amber-500">Riders Say</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-black tracking-tight text-slate-900 mb-3">
+            What Our <span className="text-amber-500 font-black">Riders Say</span>
           </h2>
           <p className="text-slate-600 text-sm sm:text-base">
             Real stories from the KTR Cycle World community in Tirunelveli
