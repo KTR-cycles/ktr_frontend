@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 import { EMAIL_ID, email_url } from "@/utils/config";
+import { STORE_LOCATIONS } from "@/data/storeLocations";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -28,8 +29,8 @@ export default function Footer() {
                 KTR <span className="text-primary">Cycle World</span>
               </span>
             </div>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Your premium destination for high-quality cycles. Two wheels, endless adventures.
+            <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
+              Your premium destination for high-quality bicycles across South Tamil Nadu. 4 Showrooms to serve you best!
             </p>
           </div>
 
@@ -38,28 +39,28 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/" data-testid="link-footer-home" onClick={scrollToTop}>
-                  <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">
+                  <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-sm">
                     Home
                   </span>
                 </Link>
               </li>
               <li>
                 <Link href="/products" data-testid="link-footer-products" onClick={scrollToTop}>
-                  <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">
+                  <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-sm">
                     Products
                   </span>
                 </Link>
               </li>
               <li>
                 <Link href="/about" data-testid="link-footer-about" onClick={scrollToTop}>
-                  <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">
+                  <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-sm">
                     About Us
                   </span>
                 </Link>
               </li>
               <li>
                 <Link href="/contact" data-testid="link-footer-contact" onClick={scrollToTop}>
-                  <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer">
+                  <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-sm">
                     Contact
                   </span>
                 </Link>
@@ -68,33 +69,31 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-4">Policies</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors" onClick={scrollToTop}>
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms-of-service" className="text-muted-foreground hover:text-primary transition-colors" onClick={scrollToTop}>
-                  Terms of Service
-                </Link>
-              </li>
+            <h3 className="text-lg font-semibold text-foreground mb-4">Our Showrooms</h3>
+            <ul className="space-y-2 text-sm">
+              {STORE_LOCATIONS.map((loc) => (
+                <li key={loc.id}>
+                  <a
+                    href={loc.googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"
+                  >
+                    <MapPin className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                    <span>{loc.branchName}</span>
+                    <ExternalLink className="w-3 h-3 text-muted-foreground/60" />
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold text-foreground mb-4">Contact Us</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                <span className="text-muted-foreground">
-                  Nainar kulam road, Tirunelveli, Tamil Nadu, India - 627006
-                </span>
-              </li>
+            <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="tel:+919342727735" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="tel:+919342727735" className="text-muted-foreground hover:text-primary transition-colors font-medium">
                   +91 9342727735
                 </a>
               </li>
@@ -111,7 +110,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm text-center md:text-left">
-              © {currentYear} KTR Cycle World. All rights reserved.
+              © {currentYear} KTR Cycle World. All rights reserved. Operating 4 showrooms in Tirunelveli Town, Samathanapuram, Kayathar & Kalakkad.
             </p>
           </div>
         </div>

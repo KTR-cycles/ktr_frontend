@@ -1,3 +1,5 @@
+import { STORE_LOCATIONS } from "@/data/storeLocations";
+
 export default function LocalSEO() {
   const schemaData = {
     "@context": "https://schema.org",
@@ -39,9 +41,30 @@ export default function LocalSEO() {
     ],
     "areaServed": [
       { "@type": "City", "name": "Tirunelveli" },
-      { "@type": "City", "name": "Vannarpettai" },
-      { "@type": "City", "name": "Palayankottai" }
+      { "@type": "City", "name": "Samathanapuram" },
+      { "@type": "City", "name": "Palayamkottai" },
+      { "@type": "City", "name": "Kayathar" },
+      { "@type": "City", "name": "Kalakkad" }
     ],
+    "hasPOS": STORE_LOCATIONS.map((loc) => ({
+      "@type": "Store",
+      "name": loc.name,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": loc.address,
+        "addressLocality": loc.city,
+        "addressRegion": "Tamil Nadu",
+        "postalCode": loc.postalCode,
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": loc.coordinates.lat,
+        "longitude": loc.coordinates.lng
+      },
+      "telephone": loc.phone,
+      "hasMap": loc.googleMapsUrl
+    })),
     "sameAs": [
       "https://www.instagram.com/ktr_cycleworld_tirunelveli"
     ]

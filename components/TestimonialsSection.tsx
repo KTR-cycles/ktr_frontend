@@ -29,34 +29,25 @@ const testimonials: Testimonial[] = [
     location: "Vannarpettai",
     rating: 5,
     review:
-      "Amazing collection of women's cycles. I was looking for a lightweight city bike and they had exactly what I needed. The quality is premium and the price was very fair. Highly recommended!",
-    bike: "City Cycle",
+      "Excellent service and genuine spare parts. They tuned up my old cycle and it rides like brand new! Highly recommend their Palayankottai & Vannarpettai showrooms.",
+    bike: "Urban Hybrid",
     avatar: "PS",
   },
   {
-    name: "Arjun Selvam",
+    name: "Murugan M.",
     location: "Palayankottai",
     rating: 5,
     review:
-      "Got my son's first cycle from here for his birthday. They were so patient in helping us choose the right size. The kids range is fantastic — durable, safe, and colorful!",
-    bike: "Kids Cycle",
-    avatar: "AS",
+      "Great variety of kids' cycles. Bought one for my son's birthday — he loves it! Staff even threw in a helmet and free initial services. Top-class customer service.",
+    bike: "Kids Sport Cycle",
+    avatar: "MM",
   },
   {
-    name: "Meena Krishnan",
-    location: "Tirunelveli",
+    name: "Suresh Perumal",
+    location: "Tirunelveli Town",
     rating: 5,
     review:
-      "I ride every morning and evening. KTR Cycle World has the best service team. They tuned my geared cycle perfectly. Fast service, honest pricing, and genuinely passionate staff.",
-    bike: "Geared Cycle",
-    avatar: "MK",
-  },
-  {
-    name: "Suresh Pandian",
-    location: "Nanguneri",
-    rating: 5,
-    review:
-      "Switched to an electric cycle after their demo session. The range is incredible and commuting has become so much fun. The after-sale support is exceptional too!",
+      "Got an electric cycle for my daily office commute. Smooth experience, great range, zero fuel costs! The team guided me on battery maintenance thoroughly.",
     bike: "Electric Cycle",
     avatar: "SP",
   },
@@ -69,7 +60,7 @@ function StarRating({ rating }: { rating: number }) {
         <Star
           key={i}
           className={`w-4 h-4 ${
-            i < rating ? "text-primary fill-primary" : "text-muted-foreground"
+            i < rating ? "text-amber-500 fill-amber-500" : "text-slate-300"
           }`}
         />
       ))}
@@ -78,18 +69,17 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 function AvatarBubble({ initials, index }: { initials: string; index: number }) {
-  const colors = [
+  const gradients = [
     "from-amber-400 to-orange-500",
+    "from-cyan-400 to-blue-500",
     "from-emerald-400 to-teal-500",
-    "from-violet-400 to-purple-600",
-    "from-rose-400 to-pink-600",
-    "from-sky-400 to-blue-600",
+    "from-purple-400 to-pink-500",
   ];
   return (
     <div
-      className={`w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br ${
-        colors[index % colors.length]
-      } flex items-center justify-center text-white font-extrabold text-lg sm:text-xl shadow-lg flex-shrink-0`}
+      className={`w-12 h-12 rounded-full bg-gradient-to-br ${
+        gradients[index % gradients.length]
+      } flex items-center justify-center text-white font-bold text-base shadow-md flex-shrink-0`}
     >
       {initials}
     </div>
@@ -110,7 +100,6 @@ export default function TestimonialsSection() {
     setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);
   };
 
-  // Auto-advance
   useEffect(() => {
     const id = setInterval(next, 5000);
     return () => clearInterval(id);
@@ -128,7 +117,7 @@ export default function TestimonialsSection() {
       scale: 1,
     },
     exit: (dir: number) => ({
-      x: dir > 0 ? -120 : 120,
+      x: dir < 0 ? 120 : -120,
       opacity: 0,
       scale: 0.96,
     }),
@@ -137,14 +126,7 @@ export default function TestimonialsSection() {
   const t = testimonials[current];
 
   return (
-    <section className="py-16 sm:py-20 md:py-28 bg-gradient-to-br from-foreground via-foreground/95 to-foreground relative overflow-hidden">
-      {/* Decorative arcs */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full border border-white/5 opacity-30" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[450px] rounded-full border border-white/5 opacity-20" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] rounded-full border border-white/5 opacity-10" />
-      </div>
-
+    <section className="py-16 sm:py-20 md:py-28 bg-gradient-to-b from-white via-slate-50 to-slate-100 border-y border-slate-200/80 relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 md:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -153,17 +135,17 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-14"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">
-            What Our <span className="text-primary">Riders Say</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+            What Our <span className="text-amber-500">Riders Say</span>
           </h2>
-          <p className="text-white/50 text-sm sm:text-base">
-            Stories from the KTR Cycle World community
+          <p className="text-slate-600 text-sm sm:text-base">
+            Real stories from the KTR Cycle World community in Tirunelveli
           </p>
         </motion.div>
 
-        {/* Testimonial card */}
-        <div className="relative min-h-[280px] sm:min-h-[240px]">
-          <AnimatePresence mode="wait" custom={direction}>
+        {/* Testimonial Card */}
+        <div className="relative">
+          <AnimatePresence custom={direction} mode="wait">
             <motion.div
               key={current}
               custom={direction}
@@ -171,75 +153,75 @@ export default function TestimonialsSection() {
               initial="enter"
               animate="center"
               exit="exit"
-              transition={{ duration: 0.45, ease: "easeInOut" }}
-              className="absolute inset-0"
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-xl shadow-slate-200/60 relative overflow-hidden"
             >
-              <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 sm:p-8 md:p-10">
-                <Quote className="w-8 h-8 text-primary mb-4 opacity-80" />
+              <Quote className="absolute top-6 right-6 w-16 h-16 text-slate-100 pointer-events-none" />
 
-                <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed italic mb-6">
+              <div className="flex flex-col gap-6 relative z-10">
+                <StarRating rating={t.rating} />
+
+                <p className="text-base sm:text-lg text-slate-800 leading-relaxed italic font-normal">
                   "{t.review}"
                 </p>
 
-                <div className="flex items-center gap-4">
-                  <AvatarBubble initials={t.avatar} index={current} />
-                  <div>
-                    <p className="text-white font-bold text-base sm:text-lg">
-                      {t.name}
-                    </p>
-                    <p className="text-white/50 text-sm">{t.location}</p>
-                    <div className="flex items-center gap-3 mt-1">
-                      <StarRating rating={t.rating} />
-                      <span className="text-primary text-xs font-medium border border-primary/30 rounded-full px-2 py-0.5">
-                        {t.bike}
-                      </span>
+                <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+                  <div className="flex items-center gap-3">
+                    <AvatarBubble initials={t.avatar} index={current} />
+                    <div>
+                      <h4 className="text-base font-bold text-slate-950">
+                        {t.name}
+                      </h4>
+                      <p className="text-xs text-slate-500">
+                        {t.location} •{" "}
+                        <span className="text-amber-600 font-semibold">{t.bike}</span>
+                      </p>
                     </div>
+                  </div>
+
+                  <div className="flex items-center gap-2">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      onClick={prev}
+                      className="rounded-full w-9 h-9 border-slate-300 hover:bg-slate-100 text-slate-700"
+                      aria-label="Previous testimonial"
+                    >
+                      <ChevronLeft className="w-4 h-4" />
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      onClick={next}
+                      className="rounded-full w-9 h-9 border-slate-300 hover:bg-slate-100 text-slate-700"
+                      aria-label="Next testimonial"
+                    >
+                      <ChevronRight className="w-4 h-4" />
+                    </Button>
                   </div>
                 </div>
               </div>
             </motion.div>
           </AnimatePresence>
-        </div>
 
-        {/* Controls */}
-        <div className="flex items-center justify-center gap-4 mt-8">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={prev}
-            aria-label="Previous review"
-            className="w-10 h-10 rounded-full border border-white/20 text-white hover:bg-white/10"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </Button>
-
-          <div className="flex gap-2">
+          {/* Dots Indicator */}
+          <div className="flex justify-center gap-2 mt-8">
             {testimonials.map((_, i) => (
               <button
                 key={i}
-                aria-label={`Go to review ${i + 1}`}
                 onClick={() => {
                   setDirection(i > current ? 1 : -1);
                   setCurrent(i);
                 }}
-                className={`rounded-full transition-all duration-300 ${
+                className={`h-2.5 rounded-full transition-all duration-300 ${
                   i === current
-                    ? "bg-primary w-6 h-2"
-                    : "bg-white/30 w-2 h-2 hover:bg-white/60"
+                    ? "w-8 bg-amber-500"
+                    : "w-2.5 bg-slate-300 hover:bg-slate-400"
                 }`}
+                aria-label={`Go to slide ${i + 1}`}
               />
             ))}
           </div>
-
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={next}
-            aria-label="Next review"
-            className="w-10 h-10 rounded-full border border-white/20 text-white hover:bg-white/10"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </Button>
         </div>
       </div>
     </section>

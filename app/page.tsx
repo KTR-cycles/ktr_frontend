@@ -1,4 +1,4 @@
-import HeroCarousel from "@/components/HeroCarousel";
+import AnimatedCycleHero from "@/components/AnimatedCycleHero";
 import MotivationQuotes from "@/components/MotivationQuotes";
 import CyclingBenefits from "@/components/CyclingBenefits";
 import FeaturedProducts from "@/components/FeaturedProducts";
@@ -9,10 +9,6 @@ import WhyRideSection from "@/components/WhyRideSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 
 export default function HomePage() {
-  const mountainImage = '/assets/generated_images/Mountain_biking_adventure_scene_01077af1.png';
-  const urbanImage = '/assets/generated_images/Urban_cycling_lifestyle_shot_0317efee.png';
-  const groupImage = '/assets/generated_images/Group_cycling_community_scene_9b549ad4.png';
-  const sunsetImage = '/assets/generated_images/Inspirational_cycling_sunset_silhouette_5fa0f6c8.png';
   const wellnessImage = '/assets/generated_images/Peaceful_cycling_wellness_moment_d0d89c90.png';
 
   const websiteSchema = {
@@ -44,13 +40,6 @@ export default function HomePage() {
       "https://www.instagram.com/ktr_cycleworld_tirunelveli"
     ]
   };
-
-  const heroSlides = [
-    { image: mountainImage, quote: "Tirunelveli's best cycles. Start your adventure." },
-    { image: urbanImage, quote: "Premium rides for South Tamil Nadu." },
-    { image: groupImage, quote: "Ride together. Grow together." },
-    { image: sunsetImage, quote: "Go faster with KTR Cycle World." },
-  ];
 
   const motivationQuotes = [
     { text: "Cycling is a simple solution to some of the world's most complicated problems." },
@@ -105,9 +94,9 @@ export default function HomePage() {
         {/* Category quick-access strip */}
         <CategoryCarousel />
 
-        {/* Hero carousel */}
+        {/* Animated Cycle Hero Banner */}
         <section className="w-full" aria-label="Featured highlights">
-          <HeroCarousel slides={heroSlides} />
+          <AnimatedCycleHero />
         </section>
 
         {/* Animated trust stats — dark band */}

@@ -57,70 +57,34 @@ const stats: StatItem[] = [
     value: 500,
     suffix: "+",
     label: "Cycles in Stock",
-    color: "from-amber-400 to-orange-500",
+    color: "from-amber-500 to-orange-500",
   },
   {
     icon: "users",
-    value: 5000,
+    value: 10000,
     suffix: "+",
-    label: "Happy Riders",
-    color: "from-emerald-400 to-teal-500",
-  },
-  {
-    icon: "trophy",
-    value: 15,
-    suffix: "+",
-    label: "Years of Excellence",
-    color: "from-violet-400 to-purple-600",
+    label: "Happy Cyclists",
+    color: "from-emerald-500 to-teal-600",
   },
   {
     icon: "star",
+    value: 15,
+    suffix: "+",
+    label: "Years of Trust",
+    color: "from-blue-500 to-indigo-600",
+  },
+  {
+    icon: "trophy",
     value: 20,
     suffix: "+",
     label: "Premium Brands",
-    color: "from-rose-400 to-pink-600",
+    color: "from-purple-500 to-pink-600",
   },
 ];
 
 export default function AnimatedStats() {
   return (
-    <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden bg-foreground">
-      {/* Background cycling track line */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <svg
-          className="absolute bottom-0 left-0 w-full opacity-5"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,60 Q300,0 600,60 Q900,120 1200,60"
-            stroke="white"
-            strokeWidth="3"
-            fill="none"
-          />
-        </svg>
-        {/* Floating dots */}
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 rounded-full bg-primary/30"
-            style={{
-              left: `${15 + i * 15}%`,
-              top: `${20 + (i % 3) * 25}%`,
-            }}
-            animate={{
-              y: [0, -16, 0],
-              opacity: [0.3, 0.7, 0.3],
-            }}
-            transition={{
-              duration: 2.5 + i * 0.4,
-              repeat: Infinity,
-              delay: i * 0.3,
-            }}
-          />
-        ))}
-      </div>
-
+    <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden bg-slate-50 border-y border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -129,12 +93,12 @@ export default function AnimatedStats() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-14"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-3">
             Trusted by the{" "}
-            <span className="text-primary">Cycling Community</span>
+            <span className="text-amber-500">Cycling Community</span>
           </h2>
-          <p className="text-white/60 text-sm sm:text-base max-w-xl mx-auto">
-            Numbers that speak for our passion and commitment
+          <p className="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
+            Numbers that speak for our passion and commitment in Tirunelveli
           </p>
         </motion.div>
 
@@ -144,32 +108,23 @@ export default function AnimatedStats() {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -4 }}
-                className="relative group cursor-default"
+                whileHover={{ y: -4 }}
+                className="relative bg-white rounded-2xl border border-slate-200/80 p-5 sm:p-6 text-center shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-5 sm:p-6 md:p-8 text-center overflow-hidden">
-                  {/* Glow blob */}
-                  <div
-                    className={`absolute -top-6 -right-6 w-20 h-20 rounded-full bg-gradient-to-br ${stat.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300 blur-xl`}
-                  />
-
-                  <div
-                    className={`inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br ${stat.color} mb-4 mx-auto shadow-lg`}
-                  >
-                    <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
-                  </div>
-
-                  <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-2 tracking-tight">
-                    <CountUp target={stat.value} suffix={stat.suffix} />
-                  </div>
-
-                  <p className="text-white/60 text-xs sm:text-sm font-medium uppercase tracking-wider">
-                    {stat.label}
-                  </p>
+                <div
+                  className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center mx-auto mb-4 shadow-md text-white`}
+                >
+                  <Icon className="w-6 h-6 sm:w-7 sm:h-7" />
+                </div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-950 mb-1 tracking-tight">
+                  <CountUp target={stat.value} suffix={stat.suffix} />
+                </div>
+                <div className="text-xs sm:text-sm text-slate-600 font-semibold">
+                  {stat.label}
                 </div>
               </motion.div>
             );
