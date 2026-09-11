@@ -39,12 +39,12 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
   }, [emblaApi, onSelect]);
 
   return (
-    <div className="relative w-full min-h-[500px] sm:min-h-[600px] md:min-h-[700px] overflow-hidden">
+    <div className="relative w-full min-h-[380px] sm:min-h-[520px] md:min-h-[650px] overflow-hidden">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {slides.map((slide, index) => (
             <div key={index} className="flex-[0_0_100%] min-w-0 relative">
-              <div className="relative w-full h-[500px] sm:h-[600px] md:h-[700px]">
+              <div className="relative w-full h-[380px] sm:h-[520px] md:h-[650px]">
                 <img
                   src={slide.image}
                   alt={`Slide ${index + 1}`}
@@ -60,9 +60,9 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
                       transition={{ duration: 0.6 }}
                       className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
                     >
-                      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-4 drop-shadow-2xl max-w-4xl px-4">
+                      <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 sm:mb-4 drop-shadow-2xl max-w-4xl px-4">
                         {slide.quote}
-                      </h1>
+                      </p>
                       {slide.author && (
                         <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-white/90 font-light italic drop-shadow-lg px-4">
                           — {slide.author}
@@ -86,18 +86,24 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
         </div>
       </div>
 
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-1">
         {slides.map((_, index) => (
           <button
             key={index}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === selectedIndex
-                ? "bg-white w-8"
-                : "bg-white/50 hover:bg-white/70"
-            }`}
+            aria-label={`Go to slide ${index + 1}`}
+            aria-current={index === selectedIndex ? 'true' : undefined}
+            className="w-9 h-9 rounded-full flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
             onClick={() => emblaApi?.scrollTo(index)}
             data-testid={`button-carousel-dot-${index}`}
-          />
+          >
+            <span
+              className={`block rounded-full transition-all duration-300 ${
+                index === selectedIndex
+                  ? 'bg-white w-6 h-2'
+                  : 'bg-white/50 hover:bg-white/70 w-2 h-2'
+              }`}
+            />
+          </button>
         ))}
       </div>
     </div>

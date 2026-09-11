@@ -143,11 +143,18 @@ export default function RootLayout({
           </>
         )}
         <Providers>
+          {/* Skip to main content — visible on keyboard focus */}
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-background focus:border focus:border-border focus:px-4 focus:py-2 focus:rounded-lg focus:text-foreground focus:shadow-lg focus:text-sm focus:font-medium"
+          >
+            Skip to main content
+          </a>
           <NavigationLoader />
           <ScrollToTop />
           <LocalSEO />
           <Header />
-          <main className="flex-1">{children}</main>
+          <main id="main-content" className="flex-1">{children}</main>
           <Footer />
           <StickyContactButtons />
         </Providers>

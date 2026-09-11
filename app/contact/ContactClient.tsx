@@ -73,35 +73,57 @@ export default function ContactClient() {
               <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="text-sm font-medium mb-1 block">Your Name</label>
+                  <label htmlFor="contact-name" className="text-sm font-medium mb-1 block">
+                    Your Name <span className="text-destructive" aria-hidden="true">*</span>
+                  </label>
                   <Input
+                    id="contact-name"
                     type="text"
+                    required
+                    aria-required="true"
+                    autoComplete="name"
                     placeholder="John Doe"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
                 </div>
                 <div>
-                  <label className="text-sm font-medium mb-1 block">Phone Number</label>
+                  <label htmlFor="contact-phone" className="text-sm font-medium mb-1 block">
+                    Phone Number <span className="text-destructive" aria-hidden="true">*</span>
+                  </label>
                   <Input
+                    id="contact-phone"
                     type="tel"
+                    required
+                    aria-required="true"
+                    autoComplete="tel"
+                    inputMode="tel"
                     placeholder="+91 9342727735"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   />
                 </div>
                 <div>
-                  <label className="text-sm font-medium mb-1 block">Email Address (Optional)</label>
+                  <label htmlFor="contact-email" className="text-sm font-medium mb-1 block">
+                    Email Address <span className="text-muted-foreground text-xs">(Optional)</span>
+                  </label>
                   <Input
+                    id="contact-email"
                     type="email"
+                    autoComplete="email"
                     placeholder="john@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
                 </div>
                 <div>
-                  <label className="text-sm font-medium mb-1 block">Message</label>
+                  <label htmlFor="contact-message" className="text-sm font-medium mb-1 block">
+                    Message <span className="text-destructive" aria-hidden="true">*</span>
+                  </label>
                   <Textarea
+                    id="contact-message"
+                    required
+                    aria-required="true"
                     placeholder="Tell us which cycle you are looking for..."
                     rows={4}
                     value={formData.message}

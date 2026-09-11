@@ -12,6 +12,17 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  // Close mobile menu on Escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [mobileMenuOpen]);
+
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/products", label: "Products" },
@@ -62,7 +73,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-lg border-b border-border">
-      <nav className="max-w-7xl mx-auto px-4 md:px-6">
+      <nav className="max-w-7xl mx-auto px-4 md:px-6" aria-label="Main navigation">
         <div className="flex items-center justify-between h-16">
           <Link href="/" data-testid="link-home" onClick={scrollToTop}>
             <div className="flex items-center gap-2 hover-elevate active-elevate-2 px-3 py-2 rounded-xl transition-all cursor-pointer">

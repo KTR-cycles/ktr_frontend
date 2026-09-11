@@ -30,7 +30,7 @@
   --popover-foreground: 0 0% 15%;
   --popover-border: 0 0% 88%;
   --primary: 45 100% 50%;
-  --primary-foreground: 0 0% 100%;
+  --primary-foreground: 0 0% 8%; /* Near-black — contrast ~12:1 on yellow, WCAG AA ✓ */
   --secondary: 0 0% 93%;
   --secondary-foreground: 0 0% 15%;
   --muted: 45 8% 94%;
@@ -78,7 +78,7 @@
   --popover-foreground: 0 0% 95%;
   --popover-border: 0 0% 22%;
   --primary: 45 100% 50%;
-  --primary-foreground: 0 0% 100%;
+  --primary-foreground: 0 0% 8%; /* Near-black — contrast ~12:1 on yellow, WCAG AA ✓ */
   --secondary: 0 0% 18%;
   --secondary-foreground: 0 0% 95%;
   --muted: 0 0% 16%;
@@ -116,5 +116,45 @@
   .content-visibility-auto {
     content-visibility: auto;
     contain-intrinsic-size: 1px 320px;
+  }
+
+  /* Gradient text utility */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(45 100% 45%), hsl(35 100% 50%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Shimmer animation for loading states */
+  .shimmer {
+    background: linear-gradient(90deg, hsl(var(--muted)) 25%, hsl(var(--accent)) 50%, hsl(var(--muted)) 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* Float animation for decorative elements */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

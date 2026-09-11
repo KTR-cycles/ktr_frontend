@@ -4,6 +4,9 @@ import CyclingBenefits from "@/components/CyclingBenefits";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import GoogleMap from "@/components/GoogleMap";
 import CategoryCarousel from "@/components/CategoryCarousel";
+import AnimatedStats from "@/components/AnimatedStats";
+import WhyRideSection from "@/components/WhyRideSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 
 export default function HomePage() {
   const mountainImage = '/assets/generated_images/Mountain_biking_adventure_scene_01077af1.png';
@@ -43,66 +46,48 @@ export default function HomePage() {
   };
 
   const heroSlides = [
-    {
-      image: mountainImage,
-      quote: "Tirunelveli’s best cycles. Start your adventure.",
-    },
-    {
-      image: urbanImage,
-      quote: "Premium rides for South Tamil Nadu.",
-    },
-    {
-      image: groupImage,
-      quote: "Ride together. Grow together.",
-    },
-    {
-      image: sunsetImage,
-      quote: "Go faster with KTR Cycle World.",
-    },
+    { image: mountainImage, quote: "Tirunelveli's best cycles. Start your adventure." },
+    { image: urbanImage, quote: "Premium rides for South Tamil Nadu." },
+    { image: groupImage, quote: "Ride together. Grow together." },
+    { image: sunsetImage, quote: "Go faster with KTR Cycle World." },
   ];
 
   const motivationQuotes = [
-    {
-      text: "Cycling is a simple solution to some of the world's most complicated problems - Best cycles in Tirunelveli at KTR Cycle World.",
-    },
-    {
-      text: "Give a man a fish and feed him for a day. Teach a man to fish and feed him for a lifetime. Teach a man to cycle and he will realize fishing is stupid and boring - Premium cycles in South Tamil Nadu.",
-    },
-    {
-      text: "When the spirits are low, when the day appears dark, when work becomes monotonous, when hope hardly seems worth having, just mount a bicycle and go out for a spin down the road - Best cycle shop in Vannarpettai.",
-    },
+    { text: "Cycling is a simple solution to some of the world's most complicated problems." },
+    { text: "Life is like riding a bicycle. To keep your balance you must keep moving." },
+    { text: "When the spirits are low, when the day appears dark, just mount a bicycle and go out for a spin — and everything seems brighter." },
   ];
 
   const cyclingBenefits = [
     {
       icon: "heart" as const,
       title: "Cardiovascular Health",
-      description: "Strengthen your heart, improve circulation, and reduce the risk of heart disease with regular cycling. Best cycles in Tirunelveli for your health journey."
+      description: "Strengthen your heart, improve circulation, and reduce the risk of heart disease with regular cycling.",
     },
     {
       icon: "zap" as const,
       title: "Build Stamina & Strength",
-      description: "Increase your endurance and muscle strength while enjoying the journey. Premium cycles in South Tamil Nadu for optimal performance."
+      description: "Increase your endurance and muscle strength while enjoying every kilometre of the journey.",
     },
     {
       icon: "smile" as const,
       title: "Mental Wellbeing",
-      description: "Reduce stress, anxiety, and depression. Cycling releases endorphins that boost your mood. Best cycle shop in Vannarpettai for your mental health."
+      description: "Reduce stress, anxiety, and depression. Cycling releases endorphins that boost your mood naturally.",
     },
     {
       icon: "trending" as const,
       title: "Weight Management",
-      description: "Burn calories efficiently and maintain a healthy weight through regular cycling. Quality cycles in Palayankottai for fitness goals."
+      description: "Burn calories efficiently and maintain a healthy weight through regular cycling sessions.",
     },
     {
       icon: "users" as const,
       title: "Social Connection",
-      description: "Join cycling groups and communities. Make friends and share adventures together. KTR Cycle World community in Tirunelveli."
+      description: "Join cycling groups and communities. Make friends and share amazing adventures together.",
     },
     {
       icon: "leaf" as const,
       title: "Eco-Friendly Transport",
-      description: "Reduce your carbon footprint and contribute to a cleaner, greener environment. Electric cycles in South Tamil Nadu for sustainable commuting."
+      description: "Reduce your carbon footprint and contribute to a cleaner, greener environment.",
     },
   ];
 
@@ -117,18 +102,33 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
       <div className="w-full">
+        {/* Category quick-access strip */}
         <CategoryCarousel />
-        
-        <section className="w-full">
+
+        {/* Hero carousel */}
+        <section className="w-full" aria-label="Featured highlights">
           <HeroCarousel slides={heroSlides} />
         </section>
 
+        {/* Animated trust stats — dark band */}
+        <AnimatedStats />
+
+        {/* Featured products */}
         <FeaturedProducts />
 
+        {/* Why ride with us — animated SVG bike + feature cards */}
+        <WhyRideSection />
+
+        {/* Cycling lifestyle quotes */}
         <MotivationQuotes quotes={motivationQuotes} image={wellnessImage} />
 
+        {/* Community testimonials carousel */}
+        <TestimonialsSection />
+
+        {/* Health & lifestyle benefits grid */}
         <CyclingBenefits benefits={cyclingBenefits} />
 
+        {/* Showroom map + hours */}
         <GoogleMap />
       </div>
     </>
