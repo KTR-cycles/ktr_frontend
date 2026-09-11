@@ -37,17 +37,24 @@ export default function ProductCard({
   const cleanImageUrl = getFirstImageUrl(images || '');
   const targetIdentifier = slug || id;
 
+  const hasDiscount = Number(originalPrice) > 0 && Number(originalPrice) > Number(discountedPrice);
+  const calcDiscount = hasDiscount 
+    ? Math.round(((Number(originalPrice) - Number(discountedPrice)) / Number(originalPrice)) * 100) 
+    : 0;
+  const finalDiscount = (discount && discount > 0) ? Math.round(discount) : calcDiscount;
+  const savingsAmount = hasDiscount ? Number(originalPrice) - Number(discountedPrice) : 0;
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
-      className="group bg-white/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-lg overflow-hidden hover-elevate transition-all flex flex-col h-[280px] sm:h-[320px] md:h-[360px] min-h-[280px] sm:min-h-[320px] md:min-h-[360px] max-h-[280px] sm:max-h-[320px] md:max-h-[360px] cursor-pointer hover:shadow-xl hover:scale-[1.02] content-visibility-auto"
+      className="group bg-white/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-lg overflow-hidden hover-elevate transition-all flex flex-col h-[300px] sm:h-[340px] md:h-[380px] min-h-[300px] sm:min-h-[340px] md:min-h-[380px] max-h-[300px] sm:max-h-[340px] md:max-h-[380px] cursor-pointer hover:shadow-xl hover:scale-[1.02] content-visibility-auto"
       data-testid={`product-card-${id}`}
       onClick={() => onViewDetails?.(targetIdentifier)}
     >
-      <div className="relative aspect-[4/3] overflow-hidden bg-muted flex-shrink-0 h-[150px] sm:h-[200px] md:h-[220px]">
+      <div className="relative aspect-[4/3] overflow-hidden bg-muted flex-shrink-0 h-[150px] sm:h-[190px] md:h-[210px]">
         {cleanImageUrl && !imageError ? (
           <img
             src={cleanImageUrl}
@@ -62,13 +69,13 @@ export default function ProductCard({
           </div>
         )}
         {ageGroup ? (
-          <Badge variant="secondary" className="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white font-medium text-[10px] sm:text-xs rounded-full px-2.5 py-0.5 border border-white/20">
+          <Badge variant="secondary" className="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-white font-medium text-[10px] sm:text-xs rounded-full px-2.5 py-0.5 border border-white/20 shadow-sm">
             {ageGroup}
           </Badge>
         ) : null}
-        {discount && discount > 0 ? (
-          <Badge className="absolute top-3 right-3 bg-primary text-primary-foreground font-bold text-xs rounded-full px-2.5 py-0.5">
-            {Math.round(discount)}% OFF
+        {finalDiscount > 0 ? (
+          <Badge className="absolute top-3 right-3 bg-gradient-to-r from-red-600 via-rose-500 to-amber-500 text-white font-black text-xs rounded-full px-3 py-1 shadow-lg border border-white/20">
+            {finalDiscount}% OFF
           </Badge>
         ) : null}
       </div>
@@ -79,7 +86,7 @@ export default function ProductCard({
             <div className="flex-1">
               <div className="flex items-center justify-between gap-1 mb-1">
                 {brand ? (
-                  <p className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold">{brand}</p>
+                  <p className="text-[11px] uppercase tracking-wider text-amber-600 dark:text-amber-400 font-extrabold">{brand}</p>
                 ) : <div />}
               </div>
               <h3 className="text-sm sm:text-base font-heading font-bold text-foreground line-clamp-2 leading-snug group-hover:text-amber-600 transition-colors" data-testid={`text-product-name-${id}`}>
@@ -88,15 +95,33 @@ export default function ProductCard({
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-2 sm:gap-3 mt-3 sm:mt-4">
-          <span className="text-lg sm:text-xl md:text-2xl font-heading font-extrabold text-primary" data-testid={`text-discounted-price-${id}`}>
-            ₹{(discountedPrice || 0).toLocaleString()}
-          </span>
-          {Number(originalPrice) > 0 && Number(originalPrice) > Number(discountedPrice) && (
-            <span className="text-xs sm:text-sm text-muted-foreground/80 font-medium line-through" data-testid={`text-original-price-${id}`}>
-              ₹{Number(originalPrice || 0).toLocaleString()}
-            </span>
+
+        {/* Attractive Price Container */}
+        <div className="mt-2 pt-2 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-col gap-0.5">
+          {hasDiscount && (
+            <div className="flex items-center justify-between text-xs">
+              <div className="flex items-center gap-1.5">
+                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">MRP:</span>
+                <span className="text-xs text-slate-400 font-medium line-through" data-testid={`text-original-price-${id}`}>
+                  ₹{Number(originalPrice || 0).toLocaleString()}
+                </span>
+              </div>
+              {savingsAmount > 0 && (
+                <span className="text-[10px] font-extrabold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                  Save ₹{savingsAmount.toLocaleString()}
+                </span>
+              )}
+            </div>
           )}
+
+          <div className="flex items-baseline justify-between mt-0.5">
+            <div className="flex items-baseline gap-1.5">
+              <span className="text-[11px] font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider">Offer Price:</span>
+              <span className="text-xl sm:text-2xl font-heading font-black text-slate-900 dark:text-white" data-testid={`text-discounted-price-${id}`}>
+                ₹{(discountedPrice || 0).toLocaleString()}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </motion.div>

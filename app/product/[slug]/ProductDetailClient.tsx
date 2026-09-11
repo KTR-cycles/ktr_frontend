@@ -177,26 +177,49 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
               {product.name}
             </h1>
 
-            {/* Price Section */}
-            <div className="p-4 sm:p-6 rounded-2xl bg-white/80 backdrop-blur-md border border-border/50 shadow-md">
-              <div className="flex items-baseline gap-3 flex-wrap">
-                <span className="text-3xl sm:text-4xl font-extrabold text-primary">
-                  ₹{currentPrice}
-                </span>
+            {/* Attractive Premium Price Hero Box */}
+            <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-amber-500/10 via-amber-400/5 to-background border border-amber-500/30 shadow-xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />
+
+              <div className="flex flex-col gap-2 relative z-10">
+                {/* MRP Line & Savings Badge */}
                 {hasOriginalPrice && (
-                  <span className="text-lg sm:text-xl text-muted-foreground line-through font-medium">
-                    ₹{product.original_price}
-                  </span>
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-400">MRP:</span>
+                    <span className="text-base sm:text-lg text-slate-400 font-semibold line-through">
+                      ₹{Number(product.original_price).toLocaleString()}
+                    </span>
+                    {origNum > discNum && (
+                      <span className="px-3 py-1 rounded-full bg-gradient-to-r from-emerald-600 to-teal-500 text-white text-xs font-black shadow-md flex items-center gap-1">
+                        <Sparkles className="w-3.5 h-3.5" />
+                        Save ₹{(origNum - discNum).toLocaleString()} ({discountPercent}% OFF)
+                      </span>
+                    )}
+                  </div>
                 )}
-                {discountPercent !== null && discountPercent > 0 && (
-                  <span className="px-2.5 py-1 rounded-lg bg-red-500 text-white text-xs font-bold">
-                    {discountPercent}% OFF
-                  </span>
-                )}
+
+                {/* Offer Price Header */}
+                <div className="flex items-baseline gap-3 flex-wrap mt-1">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-amber-600 dark:text-amber-400">Offer Price:</span>
+                    <span className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-slate-900 dark:text-white">
+                      ₹{typeof currentPrice === 'number' ? currentPrice.toLocaleString() : currentPrice}
+                    </span>
+                  </div>
+                </div>
               </div>
-              <p className="text-xs text-muted-foreground mt-2">
-                * Inclusive of all taxes. Free pre-assembly & safety inspection included.
-              </p>
+
+              <div className="mt-4 pt-3 border-t border-amber-500/20 flex flex-wrap items-center gap-4 text-xs text-slate-600 dark:text-slate-300 font-medium relative z-10">
+                <span className="flex items-center gap-1.5">
+                  <ShieldCheck className="w-4 h-4 text-amber-500" /> Inclusive of GST & All Taxes
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Truck className="w-4 h-4 text-emerald-500" /> Free Showroom Pre-Assembly
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <Award className="w-4 h-4 text-blue-500" /> 0% Financing / EMI Available
+                </span>
+              </div>
             </div>
 
             {/* Description */}
