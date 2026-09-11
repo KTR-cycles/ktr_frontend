@@ -12,6 +12,7 @@ import { Label } from "@/components/ui/label";
 export interface FilterOptions {
   categories: { id: string; name: string }[];
   brands: string[];
+  ageGroups?: string[];
   priceRange: [number, number];
 }
 
@@ -19,9 +20,11 @@ export interface ProductFiltersProps {
   options: FilterOptions;
   selectedCategories: string[];
   selectedBrands: string[];
+  selectedAgeGroups?: string[];
   priceRange: [number, number];
   onCategoryChange: (categories: string[]) => void;
   onBrandChange: (brands: string[]) => void;
+  onAgeGroupChange?: (ageGroups: string[]) => void;
   onPriceChange: (range: [number, number]) => void;
   onClearAll: () => void;
 }
@@ -30,9 +33,11 @@ export default function ProductFilters({
   options,
   selectedCategories,
   selectedBrands,
+  selectedAgeGroups = [],
   priceRange,
   onCategoryChange,
   onBrandChange,
+  onAgeGroupChange,
   onPriceChange,
   onClearAll,
 }: ProductFiltersProps) {
@@ -41,6 +46,7 @@ export default function ProductFilters({
   const [expandedSections, setExpandedSections] = useState({
     categories: true,
     brands: true,
+    ageGroups: true,
     price: true,
   });
 
@@ -61,6 +67,7 @@ export default function ProductFilters({
   const activeFilterCount =
     selectedCategories.length +
     selectedBrands.length +
+    selectedAgeGroups.length +
     (priceRange[0] !== options.priceRange[0] || priceRange[1] !== options.priceRange[1] ? 1 : 0);
 
   const toggleCategory = (categoryId: string) => {
@@ -75,6 +82,14 @@ export default function ProductFilters({
       ? selectedBrands.filter((b) => b !== brand)
       : [...selectedBrands, brand];
     onBrandChange(next);
+  };
+
+  const toggleAgeGroup = (age: string) => {
+    if (!onAgeGroupChange) return;
+    const next = selectedAgeGroups.includes(age)
+      ? selectedAgeGroups.filter((a) => a !== age)
+      : [...selectedAgeGroups, age];
+    onAgeGroupChange(next);
   };
 
   const filterContent = (
@@ -118,6 +133,38 @@ export default function ProductFilters({
           </div>
         )}
       </div>
+
+      {/* Age Group Filter */}
+      {options.ageGroups && options.ageGroups.length > 0 && (
+        <div className="space-y-3 pt-4 border-t border-border">
+          <button
+            className="flex items-center justify-between w-full font-medium text-sm text-foreground"
+            onClick={() => setExpandedSections((prev) => ({ ...prev, ageGroups: !prev.ageGroups }))}
+          >
+            <span className="flex items-center gap-1.5">
+              Age Group ({options.ageGroups.length})
+            </span>
+            <ChevronDown className={`w-4 h-4 transition-transform ${expandedSections.ageGroups ? 'rotate-180' : ''}`} />
+          </button>
+
+          {expandedSections.ageGroups && (
+            <div className="space-y-2 max-h-48 overflow-y-auto pr-2">
+              {options.ageGroups.map((age) => (
+                <div key={age} className="flex items-center space-x-2">
+                  <Checkbox
+                    id={`age-${age}`}
+                    checked={selectedAgeGroups.includes(age)}
+                    onCheckedChange={() => toggleAgeGroup(age)}
+                  />
+                  <Label htmlFor={`age-${age}`} className="text-sm font-normal cursor-pointer flex-1 flex items-center justify-between">
+                    <span>{age}</span>
+                  </Label>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Brands Filter */}
       <div className="space-y-3 pt-4 border-t border-border">

@@ -20,7 +20,7 @@ import ProductImageCarousel from "@/components/ProductImageCarousel";
 import SharePopup from "@/components/SharePopup";
 import ProductReviews from "@/components/ProductReviews";
 import ProductCard from "@/components/ProductCard";
-import { getProductsByCategory } from "@/lib/products";
+import { getProductsByCategory, getAgeGroupForProduct } from "@/lib/products";
 import { trackProductView, trackWhatsAppLead } from "@/lib/analytics";
 import type { Product } from "@/types";
 
@@ -270,6 +270,10 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                 Technical Specifications
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex justify-between py-3 px-4 rounded-xl bg-accent/20 border border-border/30">
+                  <span className="text-sm font-semibold text-muted-foreground">Suitable Age Group</span>
+                  <span className="text-sm font-bold text-primary">{getAgeGroupForProduct(product)}</span>
+                </div>
                 {product.frame && (
                   <div className="flex justify-between py-3 px-4 rounded-xl bg-accent/20 border border-border/30">
                     <span className="text-sm font-semibold text-muted-foreground">Frame Material</span>

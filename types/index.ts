@@ -57,6 +57,7 @@ export interface ProductCardProps {
   originalPrice: number;
   discountedPrice: number;
   categoryName?: string;
+  ageGroup?: string;
   discount?: number;
   onViewDetails?: (idOrSlug: string) => void;
 }
