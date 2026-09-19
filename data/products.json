@@ -2189,5 +2189,39 @@
     "seo_title": "Street Ghost - KTR Cycle World",
     "seo_description": "105 KM Range,5 Hr Charge Time",
     "currentPrice": 73000
+  },
+  {
+    "id": "prod_065",
+    "product_id": "prod_065",
+    "slug": "madrock-275t",
+    "name": "MadRock 27.5T",
+    "brand": "Montra",
+    "varient_label": "Montra",
+    "category": "cat_003",
+    "category_id": "cat_003",
+    "category_name": "Geared Cycle",
+    "image": "/images/products/prod_065_1.jpg",
+    "images": "/images/products/prod_065_1.jpg",
+    "images_list": [
+      "/images/products/prod_065_1.jpg"
+    ],
+    "color": "",
+    "original_price": 30000,
+    "discounted_price": 25000,
+    "discount_percent": 16.67,
+    "discount": 16.67,
+    "stock": 5,
+    "featured": true,
+    "location": "Tirunelveli",
+    "tags": "GEAR,ADULT",
+    "age_group": "15+ Years",
+    "short_description": "",
+    "long_description": "right partner for you in the range of MTB bikes -engineered and tested to deliver in every situation to ensure a seamless ride.",
+    "description": "right partner for you in the range of MTB bikes -engineered and tested to deliver in every situation to ensure a seamless ride.",
+    "specifications": "",
+    "features": "",
+    "seo_title": "MadRock 27.5T - KTR Cycle World",
+    "seo_description": "right partner for you in the range of MTB bikes -engineered and tested to deliver in every situation to ensure a seamless ride.",
+    "currentPrice": 25000
   }
 ]
