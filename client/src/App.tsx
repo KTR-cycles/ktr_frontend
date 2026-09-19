@@ -14,6 +14,7 @@ import Router from "@/components/Router";
 import ErrorFallback from "@/components/ErrorFallback";
 import ScrollToTop from "@/components/ScrollToTop";
 import LocalSEO from "@/components/LocalSEO";
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 
 function AppContent() {
@@ -41,6 +42,7 @@ function App() {
             <TooltipProvider>
               <AppContent />
               <Toaster />
+              <SpeedInsights />
             </TooltipProvider>
           </QueryClientProvider>
         </PersistGate>
