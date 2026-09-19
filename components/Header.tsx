@@ -79,7 +79,7 @@ export default function Header() {
             <div className="flex items-center gap-2 hover-elevate active-elevate-2 px-3 py-2 rounded-xl transition-all cursor-pointer">
               <img 
                 src="/assets/generated_images/ktr_cycle_logo.jpg" 
-                alt="KTR Cycle World - Best Cycles in Tirunelveli, Vannarpettai & Palayankottai" 
+                alt="KTR Cycle World Logo" 
                 className="w-8 h-6 sm:w-10 sm:h-8 md:w-12 md:h-10 object-contain"
                 title="KTR Cycle World - Leading Cycle Shop in South Tamil Nadu"
               />
