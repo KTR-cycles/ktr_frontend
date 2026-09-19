@@ -8,6 +8,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 import LocalSEO from '@/components/LocalSEO';
 import Providers from '@/components/Providers';
 import NavigationLoader from '@/components/NavigationLoader';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -158,6 +159,7 @@ export default function RootLayout({
           <main id="main-content" className="flex-1">{children}</main>
           <Footer />
           <StickyContactButtons />
+          <SpeedInsights />
         </Providers>
       </body>
     </html>
