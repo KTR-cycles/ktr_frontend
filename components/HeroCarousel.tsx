@@ -56,7 +56,10 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
               <div className="relative w-full h-[380px] sm:h-[520px] md:h-[620px]">
                 <img
                   src={slide.image}
-                  alt={`Slide ${index + 1}`}
+                  alt={slide.quote || `KTR Cycle World Slide ${index + 1}`}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "low"}
+                  decoding="async"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-slate-950/20 backdrop-blur-[1px]" />

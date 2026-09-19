@@ -1,14 +1,16 @@
 import { STORE_LOCATIONS } from "@/data/storeLocations";
 
 export default function LocalSEO() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ktrcycleworld.com';
+  
   const schemaData = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "BicycleStore",
     "name": "KTR Cycle World",
-    "image": "https://ktrcycleworld.com/assets/generated_images/ktr_cycle_logo.jpg",
-    "logo": "https://ktrcycleworld.com/assets/generated_images/ktr_cycle_logo.jpg",
-    "@id": "https://ktrcycleworld.com/#localbusiness",
-    "url": "https://ktrcycleworld.com",
+    "image": `${siteUrl}/assets/generated_images/ktr_cycle_logo.jpg`,
+    "logo": `${siteUrl}/assets/generated_images/ktr_cycle_logo.jpg`,
+    "@id": `${siteUrl}/#bicyclestore`,
+    "url": siteUrl,
     "telephone": "+91-9342727735",
     "email": "ktrcycleworld006@gmail.com",
     "priceRange": "₹₹",

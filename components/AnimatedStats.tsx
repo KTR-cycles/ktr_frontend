@@ -20,12 +20,18 @@ const iconMap = {
 };
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
-  const [count, setCount] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
+  const [count, setCount] = useState(target);
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   useEffect(() => {
-    if (!inView) return;
+    setIsMounted(true);
+    setCount(0);
+  }, []);
+
+  useEffect(() => {
+    if (!isMounted || !inView) return;
     let start = 0;
     const duration = 2000;
     const step = 16;
@@ -42,7 +48,7 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
     }, step);
 
     return () => clearInterval(timer);
-  }, [inView, target]);
+  }, [inView, isMounted, target]);
 
   return (
     <span ref={ref}>

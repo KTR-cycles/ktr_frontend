@@ -23,25 +23,27 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: 'swap',
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ktrcycleworld.com';
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ktrcycleworld.com'),
+  metadataBase: new URL(siteUrl),
   title: {
-    default: 'KTR Cycle World - Best Cycles in Tirunelveli | Premium Bikes in Vannarpettai & Palayankottai',
+    default: 'Cycles in Tirunelveli | KTR Cycle World',
     template: '%s | KTR Cycle World',
   },
   description:
-    'Discover the best cycles in Tirunelveli at KTR Cycle World. Wide range of mountain bikes, road bikes, electric cycles, kids cycles & accessories in Vannarpettai and Palayankottai, South Tamil Nadu.',
+    "Shop bicycles in Tirunelveli at KTR Cycle World. Explore MTB, kids, geared, electric and women's cycles from leading brands with 4 local showrooms.",
   keywords: [
     'KTR Cycle',
     'KTR Cycle World',
-    'best cycle in Tirunelveli',
+    'cycles in Tirunelveli',
+    'best cycle shop Tirunelveli',
     'cycles in Vannarpettai',
     'cycles in Palayankottai',
-    'best cycle shop Tirunelveli',
-    'cycle store South Tamil Nadu',
-    'electric cycles Palayankottai',
     'mountain bikes Tirunelveli',
-    'road bikes Vannarpettai',
+    'geared cycles Tirunelveli',
+    'kids cycles Tirunelveli',
+    'electric cycles Palayankottai',
     'bicycle shop Tamil Nadu',
   ],
   authors: [{ name: 'KTR Cycle World' }],
@@ -57,24 +59,24 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://ktrcycleworld.com',
+    canonical: siteUrl,
   },
   icons: {
     icon: '/assets/generated_images/ktr_cycle_logo.jpg',
     apple: '/assets/generated_images/ktr_cycle_logo.jpg',
   },
   openGraph: {
-    title: 'KTR Cycle World - Best Cycles in Tirunelveli | Premium Bikes in South Tamil Nadu',
+    title: 'Cycles in Tirunelveli | KTR Cycle World',
     description:
-      'Premium bicycle showroom offering top brand mountain, road, kids and electric cycles in Tirunelveli, Vannarpettai & Palayankottai.',
-    url: 'https://ktrcycleworld.com',
+      "Shop bicycles in Tirunelveli at KTR Cycle World. Explore MTB, kids, geared, electric and women's cycles from leading brands with 4 local showrooms.",
+    url: siteUrl,
     siteName: 'KTR Cycle World',
     images: [
       {
-        url: 'https://ktrcycleworld.com/assets/generated_images/ktr_cycle_logo.jpg',
+        url: `${siteUrl}/assets/generated_images/ktr_cycle_logo.jpg`,
         width: 1200,
         height: 630,
-        alt: 'KTR Cycle World Tirunelveli',
+        alt: 'KTR Cycle World - Cycles in Tirunelveli',
       },
     ],
     locale: 'en_IN',
@@ -82,9 +84,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'KTR Cycle World - Best Cycles in Tirunelveli',
-    description: 'Leading cycle shop in Tirunelveli, Vannarpettai & Palayankottai. Best cycles in South Tamil Nadu.',
-    images: ['https://ktrcycleworld.com/assets/generated_images/ktr_cycle_logo.jpg'],
+    title: 'Cycles in Tirunelveli | KTR Cycle World',
+    description: "Shop bicycles in Tirunelveli from leading brands at KTR Cycle World with 4 local showrooms.",
+    images: [`${siteUrl}/assets/generated_images/ktr_cycle_logo.jpg`],
   },
   other: {
     'geo.region': 'IN-TN',

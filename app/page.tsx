@@ -6,8 +6,12 @@ import AnimatedStats from "@/components/AnimatedStats";
 import InstagramReelsSection from "@/components/InstagramReelsSection";
 import BrandSlider from "@/components/BrandSlider";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import LocalSEOContent from "@/components/LocalSEOContent";
+import HomepageFAQ from "@/components/HomepageFAQ";
+import { homepageFaqs } from "@/data/faqs";
 
 export default function HomePage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ktrcycleworld.com';
   const mountainImage = '/assets/generated_images/Mountain_biking_adventure_scene_01077af1.png';
   const urbanImage = '/assets/generated_images/Urban_cycling_lifestyle_shot_0317efee.png';
   const groupImage = '/assets/generated_images/Group_cycling_community_scene_9b549ad4.png';
@@ -16,19 +20,19 @@ export default function HomePage() {
   const heroSlides = [
     {
       image: mountainImage,
-      quote: "Tirunelveli's best cycles. Start your adventure.",
+      quote: "Cycles in Tirunelveli — Shop Bicycles from Leading Brands",
     },
     {
       image: urbanImage,
-      quote: "Premium rides for South Tamil Nadu.",
+      quote: "Premium Mountain, Geared & Electric Bikes for South Tamil Nadu",
     },
     {
       image: groupImage,
-      quote: "Ride together. Grow together.",
+      quote: "Ride together. Top Brands & Authorized Warranty",
     },
     {
       image: sunsetImage,
-      quote: "Go faster with KTR Cycle World.",
+      quote: "Go faster with KTR Cycle World — 4 Local Showrooms",
     },
   ];
 
@@ -36,10 +40,10 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "KTR Cycle World",
-    "url": "https://ktrcycleworld.com",
+    "url": siteUrl,
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://ktrcycleworld.com/products?search={search_term_string}",
+      "target": `${siteUrl}/products?search={search_term_string}`,
       "query-input": "required name=search_term_string"
     }
   };
@@ -48,8 +52,8 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "KTR Cycle World",
-    "url": "https://ktrcycleworld.com",
-    "logo": "https://ktrcycleworld.com/assets/generated_images/ktr_cycle_logo.jpg",
+    "url": siteUrl,
+    "logo": `${siteUrl}/assets/generated_images/ktr_cycle_logo.jpg`,
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+91-9342727735",
@@ -62,6 +66,19 @@ export default function HomePage() {
     ]
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": homepageFaqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
       <script
@@ -72,6 +89,10 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="w-full">
         {/* Category quick-access strip */}
         <CategoryCarousel />
@@ -81,8 +102,11 @@ export default function HomePage() {
           <HeroCarousel slides={heroSlides} />
         </section>
 
-        {/* Animated trust stats — dark band */}
+        {/* Animated trust stats */}
         <AnimatedStats />
+
+        {/* Local SEO Explanatory Content Section */}
+        <LocalSEOContent />
 
         {/* Featured products */}
         <FeaturedProducts />
@@ -90,7 +114,10 @@ export default function HomePage() {
         {/* Sliding brand list marquee */}
         <BrandSlider />
 
-        {/* Instagram Reels & Video Showcase with adaptive network resolution */}
+        {/* FAQ Accordion Section */}
+        <HomepageFAQ />
+
+        {/* Instagram Reels & Video Showcase */}
         <InstagramReelsSection />
 
         {/* Community Testimonials */}

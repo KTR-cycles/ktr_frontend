@@ -3,7 +3,7 @@ import { getProducts } from '@/lib/products';
 import { getCategories } from '@/lib/categories';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://ktrcycleworld.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ktrcycleworld.com';
 
   const products = getProducts();
   const categories = getCategories();
