@@ -104,8 +104,8 @@ export default function RootLayout({
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
 
   return (
-    <html lang="en" className={`${inter.variable} ${plusJakarta.variable}`}>
-      <body className="min-h-screen flex flex-col bg-background font-sans antialiased">
+    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${plusJakarta.variable}`}>
+      <body suppressHydrationWarning className="min-h-screen flex flex-col bg-background font-sans antialiased">
         {gtmId && (
           <>
             <Script id="gtm-script" strategy="afterInteractive">
