@@ -2200,10 +2200,10 @@
     "category": "cat_003",
     "category_id": "cat_003",
     "category_name": "Geared Cycle",
-    "image": "/images/products/prod_065_1.jpg",
-    "images": "/images/products/prod_065_1.jpg",
+    "image": "/images/products/prod_065_1.png",
+    "images": "/images/products/prod_065_1.png",
     "images_list": [
-      "/images/products/prod_065_1.jpg"
+      "/images/products/prod_065_1.png"
     ],
     "color": "",
     "original_price": 30000,
