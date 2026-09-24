@@ -10,7 +10,8 @@
     "check": "tsc --noEmit",
     "excel:template": "node scripts/generate-excel-template.cjs",
     "excel:import": "node scripts/import-excel-to-json.cjs",
-    "images:optimize": "node scripts/optimize-images.cjs"
+    "images:optimize": "node scripts/optimize-images.cjs",
+    "images:clean": "node scripts/cleanup-unused-images.cjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

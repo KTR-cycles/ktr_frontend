@@ -172,6 +172,15 @@ function runImport() {
   if (formattedCategories.length > 0) {
     console.log(`✅ Imported & updated ${formattedCategories.length} categories -> ${categoriesJsonPath}\n`);
   }
+
+  // Cleanup orphaned images no longer referenced in products.json
+  try {
+    const { cleanUnusedImages } = require('./cleanup-unused-images.cjs');
+    cleanUnusedImages();
+  } catch (err) {
+    console.warn(`⚠️ Warning: Image cleanup failed:`, err.message);
+  }
 }
 
 runImport();
+
