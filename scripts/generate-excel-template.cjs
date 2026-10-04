@@ -28,13 +28,15 @@ if (fs.existsSync(productsJsonPath)) {
       featured: p.featured ? "TRUE" : "FALSE",
       location: p.location || 'Tirunelveli',
       color: p.color || '',
+      frame_size: p.frame_size || p.tire_size || '',
       age_group: p.age_group || '',
       tags: p.tags || '',
       short_description: p.short_description || '',
       long_description: p.long_description || '',
       description: p.description || p.long_description || p.short_description || '',
-      specifications: p.specifications || '',
-      features: p.features || '',
+      specifications: typeof p.specifications === 'object' ? JSON.stringify(p.specifications) : (p.specifications || ''),
+      variants: typeof p.variants === 'object' ? JSON.stringify(p.variants) : (p.variants || ''),
+      features: typeof p.features === 'object' ? JSON.stringify(p.features) : (p.features || ''),
       seo_title: p.seo_title || p.meta_title || `${p.name || ''} - KTR Cycle World`,
       seo_description: p.seo_description || p.meta_description || p.short_description || p.description || '',
       images: p.images || (Array.isArray(p.images_list) ? p.images_list.join(',') : p.image || '')
@@ -130,12 +132,14 @@ wsProducts['!cols'] = [
   { wch: 10 }, // featured
   { wch: 14 }, // location
   { wch: 15 }, // color
+  { wch: 15 }, // frame_size
   { wch: 15 }, // age_group
   { wch: 20 }, // tags
   { wch: 35 }, // short_description
   { wch: 45 }, // long_description
   { wch: 45 }, // description
   { wch: 45 }, // specifications
+  { wch: 55 }, // variants
   { wch: 45 }, // features
   { wch: 35 }, // seo_title
   { wch: 45 }, // seo_description

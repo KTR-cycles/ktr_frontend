@@ -1,5 +1,5 @@
 import productsData from '../data/products.json';
-import type { Product } from '../types';
+import type { Product, ProductVariant } from '../types';
 
 export function getProducts(): Product[] {
   return productsData as unknown as Product[];
@@ -78,4 +78,72 @@ export function getAgeGroups(): string[] {
     return a.localeCompare(b);
   });
 }
+
+export function getProductVariants(product: Product): ProductVariant[] {
+  if (product.variants && product.variants.length > 0) {
+    return product.variants;
+  }
+
+  const allProducts = getProducts();
+
+  // If product has a variant group ID
+  if (product.variant_group_id) {
+    return allProducts
+      .filter((p) => p.variant_group_id === product.variant_group_id)
+      .map((p) => ({
+        id: p.id,
+        product_id: p.product_id,
+        slug: p.slug,
+        name: p.name,
+        varient_label: p.varient_label || p.name,
+        color: p.color,
+        tire_size: p.tire_size,
+        brakes: p.brakes,
+        gears: p.gears,
+        original_price: p.original_price,
+        discounted_price: p.discounted_price,
+        image: p.image,
+        stock: p.stock
+      }));
+  }
+
+  // Auto-group variants based on common brand + model prefix (e.g., "ALPHA BOMBAY" or "BSA CHAMP")
+  if (product.name) {
+    const words = product.name.split(' ');
+    // Get base series name (e.g. first 2-3 words like "91 ALPHA BOMBAY" -> "ALPHA BOMBAY")
+    const cleanName = product.name.replace(/^91\s+/i, '');
+    const modelPrefix = cleanName.split(/\s+\d+(T|")/i)[0].trim();
+
+    if (modelPrefix && modelPrefix.length > 3) {
+      const matches = allProducts.filter((p) => {
+        const pClean = (p.name || '').replace(/^91\s+/i, '');
+        return (
+          p.brand?.toLowerCase() === product.brand?.toLowerCase() &&
+          pClean.toLowerCase().startsWith(modelPrefix.toLowerCase())
+        );
+      });
+
+      if (matches.length > 1) {
+        return matches.map((p) => ({
+          id: p.id,
+          product_id: p.product_id,
+          slug: p.slug,
+          name: p.name,
+          varient_label: p.varient_label || p.name,
+          color: p.color,
+          tire_size: p.tire_size,
+          brakes: p.brakes,
+          gears: p.gears,
+          original_price: p.original_price,
+          discounted_price: p.discounted_price,
+          image: p.image,
+          stock: p.stock
+        }));
+      }
+    }
+  }
+
+  return [];
+}
+
 

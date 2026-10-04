@@ -29,8 +29,11 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     return { title: 'Category Not Found' };
   }
 
-  const title = `${category.name} | Best ${category.name} in Tirunelveli | KTR Cycle World`;
-  const description = category.description || `Browse top quality ${category.name} collection at KTR Cycle World, Tirunelveli, Vannarpettai & Palayankottai. Best prices guaranteed.`;
+  const rawTitle = (category as any).seo_title || category.name;
+  const cleanTitle = rawTitle.replace(/\s*[\|-]\s*KTR Cycle World$/i, '').trim();
+
+  const title = `${cleanTitle} | Best Range in Tirunelveli`;
+  const description = (category as any).seo_description || category.description || `Browse top quality ${category.name} collection at KTR Cycle World, Tirunelveli, Vannarpettai & Palayankottai. Best prices guaranteed.`;
   const canonicalUrl = `https://ktrcycleworld.com/category/${category.slug || category.category_id}`;
 
   return {
@@ -48,7 +51,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
       canonical: canonicalUrl,
     },
     openGraph: {
-      title,
+      title: `${cleanTitle} | KTR Cycle World`,
       description,
       url: canonicalUrl,
       siteName: 'KTR Cycle World',
@@ -64,7 +67,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     },
     twitter: {
       card: 'summary_large_image',
-      title,
+      title: `${cleanTitle} | KTR Cycle World`,
       description,
     },
   };

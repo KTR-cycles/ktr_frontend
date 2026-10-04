@@ -124,6 +124,39 @@ function runImport() {
     const longDesc = String(item.long_description || '').trim();
     const mainDesc = String(item.description || longDesc || shortDesc || name).trim();
 
+    // Parse JSON or complex fields safely
+    let specifications = item.specifications;
+    if (typeof specifications === 'string' && specifications.trim()) {
+      const trimmed = specifications.trim();
+      if (trimmed.startsWith('[') || trimmed.startsWith('{')) {
+        try { specifications = JSON.parse(trimmed); } catch {}
+      } else if (trimmed.includes('|') || trimmed.includes(':')) {
+        specifications = trimmed.split('|').map(part => {
+          const kv = part.split(':');
+          if (kv.length >= 2) {
+            return { label: kv[0].trim(), value: kv.slice(1).join(':').trim() };
+          }
+          return { label: 'Specification', value: part.trim() };
+        });
+      }
+    }
+
+    let variants = item.variants;
+    if (typeof variants === 'string' && variants.trim()) {
+      const trimmed = variants.trim();
+      if (trimmed.startsWith('[') || trimmed.startsWith('{')) {
+        try { variants = JSON.parse(trimmed); } catch {}
+      }
+    }
+
+    let features = item.features;
+    if (typeof features === 'string' && features.trim()) {
+      const trimmed = features.trim();
+      if (trimmed.startsWith('[')) {
+        try { features = JSON.parse(trimmed); } catch {}
+      }
+    }
+
     return {
       id: productId,
       product_id: productId,
@@ -138,6 +171,7 @@ function runImport() {
       images: imagesList.join(','),
       images_list: imagesList,
       color: String(item.color || '').trim(),
+      frame_size: String(item.frame_size || item.tire_size || '').trim(),
       original_price: originalPrice,
       discounted_price: discountedPrice,
       discount_percent: discountPercent,
@@ -150,8 +184,9 @@ function runImport() {
       short_description: shortDesc,
       long_description: longDesc,
       description: mainDesc,
-      specifications: String(item.specifications || '').trim(),
-      features: String(item.features || '').trim(),
+      specifications: specifications || '',
+      variants: variants || undefined,
+      features: features || '',
       seo_title: String(item.seo_title || item.meta_title || `${name} - KTR Cycle World`).trim(),
       seo_description: String(item.seo_description || item.meta_description || shortDesc || mainDesc).trim(),
       currentPrice: discountedPrice

@@ -20,7 +20,7 @@ import ProductImageCarousel from "@/components/ProductImageCarousel";
 import SharePopup from "@/components/SharePopup";
 import ProductReviews from "@/components/ProductReviews";
 import ProductCard from "@/components/ProductCard";
-import { getProductsByCategory, getAgeGroupForProduct } from "@/lib/products";
+import { getProductsByCategory, getAgeGroupForProduct, getProductVariants } from "@/lib/products";
 import { trackProductView, trackWhatsAppLead } from "@/lib/analytics";
 import type { Product } from "@/types";
 
@@ -31,6 +31,8 @@ interface ProductDetailClientProps {
 export default function ProductDetailClient({ product }: ProductDetailClientProps) {
   const router = useRouter();
   const [shareOpen, setShareOpen] = useState(false);
+
+  const availableVariants = getProductVariants(product);
 
   // Track product page view
   useEffect(() => {
@@ -48,12 +50,59 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
         ? [product.image]
         : [];
 
-  const currentPrice = product.discounted_price || product.original_price || product.currentPrice || "Contact for Price";
-  const hasOriginalPrice = product.original_price && product.discounted_price && product.original_price !== product.discounted_price;
+  // Extract unique frame sizes and colors from variants
+  const availableSizes = Array.from(
+    new Set(
+      availableVariants
+        .map((v) => v.frame_size || v.size || v.tire_size)
+        .filter((s): s is string => Boolean(s && s.trim()))
+    )
+  );
 
-  // Calculate discount percentage
-  const origNum = typeof product.original_price === "number" ? product.original_price : parseFloat(String(product.original_price || 0));
-  const discNum = typeof product.discounted_price === "number" ? product.discounted_price : parseFloat(String(product.discounted_price || 0));
+  const availableColors = Array.from(
+    new Set(
+      availableVariants
+        .map((v) => v.color)
+        .filter((c): c is string => Boolean(c && c.trim()))
+    )
+  );
+
+  // Default state for size and color
+  const defaultSize = availableSizes.length > 0
+    ? (availableSizes.find(s => s === product.frame_size || s === product.tire_size) || availableSizes[0])
+    : (product.frame_size || product.tire_size || "");
+
+  const defaultColor = availableColors.length > 0
+    ? (availableColors.find(c => c === product.color) || availableColors[0])
+    : (product.color || "");
+
+  const [selectedSize, setSelectedSize] = useState<string>(defaultSize);
+  const [selectedColor, setSelectedColor] = useState<string>(defaultColor);
+
+  useEffect(() => {
+    if (defaultSize) setSelectedSize(defaultSize);
+    if (defaultColor) setSelectedColor(defaultColor);
+  }, [product.id, product.slug]);
+
+  // Match selected variant
+  const selectedVariant = availableVariants.find((v) => {
+    const vSize = v.frame_size || v.size || v.tire_size;
+    const sizeMatch = !selectedSize || vSize === selectedSize;
+    const colorMatch = !selectedColor || v.color === selectedColor;
+    return sizeMatch && colorMatch;
+  }) || availableVariants.find((v) => {
+    const vSize = v.frame_size || v.size || v.tire_size;
+    return !selectedSize || vSize === selectedSize;
+  }) || availableVariants[0];
+
+  // Dynamic price calculation
+  const activeDiscountedPrice = selectedVariant?.discounted_price || product.discounted_price || product.original_price || product.currentPrice || 0;
+  const activeOriginalPrice = selectedVariant?.original_price || product.original_price || 0;
+  const currentPrice = activeDiscountedPrice || "Contact for Price";
+  const hasOriginalPrice = Boolean(activeOriginalPrice && activeDiscountedPrice && activeOriginalPrice > activeDiscountedPrice);
+
+  const origNum = typeof activeOriginalPrice === "number" ? activeOriginalPrice : parseFloat(String(activeOriginalPrice || 0));
+  const discNum = typeof activeDiscountedPrice === "number" ? activeDiscountedPrice : parseFloat(String(activeDiscountedPrice || 0));
   const discountPercent = (origNum > 0 && discNum > 0 && origNum > discNum) 
     ? Math.round(((origNum - discNum) / origNum) * 100)
     : null;
@@ -89,7 +138,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
   }
 
   // WhatsApp enquiry message
-  const whatsappMessage = `Hello KTR Cycle World 👋\n\nI am interested in buying/enquiring about:\n🚴 *${product.name}*\nBrand: ${product.brand || 'KTR'}\nPrice: ₹${currentPrice}\n\nCould you please confirm stock availability and delivery options?`;
+  const whatsappMessage = `Hello KTR Cycle World 👋\n\nI am interested in buying/enquiring about:\n🚴 *${product.name}*\nBrand: ${product.brand || 'KTR'}\nFrame Size: ${selectedSize || 'Standard'}\nColor: ${selectedColor || 'Standard'}\nPrice: ₹${currentPrice}\n\nCould you please confirm stock availability and delivery options?`;
 
   // Related products
   const relatedProducts = getProductsByCategory(product.category || product.category_id || product.category_name || '')
@@ -149,7 +198,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left Column: Image Carousel */}
           <div>
-            <ProductImageCarousel images={images} productName={product.name} />
+            <ProductImageCarousel images={selectedVariant?.image ? [selectedVariant.image, ...images.filter(img => img !== selectedVariant.image)] : images} productName={product.name} />
           </div>
 
           {/* Right Column: Information & Actions */}
@@ -187,7 +236,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                   <div className="flex items-center gap-3 flex-wrap">
                     <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-400">MRP:</span>
                     <span className="text-base sm:text-lg text-slate-400 font-semibold line-through">
-                      ₹{Number(product.original_price).toLocaleString()}
+                      ₹{origNum.toLocaleString()}
                     </span>
                     {origNum > discNum && (
                       <span className="px-3 py-1 rounded-full bg-gradient-to-r from-emerald-600 to-teal-500 text-white text-xs font-black shadow-md flex items-center gap-1">
@@ -202,7 +251,7 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                 <div className="flex items-baseline gap-3 flex-wrap mt-1">
                   <div className="flex items-baseline gap-2">
                     <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-amber-600 dark:text-amber-400">Offer Price:</span>
-                    <span className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-slate-900 dark:text-white">
+                    <span className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-slate-900 dark:text-white transition-all">
                       ₹{typeof currentPrice === 'number' ? currentPrice.toLocaleString() : currentPrice}
                     </span>
                   </div>
@@ -221,6 +270,81 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
                 </span>
               </div>
             </div>
+
+            {/* Frame Size Selector */}
+            {availableSizes.length > 0 && (
+              <div className="space-y-2.5 p-4 rounded-2xl bg-white/60 dark:bg-white/5 border border-border/60">
+                <div className="flex items-center justify-between">
+                  <label className="text-xs font-extrabold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+                    <Sparkles className="w-4 h-4 text-amber-500" />
+                    Frame / Wheel Size:
+                    <span className="text-primary font-black ml-1">{selectedSize}</span>
+                  </label>
+                </div>
+                <div className="flex items-center gap-2.5 flex-wrap">
+                  {availableSizes.map((size) => {
+                    const isSelected = selectedSize === size;
+                    return (
+                      <button
+                        key={size}
+                        type="button"
+                        onClick={() => setSelectedSize(size)}
+                        className={`px-4 py-2.5 rounded-xl text-xs font-extrabold transition-all cursor-pointer border ${
+                          isSelected
+                            ? "bg-amber-500 text-slate-950 border-amber-500 shadow-lg ring-2 ring-amber-500/40 scale-105"
+                            : "bg-background hover:bg-accent/40 text-foreground border-border/80"
+                        }`}
+                      >
+                        {size}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* Color Selector */}
+            {availableColors.length > 0 && (
+              <div className="space-y-2.5 p-4 rounded-2xl bg-white/60 dark:bg-white/5 border border-border/60">
+                <div className="flex items-center justify-between">
+                  <label className="text-xs font-extrabold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+                    <Sparkles className="w-4 h-4 text-amber-500" />
+                    Color Variant:
+                    <span className="text-primary font-black ml-1">{selectedColor}</span>
+                  </label>
+                </div>
+                <div className="flex items-center gap-2.5 flex-wrap">
+                  {availableColors.map((colorName) => {
+                    const isSelected = selectedColor === colorName;
+                    const variantForColor = availableVariants.find((v) => v.color === colorName);
+                    const hexCode = variantForColor?.color_hex;
+
+                    return (
+                      <button
+                        key={colorName}
+                        type="button"
+                        onClick={() => setSelectedColor(colorName)}
+                        className={`px-4 py-2.5 rounded-xl text-xs font-extrabold transition-all cursor-pointer border flex items-center gap-2 ${
+                          isSelected
+                            ? "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500 shadow-md ring-2 ring-amber-500/30 scale-105"
+                            : "bg-background hover:bg-accent/40 text-foreground border-border/80"
+                        }`}
+                      >
+                        {hexCode ? (
+                          <span
+                            className="w-3.5 h-3.5 rounded-full border border-black/20 inline-block shadow-sm"
+                            style={{ backgroundColor: hexCode }}
+                          />
+                        ) : (
+                          <span className="w-3.5 h-3.5 rounded-full bg-primary/40 inline-block" />
+                        )}
+                        <span>{colorName}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
 
             {/* Description */}
             <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
