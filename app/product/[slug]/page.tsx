@@ -29,9 +29,14 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     };
   }
 
-  const title = product.meta_title || `${product.name} | Best Price in Tirunelveli | KTR Cycle World`;
-  const description = product.meta_description || product.short_description || product.description || `Buy ${product.name} at KTR Cycle World, Tirunelveli, Vannarpettai. Premium quality and best price guaranteed.`;
-  const imageUrl = product.image ? `https://ktrcycleworld.com${product.image}` : 'https://ktrcycleworld.com/assets/generated_images/ktr_cycle_logo.jpg';
+  const rawTitle = (product as any).seo_title || product.meta_title || product.name;
+  const cleanTitle = rawTitle.replace(/\s*[\|-]\s*KTR Cycle World$/i, '').trim();
+
+  const title = `${cleanTitle} | Best Price in Tirunelveli`;
+  const description = (product as any).seo_description || product.meta_description || product.short_description || product.description || `Buy ${product.name} at KTR Cycle World, Tirunelveli. Premium quality and best price guaranteed.`;
+  const imageUrl = product.image
+    ? (product.image.startsWith('http') ? product.image : `https://ktrcycleworld.com${product.image}`)
+    : 'https://ktrcycleworld.com/assets/generated_images/ktr_cycle_logo.jpg';
   const canonicalUrl = `https://ktrcycleworld.com/product/${product.slug || product.id}`;
 
   return {
@@ -51,7 +56,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
       canonical: canonicalUrl,
     },
     openGraph: {
-      title,
+      title: `${cleanTitle} | KTR Cycle World`,
       description,
       url: canonicalUrl,
       siteName: 'KTR Cycle World',
@@ -67,7 +72,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     },
     twitter: {
       card: 'summary_large_image',
-      title,
+      title: `${cleanTitle} | KTR Cycle World`,
       description,
       images: [imageUrl],
     },

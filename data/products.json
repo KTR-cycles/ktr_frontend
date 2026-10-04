@@ -5,7 +5,7 @@
     "slug": "alpha-bombay-26-vb",
     "name": "91 ALPHA BOMBAY 26T VB",
     "brand": "ALPHA",
-    "varient_label": "Alpha Bombay 26 VB",
+    "varient_label": "26T V-Brake",
     "category": "cat_002",
     "category_id": "cat_002",
     "category_name": "Adult Cycle",
@@ -14,20 +14,106 @@
     "images_list": [
       "/images/products/prod_001_1.jpg"
     ],
-    "color": "",
+    "color": "Matte Black",
+    "frame_size": "18 Inches",
     "original_price": 7900,
     "discounted_price": 6700,
-    "discount_percent": 3.47,
-    "discount": 3.47,
-    "stock": 1,
-    "featured": false,
+    "discount_percent": 15.19,
+    "discount": 15.19,
+    "stock": 5,
+    "featured": true,
     "location": "Tirunelveli",
-    "tags": "",
+    "tags": "ADULT CYCLE, HYBRID",
     "age_group": "15+ Years",
-    "short_description": "",
-    "long_description": "",
+    "short_description": "High performance adult cycle with sturdy frame and smooth V-brakes.",
+    "long_description": "The 91 Alpha Bombay 26T is built for daily commutes and fitness rides across Tirunelveli.",
     "description": "Alpha Bombay 26 VB",
-    "specifications": "",
+    "specifications": [
+      {
+        "label": "Wheel Size",
+        "value": "26 Inches"
+      },
+      {
+        "label": "Brake System",
+        "value": "V-Brake"
+      },
+      {
+        "label": "Frame Material",
+        "value": "High-Tensile Steel"
+      }
+    ],
+    "variants": [
+      {
+        "id": "prod_001_s16_black",
+        "size": "16 Inches",
+        "frame_size": "16 Inches",
+        "color": "Matte Black",
+        "color_hex": "#1a1a1a",
+        "original_price": 7500,
+        "discounted_price": 6300,
+        "slug": "alpha-bombay-26-vb"
+      },
+      {
+        "id": "prod_001_s16_red",
+        "size": "16 Inches",
+        "frame_size": "16 Inches",
+        "color": "Gloss Red",
+        "color_hex": "#dc2626",
+        "original_price": 7500,
+        "discounted_price": 6300,
+        "slug": "alpha-bombay-26-vb"
+      },
+      {
+        "id": "prod_001_s18_black",
+        "size": "18 Inches",
+        "frame_size": "18 Inches",
+        "color": "Matte Black",
+        "color_hex": "#1a1a1a",
+        "original_price": 7900,
+        "discounted_price": 6700,
+        "slug": "alpha-bombay-26-vb"
+      },
+      {
+        "id": "prod_001_s18_red",
+        "size": "18 Inches",
+        "frame_size": "18 Inches",
+        "color": "Gloss Red",
+        "color_hex": "#dc2626",
+        "original_price": 7900,
+        "discounted_price": 6700,
+        "slug": "alpha-bombay-26-vb"
+      },
+      {
+        "id": "prod_001_s18_yellow",
+        "size": "18 Inches",
+        "frame_size": "18 Inches",
+        "color": "Neon Yellow",
+        "color_hex": "#eab308",
+        "original_price": 8200,
+        "discounted_price": 7000,
+        "slug": "alpha-bombay-26-vb"
+      },
+      {
+        "id": "prod_001_s20_black",
+        "size": "20 Inches",
+        "frame_size": "20 Inches",
+        "color": "Matte Black",
+        "color_hex": "#1a1a1a",
+        "original_price": 8500,
+        "discounted_price": 7400,
+        "slug": "alpha-bombay-26-vb"
+      },
+      {
+        "id": "prod_001_s20_blue",
+        "size": "20 Inches",
+        "frame_size": "20 Inches",
+        "color": "Electric Blue",
+        "color_hex": "#2563eb",
+        "original_price": 8500,
+        "discounted_price": 7400,
+        "slug": "alpha-bombay-26-vb"
+      }
+    ],
     "features": "",
     "seo_title": "Alpha Bombay 26 VB - KTR Cycle World",
     "seo_description": "Alpha Bombay 26 VB",
@@ -49,6 +135,7 @@
       "/images/products/prod_002_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 11200,
     "discounted_price": 11200,
     "discount_percent": 0,
@@ -84,6 +171,7 @@
       "/images/products/prod_004_2.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 6900,
     "discounted_price": 6200,
     "discount_percent": 10.14,
@@ -118,6 +206,7 @@
       "/images/products/prod_005_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 10200,
     "discounted_price": 9500,
     "discount_percent": 2.45,
@@ -152,6 +241,7 @@
       "/images/products/prod_006_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 10400,
     "discounted_price": 9700,
     "discount_percent": 2.4,
@@ -186,6 +276,7 @@
       "/images/products/prod_009_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 7800,
     "discounted_price": 7350,
     "discount_percent": 3.29,
@@ -221,6 +312,7 @@
       "/images/products/prod_011_2.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 7900,
     "discounted_price": 6800,
     "discount_percent": 3.16,
@@ -257,6 +349,7 @@
       "/images/products/prod_012_3.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 7800,
     "discounted_price": 7400,
     "discount_percent": 3.21,
@@ -293,6 +386,7 @@
       "/images/products/prod_013_3.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 0,
     "discounted_price": 0,
     "discount_percent": 0,
@@ -327,6 +421,7 @@
       "/images/products/prod_014_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 4600,
     "discounted_price": 4150,
     "discount_percent": 5.68,
@@ -361,6 +456,7 @@
       "/images/products/prod_015_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 4800,
     "discounted_price": 4250,
     "discount_percent": 5.56,
@@ -395,6 +491,7 @@
       "/images/products/prod_016_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 4900,
     "discounted_price": 4650,
     "discount_percent": 5.1,
@@ -429,6 +526,7 @@
       "/images/products/prod_017_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 5450,
     "discounted_price": 5100,
     "discount_percent": 4.59,
@@ -463,6 +561,7 @@
       "/images/products/prod_018_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 7450,
     "discounted_price": 6500,
     "discount_percent": 4.72,
@@ -497,6 +596,7 @@
       "/images/products/prod_019_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 8400,
     "discounted_price": 7500,
     "discount_percent": 2.98,
@@ -531,6 +631,7 @@
       "/images/products/prod_020_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 12900,
     "discounted_price": 12300,
     "discount_percent": 2,
@@ -566,6 +667,7 @@
       "/images/products/prod_021_2.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 38900,
     "discounted_price": 37500,
     "discount_percent": 3.6,
@@ -602,6 +704,7 @@
       "/images/products/prod_022_3.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 24500,
     "discounted_price": 24000,
     "discount_percent": 2.04,
@@ -638,6 +741,7 @@
       "/images/products/prod_024_3.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 14175,
     "discounted_price": 13925,
     "discount_percent": 1.76,
@@ -672,6 +776,7 @@
       "/images/products/prod_025_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 31900,
     "discounted_price": 31000,
     "discount_percent": 2.82,
@@ -706,6 +811,7 @@
       "/images/products/prod_027_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 19900,
     "discounted_price": 18900,
     "discount_percent": 1.23,
@@ -740,6 +846,7 @@
       "/images/products/prod_029_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 31000,
     "discounted_price": 30000,
     "discount_percent": 3.01,
@@ -774,6 +881,7 @@
       "/images/products/prod_030_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 5200,
     "discounted_price": 4800,
     "discount_percent": 4.81,
@@ -808,6 +916,7 @@
       "/images/products/prod_031_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 7200,
     "discounted_price": 6950,
     "discount_percent": 3.47,
@@ -842,6 +951,7 @@
       "/images/products/prod_032_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 28900,
     "discounted_price": 28000,
     "discount_percent": 3.11,
@@ -876,6 +986,7 @@
       "/images/products/prod_033_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 13500,
     "discounted_price": 12900,
     "discount_percent": 1.85,
@@ -910,6 +1021,7 @@
       "/images/products/prod_034_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 6800,
     "discounted_price": 6550,
     "discount_percent": 3.68,
@@ -944,6 +1056,7 @@
       "/images/products/prod_035_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 3500,
     "discounted_price": 3250,
     "discount_percent": 7.14,
@@ -978,6 +1091,7 @@
       "/images/products/prod_036_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 4200,
     "discounted_price": 3950,
     "discount_percent": 5.95,
@@ -1012,6 +1126,7 @@
       "/images/products/prod_037_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 3600,
     "discounted_price": 3350,
     "discount_percent": 6.94,
@@ -1046,6 +1161,7 @@
       "/images/products/prod_038_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 8200,
     "discounted_price": 7950,
     "discount_percent": 3.05,
@@ -1080,6 +1196,7 @@
       "/images/products/prod_039_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 8100,
     "discounted_price": 7850,
     "discount_percent": 3.09,
@@ -1114,6 +1231,7 @@
       "/images/products/prod_040_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 8200,
     "discounted_price": 7950,
     "discount_percent": 3.05,
@@ -1148,6 +1266,7 @@
       "/images/products/prod_041_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 6900,
     "discounted_price": 6650,
     "discount_percent": 3.62,
@@ -1182,6 +1301,7 @@
       "/images/products/prod_042_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 13000,
     "discounted_price": 12750,
     "discount_percent": 1.92,
@@ -1216,6 +1336,7 @@
       "/images/products/prod_043_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 23500,
     "discounted_price": 23000,
     "discount_percent": 2.13,
@@ -1250,6 +1371,7 @@
       "/images/products/prod_044_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 34000,
     "discounted_price": 33800,
     "discount_percent": 0.59,
@@ -1284,6 +1406,7 @@
       "/images/products/prod_046_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 5900,
     "discounted_price": 5500,
     "discount_percent": 4.24,
@@ -1318,6 +1441,7 @@
       "/images/products/prod_047_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 8300,
     "discounted_price": 7800,
     "discount_percent": 3.21,
@@ -1352,6 +1476,7 @@
       "/images/products/prod_048_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 14200,
     "discounted_price": 13950,
     "discount_percent": 1.76,
@@ -1386,6 +1511,7 @@
       "/images/products/prod_049_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 13995,
     "discounted_price": 13500,
     "discount_percent": 3.54,
@@ -1420,6 +1546,7 @@
       "/images/products/prod_052_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 20200,
     "discounted_price": 19400,
     "discount_percent": 3.96,
@@ -1454,6 +1581,7 @@
       "/images/products/prod_054_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 13300,
     "discounted_price": 12800,
     "discount_percent": 3.76,
@@ -1489,6 +1617,7 @@
       "/images/products/prod_055_2.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 70000,
     "discounted_price": 62000,
     "discount_percent": 11.43,
@@ -1524,6 +1653,7 @@
       "/images/products/prod_056_2.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 13000,
     "discounted_price": 13000,
     "discount_percent": 0,
@@ -1558,6 +1688,7 @@
       "/images/products/prod_057_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 8500,
     "discounted_price": 8500,
     "discount_percent": 0,
@@ -1592,6 +1723,7 @@
       "/images/products/prod_058_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 7300,
     "discounted_price": 7300,
     "discount_percent": 0,
@@ -1626,6 +1758,7 @@
       "/images/products/prod_059_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 8200,
     "discounted_price": 8200,
     "discount_percent": 0,
@@ -1660,6 +1793,7 @@
       "/images/products/prod_062_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 13100,
     "discounted_price": 12800,
     "discount_percent": 2.29,
@@ -1694,6 +1828,7 @@
       "/images/products/prod_063_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 12500,
     "discounted_price": 11500,
     "discount_percent": 8,
@@ -1728,6 +1863,7 @@
       "/images/products/prod_064_1.jpg"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 73000,
     "discounted_price": 73000,
     "discount_percent": 0,
@@ -1762,6 +1898,7 @@
       "/images/placeholder.png"
     ],
     "color": "",
+    "frame_size": "",
     "original_price": 23500,
     "discounted_price": 23000,
     "discount_percent": 2.13,

@@ -37,6 +37,30 @@ export interface Product {
   meta_title?: string;
   meta_description?: string;
   meta_keywords?: string[];
+  frame_size?: string;
+  available_sizes?: string[];
+  available_colors?: string[];
+  variants?: ProductVariant[];
+  variant_group_id?: string;
+}
+
+export interface ProductVariant {
+  id: string;
+  product_id?: string;
+  slug?: string;
+  name?: string;
+  varient_label?: string;
+  color?: string;
+  color_hex?: string;
+  size?: string;
+  frame_size?: string;
+  tire_size?: string;
+  brakes?: string;
+  gears?: string;
+  original_price?: number;
+  discounted_price?: number;
+  image?: string;
+  stock?: number;
 }
 
 export interface Category {

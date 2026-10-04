@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import ContactClient from './ContactClient';
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Showroom Address & WhatsApp | KTR Cycle World Tirunelveli',
+  title: 'Contact Us | Showroom Address & WhatsApp',
   description: 'Get in touch with KTR Cycle World in Tirunelveli. Visit our showroom at Nainar kulam road, or contact us via WhatsApp at +91 9342727735 for bicycle availability & delivery in Vannarpettai and Palayankottai.',
   keywords: [
     'contact KTR Cycle World',
