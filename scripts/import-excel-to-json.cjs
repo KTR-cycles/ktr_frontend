@@ -138,7 +138,7 @@ async function processImages(productId, imagesList) {
     var rawUrl = imagesList[imgIdx];
     if (isGoogleDriveUrl(rawUrl)) {
       var driveInfo = resolveGoogleDriveUrl(rawUrl);
-      var filename = productId + '_' + (imgIdx + 1) + '.jpg';
+      var filename = productId + '_' + (imgIdx + 1) + '_' + driveInfo.fileId + '.jpg';
       var destPath = path.join(PUBLIC_IMG_DIR, filename);
       var publicPath = '/images/products/' + filename;
 

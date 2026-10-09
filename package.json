@@ -9,9 +9,9 @@
     "start": "next start",
     "check": "tsc --noEmit",
     "excel:template": "node scripts/generate-excel-template.cjs",
-    "excel:import": "node scripts/import-excel-to-json.cjs && npm run seo:generate && npm run images:optimize && npm run images:clean",
+    "excel:import": "node scripts/import-excel-to-json.cjs && npm run seo:generate",
     "seo:generate": "node scripts/generate-seo.cjs",
-    "images:optimize": "node scripts/optimize-images.cjs",
+    "images:optimize": "npm run images:clean && node scripts/optimize-images.cjs ",
     "images:clean": "node scripts/cleanup-unused-images.cjs"
   },
   "dependencies": {
