@@ -9,11 +9,11 @@
     "category": "cat_002",
     "category_id": "cat_002",
     "category_name": "Adult Cycle",
-    "image": "/images/products/prod_001_1.jpg",
-    "images": "/images/products/prod_001_1.jpg,/images/products/prod_001_2.jpg",
+    "image": "/images/products/prod_001_1_1cBHXAZIQpKTodzPqbos1Ngp1sV-MFDwC.jpg",
+    "images": "/images/products/prod_001_1_1cBHXAZIQpKTodzPqbos1Ngp1sV-MFDwC.jpg,/images/products/prod_001_2_1Iv7MRj7lY8BSTD19GLEGM0ZcK6zuQYd1.jpg",
     "images_list": [
-      "/images/products/prod_001_1.jpg",
-      "/images/products/prod_001_2.jpg"
+      "/images/products/prod_001_1_1cBHXAZIQpKTodzPqbos1Ngp1sV-MFDwC.jpg",
+      "/images/products/prod_001_2_1Iv7MRj7lY8BSTD19GLEGM0ZcK6zuQYd1.jpg"
     ],
     "color": "Matte Black",
     "frame_size": "18 Inches",
@@ -160,7 +160,7 @@
       "title": "91 Alpha Bombay 26T VB | Adult Cycle | KTR Cycle World",
       "description": "Buy 91 Alpha Bombay 26T VB at ₹6,700. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sle…",
       "type": "product",
-      "image": "/images/products/prod_001_1.jpg",
+      "image": "/images/products/prod_001_1_1cBHXAZIQpKTodzPqbos1Ngp1sV-MFDwC.jpg",
       "url": "/product/alpha-bombay-26-vb",
       "site_name": "KTR Cycle World"
     },
@@ -168,7 +168,7 @@
       "card": "summary_large_image",
       "title": "91 Alpha Bombay 26T VB | Adult Cycle | KTR Cycle World",
       "description": "Buy 91 Alpha Bombay 26T VB at ₹6,700. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sle…",
-      "image": "/images/products/prod_001_1.jpg"
+      "image": "/images/products/prod_001_1_1cBHXAZIQpKTodzPqbos1Ngp1sV-MFDwC.jpg"
     }
   },
   {
@@ -181,10 +181,10 @@
     "category": "cat_001",
     "category_id": "cat_001",
     "category_name": "Kids Cycle",
-    "image": "/images/products/prod_002_1.jpg",
-    "images": "/images/products/prod_002_1.jpg",
+    "image": "/images/products/prod_002_1_1UMFTn5JP9w2FFi4KL6l-8diVc5gUkx-Z.jpg",
+    "images": "/images/products/prod_002_1_1UMFTn5JP9w2FFi4KL6l-8diVc5gUkx-Z.jpg",
     "images_list": [
-      "/images/products/prod_002_1.jpg"
+      "/images/products/prod_002_1_1UMFTn5JP9w2FFi4KL6l-8diVc5gUkx-Z.jpg"
     ],
     "color": "",
     "frame_size": "",
@@ -258,7 +258,7 @@
       "title": "Toronto Skywalk 20T | Kids Cycle | KTR Cycle World",
       "description": "Buy Toronto Skywalk 20T at ₹11,200. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and erg…",
       "type": "product",
-      "image": "/images/products/prod_002_1.jpg",
+      "image": "/images/products/prod_002_1_1UMFTn5JP9w2FFi4KL6l-8diVc5gUkx-Z.jpg",
       "url": "/product/skywalk-20",
       "site_name": "KTR Cycle World"
     },
@@ -266,7 +266,7 @@
       "card": "summary_large_image",
       "title": "Toronto Skywalk 20T | Kids Cycle | KTR Cycle World",
       "description": "Buy Toronto Skywalk 20T at ₹11,200. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and erg…",
-      "image": "/images/products/prod_002_1.jpg"
+      "image": "/images/products/prod_002_1_1UMFTn5JP9w2FFi4KL6l-8diVc5gUkx-Z.jpg"
     }
   },
   {
@@ -578,11 +578,11 @@
     "category_id": "cat_001",
     "category_name": "Kids Cycle",
     "image": "/images/products/prod_011_1.jpg",
-    "images": "/images/products/prod_011_1.jpg,/images/products/prod_011_2.jpg,/images/products/prod_011_3.jpg",
+    "images": "/images/products/prod_011_1.jpg,/images/products/prod_011_2.jpg,/images/products/prod_011_3_1mab42s_Mf84sxHNRZbtB6q6yn-2m0tMB.jpg",
     "images_list": [
       "/images/products/prod_011_1.jpg",
       "/images/products/prod_011_2.jpg",
-      "/images/products/prod_011_3.jpg"
+      "/images/products/prod_011_3_1mab42s_Mf84sxHNRZbtB6q6yn-2m0tMB.jpg"
     ],
     "color": "",
     "frame_size": "",
@@ -3150,10 +3150,10 @@
     "category": "cat_002",
     "category_id": "cat_002",
     "category_name": "Adult Cycle",
-    "image": "/images/products/prod_039_1.jpg",
-    "images": "/images/products/prod_039_1.jpg",
+    "image": "/images/products/prod_039_1_1nPWMjoQJb4iSfNwzK5riXrpzhImenNGk.jpg",
+    "images": "/images/products/prod_039_1_1nPWMjoQJb4iSfNwzK5riXrpzhImenNGk.jpg",
     "images_list": [
-      "/images/products/prod_039_1.jpg"
+      "/images/products/prod_039_1_1nPWMjoQJb4iSfNwzK5riXrpzhImenNGk.jpg"
     ],
     "color": "",
     "frame_size": "",
@@ -3229,7 +3229,7 @@
       "title": "Hercules Rift FS DD 24T | Adult Cycle | KTR Cycle World",
       "description": "Buy Hercules Rift FS DD 24T at ₹7,850. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Re…",
       "type": "product",
-      "image": "/images/products/prod_039_1.jpg",
+      "image": "/images/products/prod_039_1_1nPWMjoQJb4iSfNwzK5riXrpzhImenNGk.jpg",
       "url": "/product/hercules-rift-ic-fx-dd-24t",
       "site_name": "KTR Cycle World"
     },
@@ -3237,7 +3237,7 @@
       "card": "summary_large_image",
       "title": "Hercules Rift FS DD 24T | Adult Cycle | KTR Cycle World",
       "description": "Buy Hercules Rift FS DD 24T at ₹7,850. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Re…",
-      "image": "/images/products/prod_039_1.jpg"
+      "image": "/images/products/prod_039_1_1nPWMjoQJb4iSfNwzK5riXrpzhImenNGk.jpg"
     }
   },
   {
@@ -3250,10 +3250,10 @@
     "category": "cat_002",
     "category_id": "cat_002",
     "category_name": "Adult Cycle",
-    "image": "/images/products/prod_040_1.jpg",
-    "images": "/images/products/prod_040_1.jpg",
+    "image": "/images/products/prod_040_1_1g-pYq_s7n50qf5m2eJN9l5r_v4edU99Z.jpg",
+    "images": "/images/products/prod_040_1_1g-pYq_s7n50qf5m2eJN9l5r_v4edU99Z.jpg",
     "images_list": [
-      "/images/products/prod_040_1.jpg"
+      "/images/products/prod_040_1_1g-pYq_s7n50qf5m2eJN9l5r_v4edU99Z.jpg"
     ],
     "color": "",
     "frame_size": "",
@@ -3329,7 +3329,7 @@
       "title": "Hercules Rift FS DD 26T | Adult Cycle | KTR Cycle World",
       "description": "Buy Hercules Rift FS DD 26T at ₹7,950. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Re…",
       "type": "product",
-      "image": "/images/products/prod_040_1.jpg",
+      "image": "/images/products/prod_040_1_1g-pYq_s7n50qf5m2eJN9l5r_v4edU99Z.jpg",
       "url": "/product/hercules-rift-ic-fx-dd-26t",
       "site_name": "KTR Cycle World"
     },
@@ -3337,7 +3337,7 @@
       "card": "summary_large_image",
       "title": "Hercules Rift FS DD 26T | Adult Cycle | KTR Cycle World",
       "description": "Buy Hercules Rift FS DD 26T at ₹7,950. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Re…",
-      "image": "/images/products/prod_040_1.jpg"
+      "image": "/images/products/prod_040_1_1g-pYq_s7n50qf5m2eJN9l5r_v4edU99Z.jpg"
     }
   },
   {
@@ -3449,10 +3449,10 @@
     "category": "cat_003",
     "category_id": "cat_003",
     "category_name": "Geared Cycle",
-    "image": "/images/products/prod_042_1.jpg",
-    "images": "/images/products/prod_042_1.jpg",
+    "image": "/images/products/prod_042_1_1VGfMRvQitXL1aQYdeM933R_pw4jiJXss.jpg",
+    "images": "/images/products/prod_042_1_1VGfMRvQitXL1aQYdeM933R_pw4jiJXss.jpg",
     "images_list": [
-      "/images/products/prod_042_1.jpg"
+      "/images/products/prod_042_1_1VGfMRvQitXL1aQYdeM933R_pw4jiJXss.jpg"
     ],
     "color": "",
     "frame_size": "",
@@ -3529,7 +3529,7 @@
       "title": "Hercules Redeem 26T FSDD 21 Gear | Geared Cycle | KTR Cycle World",
       "description": "Buy Hercules Redeem 26T FSDD 21 Gear at ₹12,750. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Bra…",
       "type": "product",
-      "image": "/images/products/prod_042_1.jpg",
+      "image": "/images/products/prod_042_1_1VGfMRvQitXL1aQYdeM933R_pw4jiJXss.jpg",
       "url": "/product/hercules-redeem-26t-fsdd-21-gear",
       "site_name": "KTR Cycle World"
     },
@@ -3537,7 +3537,7 @@
       "card": "summary_large_image",
       "title": "Hercules Redeem 26T FSDD 21 Gear | Geared Cycle | KTR Cycle World",
       "description": "Buy Hercules Redeem 26T FSDD 21 Gear at ₹12,750. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Bra…",
-      "image": "/images/products/prod_042_1.jpg"
+      "image": "/images/products/prod_042_1_1VGfMRvQitXL1aQYdeM933R_pw4jiJXss.jpg"
     }
   },
   {
@@ -3550,10 +3550,10 @@
     "category": "cat_005",
     "category_id": "cat_005",
     "category_name": "Electric Cycle",
-    "image": "/images/products/prod_043_1.jpg",
-    "images": "/images/products/prod_043_1.jpg",
+    "image": "/images/products/prod_043_1_18abkEN_bcgrKPFHkF5ttxu6aWRIccoNj.jpg",
+    "images": "/images/products/prod_043_1_18abkEN_bcgrKPFHkF5ttxu6aWRIccoNj.jpg",
     "images_list": [
-      "/images/products/prod_043_1.jpg"
+      "/images/products/prod_043_1_18abkEN_bcgrKPFHkF5ttxu6aWRIccoNj.jpg"
     ],
     "color": "",
     "frame_size": "",
@@ -3645,7 +3645,7 @@
       "title": "Hercules Shurveer EC | Electric Cycle | KTR Cycle World",
       "description": "Buy Hercules Shurveer EC at ₹23,000. Hercules Shurveer EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery…",
       "type": "product",
-      "image": "/images/products/prod_043_1.jpg",
+      "image": "/images/products/prod_043_1_18abkEN_bcgrKPFHkF5ttxu6aWRIccoNj.jpg",
       "url": "/product/hercules-shurveer",
       "site_name": "KTR Cycle World"
     },
@@ -3653,7 +3653,7 @@
       "card": "summary_large_image",
       "title": "Hercules Shurveer EC | Electric Cycle | KTR Cycle World",
       "description": "Buy Hercules Shurveer EC at ₹23,000. Hercules Shurveer EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery…",
-      "image": "/images/products/prod_043_1.jpg"
+      "image": "/images/products/prod_043_1_18abkEN_bcgrKPFHkF5ttxu6aWRIccoNj.jpg"
     }
   },
   {
@@ -3782,10 +3782,10 @@
     "category": "cat_001",
     "category_id": "cat_001",
     "category_name": "Kids Cycle",
-    "image": "/images/products/prod_046_1.jpg",
-    "images": "/images/products/prod_046_1.jpg",
+    "image": "/images/products/prod_046_1_12-l0LZzxDB78A0b3ENPw61IPM1TbNp-e.jpg",
+    "images": "/images/products/prod_046_1_12-l0LZzxDB78A0b3ENPw61IPM1TbNp-e.jpg",
     "images_list": [
-      "/images/products/prod_046_1.jpg"
+      "/images/products/prod_046_1_12-l0LZzxDB78A0b3ENPw61IPM1TbNp-e.jpg"
     ],
     "color": "",
     "frame_size": "",
@@ -3859,7 +3859,7 @@
       "title": "Keysto Friends 20T | Kids Cycle | KTR Cycle World",
       "description": "Buy Keysto Friends 20T at ₹5,500. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergon…",
       "type": "product",
-      "image": "/images/products/prod_046_1.jpg",
+      "image": "/images/products/prod_046_1_12-l0LZzxDB78A0b3ENPw61IPM1TbNp-e.jpg",
       "url": "/product/friends-20t",
       "site_name": "KTR Cycle World"
     },
@@ -3867,7 +3867,7 @@
       "card": "summary_large_image",
       "title": "Keysto Friends 20T | Kids Cycle | KTR Cycle World",
       "description": "Buy Keysto Friends 20T at ₹5,500. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergon…",
-      "image": "/images/products/prod_046_1.jpg"
+      "image": "/images/products/prod_046_1_12-l0LZzxDB78A0b3ENPw61IPM1TbNp-e.jpg"
     }
   },
   {
@@ -3880,11 +3880,11 @@
     "category": "cat_004",
     "category_id": "cat_004",
     "category_name": "Girls Cycle",
-    "image": "/images/products/prod_047_1.jpg",
-    "images": "/images/products/prod_047_1.jpg,/images/products/prod_047_2.jpg",
+    "image": "/images/products/prod_047_1_12dXbchyMT1JX3me2LR2NMcyZY9LlvDvG.jpg",
+    "images": "/images/products/prod_047_1_12dXbchyMT1JX3me2LR2NMcyZY9LlvDvG.jpg,/images/products/prod_047_2_1ZloQm8BkEBmS1dycx5Gt0-2Pkmm4oW7k.jpg",
     "images_list": [
-      "/images/products/prod_047_1.jpg",
-      "/images/products/prod_047_2.jpg"
+      "/images/products/prod_047_1_12dXbchyMT1JX3me2LR2NMcyZY9LlvDvG.jpg",
+      "/images/products/prod_047_2_1ZloQm8BkEBmS1dycx5Gt0-2Pkmm4oW7k.jpg"
     ],
     "color": "",
     "frame_size": "",
@@ -3959,7 +3959,7 @@
       "title": "BSA Hazel Lady Birld 24T | Girls Cycle | KTR Cycle World",
       "description": "Buy BSA Hazel Lady Birld 24T at ₹7,800. Elegant and comfortable girls cycle featuring low step-through frame, comfortable upright geometry, rear carrier, and s…",
       "type": "product",
-      "image": "/images/products/prod_047_1.jpg",
+      "image": "/images/products/prod_047_1_12dXbchyMT1JX3me2LR2NMcyZY9LlvDvG.jpg",
       "url": "/product/hazel-lady-birld-24t",
       "site_name": "KTR Cycle World"
     },
@@ -3967,7 +3967,7 @@
       "card": "summary_large_image",
       "title": "BSA Hazel Lady Birld 24T | Girls Cycle | KTR Cycle World",
       "description": "Buy BSA Hazel Lady Birld 24T at ₹7,800. Elegant and comfortable girls cycle featuring low step-through frame, comfortable upright geometry, rear carrier, and s…",
-      "image": "/images/products/prod_047_1.jpg"
+      "image": "/images/products/prod_047_1_12dXbchyMT1JX3me2LR2NMcyZY9LlvDvG.jpg"
     }
   },
   {
@@ -3980,10 +3980,10 @@
     "category": "cat_002",
     "category_id": "cat_002",
     "category_name": "Adult Cycle",
-    "image": "/images/products/prod_048_1.jpg",
-    "images": "/images/products/prod_048_1.jpg",
+    "image": "/images/products/prod_048_1_1q9hYp6kdJYhpvmBvWxFKHGGbUYovFiXh.jpg",
+    "images": "/images/products/prod_048_1_1q9hYp6kdJYhpvmBvWxFKHGGbUYovFiXh.jpg",
     "images_list": [
-      "/images/products/prod_048_1.jpg"
+      "/images/products/prod_048_1_1q9hYp6kdJYhpvmBvWxFKHGGbUYovFiXh.jpg"
     ],
     "color": "",
     "frame_size": "",
@@ -4059,7 +4059,7 @@
       "title": "Suncross Hurricane FSDD 26T | Adult Cycle | KTR Cycle World",
       "description": "Buy Suncross Hurricane FSDD 26T at ₹13,950. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Dual Mechanical Disc Brakes…",
       "type": "product",
-      "image": "/images/products/prod_048_1.jpg",
+      "image": "/images/products/prod_048_1_1q9hYp6kdJYhpvmBvWxFKHGGbUYovFiXh.jpg",
       "url": "/product/hurricane-26t",
       "site_name": "KTR Cycle World"
     },
@@ -4067,7 +4067,7 @@
       "card": "summary_large_image",
       "title": "Suncross Hurricane FSDD 26T | Adult Cycle | KTR Cycle World",
       "description": "Buy Suncross Hurricane FSDD 26T at ₹13,950. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Dual Mechanical Disc Brakes…",
-      "image": "/images/products/prod_048_1.jpg"
+      "image": "/images/products/prod_048_1_1q9hYp6kdJYhpvmBvWxFKHGGbUYovFiXh.jpg"
     }
   },
   {
@@ -4080,11 +4080,11 @@
     "category": "cat_002",
     "category_id": "cat_002",
     "category_name": "Adult Cycle",
-    "image": "/images/products/prod_049_1.jpg",
-    "images": "/images/products/prod_049_1.jpg,/images/products/prod_049_2.jpg",
+    "image": "/images/products/prod_049_1_17DZ0XXndgxQv-Za--OftlEZ4Jo9MLJLK.jpg",
+    "images": "/images/products/prod_049_1_17DZ0XXndgxQv-Za--OftlEZ4Jo9MLJLK.jpg,/images/products/prod_049_2_1qV2Wmetczbft1-kyA6E2yKZ-X_QJYHWM.jpg",
     "images_list": [
-      "/images/products/prod_049_1.jpg",
-      "/images/products/prod_049_2.jpg"
+      "/images/products/prod_049_1_17DZ0XXndgxQv-Za--OftlEZ4Jo9MLJLK.jpg",
+      "/images/products/prod_049_2_1qV2Wmetczbft1-kyA6E2yKZ-X_QJYHWM.jpg"
     ],
     "color": "",
     "frame_size": "",
@@ -4159,7 +4159,7 @@
       "title": "Raleigh Exalt 29T SS | Adult Cycle | KTR Cycle World",
       "description": "Buy Raleigh Exalt 29T SS at ₹13,500. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Power Brak…",
       "type": "product",
-      "image": "/images/products/prod_049_1.jpg",
+      "image": "/images/products/prod_049_1_17DZ0XXndgxQv-Za--OftlEZ4Jo9MLJLK.jpg",
       "url": "/product/exalt-29t-ss",
       "site_name": "KTR Cycle World"
     },
@@ -4167,7 +4167,7 @@
       "card": "summary_large_image",
       "title": "Raleigh Exalt 29T SS | Adult Cycle | KTR Cycle World",
       "description": "Buy Raleigh Exalt 29T SS at ₹13,500. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Power Brak…",
-      "image": "/images/products/prod_049_1.jpg"
+      "image": "/images/products/prod_049_1_17DZ0XXndgxQv-Za--OftlEZ4Jo9MLJLK.jpg"
     }
   },
   {
@@ -4180,10 +4180,10 @@
     "category": "cat_003",
     "category_id": "cat_003",
     "category_name": "Geared Cycle",
-    "image": "/images/products/prod_052_1.jpg",
-    "images": "/images/products/prod_052_1.jpg",
+    "image": "/images/products/prod_052_1_105NvCgjVtXGtaeqUeDr858YjfsaNBmNa.jpg",
+    "images": "/images/products/prod_052_1_105NvCgjVtXGtaeqUeDr858YjfsaNBmNa.jpg",
     "images_list": [
-      "/images/products/prod_052_1.jpg"
+      "/images/products/prod_052_1_105NvCgjVtXGtaeqUeDr858YjfsaNBmNa.jpg"
     ],
     "color": "",
     "frame_size": "",
@@ -4259,7 +4259,7 @@
       "title": "Raleigh Navarro One 29T M/s | Geared Cycle | KTR Cycle World",
       "description": "Buy Raleigh Navarro One 29T M/s at ₹19,400. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Front & Rear Mechanical Power…",
       "type": "product",
-      "image": "/images/products/prod_052_1.jpg",
+      "image": "/images/products/prod_052_1_105NvCgjVtXGtaeqUeDr858YjfsaNBmNa.jpg",
       "url": "/product/navarro-one-ms",
       "site_name": "KTR Cycle World"
     },
@@ -4267,7 +4267,7 @@
       "card": "summary_large_image",
       "title": "Raleigh Navarro One 29T M/s | Geared Cycle | KTR Cycle World",
       "description": "Buy Raleigh Navarro One 29T M/s at ₹19,400. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Front & Rear Mechanical Power…",
-      "image": "/images/products/prod_052_1.jpg"
+      "image": "/images/products/prod_052_1_105NvCgjVtXGtaeqUeDr858YjfsaNBmNa.jpg"
     }
   },
   {
@@ -4499,10 +4499,10 @@
     "category": "cat_002",
     "category_id": "cat_002",
     "category_name": "Adult Cycle",
-    "image": "/images/products/prod_056_1.jpg",
-    "images": "/images/products/prod_056_1.jpg",
+    "image": "/images/products/prod_056_1_1Ws3eOH-sOZouOZB14wePKR-eqO69kGwH.jpg",
+    "images": "/images/products/prod_056_1_1Ws3eOH-sOZouOZB14wePKR-eqO69kGwH.jpg",
     "images_list": [
-      "/images/products/prod_056_1.jpg"
+      "/images/products/prod_056_1_1Ws3eOH-sOZouOZB14wePKR-eqO69kGwH.jpg"
     ],
     "color": "",
     "frame_size": "",
@@ -4577,7 +4577,7 @@
       "title": "Raleigh Navarro One 29T SS | Adult Cycle | KTR Cycle World",
       "description": "Buy Raleigh Navarro One 29T SS at ₹13,000. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Powe…",
       "type": "product",
-      "image": "/images/products/prod_056_1.jpg",
+      "image": "/images/products/prod_056_1_1Ws3eOH-sOZouOZB14wePKR-eqO69kGwH.jpg",
       "url": "/product/navarro-one",
       "site_name": "KTR Cycle World"
     },
@@ -4585,7 +4585,7 @@
       "card": "summary_large_image",
       "title": "Raleigh Navarro One 29T SS | Adult Cycle | KTR Cycle World",
       "description": "Buy Raleigh Navarro One 29T SS at ₹13,000. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Powe…",
-      "image": "/images/products/prod_056_1.jpg"
+      "image": "/images/products/prod_056_1_1Ws3eOH-sOZouOZB14wePKR-eqO69kGwH.jpg"
     }
   },
   {
@@ -4598,11 +4598,11 @@
     "category": "cat_002",
     "category_id": "cat_002",
     "category_name": "Adult Cycle",
-    "image": "/images/products/prod_057_1.jpg",
-    "images": "/images/products/prod_057_1.jpg,/images/products/prod_057_2.jpg",
+    "image": "/images/products/prod_057_1_1k1yFIJJdHeoq9OAfD4q2lDOsT0I7j1Mf.jpg",
+    "images": "/images/products/prod_057_1_1k1yFIJJdHeoq9OAfD4q2lDOsT0I7j1Mf.jpg,/images/products/prod_057_2_1iPIByYnUQzn3NtdOw85C-0Tfd93VRUsN.jpg",
     "images_list": [
-      "/images/products/prod_057_1.jpg",
-      "/images/products/prod_057_2.jpg"
+      "/images/products/prod_057_1_1k1yFIJJdHeoq9OAfD4q2lDOsT0I7j1Mf.jpg",
+      "/images/products/prod_057_2_1iPIByYnUQzn3NtdOw85C-0Tfd93VRUsN.jpg"
     ],
     "color": "",
     "frame_size": "",
@@ -4678,7 +4678,7 @@
       "title": "91 Alpha Bombay 26T FSDD | Adult Cycle | KTR Cycle World",
       "description": "Buy 91 Alpha Bombay 26T FSDD at ₹8,500. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & R…",
       "type": "product",
-      "image": "/images/products/prod_057_1.jpg",
+      "image": "/images/products/prod_057_1_1k1yFIJJdHeoq9OAfD4q2lDOsT0I7j1Mf.jpg",
       "url": "/product/alpha-bombay-26-fsdd",
       "site_name": "KTR Cycle World"
     },
@@ -4686,7 +4686,7 @@
       "card": "summary_large_image",
       "title": "91 Alpha Bombay 26T FSDD | Adult Cycle | KTR Cycle World",
       "description": "Buy 91 Alpha Bombay 26T FSDD at ₹8,500. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & R…",
-      "image": "/images/products/prod_057_1.jpg"
+      "image": "/images/products/prod_057_1_1k1yFIJJdHeoq9OAfD4q2lDOsT0I7j1Mf.jpg"
     }
   },
   {
@@ -4699,11 +4699,11 @@
     "category": "cat_002",
     "category_id": "cat_002",
     "category_name": "Adult Cycle",
-    "image": "/images/products/prod_058_1.jpg",
-    "images": "/images/products/prod_058_1.jpg,/images/products/prod_058_2.jpg",
+    "image": "/images/products/prod_058_1_19hv2ju_nqrZGcVFJCD0fotD41RiwWNuc.jpg",
+    "images": "/images/products/prod_058_1_19hv2ju_nqrZGcVFJCD0fotD41RiwWNuc.jpg,/images/products/prod_058_2_1OT8rO3PDeCLBzsLHMUWJ_UyCckcc6lX2.jpg",
     "images_list": [
-      "/images/products/prod_058_1.jpg",
-      "/images/products/prod_058_2.jpg"
+      "/images/products/prod_058_1_19hv2ju_nqrZGcVFJCD0fotD41RiwWNuc.jpg",
+      "/images/products/prod_058_2_1OT8rO3PDeCLBzsLHMUWJ_UyCckcc6lX2.jpg"
     ],
     "color": "",
     "frame_size": "",
@@ -4778,7 +4778,7 @@
       "title": "91 Alpha Bombay 24T VB | Adult Cycle | KTR Cycle World",
       "description": "Buy 91 Alpha Bombay 24T VB at ₹7,300. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sle…",
       "type": "product",
-      "image": "/images/products/prod_058_1.jpg",
+      "image": "/images/products/prod_058_1_19hv2ju_nqrZGcVFJCD0fotD41RiwWNuc.jpg",
       "url": "/product/alpha-bombay-24-vb",
       "site_name": "KTR Cycle World"
     },
@@ -4786,7 +4786,7 @@
       "card": "summary_large_image",
       "title": "91 Alpha Bombay 24T VB | Adult Cycle | KTR Cycle World",
       "description": "Buy 91 Alpha Bombay 24T VB at ₹7,300. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sle…",
-      "image": "/images/products/prod_058_1.jpg"
+      "image": "/images/products/prod_058_1_19hv2ju_nqrZGcVFJCD0fotD41RiwWNuc.jpg"
     }
   },
   {
@@ -4799,12 +4799,12 @@
     "category": "cat_002",
     "category_id": "cat_002",
     "category_name": "Adult Cycle",
-    "image": "/images/products/prod_059_1.jpg",
-    "images": "/images/products/prod_059_1.jpg,/images/products/prod_059_2.jpg,/images/products/prod_059_3.jpg",
+    "image": "/images/products/prod_059_1_1k1yFIJJdHeoq9OAfD4q2lDOsT0I7j1Mf.jpg",
+    "images": "/images/products/prod_059_1_1k1yFIJJdHeoq9OAfD4q2lDOsT0I7j1Mf.jpg,/images/products/prod_059_2_1iPIByYnUQzn3NtdOw85C-0Tfd93VRUsN.jpg,/images/products/prod_059_3_1iPIByYnUQzn3NtdOw85C-0Tfd93VRUsN.jpg",
     "images_list": [
-      "/images/products/prod_059_1.jpg",
-      "/images/products/prod_059_2.jpg",
-      "/images/products/prod_059_3.jpg"
+      "/images/products/prod_059_1_1k1yFIJJdHeoq9OAfD4q2lDOsT0I7j1Mf.jpg",
+      "/images/products/prod_059_2_1iPIByYnUQzn3NtdOw85C-0Tfd93VRUsN.jpg",
+      "/images/products/prod_059_3_1iPIByYnUQzn3NtdOw85C-0Tfd93VRUsN.jpg"
     ],
     "color": "",
     "frame_size": "",
@@ -4880,7 +4880,7 @@
       "title": "91 Alpha Bombay 24T FSDD | Adult Cycle | KTR Cycle World",
       "description": "Buy 91 Alpha Bombay 24T FSDD at ₹8,200. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & R…",
       "type": "product",
-      "image": "/images/products/prod_059_1.jpg",
+      "image": "/images/products/prod_059_1_1k1yFIJJdHeoq9OAfD4q2lDOsT0I7j1Mf.jpg",
       "url": "/product/alpha-bombay24-fsdd",
       "site_name": "KTR Cycle World"
     },
@@ -4888,7 +4888,7 @@
       "card": "summary_large_image",
       "title": "91 Alpha Bombay 24T FSDD | Adult Cycle | KTR Cycle World",
       "description": "Buy 91 Alpha Bombay 24T FSDD at ₹8,200. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & R…",
-      "image": "/images/products/prod_059_1.jpg"
+      "image": "/images/products/prod_059_1_1k1yFIJJdHeoq9OAfD4q2lDOsT0I7j1Mf.jpg"
     }
   },
   {
