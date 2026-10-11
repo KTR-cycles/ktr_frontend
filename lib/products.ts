@@ -107,42 +107,6 @@ export function getProductVariants(product: Product): ProductVariant[] {
       }));
   }
 
-  // Auto-group variants based on common brand + model prefix (e.g., "ALPHA BOMBAY" or "BSA CHAMP")
-  if (product.name) {
-    const words = product.name.split(' ');
-    // Get base series name (e.g. first 2-3 words like "91 ALPHA BOMBAY" -> "ALPHA BOMBAY")
-    const cleanName = product.name.replace(/^91\s+/i, '');
-    const modelPrefix = cleanName.split(/\s+\d+(T|")/i)[0].trim();
-
-    if (modelPrefix && modelPrefix.length > 3) {
-      const matches = allProducts.filter((p) => {
-        const pClean = (p.name || '').replace(/^91\s+/i, '');
-        return (
-          p.brand?.toLowerCase() === product.brand?.toLowerCase() &&
-          pClean.toLowerCase().startsWith(modelPrefix.toLowerCase())
-        );
-      });
-
-      if (matches.length > 1) {
-        return matches.map((p) => ({
-          id: p.id,
-          product_id: p.product_id,
-          slug: p.slug,
-          name: p.name,
-          varient_label: p.varient_label || p.name,
-          color: p.color,
-          tire_size: p.tire_size,
-          brakes: p.brakes,
-          gears: p.gears,
-          original_price: p.original_price,
-          discounted_price: p.discounted_price,
-          image: p.image,
-          stock: p.stock
-        }));
-      }
-    }
-  }
-
   return [];
 }
 
