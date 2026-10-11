@@ -84,20 +84,27 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
     if (defaultColor) setSelectedColor(defaultColor);
   }, [product.id, product.slug]);
 
-  // Match selected variant
-  const selectedVariant = availableVariants.find((v) => {
-    const vSize = v.frame_size || v.size || v.tire_size;
-    const sizeMatch = !selectedSize || vSize === selectedSize;
-    const colorMatch = !selectedColor || v.color === selectedColor;
-    return sizeMatch && colorMatch;
-  }) || availableVariants.find((v) => {
-    const vSize = v.frame_size || v.size || v.tire_size;
-    return !selectedSize || vSize === selectedSize;
-  }) || availableVariants[0];
+  // Match selected variant safely
+  const selectedVariant = availableVariants.length > 0
+    ? (
+        availableVariants.find((v) => {
+          const vSize = v.frame_size || v.size || v.tire_size;
+          const sizeMatch = !selectedSize || vSize === selectedSize;
+          const colorMatch = !selectedColor || v.color === selectedColor;
+          return sizeMatch && colorMatch;
+        }) ||
+        availableVariants.find((v) => {
+          const vSize = v.frame_size || v.size || v.tire_size;
+          return !selectedSize || vSize === selectedSize;
+        }) ||
+        availableVariants.find((v) => v.id === product.id || v.slug === product.slug) ||
+        availableVariants[0]
+      )
+    : undefined;
 
   // Dynamic price calculation
-  const activeDiscountedPrice = selectedVariant?.discounted_price || product.discounted_price || product.original_price || product.currentPrice || 0;
-  const activeOriginalPrice = selectedVariant?.original_price || product.original_price || 0;
+  const activeDiscountedPrice = (selectedVariant?.discounted_price !== undefined ? selectedVariant.discounted_price : product.discounted_price) || product.original_price || product.currentPrice || 0;
+  const activeOriginalPrice = (selectedVariant?.original_price !== undefined ? selectedVariant.original_price : product.original_price) || 0;
   const currentPrice = activeDiscountedPrice || "Contact for Price";
   const hasOriginalPrice = Boolean(activeOriginalPrice && activeDiscountedPrice && activeOriginalPrice > activeDiscountedPrice);
 
