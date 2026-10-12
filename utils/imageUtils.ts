@@ -66,9 +66,12 @@ export function processImageUrls(imagesString: string): string[] {
  * @param imagesString - Comma-separated string of image URLs
  * @returns First processed image URL or empty string
  */
-export function getFirstImageUrl(imagesString: string): string {
+export function getFirstImageUrl(imagesInput: string | string[]): string {
   try {
-    const urls = processImageUrls(imagesString);
+    if (Array.isArray(imagesInput)) {
+      return imagesInput.length > 0 ? convertGoogleDriveUrl(imagesInput[0]) : '';
+    }
+    const urls = processImageUrls(imagesInput);
     return urls.length > 0 ? urls[0] : '';
   } catch (error) {
     console.warn('Error getting first image URL:', error);

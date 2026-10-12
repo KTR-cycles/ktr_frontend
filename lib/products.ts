@@ -1,8 +1,36 @@
 import productsData from '../data/products.json';
-import type { Product, ProductVariant } from '../types';
+import categoriesData from '../data/categories.json';
+import type { Product, ProductVariant, Category } from '../types';
+
+const categoryMap = new Map<string, string>(
+  (categoriesData as unknown as Category[]).map((c) => [c.category_id || c.id, c.name])
+);
 
 export function getProducts(): Product[] {
-  return productsData as unknown as Product[];
+  return (productsData as unknown as any[]).map((p) => {
+    const imagesList = Array.isArray(p.images)
+      ? p.images
+      : typeof p.images === 'string' && p.images.trim()
+      ? p.images.split(',').map((s: string) => s.trim()).filter(Boolean)
+      : p.image
+      ? [p.image]
+      : ['/images/placeholder.png'];
+
+    const firstImage = imagesList[0] || '/images/placeholder.png';
+    const catId = p.category_id || p.category || '';
+    const catName = p.category_name || categoryMap.get(catId) || '';
+
+    return {
+      ...p,
+      category_id: catId,
+      category: catId,
+      category_name: catName,
+      images: imagesList,
+      images_list: imagesList,
+      image: firstImage,
+      currentPrice: p.discounted_price,
+    } as Product;
+  });
 }
 
 export function getProductBySlug(slug: string): Product | undefined {

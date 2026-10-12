@@ -12,27 +12,30 @@ import { homepageFaqs } from "@/data/faqs";
 
 export default function HomePage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ktrcycleworld.com';
-  const mountainImage = '/assets/generated_images/Mountain_biking_adventure_scene_01077af1.png';
-  const urbanImage = '/assets/generated_images/Urban_cycling_lifestyle_shot_0317efee.png';
-  const groupImage = '/assets/generated_images/Group_cycling_community_scene_9b549ad4.png';
-  const sunsetImage = '/assets/generated_images/Inspirational_cycling_sunset_silhouette_5fa0f6c8.png';
-
   const heroSlides = [
     {
-      image: mountainImage,
-      quote: "Cycles in Tirunelveli — Shop Bicycles from Leading Brands",
+      image: '/images/banners/hercules_brute_banner.webp',
+      alt: 'Hercules Brute 27T FSDD Electric Cycle - Special Offer ₹31,500',
+      link: '/product/brute-fsdd',
+      title: 'Hercules Brute 27T FSDD EC',
     },
     {
-      image: urbanImage,
-      quote: "Premium Mountain, Geared & Electric Bikes for South Tamil Nadu",
+      image: '/images/banners/hercules_yuvolt_banner.webp',
+      alt: 'Hercules Yuvolt Electric Cycle - Special Offer ₹24,500',
+      link: '/products?category=cat_004',
+      title: 'Hercules Yuvolt Electric Cycle',
     },
     {
-      image: groupImage,
-      quote: "Ride together. Top Brands & Authorized Warranty",
+      image: '/images/banners/aoki_street_mamba_banner.webp',
+      alt: 'Aoki Mobility Street Mamba Fat Tire Electric Bike - Special Offer ₹67,500',
+      link: '/product/aoki-street-mamba',
+      title: 'Aoki Mobility Street Mamba',
     },
     {
-      image: sunsetImage,
-      quote: "Go faster with KTR Cycle World — 4 Local Showrooms",
+      image: '/images/banners/bsa_maeve_banner.webp',
+      alt: 'BSA Maeve 26T EC Electric Cycle - Special Offer ₹31,500',
+      link: '/product/maeve-26t-ec',
+      title: 'BSA Maeve 26T EC',
     },
   ];
 
