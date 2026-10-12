@@ -11,7 +11,7 @@ interface ProductCardProps {
   slug?: string;
   name: string;
   brand?: string;
-  images: string;
+  images: string | string[];
   originalPrice: number;
   discount?: number;
   discountedPrice: number;

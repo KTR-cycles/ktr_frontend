@@ -42,13 +42,16 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
   }, [product]);
 
   // Normalize images list
-  const images = Array.isArray(product.images_list) && product.images_list.length > 0
-    ? product.images_list
-    : typeof product.images === "string" && product.images.trim()
-      ? [product.images]
-      : product.image
-        ? [product.image]
-        : [];
+  const rawImages = product.images as unknown;
+  const images: string[] = Array.isArray(rawImages) && rawImages.length > 0
+    ? (rawImages as string[])
+    : Array.isArray(product.images_list) && product.images_list.length > 0
+      ? product.images_list
+      : typeof rawImages === "string" && (rawImages as string).trim()
+        ? [(rawImages as string).trim()]
+        : product.image
+          ? [product.image]
+          : [];
 
   // Extract unique frame sizes and colors from variants
   const availableSizes = Array.from(

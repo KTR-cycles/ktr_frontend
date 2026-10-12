@@ -18,28 +18,21 @@ if (fs.existsSync(productsJsonPath)) {
       name: p.name || '',
       slug: p.slug || '',
       brand: p.brand || '',
-      category_id: p.category_id || p.category || '',
-      category_name: p.category_name || '',
-      varient_label: p.varient_label || p.name || '',
+      category_id: p.category_id || '',
       original_price: p.original_price || 0,
-      discounted_price: p.discounted_price || p.currentPrice || 0,
-      discount_percent: p.discount_percent || p.discount || 0,
-      stock: p.stock || 0,
+      discounted_price: p.discounted_price || 0,
       featured: p.featured ? "TRUE" : "FALSE",
-      location: p.location || 'Tirunelveli',
       color: p.color || '',
-      frame_size: p.frame_size || p.tire_size || '',
+      frame_size: p.frame_size || '',
       age_group: p.age_group || '',
-      tags: p.tags || '',
       short_description: p.short_description || '',
       long_description: p.long_description || '',
       description: p.description || p.long_description || p.short_description || '',
       specifications: typeof p.specifications === 'object' ? JSON.stringify(p.specifications) : (p.specifications || ''),
-      variants: typeof p.variants === 'object' ? JSON.stringify(p.variants) : (p.variants || ''),
       features: typeof p.features === 'object' ? JSON.stringify(p.features) : (p.features || ''),
-      seo_title: p.seo_title || p.meta_title || `${p.name || ''} - KTR Cycle World`,
-      seo_description: p.seo_description || p.meta_description || p.short_description || p.description || '',
-      images: p.images || (Array.isArray(p.images_list) ? p.images_list.join(',') : p.image || '')
+      seo_title: p.seo?.title || p.seo_title || `${p.name || ''} - KTR Cycle World`,
+      seo_description: p.seo?.description || p.seo_description || p.short_description || p.description || '',
+      images: Array.isArray(p.images) ? p.images.join(',') : (p.images || p.image || '')
     }));
     console.log(`Loaded ${productsData.length} existing products from products.json`);
   } catch (e) {
@@ -123,23 +116,16 @@ wsProducts['!cols'] = [
   { wch: 25 }, // slug
   { wch: 15 }, // brand
   { wch: 14 }, // category_id
-  { wch: 18 }, // category_name
-  { wch: 25 }, // varient_label
   { wch: 14 }, // original_price
   { wch: 16 }, // discounted_price
-  { wch: 16 }, // discount_percent
-  { wch: 8 },  // stock
   { wch: 10 }, // featured
-  { wch: 14 }, // location
   { wch: 15 }, // color
   { wch: 15 }, // frame_size
   { wch: 15 }, // age_group
-  { wch: 20 }, // tags
   { wch: 35 }, // short_description
   { wch: 45 }, // long_description
   { wch: 45 }, // description
   { wch: 45 }, // specifications
-  { wch: 55 }, // variants
   { wch: 45 }, // features
   { wch: 35 }, // seo_title
   { wch: 45 }, // seo_description

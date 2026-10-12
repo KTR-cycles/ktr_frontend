@@ -4,13 +4,12 @@ export interface Product {
   slug: string;
   name: string;
   brand: string;
-  varient_label?: string;
-  image: string;
-  images: string;
-  images_list?: string[];
-  category: string;
-  category_id?: string;
+  category_id: string;
+  category?: string;
   category_name?: string;
+  images: string[];
+  image?: string;
+  images_list?: string[];
   color?: string;
   frame?: string;
   gears?: string;
@@ -19,9 +18,9 @@ export interface Product {
   weight?: string;
   original_price: number;
   discounted_price: number;
-  discount_percent: number;
+  discount_percent?: number;
   discount?: number;
-  stock: number;
+  stock?: number;
   featured: boolean;
   location?: string;
   tags?: string;
@@ -34,6 +33,15 @@ export interface Product {
   currentPrice?: number;
   rating?: number;
   reviews?: number;
+  seo?: {
+    title: string;
+    description: string;
+    canonical?: string;
+    keywords?: string[];
+    robots?: string;
+  };
+  og?: any;
+  twitter?: any;
   meta_title?: string;
   meta_description?: string;
   meta_keywords?: string[];
@@ -42,6 +50,7 @@ export interface Product {
   available_colors?: string[];
   variants?: ProductVariant[];
   variant_group_id?: string;
+  varient_label?: string;
 }
 
 export interface ProductVariant {
