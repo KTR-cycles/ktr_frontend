@@ -10,28 +10,45 @@ const categoriesJsonPath = path.join(__dirname, '..', 'data', 'categories.json')
 let productsData = [];
 let categoriesData = [];
 
+function getCycleSize(name) {
+  const n = (name || '').toUpperCase();
+  if (n.includes('27.5T') || n.includes('27.5"') || n.includes('27.5') || n.includes('27T')) return '27.5T';
+  if (n.includes('29T') || n.includes('29"') || n.includes('29 ')) return '29T';
+  if (n.includes('26T') || n.includes('26"') || n.includes(' 26 ') || n.includes('26 FSDD')) return '26T';
+  if (n.includes('24T') || n.includes('24"') || n.includes(' 24 ')) return '24T';
+  if (n.includes('20T') || n.includes('20"') || n.includes(' 20 ')) return '20T';
+  if (n.includes('16T') || n.includes('16"')) return '16T';
+  if (n.includes('14T') || n.includes('14"')) return '14T';
+  if (n.includes('12T') || n.includes('12"')) return '12T';
+  if (n.includes('SHURVEER')) return '26T';
+  if (n.includes('E-SURGE')) return '27.5T';
+  if (n.includes('MAMBA') || n.includes('GOST')) return '20T';
+  return '';
+}
+
+function formatSpecs(specs) {
+  if (!specs) return '';
+  if (Array.isArray(specs)) {
+    return specs.map(s => `${s.label}: ${s.value}`).join(' | ');
+  }
+  return String(specs);
+}
+
 if (fs.existsSync(productsJsonPath)) {
   try {
     const rawProducts = JSON.parse(fs.readFileSync(productsJsonPath, 'utf8'));
     productsData = rawProducts.map(p => ({
       product_id: p.product_id || p.id || '',
       name: p.name || '',
-      slug: p.slug || '',
       brand: p.brand || '',
       category_id: p.category_id || '',
+      cycle_size: p.cycle_size || getCycleSize(p.name) || '',
       original_price: p.original_price || 0,
       discounted_price: p.discounted_price || 0,
       featured: p.featured ? "TRUE" : "FALSE",
-      color: p.color || '',
-      frame_size: p.frame_size || '',
       age_group: p.age_group || '',
-      short_description: p.short_description || '',
-      long_description: p.long_description || '',
-      description: p.description || p.long_description || p.short_description || '',
-      specifications: typeof p.specifications === 'object' ? JSON.stringify(p.specifications) : (p.specifications || ''),
-      features: typeof p.features === 'object' ? JSON.stringify(p.features) : (p.features || ''),
-      seo_title: p.seo?.title || p.seo_title || `${p.name || ''} - KTR Cycle World`,
-      seo_description: p.seo?.description || p.seo_description || p.short_description || p.description || '',
+      description: p.short_description || p.description || p.long_description || '',
+      specifications: formatSpecs(p.specifications),
       images: Array.isArray(p.images) ? p.images.join(',') : (p.images || p.image || '')
     }));
     console.log(`Loaded ${productsData.length} existing products from products.json`);
@@ -47,9 +64,7 @@ if (fs.existsSync(categoriesJsonPath)) {
       category_id: c.category_id || c.id || '',
       name: c.name || '',
       slug: c.slug || '',
-      description: c.description || '',
-      seo_title: c.seo_title || c.meta_title || `${c.name || ''} | KTR Cycle World`,
-      seo_description: c.seo_description || c.meta_description || c.description || ''
+      description: c.description || ''
     }));
     console.log(`Loaded ${categoriesData.length} existing categories from categories.json`);
   } catch (e) {
@@ -57,33 +72,19 @@ if (fs.existsSync(categoriesJsonPath)) {
   }
 }
 
-// Fallback if empty
+// Fallback sample data if empty
 if (productsData.length === 0) {
   productsData = [
     {
       product_id: "prod_001",
       name: "Alpha Bombay 26 VB",
-      slug: "alpha-bombay-26-vb",
       brand: "ALPHA",
       category_id: "cat_002",
-      category_name: "Adult Cycle",
-      varient_label: "Alpha Bombay 26 VB",
       original_price: 7200,
       discounted_price: 6950,
-      discount_percent: 3.47,
-      stock: 5,
       featured: "FALSE",
-      location: "Tirunelveli",
-      color: "Black / Red",
       age_group: "15+ Years",
-      tags: "adult cycle, single speed",
-      short_description: "Durable single speed adult bicycle",
-      long_description: "Premium single speed cycle with rigid frame, V-brakes, and smooth ride quality.",
-      description: "Premium single speed cycle with rigid frame, V-brakes, and smooth ride quality.",
-      specifications: "Frame: Steel | Brake: V-Brake | Speed: Single Speed | Wheel Size: 26 inch",
-      features: "Sturdy Frame | Ergonomic Saddle | High Grip Tyres",
-      seo_title: "Alpha Bombay 26 VB - KTR Cycle World",
-      seo_description: "Buy Alpha Bombay 26 VB single speed adult bicycle at best price in Tirunelveli.",
+      description: "Durable single speed adult bicycle with rigid frame, V-brakes, and smooth ride quality.",
       images: "/images/products/prod_001_1.jpg"
     }
   ];
@@ -95,9 +96,7 @@ if (categoriesData.length === 0) {
       category_id: "cat_001",
       name: "Kids Cycle",
       slug: "kids-cycle",
-      description: "Kids Cycle available at KTR Cycle World, Tirunelveli.",
-      seo_title: "Kids Cycles | KTR Cycle World Tirunelveli",
-      seo_description: "Explore the best collection of kids cycles at KTR Cycle World, Tirunelveli."
+      description: "Kids Cycle available at KTR Cycle World, Tirunelveli."
     }
   ];
 }
@@ -109,36 +108,28 @@ const wb = XLSX.utils.book_new();
 const wsProducts = XLSX.utils.json_to_sheet(productsData);
 const wsCategories = XLSX.utils.json_to_sheet(categoriesData);
 
-// Set column widths for products sheet
+// Set column widths for products sheet (12 essential columns)
 wsProducts['!cols'] = [
-  { wch: 12 }, // product_id
-  { wch: 30 }, // name
-  { wch: 25 }, // slug
-  { wch: 15 }, // brand
+  { wch: 14 }, // product_id
+  { wch: 35 }, // name
+  { wch: 16 }, // brand
   { wch: 14 }, // category_id
-  { wch: 14 }, // original_price
-  { wch: 16 }, // discounted_price
-  { wch: 10 }, // featured
-  { wch: 15 }, // color
-  { wch: 15 }, // frame_size
-  { wch: 15 }, // age_group
-  { wch: 35 }, // short_description
-  { wch: 45 }, // long_description
-  { wch: 45 }, // description
-  { wch: 45 }, // specifications
-  { wch: 45 }, // features
-  { wch: 35 }, // seo_title
-  { wch: 45 }, // seo_description
-  { wch: 35 }  // images
+  { wch: 14 }, // cycle_size
+  { wch: 15 }, // original_price
+  { wch: 18 }, // discounted_price
+  { wch: 12 }, // featured
+  { wch: 16 }, // age_group
+  { wch: 65 }, // description
+  { wch: 80 }, // specifications
+  { wch: 50 }  // images
 ];
 
+// Set column widths for categories sheet (4 essential columns)
 wsCategories['!cols'] = [
   { wch: 15 }, // category_id
-  { wch: 20 }, // name
-  { wch: 20 }, // slug
-  { wch: 45 }, // description
-  { wch: 35 }, // seo_title
-  { wch: 45 }  // seo_description
+  { wch: 22 }, // name
+  { wch: 22 }, // slug
+  { wch: 50 }  // description
 ];
 
 // Append sheets to workbook

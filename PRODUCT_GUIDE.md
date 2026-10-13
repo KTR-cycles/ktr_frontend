@@ -1,89 +1,72 @@
-# KTR Cycle World — Product & SEO Management Guide
+# KTR Cycle World — Product Inventory & Excel Guide
 
-This guide provides instructions on **how to add a new product or update an existing product**, including image formats, pixel dimensions, key data attributes, automatic SEO generation, optional custom SEO overrides, and JSON templates.
-
----
-
-## 🔍 How SEO & Open Graph (OG) Works for Products
-
-You **DO NOT need to manually write complex SEO tags, Open Graph meta tags, or JSON-LD schema strings** in your JSON file!
-
-Next.js **automatically generates 100% compliant SEO metadata** for every single product using your standard fields (`name`, `brand`, `short_description`, `image`, `original_price`, `discounted_price`):
-1. **Title Tag**: Automatically generated as `"[Product Name] | Best Price in Tirunelveli | KTR Cycle World"`.
-2. **Meta Description**: Automatically uses `short_description` or `description`.
-3. **Canonical URL**: Automatically created as `https://ktrcycleworld.com/product/[slug]`.
-4. **Open Graph & Twitter Cards**: Automatically populates `og:title`, `og:description`, `og:image` (with 800×600 dimensions), `og:url`, and `twitter:card`.
-5. **Product & Breadcrumb JSON-LD Schema**: Automatically injected into the page HTML for rich Google search result snippets.
+This guide explains how to manage products using the **Excel Inventory Template** (`store_inventory_template.xlsx`) or directly in `data/products.json`.
 
 ---
 
-## ✍️ Optional Custom SEO Overrides
+## 📊 1. Managing Inventory via Excel (Recommended)
 
-If you ever want to override the default SEO title or description for a specific product, you can optionally include these fields in `data/products.json`:
+Managing products via Excel is the fastest and cleanest way to update the catalog.
 
-- **`meta_title`** *(optional string)*: Custom SEO title tag override.
-- **`meta_description`** *(optional string)*: Custom meta description override.
+### Available Commands
+
+| Command | Action |
+| :--- | :--- |
+| `npm run excel:template` | Exports current inventory from `data/products.json` into `store_inventory_template.xlsx`. |
+| `npm run excel:import` | Imports `store_inventory_template.xlsx` into `data/products.json`, cleans unused images, and auto-generates SEO metadata. |
 
 ---
 
-## 🖼️ 1. Image Specifications & Best Practices
+### Excel Columns in `store_inventory_template.xlsx`
 
-| Property | Recommended Setting | Details |
+The **Products** sheet includes only the **12 essential columns**:
+
+| Column Name | Type | Example | Description |
+| :--- | :--- | :--- | :--- |
+| **`product_id`** | Text | `prod_001` | Unique SKU / product identifier. |
+| **`name`** | Text | `91 ALPHA BOMBAY 26T VB` | Full display name of the cycle. |
+| **`brand`** | Text | `ALPHA` | Manufacturer brand name. |
+| **`category_id`** | Text | `cat_002` | Foreign key reference (`cat_001` to `cat_006`). |
+| **`cycle_size`** | Text | `26T`, `27.5T`, `29T` | Wheel / frame size for catalog filtering. |
+| **`original_price`** | Number | `7500` | MRP price. |
+| **`discounted_price`** | Number | `6700` | Offer selling price. |
+| **`featured`** | Text | `TRUE` / `FALSE` | Display on Homepage featured section. |
+| **`age_group`** | Text | `15+ Years` | Target rider age bracket. |
+| **`description`** | Text | `Durable single speed adult bicycle...` | Overview text (PDP summary). |
+| **`specifications`** | Text | `Wheel Size: 26 Inches \| Frame Material: Alloy Frame...` | Technical specs (pipe-separated or JSON). |
+| **`images`** | Text | `/images/products/prod_001_1.jpg` | Comma-separated image paths or Google Drive links. |
+
+> [!NOTE]
+> All technical specifications, key features, URL slugs, and SEO/OpenGraph tags are **automatically generated** when running `npm run excel:import`.
+
+---
+
+### Categories Sheet Columns
+
+The **Categories** sheet has **4 clean columns**:
+
+| Column Name | Example | Description |
 | :--- | :--- | :--- |
-| **Directory** | `public/images/products/` | Place all product images inside `public/images/products/`. |
-| **File Format** | `.jpg` or `.jpeg` | High-quality standard image format. `.png` and `.webp` are also supported. |
-| **Pixel Dimensions** | **800 × 600 px** or **1000 × 750 px** | Standard **4:3 aspect ratio** (or 1:1 square `800×800px`). Ensures high clarity on high-resolution screens and zoom modals. |
-| **File Size** | **100 KB – 250 KB** | Compress images before uploading using free tools like [TinyJPG](https://tinyjpg.com) to maintain fast page loading times. |
-| **Naming Convention** | `prod_<ID>_<NUMBER>.jpg` | Example: `prod_065_1.jpg` (main image), `prod_065_2.jpg` (side view thumbnail). |
+| **`category_id`** | `cat_001` | Category identifier. |
+| **`name`** | `Kids Cycle` | Category name. |
+| **`slug`** | `kids-cycle` | URL slug for `/category/[slug]`. |
+| **`description`** | `Kids Cycle available at KTR Cycle World...` | Category header description. |
 
 ---
 
-## 📝 2. Key Attributes for Display
+## 🖼️ 2. Image Specifications
 
-When adding or editing a product in `data/products.json`, use these key attributes:
-
-### Required Fields
-- **`id`** *(string)*: Unique identifier (e.g. `"prod_065"`).
-- **`product_id`** *(string)*: Same as `id` (`"prod_065"`).
-- **`slug`** *(string)*: Clean URL slug (e.g. `"hercules-roadeo-hulk-26t"`). Used in page URLs: `/product/hercules-roadeo-hulk-26t`.
-- **`name`** *(string)*: Full title of the cycle (e.g. `"Hercules Roadeo Hulk 26T"`).
-- **`brand`** *(string)*: Brand name (e.g. `"HERCULES"`, `"TORONTO"`, `"BSA"`, `"HERO"`, `"ALPHA"`).
-- **`category`** *(string)*: Category ID reference:
-  - `"cat_001"` → Kids Cycle
-  - `"cat_002"` → Adult Cycle
-  - `"cat_003"` → Geared Cycle
-  - `"cat_004"` → Girls Cycle
-  - `"cat_005"` → Electric Cycle
-  - `"cat_006"` → Offer Cycle
-- **`category_name`** *(string)*: Display name (e.g. `"Geared Cycle"`).
-- **`image`** *(string)*: Path to main image (e.g. `"/images/products/prod_065_1.jpg"`).
-- **`images`** *(string)*: Same as main image path.
-- **`images_list`** *(array)*: Array of image paths for multi-image zoom carousel: `["/images/products/prod_065_1.jpg", "/images/products/prod_065_2.jpg"]`.
-- **`original_price`** *(number)*: MRP price (e.g. `14500`).
-- **`discounted_price`** *(number)*: Final selling price (e.g. `12990`).
-- **`discount_percent`** *(number)*: Discount percentage integer (e.g. `10`).
-- **`stock`** *(number)*: Available quantity in showroom (e.g. `5`).
-- **`featured`** *(boolean)*: Set `true` to feature on Homepage, `false` otherwise.
-
-### Technical Specifications (Displayed on Details Page)
-- **`short_description`** *(string)*: 1-sentence catalog card summary.
-- **`description`** *(string)*: Full paragraph details about performance, riding age group, and comfort.
-- **`frame`** *(string)*: Frame type (e.g. `"Lightweight Steel Frame"` or `"Alloy Frame"`).
-- **`gears`** *(string)*: Speed setup (e.g. `"21 Speed Shimano"` or `"Single Speed"`).
-- **`brakes`** *(string)*: Brake system (e.g. `"Dual Mechanical Disc Brakes"` or `"V-Brakes"`).
-- **`tire_size`** *(string)*: Wheel size (e.g. `"26 inch"` or `"29 inch"`).
-- **`weight`** *(string)*: Weight in KG (e.g. `"14.5 kg"`).
-- **`color`** *(string)*: Color combinations (e.g. `"Matte Black / Neon Yellow"`).
-
-### Optional Custom SEO Overrides
-- **`meta_title`** *(optional string)*: Custom SEO title override.
-- **`meta_description`** *(optional string)*: Custom meta description override.
+| Property | Recommended Setting |
+| :--- | :--- |
+| **Directory** | `public/images/products/` |
+| **File Format** | `.jpg`, `.jpeg`, `.webp`, or `.png` |
+| **Pixel Dimensions** | **800 × 600 px** (4:3 ratio) |
+| **File Size** | **100 KB – 250 KB** |
+| **Google Drive** | Direct Drive links in Excel are automatically downloaded into `public/images/products/`. |
 
 ---
 
-## 📋 3. Complete JSON Template to Copy & Paste
-
-Open `data/products.json` and append a new product entry:
+## 📋 3. Streamlined JSON Schema (`data/products.json`)
 
 ```json
 {
@@ -92,44 +75,41 @@ Open `data/products.json` and append a new product entry:
   "slug": "hercules-roadeo-hulk-26t",
   "name": "Hercules Roadeo Hulk 26T",
   "brand": "HERCULES",
-  "varient_label": "Hercules Roadeo Hulk 26T Dual Disc",
-  "category": "cat_003",
   "category_id": "cat_003",
-  "category_name": "Geared Cycle",
-  "image": "/images/products/prod_065_1.jpg",
-  "images": "/images/products/prod_065_1.jpg",
-  "images_list": [
+  "images": [
     "/images/products/prod_065_1.jpg",
     "/images/products/prod_065_2.jpg"
   ],
   "original_price": 14500,
   "discounted_price": 12990,
-  "discount_percent": 10,
-  "discount": 10,
-  "stock": 5,
   "featured": true,
-  "location": "Tirunelveli",
-  "tags": "Geared Cycle, Mountain Bike, Hercules",
-  "age_group": "13+ years",
+  "age_group": "13+ Years",
+  "description": "21 speed mountain geared cycle with dual disc brakes.",
   "short_description": "21 speed mountain geared cycle with dual disc brakes.",
-  "description": "The Hercules Roadeo Hulk 26T is built for rugged terrains and city commuting in Tirunelveli. Features precision 21-speed Shimano gears, sturdy steel frame, and dual mechanical disc brakes.",
-  "frame": "Steel Frame",
-  "gears": "21 Speed Shimano",
-  "brakes": "Dual Disc Brakes",
-  "tire_size": "26 inch",
-  "weight": "15 kg",
-  "color": "Matte Black / Yellow",
-  "currentPrice": 12990,
-  "meta_title": "Hercules Roadeo Hulk 26T | Best Geared Cycle in Tirunelveli",
-  "meta_description": "Buy Hercules Roadeo Hulk 26T geared cycle at KTR Cycle World Tirunelveli. Features 21 speed Shimano gears & dual disc brakes at ₹12,990."
+  "specifications": [
+    { "label": "Wheel Size", "value": "26 Inches" },
+    { "label": "Brake System", "value": "Dual Mechanical Disc Brakes" }
+  ],
+  "features": [
+    "Ergonomically engineered High-Tensile Carbon Steel Frame.",
+    "Precision 21-Speed Gear System for seamless shifting."
+  ],
+  "seo": {
+    "title": "Hercules Roadeo Hulk 26T | Geared Cycle | KTR Cycle World",
+    "description": "Buy Hercules Roadeo Hulk 26T at ₹12,990. 21 speed mountain geared cycle with dual disc brakes."
+  }
 }
 ```
 
 ---
 
-## 🔄 4. How to Update & Deploy
+## 🔄 4. Update & Deployment Workflow
 
-1. **Save Images**: Upload product photos into `public/images/products/`.
-2. **Update JSON**: Add or edit product data in `data/products.json`.
-3. **Build**: Run `npm run build` in your terminal to pre-render static HTML pages.
-4. **Deploy**: Push changes to GitHub (`git push`), and Vercel will automatically rebuild and publish the updated catalog!
+1. Run `npm run excel:template` to generate/export the current inventory spreadsheet with 12 essential columns.
+2. Edit product information in `store_inventory_template.xlsx`.
+3. Run `npm run excel:import` to sync Excel changes into JSON, download any new Google Drive images, clean unused images, and run **Smart / Conditional SEO**:
+   - Preserves all existing product SEO metadata without overwriting.
+   - Automatically generates complete SEO, OpenGraph, and Twitter tags for any new products or items missing SEO.
+4. *(Optional)* Run `npm run seo:generate:force` if you ever wish to re-generate SEO titles, descriptions, and keywords for *all* products from scratch.
+5. Run `npm run check` or `npm run build` to verify builds.
+6. Push changes to GitHub (`git push`).

@@ -14,8 +14,19 @@ const fs = require('fs');
 const path = require('path');
 
 const PRODUCTS_PATH = path.join(__dirname, '..', 'data', 'products.json');
+const CATEGORIES_PATH = path.join(__dirname, '..', 'data', 'categories.json');
 const SITE_NAME = 'KTR Cycle World';
 const LOCATION = 'Tirunelveli';
+
+let categoriesMap = new Map();
+if (fs.existsSync(CATEGORIES_PATH)) {
+  try {
+    const rawCats = JSON.parse(fs.readFileSync(CATEGORIES_PATH, 'utf8'));
+    rawCats.forEach(c => {
+      categoriesMap.set(c.id || c.category_id, c.name);
+    });
+  } catch {}
+}
 
 // Tokens that must stay uppercase in SEO-facing titles
 const KEEP_UPPER = new Set([
@@ -129,7 +140,7 @@ function generateRealTimeProductData(p) {
   const name = prettyName(p);
   const rawName = (p.name || '').toUpperCase();
   const brand = (p.brand || 'KTR').trim();
-  const categoryName = (p.category_name || 'Bicycle').trim();
+  const categoryName = (p.category_name || categoriesMap.get(p.category_id) || 'Bicycle').trim();
   const ageGroup = (p.age_group || 'All Ages').trim();
   const tags = (p.tags || '').toUpperCase();
 
@@ -217,16 +228,29 @@ function generateRealTimeProductData(p) {
   if (isElectric) {
     features.push(`Dual riding modes with intelligent pedal assist sensors and LED battery dashboard.`);
   }
-  if (suspension.includes('Telescopic') || suspension.includes('Full')) {
-    features.push(`Smooth front shock absorber fork designed to neutralize road vibrations.`);
+  function parseCycleSize(name) {
+    const n = (name || '').toUpperCase();
+    if (n.includes('27.5T') || n.includes('27.5"') || n.includes('27.5') || n.includes('27T')) return '27.5T';
+    if (n.includes('29T') || n.includes('29"') || n.includes('29 ')) return '29T';
+    if (n.includes('26T') || n.includes('26"') || n.includes(' 26 ') || n.includes('26 FSDD')) return '26T';
+    if (n.includes('24T') || n.includes('24"') || n.includes(' 24 ')) return '24T';
+    if (n.includes('20T') || n.includes('20"') || n.includes(' 20 ')) return '20T';
+    if (n.includes('16T') || n.includes('16"')) return '16T';
+    if (n.includes('14T') || n.includes('14"')) return '14T';
+    if (n.includes('12T') || n.includes('12"')) return '12T';
+    if (n.includes('SHURVEER')) return '26T';
+    if (n.includes('E-SURGE')) return '27.5T';
+    if (n.includes('MAMBA') || n.includes('GOST')) return '20T';
+    return '26T';
   }
 
   return {
-    short_description: shortDesc,
-    long_description: longDesc,
-    description: desc,
-    specifications: specs,
-    features: features
+    cycle_size: p.cycle_size || parseCycleSize(p.name),
+    short_description: p.short_description || shortDesc,
+    long_description: p.long_description || longDesc,
+    description: p.description || desc,
+    specifications: (Array.isArray(p.specifications) && p.specifications.length > 0) ? p.specifications : specs,
+    features: (Array.isArray(p.features) && p.features.length > 0) ? p.features : features
   };
 }
 
@@ -236,7 +260,7 @@ function generateRealTimeProductData(p) {
 
 function generateSeoTitle(product) {
   const name = prettyName(product);
-  const category = toTitleCase(product.category_name || '');
+  const category = toTitleCase(product.category_name || categoriesMap.get(product.category_id) || '');
   const full = `${name} | ${category} | ${SITE_NAME}`;
   if (full.length <= 70) return full;
   return truncate(`${name} | ${SITE_NAME}`, 70);
@@ -299,7 +323,7 @@ function generateProductSeo(product) {
   const description = generateSeoDescription(product);
   const keywords = generateKeywords(product);
   const canonical = `/product/${product.slug}`;
-  const ogImage = (product.images_list && product.images_list[0]) || product.image || '/images/placeholder.png';
+  const ogImage = (Array.isArray(product.images) ? product.images[0] : (product.images_list && product.images_list[0]) || product.image) || '/images/placeholder.png';
 
   return {
     seo: {
@@ -326,13 +350,34 @@ function generateProductSeo(product) {
   };
 }
 
+function hasValidSeo(p) {
+  return Boolean(
+    p &&
+    p.seo &&
+    typeof p.seo === 'object' &&
+    p.seo.title &&
+    p.seo.title.trim() &&
+    p.seo.description &&
+    p.seo.description.trim() &&
+    p.og &&
+    typeof p.og === 'object' &&
+    p.og.title &&
+    p.twitter &&
+    typeof p.twitter === 'object' &&
+    p.twitter.title
+  );
+}
+
 // ---------------------------------------------------------------------------
-// 3. Execution Pipeline
+// 3. Execution Pipeline (Smart / Conditional SEO)
 // ---------------------------------------------------------------------------
 
 function main() {
+  const isForce = process.argv.includes('--force') || process.argv.includes('-f');
   const products = JSON.parse(fs.readFileSync(PRODUCTS_PATH, 'utf8'));
-  console.log(`🚀 Processing ${products.length} products with combined Data + SEO Generator...\n`);
+
+  console.log(`🚀 Running Data & SEO Generator in ${isForce ? '⚡ FORCE REGENERATION' : '🧠 SMART / CONDITIONAL'} mode...`);
+  console.log(`   Total items: ${products.length} products\n`);
 
   let dupIdsFixed = 0;
   let dupSlugsFound = 0;
@@ -340,6 +385,8 @@ function main() {
   let zeroPriceProducts = 0;
   let longTitles = 0;
   let longDescriptions = 0;
+  let preservedSeoCount = 0;
+  let generatedSeoCount = 0;
 
   // Step A: Fix duplicate IDs (e.g. prod_066 -> prod_067)
   const idSeen = new Set();
@@ -366,8 +413,7 @@ function main() {
       ...realTimeData,
     };
 
-    // 2. Validation counters
-    const img = (updatedProduct.images_list && updatedProduct.images_list[0]) || updatedProduct.image || '';
+    const img = (Array.isArray(updatedProduct.images) ? updatedProduct.images[0] : (updatedProduct.images_list && updatedProduct.images_list[0]) || updatedProduct.image) || '';
     if (!img || img === '/images/placeholder.png') missingImages++;
 
     if ((updatedProduct.currentPrice || updatedProduct.discounted_price || updatedProduct.original_price || 0) === 0) {
@@ -377,13 +423,48 @@ function main() {
     if (slugSeen.has(updatedProduct.slug)) dupSlugsFound++;
     else slugSeen.add(updatedProduct.slug);
 
-    // 3. Generate SEO metadata
-    const seoData = generateProductSeo(updatedProduct);
+    // 2. Smart / Conditional SEO metadata
+    let seoData;
+    const primaryImg = (Array.isArray(updatedProduct.images) ? updatedProduct.images[0] : (updatedProduct.images_list && updatedProduct.images_list[0]) || updatedProduct.image) || '/images/placeholder.png';
+    const canonicalUrl = `/product/${updatedProduct.slug}`;
+
+    if (hasValidSeo(product) && !isForce) {
+      preservedSeoCount++;
+      seoData = {
+        seo: {
+          ...product.seo,
+          canonical: canonicalUrl,
+          robots: product.seo.robots || 'index,follow',
+          keywords: (Array.isArray(product.seo.keywords) && product.seo.keywords.length > 0)
+            ? product.seo.keywords
+            : generateKeywords(updatedProduct),
+        },
+        og: {
+          ...product.og,
+          title: product.og.title || product.seo.title,
+          description: product.og.description || product.seo.description,
+          type: product.og.type || 'product',
+          url: canonicalUrl,
+          image: product.og.image || primaryImg,
+          site_name: product.og.site_name || SITE_NAME,
+        },
+        twitter: {
+          ...product.twitter,
+          card: product.twitter.card || 'summary_large_image',
+          title: product.twitter.title || product.seo.title,
+          description: product.twitter.description || product.seo.description,
+          image: product.twitter.image || primaryImg,
+        }
+      };
+    } else {
+      generatedSeoCount++;
+      seoData = generateProductSeo(updatedProduct);
+    }
 
     if (seoData.seo.title.length > 70) longTitles++;
     if (seoData.seo.description.length > 160) longDescriptions++;
 
-    // Clean up legacy fields and apply new structured SEO
+    // Clean up legacy flat fields and apply structured SEO
     const { seo_title, seo_description, meta_title, meta_description, ...rest } = updatedProduct;
 
     return {
@@ -397,18 +478,23 @@ function main() {
 
   // Step C: Detailed Report
   console.log('='.repeat(60));
-  console.log(' Combined Product Data & SEO Generation Report');
+  console.log(` Combined Product Data & SEO Report (${isForce ? '⚡ Force Mode' : '🧠 Smart Mode'})`);
   console.log('='.repeat(60));
   console.log(`✅ Total products processed   : ${updatedProducts.length}`);
+  console.log(`🛡️  Existing SEO preserved    : ${preservedSeoCount}`);
+  console.log(`✨ New SEO generated          : ${generatedSeoCount}`);
   console.log(`🔧 Duplicate IDs fixed        : ${dupIdsFixed}`);
   console.log(`⚠️  Duplicate slugs found      : ${dupSlugsFound}`);
   console.log(`🖼️  Products missing images    : ${missingImages}`);
   console.log(`💰 Zero/out-of-stock prices    : ${zeroPriceProducts}`);
   console.log(`📏 SEO titles > 70 chars       : ${longTitles}`);
   console.log(`📏 SEO descs > 160 chars       : ${longDescriptions}`);
-  console.log(`🔗 Canonical URLs created      : ${updatedProducts.length}`);
+  console.log(`🔗 Canonical URLs ready        : ${updatedProducts.length}`);
   console.log(`🖼️  OG & Twitter cards ready   : ${updatedProducts.length}`);
   console.log('='.repeat(60));
+  if (!isForce) {
+    console.log(`💡 Note: To force regenerate all SEO tags, run: npm run seo:generate:force`);
+  }
   console.log(`\n✅ Saved to: ${PRODUCTS_PATH}\n`);
 }
 

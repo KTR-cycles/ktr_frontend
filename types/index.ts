@@ -15,6 +15,7 @@ export interface Product {
   gears?: string;
   brakes?: string;
   tire_size?: string;
+  cycle_size?: string;
   weight?: string;
   original_price: number;
   discounted_price: number;

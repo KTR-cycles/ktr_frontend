@@ -148,6 +148,15 @@ async function processImages(productId, imagesList) {
         continue;
       }
 
+      // Check if file already exists with same Drive fileId under another prefix
+      var diskFiles = fs.readdirSync(PUBLIC_IMG_DIR);
+      var existingMatch = diskFiles.find(function(f) { return f.includes(driveInfo.fileId); });
+      if (existingMatch) {
+        console.log('  ✅ Found existing image on disk for file ID ' + driveInfo.fileId + ' (' + existingMatch + '), reusing.');
+        resolved.push('/images/products/' + existingMatch);
+        continue;
+      }
+
       console.log('  📥 Downloading Google Drive image → ' + filename);
       var success = await downloadImage(driveInfo.downloadUrl, destPath);
       if (success) {
@@ -206,6 +215,25 @@ async function runImport() {
     return categoryObj;
   });
 
+  // Load existing products and slugs to preserve established URLs & SEO
+  const productsJsonPath = path.join(DATA_DIR, 'products.json');
+  const existingSlugsMap = new Map();
+  const existingProductsMap = new Map();
+  if (fs.existsSync(productsJsonPath)) {
+    try {
+      const existing = JSON.parse(fs.readFileSync(productsJsonPath, 'utf8'));
+      existing.forEach(p => {
+        if (p.product_id && p.slug) existingSlugsMap.set(p.product_id, p.slug);
+        if (p.id && p.slug) existingSlugsMap.set(p.id, p.slug);
+        if (p.name && p.slug) existingSlugsMap.set(p.name.trim().toLowerCase(), p.slug);
+
+        if (p.product_id) existingProductsMap.set(p.product_id, p);
+        if (p.id) existingProductsMap.set(p.id, p);
+        if (p.name) existingProductsMap.set(p.name.trim().toLowerCase(), p);
+      });
+    } catch {}
+  }
+
   // 2. Process Products (async to support image downloads)
   const slugCounts = new Map();
   const formattedProducts = [];
@@ -216,8 +244,10 @@ async function runImport() {
     const productId = String(item.product_id || item.id || `prod_${String(i + 1).padStart(3, '0')}`).trim();
     const name = String(item.name || '').trim();
 
-    // Custom or auto-generated slug
-    let baseSlug = item.slug ? slugify(item.slug) : slugify(name || `product-${productId}`);
+    // Custom, existing, or auto-generated slug
+    let baseSlug = item.slug
+      ? slugify(item.slug)
+      : (existingSlugsMap.get(productId) || existingSlugsMap.get(name.toLowerCase()) || slugify(name || `product-${productId}`));
     if (!baseSlug) baseSlug = `product-${productId}`;
     let slug = baseSlug;
     if (slugCounts.has(baseSlug)) {
@@ -269,9 +299,9 @@ async function runImport() {
       discountPercent = Number((((originalPrice - discountedPrice) / originalPrice) * 100).toFixed(2));
     }
 
-    const shortDesc = String(item.short_description || '').trim();
-    const longDesc = String(item.long_description || '').trim();
-    const mainDesc = String(item.description || longDesc || shortDesc || name).trim();
+    const mainDesc = String(item.description || item.short_description || item.long_description || name).trim();
+    const shortDesc = String(item.short_description || mainDesc).trim();
+    const longDesc = String(item.long_description || mainDesc).trim();
 
     // Parse JSON or complex fields safely
     let specifications = item.specifications;
@@ -306,7 +336,9 @@ async function runImport() {
       }
     }
 
-    formattedProducts.push({
+    const existingProd = existingProductsMap.get(productId) || existingProductsMap.get(name.toLowerCase());
+
+    const prodObj = {
       id: productId,
       product_id: productId,
       slug: slug,
@@ -314,24 +346,30 @@ async function runImport() {
       brand: String(item.brand || '').trim(),
       category_id: categoryId,
       images: imagesList,
-      color: String(item.color || '').trim(),
-      frame_size: String(item.frame_size || item.tire_size || '').trim(),
+      color: String(item.color || existingProd?.color || '').trim(),
+      frame_size: String(item.frame_size || item.tire_size || existingProd?.frame_size || '').trim(),
+      cycle_size: String(item.cycle_size || item.size || existingProd?.cycle_size || '').trim(),
       original_price: originalPrice,
       discounted_price: discountedPrice,
       featured: parseBoolean(item.featured),
-      age_group: String(item.age_group || '').trim(),
+      age_group: String(item.age_group || existingProd?.age_group || '').trim(),
       short_description: shortDesc,
       long_description: longDesc,
       description: mainDesc,
-      specifications: specifications || '',
-      features: features || '',
-      seo_title: String(item.seo_title || item.meta_title || `${name} - KTR Cycle World`).trim(),
-      seo_description: String(item.seo_description || item.meta_description || shortDesc || mainDesc).trim()
-    });
+      specifications: specifications || existingProd?.specifications || '',
+      features: features || existingProd?.features || '',
+      seo_title: String(item.seo_title || item.meta_title || existingProd?.seo_title || `${name} - KTR Cycle World`).trim(),
+      seo_description: String(item.seo_description || item.meta_description || existingProd?.seo_description || shortDesc || mainDesc).trim()
+    };
+
+    if (existingProd?.seo) prodObj.seo = existingProd.seo;
+    if (existingProd?.og) prodObj.og = existingProd.og;
+    if (existingProd?.twitter) prodObj.twitter = existingProd.twitter;
+
+    formattedProducts.push(prodObj);
   }
 
   // Write files to data/
-  const productsJsonPath = path.join(DATA_DIR, 'products.json');
   const categoriesJsonPath = path.join(DATA_DIR, 'categories.json');
 
   fs.writeFileSync(productsJsonPath, JSON.stringify(formattedProducts, null, 2));
