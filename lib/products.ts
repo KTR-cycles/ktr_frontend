@@ -107,6 +107,64 @@ export function getAgeGroups(): string[] {
   });
 }
 
+export function getCycleSizeForProduct(product: Partial<Product>): string {
+  if (product.cycle_size && product.cycle_size.trim()) {
+    return product.cycle_size.trim();
+  }
+
+  const name = (product.name || "").toUpperCase();
+
+  if (name.includes("27.5T") || name.includes("27.5\"") || name.includes("27.5") || name.includes("27T")) return "27.5T";
+  if (name.includes("29T") || name.includes("29\"") || name.includes("29 ")) return "29T";
+  if (name.includes("26T") || name.includes("26\"") || name.includes(" 26 ") || name.includes("26 FSDD")) return "26T";
+  if (name.includes("24T") || name.includes("24\"") || name.includes(" 24 ")) return "24T";
+  if (name.includes("20T") || name.includes("20\"") || name.includes(" 20 ")) return "20T";
+  if (name.includes("16T") || name.includes("16\"")) return "16T";
+  if (name.includes("14T") || name.includes("14\"")) return "14T";
+  if (name.includes("12T") || name.includes("12\"")) return "12T";
+
+  if (Array.isArray(product.specifications)) {
+    const ws = product.specifications.find(
+      (s: any) => s.label && s.label.toLowerCase().includes("wheel size")
+    );
+    if (ws && typeof ws.value === "string") {
+      const v = ws.value.toUpperCase();
+      if (v.includes("29")) return "29T";
+      if (v.includes("27.5") || v.includes("27")) return "27.5T";
+      if (v.includes("26")) return "26T";
+      if (v.includes("24")) return "24T";
+      if (v.includes("20")) return "20T";
+      if (v.includes("16")) return "16T";
+      if (v.includes("14")) return "14T";
+      if (v.includes("12")) return "12T";
+    }
+  }
+
+  if (name.includes("SHURVEER")) return "26T";
+  if (name.includes("E-SURGE")) return "27.5T";
+  if (name.includes("MAMBA") || name.includes("GOST")) return "20T";
+
+  return "Other";
+}
+
+export function getCycleSizes(): string[] {
+  const products = getProducts();
+  const set = new Set<string>();
+  products.forEach((p) => {
+    const size = getCycleSizeForProduct(p);
+    if (size && size !== "Other") set.add(size);
+  });
+  const order = ["12T", "14T", "16T", "20T", "24T", "26T", "27.5T", "29T"];
+  return Array.from(set).sort((a, b) => {
+    const idxA = order.indexOf(a);
+    const idxB = order.indexOf(b);
+    if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+    if (idxA !== -1) return -1;
+    if (idxB !== -1) return 1;
+    return a.localeCompare(b);
+  });
+}
+
 export function getProductVariants(product: Product): ProductVariant[] {
   if (product.variants && product.variants.length > 0) {
     return product.variants;

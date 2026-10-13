@@ -70,6 +70,7 @@ export function trackFilterApply(
     categories?: string[];
     brands?: string[];
     ageGroups?: string[];
+    sizes?: string[];
     priceRange?: [number, number];
     searchQuery?: string;
   },
@@ -79,6 +80,7 @@ export function trackFilterApply(
     (filters.categories?.length || 0) +
     (filters.brands?.length || 0) +
     (filters.ageGroups?.length || 0) +
+    (filters.sizes?.length || 0) +
     (filters.searchQuery ? 1 : 0) +
     (filters.priceRange ? 1 : 0);
 
@@ -90,6 +92,7 @@ export function trackFilterApply(
     selected_categories: filters.categories?.join(",") || "",
     selected_brands: filters.brands?.join(",") || "",
     selected_age_groups: filters.ageGroups?.join(",") || "",
+    selected_sizes: filters.sizes?.join(",") || "",
     price_min: filters.priceRange ? filters.priceRange[0] : null,
     price_max: filters.priceRange ? filters.priceRange[1] : null,
     result_count: resultCount,

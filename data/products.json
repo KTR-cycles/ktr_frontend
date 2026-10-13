@@ -10,11 +10,11 @@
       "/images/products/prod_001_1_1cBHXAZIQpKTodzPqbos1Ngp1sV-MFDwC.jpg",
       "/images/products/prod_001_2_1Iv7MRj7lY8BSTD19GLEGM0ZcK6zuQYd1.jpg"
     ],
-    "color": "Matte Black",
-    "frame_size": "18 Inches",
-    "original_price": 7900,
+    "color": "",
+    "frame_size": "",
+    "original_price": 7500,
     "discounted_price": 6700,
-    "featured": true,
+    "featured": false,
     "age_group": "15+ Years",
     "short_description": "Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sleek geometry for daily commutes and fitness rides.",
     "long_description": "The 91 Alpha Bombay 26T VB is engineered for daily dependability, low maintenance, and smooth riding performance. Built with a tough High-Tensile Carbon Steel Frame, responsive High-Performance V-Brake System, and fast-rolling 26 Inches wheels, it guarantees comfort, balance, and reliability on every journey.",
@@ -62,13 +62,11 @@
       "keywords": [
         "91 Alpha Bombay 26T VB",
         "Alpha cycle",
-        "Alpha adult cycle",
-        "Adult Cycle",
-        "adult cycle Tirunelveli",
+        "Alpha ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "adult cycle 15+ Years",
-        "Hybrid",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
@@ -86,7 +84,8 @@
       "title": "91 Alpha Bombay 26T VB | Adult Cycle | KTR Cycle World",
       "description": "Buy 91 Alpha Bombay 26T VB at ₹6,700. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sle…",
       "image": "/images/products/prod_001_1_1cBHXAZIQpKTodzPqbos1Ngp1sV-MFDwC.jpg"
-    }
+    },
+    "cycle_size": "26T"
   },
   {
     "id": "prod_002",
@@ -101,7 +100,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 11200,
-    "discounted_price": 11200,
+    "discounted_price": 10800,
     "featured": true,
     "age_group": "8-12 Years",
     "short_description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
@@ -145,24 +144,23 @@
     ],
     "seo": {
       "title": "Toronto Skywalk 20T | Kids Cycle | KTR Cycle World",
-      "description": "Buy Toronto Skywalk 20T at ₹11,200. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and erg…",
+      "description": "Buy Toronto Skywalk 20T at ₹10,800. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and erg…",
       "canonical": "/product/skywalk-20",
       "keywords": [
         "Toronto Skywalk 20T",
         "Toronto cycle",
-        "Toronto kids cycle",
-        "Kids Cycle",
-        "kids cycle Tirunelveli",
+        "Toronto ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "kids cycle 8-12 Years",
+        " 8-12 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Toronto Skywalk 20T | Kids Cycle | KTR Cycle World",
-      "description": "Buy Toronto Skywalk 20T at ₹11,200. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and erg…",
+      "description": "Buy Toronto Skywalk 20T at ₹10,800. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and erg…",
       "type": "product",
       "image": "/images/products/prod_002_1_1UMFTn5JP9w2FFi4KL6l-8diVc5gUkx-Z.jpg",
       "url": "/product/skywalk-20",
@@ -171,13 +169,14 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Toronto Skywalk 20T | Kids Cycle | KTR Cycle World",
-      "description": "Buy Toronto Skywalk 20T at ₹11,200. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and erg…",
+      "description": "Buy Toronto Skywalk 20T at ₹10,800. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and erg…",
       "image": "/images/products/prod_002_1_1UMFTn5JP9w2FFi4KL6l-8diVc5gUkx-Z.jpg"
-    }
+    },
+    "cycle_size": "20T"
   },
   {
-    "id": "prod_005",
-    "product_id": "prod_005",
+    "id": "prod_003",
+    "product_id": "prod_003",
     "slug": "91-alpha-cairo-24t-d2tx-30",
     "name": "91 ALPHA CAIRO 24T FSDD 3.00",
     "brand": "ALPHA",
@@ -189,7 +188,7 @@
     "frame_size": "",
     "original_price": 10200,
     "discounted_price": 9500,
-    "featured": false,
+    "featured": true,
     "age_group": "12-15 Years",
     "short_description": "Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
     "long_description": "The 91 Alpha Cairo 24T FSDD 3.00 is engineered for daily dependability, low maintenance, and smooth riding performance. Built with a tough High-Tensile Carbon Steel Frame, responsive Dual Mechanical Disc Brakes (Front & Rear), and fast-rolling 24 Inches wheels, it guarantees comfort, balance, and reliability on every journey.",
@@ -228,8 +227,7 @@
       "Ergonomically engineered High-Tensile Carbon Steel Frame for strength, balance, and long service life.",
       "High-stopping power Dual Mechanical Disc Brakes (Front & Rear) for reliable braking in dry and wet conditions.",
       "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
-      "Anatomically designed PU cushioned saddle with quick-release height adjustment.",
-      "Smooth front shock absorber fork designed to neutralize road vibrations."
+      "Anatomically designed PU cushioned saddle with quick-release height adjustment."
     ],
     "seo": {
       "title": "91 Alpha Cairo 24T FSDD 3.00 | Adult Cycle | KTR Cycle World",
@@ -238,12 +236,11 @@
       "keywords": [
         "91 Alpha Cairo 24T FSDD 3.00",
         "Alpha cycle",
-        "Alpha adult cycle",
-        "Adult Cycle",
-        "adult cycle Tirunelveli",
+        "Alpha ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "adult cycle 12-15 Years",
+        " 12-15 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
@@ -261,11 +258,12 @@
       "title": "91 Alpha Cairo 24T FSDD 3.00 | Adult Cycle | KTR Cycle World",
       "description": "Buy 91 Alpha Cairo 24T FSDD 3.00 at ₹9,500. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front…",
       "image": "/images/products/prod_005_1.jpg"
-    }
+    },
+    "cycle_size": "24T"
   },
   {
-    "id": "prod_006",
-    "product_id": "prod_006",
+    "id": "prod_004",
+    "product_id": "prod_004",
     "slug": "alpha-cairo-26t-fsdd-300",
     "name": "91 ALPHA CAIRO 26T FSDD 3.00",
     "brand": "ALPHA",
@@ -316,8 +314,7 @@
       "Ergonomically engineered High-Tensile Carbon Steel Frame for strength, balance, and long service life.",
       "High-stopping power Dual Mechanical Disc Brakes (Front & Rear) for reliable braking in dry and wet conditions.",
       "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
-      "Anatomically designed PU cushioned saddle with quick-release height adjustment.",
-      "Smooth front shock absorber fork designed to neutralize road vibrations."
+      "Anatomically designed PU cushioned saddle with quick-release height adjustment."
     ],
     "seo": {
       "title": "91 Alpha Cairo 26T FSDD 3.00 | Adult Cycle | KTR Cycle World",
@@ -326,13 +323,11 @@
       "keywords": [
         "91 Alpha Cairo 26T FSDD 3.00",
         "Alpha cycle",
-        "Alpha adult cycle",
-        "Adult Cycle",
-        "adult cycle Tirunelveli",
+        "Alpha ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "adult cycle 15+ Years",
-        "Ninety One Cycle",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
@@ -350,12 +345,13 @@
       "title": "91 Alpha Cairo 26T FSDD 3.00 | Adult Cycle | KTR Cycle World",
       "description": "Buy 91 Alpha Cairo 26T FSDD 3.00 at ₹9,700. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front…",
       "image": "/images/products/prod_006_1.jpg"
-    }
+    },
+    "cycle_size": "26T"
   },
   {
-    "id": "prod_009",
-    "product_id": "prod_009",
-    "slug": "avon-camila-ibc-26t",
+    "id": "prod_005",
+    "product_id": "prod_005",
+    "slug": "91-alpha-cairo-24t-d2tx-30-2",
     "name": "AVON CAMILA IBC 26T",
     "brand": "AVON",
     "category_id": "cat_004",
@@ -410,17 +406,15 @@
     "seo": {
       "title": "Avon Camila IBC 26T | Girls Cycle | KTR Cycle World",
       "description": "Buy Avon Camila IBC 26T at ₹7,350. Elegant and comfortable girls cycle featuring low step-through frame, comfortable upright geometry, rear carrier, and smooth…",
-      "canonical": "/product/avon-camila-ibc-26t",
+      "canonical": "/product/91-alpha-cairo-24t-d2tx-30-2",
       "keywords": [
         "Avon Camila IBC 26T",
         "Avon cycle",
-        "Avon girls cycle",
-        "Girls Cycle",
-        "girls cycle Tirunelveli",
+        "Avon ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "girls cycle 15+ Years",
-        "Ladies Cycle",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
@@ -430,7 +424,7 @@
       "description": "Buy Avon Camila IBC 26T at ₹7,350. Elegant and comfortable girls cycle featuring low step-through frame, comfortable upright geometry, rear carrier, and smooth…",
       "type": "product",
       "image": "/images/products/prod_009_1.jpg",
-      "url": "/product/avon-camila-ibc-26t",
+      "url": "/product/91-alpha-cairo-24t-d2tx-30-2",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
@@ -438,12 +432,13 @@
       "title": "Avon Camila IBC 26T | Girls Cycle | KTR Cycle World",
       "description": "Buy Avon Camila IBC 26T at ₹7,350. Elegant and comfortable girls cycle featuring low step-through frame, comfortable upright geometry, rear carrier, and smooth…",
       "image": "/images/products/prod_009_1.jpg"
-    }
+    },
+    "cycle_size": "26T"
   },
   {
-    "id": "prod_011",
-    "product_id": "prod_011",
-    "slug": "avon-inspiro-20t",
+    "id": "prod_006",
+    "product_id": "prod_006",
+    "slug": "alpha-cairo-26t-fsdd-300-2",
     "name": "AVON INSPIRO 20T",
     "brand": "AVON",
     "category_id": "cat_001",
@@ -455,8 +450,8 @@
     "color": "",
     "frame_size": "",
     "original_price": 7900,
-    "discounted_price": 6800,
-    "featured": false,
+    "discounted_price": 6400,
+    "featured": true,
     "age_group": "8-12 Years",
     "short_description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
     "long_description": "Bring excitement to your child's outdoor playtime with the Avon Inspiro 20T. Built with heavy-gauge steel tubing, non-toxic paint, full enclosed chain cover, and broad training stability, it ensures absolute safety while developing balance and confidence for kids aged 8-12 Years.",
@@ -499,39 +494,39 @@
     ],
     "seo": {
       "title": "Avon Inspiro 20T | Kids Cycle | KTR Cycle World",
-      "description": "Buy Avon Inspiro 20T at ₹6,800. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonom…",
-      "canonical": "/product/avon-inspiro-20t",
+      "description": "Buy Avon Inspiro 20T at ₹6,400. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonom…",
+      "canonical": "/product/alpha-cairo-26t-fsdd-300-2",
       "keywords": [
         "Avon Inspiro 20T",
         "Avon cycle",
-        "Avon kids cycle",
-        "Kids Cycle",
-        "kids cycle Tirunelveli",
+        "Avon ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "kids cycle 8-12 Years",
+        " 8-12 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Avon Inspiro 20T | Kids Cycle | KTR Cycle World",
-      "description": "Buy Avon Inspiro 20T at ₹6,800. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonom…",
+      "description": "Buy Avon Inspiro 20T at ₹6,400. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonom…",
       "type": "product",
       "image": "/images/products/prod_011_1.jpg",
-      "url": "/product/avon-inspiro-20t",
+      "url": "/product/alpha-cairo-26t-fsdd-300-2",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "Avon Inspiro 20T | Kids Cycle | KTR Cycle World",
-      "description": "Buy Avon Inspiro 20T at ₹6,800. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonom…",
+      "description": "Buy Avon Inspiro 20T at ₹6,400. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonom…",
       "image": "/images/products/prod_011_1.jpg"
-    }
+    },
+    "cycle_size": "20T"
   },
   {
-    "id": "prod_012",
-    "product_id": "prod_012",
+    "id": "prod_007",
+    "product_id": "prod_007",
     "slug": "avon-rabia-ibc-24t",
     "name": "AVON RABIA IBC 24T",
     "brand": "AVON",
@@ -544,7 +539,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 7800,
-    "discounted_price": 7400,
+    "discounted_price": 7200,
     "featured": false,
     "age_group": "12-15 Years",
     "short_description": "Elegant and comfortable girls cycle featuring low step-through frame, comfortable upright geometry, rear carrier, and smooth brake controls.",
@@ -588,25 +583,23 @@
     ],
     "seo": {
       "title": "Avon Rabia IBC 24T | Girls Cycle | KTR Cycle World",
-      "description": "Buy Avon Rabia IBC 24T at ₹7,400. Elegant and comfortable girls cycle featuring low step-through frame, comfortable upright geometry, rear carrier, and smooth…",
+      "description": "Buy Avon Rabia IBC 24T at ₹7,200. Elegant and comfortable girls cycle featuring low step-through frame, comfortable upright geometry, rear carrier, and smooth…",
       "canonical": "/product/avon-rabia-ibc-24t",
       "keywords": [
         "Avon Rabia IBC 24T",
         "Avon cycle",
-        "Avon girls cycle",
-        "Girls Cycle",
-        "girls cycle Tirunelveli",
+        "Avon ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "girls cycle 12-15 Years",
-        "Ladies Cycle",
+        " 12-15 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Avon Rabia IBC 24T | Girls Cycle | KTR Cycle World",
-      "description": "Buy Avon Rabia IBC 24T at ₹7,400. Elegant and comfortable girls cycle featuring low step-through frame, comfortable upright geometry, rear carrier, and smooth…",
+      "description": "Buy Avon Rabia IBC 24T at ₹7,200. Elegant and comfortable girls cycle featuring low step-through frame, comfortable upright geometry, rear carrier, and smooth…",
       "type": "product",
       "image": "/images/products/prod_012_1.jpg",
       "url": "/product/avon-rabia-ibc-24t",
@@ -615,13 +608,14 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Avon Rabia IBC 24T | Girls Cycle | KTR Cycle World",
-      "description": "Buy Avon Rabia IBC 24T at ₹7,400. Elegant and comfortable girls cycle featuring low step-through frame, comfortable upright geometry, rear carrier, and smooth…",
+      "description": "Buy Avon Rabia IBC 24T at ₹7,200. Elegant and comfortable girls cycle featuring low step-through frame, comfortable upright geometry, rear carrier, and smooth…",
       "image": "/images/products/prod_012_1.jpg"
-    }
+    },
+    "cycle_size": "24T"
   },
   {
-    "id": "prod_013",
-    "product_id": "prod_013",
+    "id": "prod_008",
+    "product_id": "prod_008",
     "slug": "avon-yama-26t-fat",
     "name": "AVON YAMA 26T FAT",
     "brand": "AVON",
@@ -633,8 +627,8 @@
     ],
     "color": "",
     "frame_size": "",
-    "original_price": 0,
-    "discounted_price": 0,
+    "original_price": 18500,
+    "discounted_price": 17500,
     "featured": true,
     "age_group": "15+ Years",
     "short_description": "Avon Yama 26T FAT is a rugged fat-tire bicycle featuring extra-wide 4.0\" all-terrain tires, heavy-duty suspension, and 21-speed gears for ultimate traction and off-road dominance.",
@@ -683,26 +677,23 @@
     ],
     "seo": {
       "title": "Avon Yama 26T FAT | Geared Cycle | KTR Cycle World",
-      "description": "Avon Yama 26T FAT is a rugged fat-tire bicycle featuring extra-wide 4.0\" all-terrain tires, heavy-duty suspension, and 21-speed gears for ultimate traction and…",
+      "description": "Buy Avon Yama 26T FAT at ₹17,500. Avon Yama 26T FAT is a rugged fat-tire bicycle featuring extra-wide 4.0\" all-terrain tires, heavy-duty suspension, and 21-spe…",
       "canonical": "/product/avon-yama-26t-fat",
       "keywords": [
         "Avon Yama 26T FAT",
         "Avon cycle",
-        "Avon geared cycle",
-        "Geared Cycle",
-        "geared cycle Tirunelveli",
+        "Avon ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "geared cycle 15+ Years",
-        "Avon Cycles",
-        "Fat Cycles",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Avon Yama 26T FAT | Geared Cycle | KTR Cycle World",
-      "description": "Avon Yama 26T FAT is a rugged fat-tire bicycle featuring extra-wide 4.0\" all-terrain tires, heavy-duty suspension, and 21-speed gears for ultimate traction and…",
+      "description": "Buy Avon Yama 26T FAT at ₹17,500. Avon Yama 26T FAT is a rugged fat-tire bicycle featuring extra-wide 4.0\" all-terrain tires, heavy-duty suspension, and 21-spe…",
       "type": "product",
       "image": "/images/products/prod_013_1.jpg",
       "url": "/product/avon-yama-26t-fat",
@@ -711,14 +702,15 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Avon Yama 26T FAT | Geared Cycle | KTR Cycle World",
-      "description": "Avon Yama 26T FAT is a rugged fat-tire bicycle featuring extra-wide 4.0\" all-terrain tires, heavy-duty suspension, and 21-speed gears for ultimate traction and…",
+      "description": "Buy Avon Yama 26T FAT at ₹17,500. Avon Yama 26T FAT is a rugged fat-tire bicycle featuring extra-wide 4.0\" all-terrain tires, heavy-duty suspension, and 21-spe…",
       "image": "/images/products/prod_013_1.jpg"
-    }
+    },
+    "cycle_size": "26T"
   },
   {
-    "id": "prod_014",
-    "product_id": "prod_014",
-    "slug": "bsa-champ-12t",
+    "id": "prod_009",
+    "product_id": "prod_009",
+    "slug": "avon-camila-ibc-26t",
     "name": "BSA CHAMP 12T",
     "brand": "BSA",
     "category_id": "cat_001",
@@ -728,8 +720,8 @@
     "color": "",
     "frame_size": "",
     "original_price": 4600,
-    "discounted_price": 4250,
-    "featured": true,
+    "discounted_price": 4500,
+    "featured": false,
     "age_group": "2-5 Years",
     "short_description": "Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
     "long_description": "Bring excitement to your child's outdoor playtime with the BSA Champ 12T. Built with heavy-gauge steel tubing, non-toxic paint, full enclosed chain cover, and broad training stability, it ensures absolute safety while developing balance and confidence for kids aged 2-5 Years.",
@@ -772,39 +764,39 @@
     ],
     "seo": {
       "title": "BSA Champ 12T | Kids Cycle | KTR Cycle World",
-      "description": "Buy BSA Champ 12T at ₹4,250. Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and ergonomic s…",
-      "canonical": "/product/bsa-champ-12t",
+      "description": "Buy BSA Champ 12T at ₹4,500. Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and ergonomic s…",
+      "canonical": "/product/avon-camila-ibc-26t",
       "keywords": [
         "BSA Champ 12T",
         "BSA cycle",
-        "BSA kids cycle",
-        "Kids Cycle",
-        "kids cycle Tirunelveli",
+        "BSA ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "kids cycle 2-5 Years",
+        " 2-5 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "BSA Champ 12T | Kids Cycle | KTR Cycle World",
-      "description": "Buy BSA Champ 12T at ₹4,250. Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and ergonomic s…",
+      "description": "Buy BSA Champ 12T at ₹4,500. Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and ergonomic s…",
       "type": "product",
       "image": "/images/products/prod_014_1.jpg",
-      "url": "/product/bsa-champ-12t",
+      "url": "/product/avon-camila-ibc-26t",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "BSA Champ 12T | Kids Cycle | KTR Cycle World",
-      "description": "Buy BSA Champ 12T at ₹4,250. Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and ergonomic s…",
+      "description": "Buy BSA Champ 12T at ₹4,500. Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and ergonomic s…",
       "image": "/images/products/prod_014_1.jpg"
-    }
+    },
+    "cycle_size": "12T"
   },
   {
-    "id": "prod_015",
-    "product_id": "prod_015",
+    "id": "prod_010",
+    "product_id": "prod_010",
     "slug": "bsa-champ-14t",
     "name": "BSA CHAMP 14T",
     "brand": "BSA",
@@ -815,7 +807,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 4800,
-    "discounted_price": 4350,
+    "discounted_price": 4600,
     "featured": false,
     "age_group": "2-5 Years",
     "short_description": "Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
@@ -859,24 +851,23 @@
     ],
     "seo": {
       "title": "BSA Champ 14T | Kids Cycle | KTR Cycle World",
-      "description": "Buy BSA Champ 14T at ₹4,350. Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and ergonomic s…",
+      "description": "Buy BSA Champ 14T at ₹4,600. Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and ergonomic s…",
       "canonical": "/product/bsa-champ-14t",
       "keywords": [
         "BSA Champ 14T",
         "BSA cycle",
-        "BSA kids cycle",
-        "Kids Cycle",
-        "kids cycle Tirunelveli",
+        "BSA ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "kids cycle 2-5 Years",
+        " 2-5 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "BSA Champ 14T | Kids Cycle | KTR Cycle World",
-      "description": "Buy BSA Champ 14T at ₹4,350. Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and ergonomic s…",
+      "description": "Buy BSA Champ 14T at ₹4,600. Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and ergonomic s…",
       "type": "product",
       "image": "/images/products/prod_015_1.jpg",
       "url": "/product/bsa-champ-14t",
@@ -885,14 +876,15 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "BSA Champ 14T | Kids Cycle | KTR Cycle World",
-      "description": "Buy BSA Champ 14T at ₹4,350. Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and ergonomic s…",
+      "description": "Buy BSA Champ 14T at ₹4,600. Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and ergonomic s…",
       "image": "/images/products/prod_015_1.jpg"
-    }
+    },
+    "cycle_size": "14T"
   },
   {
-    "id": "prod_016",
-    "product_id": "prod_016",
-    "slug": "bsa-champ-16t",
+    "id": "prod_011",
+    "product_id": "prod_011",
+    "slug": "avon-inspiro-20t",
     "name": "BSA CHAMP 16T",
     "brand": "BSA",
     "category_id": "cat_001",
@@ -902,7 +894,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 4900,
-    "discounted_price": 4450,
+    "discounted_price": 4700,
     "featured": false,
     "age_group": "5-8 Years",
     "short_description": "Sturdy and safe kids cycle designed for young riders (5-8 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
@@ -946,40 +938,40 @@
     ],
     "seo": {
       "title": "BSA Champ 16T | Kids Cycle | KTR Cycle World",
-      "description": "Buy BSA Champ 16T at ₹4,450. Sturdy and safe kids cycle designed for young riders (5-8 Years). Equipped with anti-skid tires, full chain guard, and ergonomic s…",
-      "canonical": "/product/bsa-champ-16t",
+      "description": "Buy BSA Champ 16T at ₹4,700. Sturdy and safe kids cycle designed for young riders (5-8 Years). Equipped with anti-skid tires, full chain guard, and ergonomic s…",
+      "canonical": "/product/avon-inspiro-20t",
       "keywords": [
         "BSA Champ 16T",
         "BSA cycle",
-        "BSA kids cycle",
-        "Kids Cycle",
-        "kids cycle Tirunelveli",
+        "BSA ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "kids cycle 5-8 Years",
+        " 5-8 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "BSA Champ 16T | Kids Cycle | KTR Cycle World",
-      "description": "Buy BSA Champ 16T at ₹4,450. Sturdy and safe kids cycle designed for young riders (5-8 Years). Equipped with anti-skid tires, full chain guard, and ergonomic s…",
+      "description": "Buy BSA Champ 16T at ₹4,700. Sturdy and safe kids cycle designed for young riders (5-8 Years). Equipped with anti-skid tires, full chain guard, and ergonomic s…",
       "type": "product",
       "image": "/images/products/prod_016_1.jpg",
-      "url": "/product/bsa-champ-16t",
+      "url": "/product/avon-inspiro-20t",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "BSA Champ 16T | Kids Cycle | KTR Cycle World",
-      "description": "Buy BSA Champ 16T at ₹4,450. Sturdy and safe kids cycle designed for young riders (5-8 Years). Equipped with anti-skid tires, full chain guard, and ergonomic s…",
+      "description": "Buy BSA Champ 16T at ₹4,700. Sturdy and safe kids cycle designed for young riders (5-8 Years). Equipped with anti-skid tires, full chain guard, and ergonomic s…",
       "image": "/images/products/prod_016_1.jpg"
-    }
+    },
+    "cycle_size": "16T"
   },
   {
-    "id": "prod_017",
-    "product_id": "prod_017",
-    "slug": "bsa-kinder-20t",
+    "id": "prod_012",
+    "product_id": "prod_012",
+    "slug": "avon-rabia-ibc-24t-2",
     "name": "BSA KINDER 20T",
     "brand": "BSA",
     "category_id": "cat_001",
@@ -989,7 +981,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 5450,
-    "discounted_price": 4700,
+    "discounted_price": 4800,
     "featured": false,
     "age_group": "8-12 Years",
     "short_description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
@@ -1033,40 +1025,40 @@
     ],
     "seo": {
       "title": "BSA Kinder 20T | Kids Cycle | KTR Cycle World",
-      "description": "Buy BSA Kinder 20T at ₹4,700. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic…",
-      "canonical": "/product/bsa-kinder-20t",
+      "description": "Buy BSA Kinder 20T at ₹4,800. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic…",
+      "canonical": "/product/avon-rabia-ibc-24t-2",
       "keywords": [
         "BSA Kinder 20T",
         "BSA cycle",
-        "BSA kids cycle",
-        "Kids Cycle",
-        "kids cycle Tirunelveli",
+        "BSA ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "kids cycle 8-12 Years",
+        " 8-12 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "BSA Kinder 20T | Kids Cycle | KTR Cycle World",
-      "description": "Buy BSA Kinder 20T at ₹4,700. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic…",
+      "description": "Buy BSA Kinder 20T at ₹4,800. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic…",
       "type": "product",
       "image": "/images/products/prod_017_1.jpg",
-      "url": "/product/bsa-kinder-20t",
+      "url": "/product/avon-rabia-ibc-24t-2",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "BSA Kinder 20T | Kids Cycle | KTR Cycle World",
-      "description": "Buy BSA Kinder 20T at ₹4,700. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic…",
+      "description": "Buy BSA Kinder 20T at ₹4,800. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic…",
       "image": "/images/products/prod_017_1.jpg"
-    }
+    },
+    "cycle_size": "20T"
   },
   {
-    "id": "prod_018",
-    "product_id": "prod_018",
-    "slug": "bsa-rocket-ic-20t",
+    "id": "prod_013",
+    "product_id": "prod_013",
+    "slug": "avon-yama-26t-fat-2",
     "name": "BSA ROCKET IC 20T CB IBC",
     "brand": "BSA",
     "category_id": "cat_001",
@@ -1076,7 +1068,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 5800,
-    "discounted_price": 5200,
+    "discounted_price": 5300,
     "featured": false,
     "age_group": "8-12 Years",
     "short_description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
@@ -1120,40 +1112,40 @@
     ],
     "seo": {
       "title": "BSA Rocket IC 20T Cb IBC | Kids Cycle | KTR Cycle World",
-      "description": "Buy BSA Rocket IC 20T Cb IBC at ₹5,200. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and…",
-      "canonical": "/product/bsa-rocket-ic-20t",
+      "description": "Buy BSA Rocket IC 20T Cb IBC at ₹5,300. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and…",
+      "canonical": "/product/avon-yama-26t-fat-2",
       "keywords": [
         "BSA Rocket IC 20T Cb IBC",
         "BSA cycle",
-        "BSA kids cycle",
-        "Kids Cycle",
-        "kids cycle Tirunelveli",
+        "BSA ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "kids cycle 8-12 Years",
+        " 8-12 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "BSA Rocket IC 20T Cb IBC | Kids Cycle | KTR Cycle World",
-      "description": "Buy BSA Rocket IC 20T Cb IBC at ₹5,200. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and…",
+      "description": "Buy BSA Rocket IC 20T Cb IBC at ₹5,300. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and…",
       "type": "product",
       "image": "/images/products/prod_018_1.jpg",
-      "url": "/product/bsa-rocket-ic-20t",
+      "url": "/product/avon-yama-26t-fat-2",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "BSA Rocket IC 20T Cb IBC | Kids Cycle | KTR Cycle World",
-      "description": "Buy BSA Rocket IC 20T Cb IBC at ₹5,200. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and…",
+      "description": "Buy BSA Rocket IC 20T Cb IBC at ₹5,300. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and…",
       "image": "/images/products/prod_018_1.jpg"
-    }
+    },
+    "cycle_size": "20T"
   },
   {
-    "id": "prod_019",
-    "product_id": "prod_019",
-    "slug": "hercules-redeem-26t-dd-ibc",
+    "id": "prod_014",
+    "product_id": "prod_014",
+    "slug": "bsa-champ-12t",
     "name": "HERCULES REDEEM 26T DD IBC",
     "brand": "HERCULES",
     "category_id": "cat_002",
@@ -1208,17 +1200,15 @@
     "seo": {
       "title": "Hercules Redeem 26T DD IBC | Adult Cycle | KTR Cycle World",
       "description": "Buy Hercules Redeem 26T DD IBC at ₹7,500. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front &…",
-      "canonical": "/product/hercules-redeem-26t-dd-ibc",
+      "canonical": "/product/bsa-champ-12t",
       "keywords": [
         "Hercules Redeem 26T DD IBC",
         "Hercules cycle",
-        "Hercules adult cycle",
-        "Adult Cycle",
-        "adult cycle Tirunelveli",
+        "Hercules ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "adult cycle 15+ Years",
-        "Hercules Cycle",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
@@ -1228,7 +1218,7 @@
       "description": "Buy Hercules Redeem 26T DD IBC at ₹7,500. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front &…",
       "type": "product",
       "image": "/images/products/prod_019_1.jpg",
-      "url": "/product/hercules-redeem-26t-dd-ibc",
+      "url": "/product/bsa-champ-12t",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
@@ -1236,12 +1226,13 @@
       "title": "Hercules Redeem 26T DD IBC | Adult Cycle | KTR Cycle World",
       "description": "Buy Hercules Redeem 26T DD IBC at ₹7,500. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front &…",
       "image": "/images/products/prod_019_1.jpg"
-    }
+    },
+    "cycle_size": "26T"
   },
   {
-    "id": "prod_020",
-    "product_id": "prod_020",
-    "slug": "keysto-cyler-ss-24t",
+    "id": "prod_015",
+    "product_id": "prod_015",
+    "slug": "bsa-champ-14t-2",
     "name": "KEYSTO CYLER SS 24T FSDD",
     "brand": "KEYSTO",
     "category_id": "cat_002",
@@ -1250,8 +1241,8 @@
     ],
     "color": "",
     "frame_size": "",
-    "original_price": 12900,
-    "discounted_price": 12300,
+    "original_price": 13500,
+    "discounted_price": 12800,
     "featured": false,
     "age_group": "12-15 Years",
     "short_description": "Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
@@ -1291,46 +1282,44 @@
       "Ergonomically engineered High-Tensile Carbon Steel Frame for strength, balance, and long service life.",
       "High-stopping power Dual Mechanical Disc Brakes (Front & Rear) for reliable braking in dry and wet conditions.",
       "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
-      "Anatomically designed PU cushioned saddle with quick-release height adjustment.",
-      "Smooth front shock absorber fork designed to neutralize road vibrations."
+      "Anatomically designed PU cushioned saddle with quick-release height adjustment."
     ],
     "seo": {
       "title": "Keysto Cyler SS 24T FSDD | Adult Cycle | KTR Cycle World",
-      "description": "Buy Keysto Cyler SS 24T FSDD at ₹12,300. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front &…",
-      "canonical": "/product/keysto-cyler-ss-24t",
+      "description": "Buy Keysto Cyler SS 24T FSDD at ₹12,800. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front &…",
+      "canonical": "/product/bsa-champ-14t-2",
       "keywords": [
         "Keysto Cyler SS 24T FSDD",
         "Keysto cycle",
-        "Keysto adult cycle",
-        "Adult Cycle",
-        "adult cycle Tirunelveli",
+        "Keysto ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "adult cycle 12-15 Years",
-        "Mtb Cycles",
+        " 12-15 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Keysto Cyler SS 24T FSDD | Adult Cycle | KTR Cycle World",
-      "description": "Buy Keysto Cyler SS 24T FSDD at ₹12,300. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front &…",
+      "description": "Buy Keysto Cyler SS 24T FSDD at ₹12,800. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front &…",
       "type": "product",
       "image": "/images/products/prod_020_1.jpg",
-      "url": "/product/keysto-cyler-ss-24t",
+      "url": "/product/bsa-champ-14t-2",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "Keysto Cyler SS 24T FSDD | Adult Cycle | KTR Cycle World",
-      "description": "Buy Keysto Cyler SS 24T FSDD at ₹12,300. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front &…",
+      "description": "Buy Keysto Cyler SS 24T FSDD at ₹12,800. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front &…",
       "image": "/images/products/prod_020_1.jpg"
-    }
+    },
+    "cycle_size": "24T"
   },
   {
-    "id": "prod_021",
-    "product_id": "prod_021",
-    "slug": "montra-hypno-pro",
+    "id": "prod_016",
+    "product_id": "prod_016",
+    "slug": "bsa-champ-16t",
     "name": "MONTRA HYPNO PRO 27T EC",
     "brand": "MONTRA",
     "category_id": "cat_005",
@@ -1340,9 +1329,9 @@
     ],
     "color": "",
     "frame_size": "",
-    "original_price": 38900,
-    "discounted_price": 37500,
-    "featured": false,
+    "original_price": 37500,
+    "discounted_price": 36800,
+    "featured": true,
     "age_group": "15+ Years",
     "short_description": "Montra Hypno PRO 27T EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for long-range commutes across Tirunelveli.",
     "long_description": "Experience effortless commuting with the Montra Hypno PRO 27T EC. Featuring a quiet 36V 250W BLDC motor, high-capacity removable battery, and dual riding modes (Pedal Assist & Throttle), this electric cycle offers up to 45km+ per charge. Complete with Front & Rear Mechanical Power Brakes, integrated LED light, and a reinforced Lightweight Aircraft-Grade Alloy Frame for maximum safety in Tirunelveli.",
@@ -1402,52 +1391,53 @@
     ],
     "seo": {
       "title": "Montra Hypno PRO 27T EC | Electric Cycle | KTR Cycle World",
-      "description": "Buy Montra Hypno PRO 27T EC at ₹37,500. Montra Hypno PRO 27T EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium b…",
-      "canonical": "/product/montra-hypno-pro",
+      "description": "Buy Montra Hypno PRO 27T EC at ₹36,800. Montra Hypno PRO 27T EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium b…",
+      "canonical": "/product/bsa-champ-16t",
       "keywords": [
         "Montra Hypno PRO 27T EC",
         "Montra cycle",
-        "Montra electric cycle",
-        "Electric Cycle",
-        "electric cycle Tirunelveli",
+        "Montra ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "electric cycle 15+ Years",
-        "Electric",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Montra Hypno PRO 27T EC | Electric Cycle | KTR Cycle World",
-      "description": "Buy Montra Hypno PRO 27T EC at ₹37,500. Montra Hypno PRO 27T EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium b…",
+      "description": "Buy Montra Hypno PRO 27T EC at ₹36,800. Montra Hypno PRO 27T EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium b…",
       "type": "product",
       "image": "/images/products/prod_021_1.jpg",
-      "url": "/product/montra-hypno-pro",
+      "url": "/product/bsa-champ-16t",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "Montra Hypno PRO 27T EC | Electric Cycle | KTR Cycle World",
-      "description": "Buy Montra Hypno PRO 27T EC at ₹37,500. Montra Hypno PRO 27T EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium b…",
+      "description": "Buy Montra Hypno PRO 27T EC at ₹36,800. Montra Hypno PRO 27T EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium b…",
       "image": "/images/products/prod_021_1.jpg"
-    }
+    },
+    "cycle_size": "27.5T"
   },
   {
-    "id": "prod_022",
-    "product_id": "prod_022",
-    "slug": "bsa-viona-26t",
+    "id": "prod_017",
+    "product_id": "prod_017",
+    "slug": "bsa-kinder-20t",
     "name": "BSA VIONA 26T",
     "brand": "BSA",
     "category_id": "cat_005",
     "images": [
-      "/images/products/prod_022_1.jpg"
+      "/images/products/prod_022_1.jpg",
+      "/images/products/prod_022_2.jpg",
+      "/images/products/prod_022_3.jpg"
     ],
     "color": "",
     "frame_size": "",
-    "original_price": 24500,
-    "discounted_price": 24000,
-    "featured": false,
+    "original_price": 24000,
+    "discounted_price": 23500,
+    "featured": true,
     "age_group": "15+ Years",
     "short_description": "BSA Viona 26T is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for long-range commutes across Tirunelveli.",
     "long_description": "Experience effortless commuting with the BSA Viona 26T. Featuring a quiet 36V 250W BLDC motor, high-capacity removable battery, and dual riding modes (Pedal Assist & Throttle), this electric cycle offers up to 45km+ per charge. Complete with Front & Rear Mechanical Power Brakes, integrated LED light, and a reinforced High-Tensile Carbon Steel Frame for maximum safety in Tirunelveli.",
@@ -1507,53 +1497,53 @@
     ],
     "seo": {
       "title": "BSA Viona 26T | Electric Cycle | KTR Cycle World",
-      "description": "Buy BSA Viona 26T at ₹24,000. BSA Viona 26T is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for…",
-      "canonical": "/product/bsa-viona-26t",
+      "description": "Buy BSA Viona 26T at ₹23,500. BSA Viona 26T is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for…",
+      "canonical": "/product/bsa-kinder-20t",
       "keywords": [
         "BSA Viona 26T",
         "BSA cycle",
-        "BSA electric cycle",
-        "Electric Cycle",
-        "electric cycle Tirunelveli",
+        "BSA ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "electric cycle 15+ Years",
-        "Electric",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "BSA Viona 26T | Electric Cycle | KTR Cycle World",
-      "description": "Buy BSA Viona 26T at ₹24,000. BSA Viona 26T is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for…",
+      "description": "Buy BSA Viona 26T at ₹23,500. BSA Viona 26T is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for…",
       "type": "product",
       "image": "/images/products/prod_022_1.jpg",
-      "url": "/product/bsa-viona-26t",
+      "url": "/product/bsa-kinder-20t",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "BSA Viona 26T | Electric Cycle | KTR Cycle World",
-      "description": "Buy BSA Viona 26T at ₹24,000. BSA Viona 26T is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for…",
+      "description": "Buy BSA Viona 26T at ₹23,500. BSA Viona 26T is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for…",
       "image": "/images/products/prod_022_1.jpg"
-    }
+    },
+    "cycle_size": "26T"
   },
   {
-    "id": "prod_024",
-    "product_id": "prod_024",
-    "slug": "raleigh-navarro-one-29t-ddisc",
+    "id": "prod_018",
+    "product_id": "prod_018",
+    "slug": "bsa-rocket-ic-20t",
     "name": "RALEIGH NAVARRO ONE 29T (D/Disc)",
     "brand": "RALEIGH",
     "category_id": "cat_002",
     "images": [
       "/images/products/prod_024_1.jpg",
+      "/images/products/prod_024_2.jpg",
       "/images/products/prod_024_3.jpg"
     ],
     "color": "",
     "frame_size": "",
     "original_price": 14175,
     "discounted_price": 13925,
-    "featured": false,
+    "featured": true,
     "age_group": "15+ Years",
     "short_description": "Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
     "long_description": "The Raleigh Navarro One 29T (d/disc) is engineered for daily dependability, low maintenance, and smooth riding performance. Built with a tough Lightweight Aircraft-Grade Alloy Frame, responsive Dual Mechanical Disc Brakes (Front & Rear), and fast-rolling 29 Inches wheels, it guarantees comfort, balance, and reliability on every journey.",
@@ -1597,17 +1587,15 @@
     "seo": {
       "title": "Raleigh Navarro One 29T (d/disc) | Adult Cycle | KTR Cycle World",
       "description": "Buy Raleigh Navarro One 29T (d/disc) at ₹13,925. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Dual Mechanical Disc B…",
-      "canonical": "/product/raleigh-navarro-one-29t-ddisc",
+      "canonical": "/product/bsa-rocket-ic-20t",
       "keywords": [
         "Raleigh Navarro One 29T (d/disc)",
         "Raleigh cycle",
-        "Raleigh adult cycle",
-        "Adult Cycle",
-        "adult cycle Tirunelveli",
+        "Raleigh ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "adult cycle 15+ Years",
-        "Raleigh Cycle",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
@@ -1617,7 +1605,7 @@
       "description": "Buy Raleigh Navarro One 29T (d/disc) at ₹13,925. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Dual Mechanical Disc B…",
       "type": "product",
       "image": "/images/products/prod_024_1.jpg",
-      "url": "/product/raleigh-navarro-one-29t-ddisc",
+      "url": "/product/bsa-rocket-ic-20t",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
@@ -1625,12 +1613,13 @@
       "title": "Raleigh Navarro One 29T (d/disc) | Adult Cycle | KTR Cycle World",
       "description": "Buy Raleigh Navarro One 29T (d/disc) at ₹13,925. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Dual Mechanical Disc B…",
       "image": "/images/products/prod_024_1.jpg"
-    }
+    },
+    "cycle_size": "29T"
   },
   {
-    "id": "prod_025",
-    "product_id": "prod_025",
-    "slug": "maeve-26t",
+    "id": "prod_019",
+    "product_id": "prod_019",
+    "slug": "hercules-redeem-26t-dd-ibc",
     "name": "MAEVE 26T EC",
     "brand": "BSA",
     "category_id": "cat_005",
@@ -1640,7 +1629,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 31900,
-    "discounted_price": 31000,
+    "discounted_price": 30500,
     "featured": false,
     "age_group": "15+ Years",
     "short_description": "Maeve 26T EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for long-range commutes across Tirunelveli.",
@@ -1701,41 +1690,40 @@
     ],
     "seo": {
       "title": "Maeve 26T EC | Electric Cycle | KTR Cycle World",
-      "description": "Buy Maeve 26T EC at ₹31,000. Maeve 26T EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for l…",
-      "canonical": "/product/maeve-26t",
+      "description": "Buy Maeve 26T EC at ₹30,500. Maeve 26T EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for l…",
+      "canonical": "/product/hercules-redeem-26t-dd-ibc",
       "keywords": [
         "Maeve 26T EC",
         "BSA cycle",
-        "BSA electric cycle",
-        "Electric Cycle",
-        "electric cycle Tirunelveli",
+        "BSA ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "electric cycle 15+ Years",
-        "Electric",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Maeve 26T EC | Electric Cycle | KTR Cycle World",
-      "description": "Buy Maeve 26T EC at ₹31,000. Maeve 26T EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for l…",
+      "description": "Buy Maeve 26T EC at ₹30,500. Maeve 26T EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for l…",
       "type": "product",
       "image": "/images/products/prod_025_1.jpg",
-      "url": "/product/maeve-26t",
+      "url": "/product/hercules-redeem-26t-dd-ibc",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "Maeve 26T EC | Electric Cycle | KTR Cycle World",
-      "description": "Buy Maeve 26T EC at ₹31,000. Maeve 26T EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for l…",
+      "description": "Buy Maeve 26T EC at ₹30,500. Maeve 26T EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for l…",
       "image": "/images/products/prod_025_1.jpg"
-    }
+    },
+    "cycle_size": "26T"
   },
   {
-    "id": "prod_027",
-    "product_id": "prod_027",
-    "slug": "toronto-fraser-29-21-speed",
+    "id": "prod_020",
+    "product_id": "prod_020",
+    "slug": "keysto-cyler-ss-24t",
     "name": "TORONTO FRASER FSDD 29\" 21 Speed",
     "brand": "TORONTO",
     "category_id": "cat_003",
@@ -1745,7 +1733,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 19900,
-    "discounted_price": 18900,
+    "discounted_price": 17800,
     "featured": false,
     "age_group": "15+ Years",
     "short_description": "High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Brakes (Front & Rear), and a rigid High-Tensile Carbon Steel Frame for fast city and trail riding.",
@@ -1786,47 +1774,44 @@
       "High-stopping power Dual Mechanical Disc Brakes (Front & Rear) for reliable braking in dry and wet conditions.",
       "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
       "Anatomically designed PU cushioned saddle with quick-release height adjustment.",
-      "Precision 21-Speed Gear System (Shimano / Microshift) for seamless shifting on steep hills and flat roads.",
-      "Smooth front shock absorber fork designed to neutralize road vibrations."
+      "Precision 21-Speed Gear System (Shimano / Microshift) for seamless shifting on steep hills and flat roads."
     ],
     "seo": {
       "title": "Toronto Fraser FSDD 29\" 21 Speed | Geared Cycle | KTR Cycle World",
-      "description": "Buy Toronto Fraser FSDD 29\" 21 Speed at ₹18,900. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Bra…",
-      "canonical": "/product/toronto-fraser-29-21-speed",
+      "description": "Buy Toronto Fraser FSDD 29\" 21 Speed at ₹17,800. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Bra…",
+      "canonical": "/product/keysto-cyler-ss-24t",
       "keywords": [
         "Toronto Fraser FSDD 29\" 21 Speed",
         "Toronto cycle",
-        "Toronto geared cycle",
-        "Geared Cycle",
-        "geared cycle Tirunelveli",
+        "Toronto ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "geared cycle 15+ Years",
-        "Toronto Cycles",
-        "Ktr Cycle World",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Toronto Fraser FSDD 29\" 21 Speed | Geared Cycle | KTR Cycle World",
-      "description": "Buy Toronto Fraser FSDD 29\" 21 Speed at ₹18,900. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Bra…",
+      "description": "Buy Toronto Fraser FSDD 29\" 21 Speed at ₹17,800. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Bra…",
       "type": "product",
       "image": "/images/products/prod_027_1.jpg",
-      "url": "/product/toronto-fraser-29-21-speed",
+      "url": "/product/keysto-cyler-ss-24t",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "Toronto Fraser FSDD 29\" 21 Speed | Geared Cycle | KTR Cycle World",
-      "description": "Buy Toronto Fraser FSDD 29\" 21 Speed at ₹18,900. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Bra…",
+      "description": "Buy Toronto Fraser FSDD 29\" 21 Speed at ₹17,800. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Bra…",
       "image": "/images/products/prod_027_1.jpg"
-    }
+    },
+    "cycle_size": "29T"
   },
   {
-    "id": "prod_029",
-    "product_id": "prod_029",
-    "slug": "brute-fsdd",
+    "id": "prod_021",
+    "product_id": "prod_021",
+    "slug": "montra-hypno-pro",
     "name": "HERCULES BRUTE 27T FSDD  EC",
     "brand": "HERCULES",
     "category_id": "cat_005",
@@ -1835,8 +1820,8 @@
     ],
     "color": "",
     "frame_size": "",
-    "original_price": 31000,
-    "discounted_price": 30000,
+    "original_price": 30500,
+    "discounted_price": 29500,
     "featured": false,
     "age_group": "15+ Years",
     "short_description": "Hercules Brute 27T FSDD EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for long-range commutes across Tirunelveli.",
@@ -1893,46 +1878,44 @@
       "High-stopping power Dual Mechanical Disc Brakes (Front & Rear) for reliable braking in dry and wet conditions.",
       "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
       "Anatomically designed PU cushioned saddle with quick-release height adjustment.",
-      "Dual riding modes with intelligent pedal assist sensors and LED battery dashboard.",
-      "Smooth front shock absorber fork designed to neutralize road vibrations."
+      "Dual riding modes with intelligent pedal assist sensors and LED battery dashboard."
     ],
     "seo": {
       "title": "Hercules Brute 27T FSDD EC | Electric Cycle | KTR Cycle World",
-      "description": "Buy Hercules Brute 27T FSDD EC at ₹30,000. Hercules Brute 27T FSDD EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lit…",
-      "canonical": "/product/brute-fsdd",
+      "description": "Buy Hercules Brute 27T FSDD EC at ₹29,500. Hercules Brute 27T FSDD EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lit…",
+      "canonical": "/product/montra-hypno-pro",
       "keywords": [
         "Hercules Brute 27T FSDD EC",
         "Hercules cycle",
-        "Hercules electric cycle",
-        "Electric Cycle",
-        "electric cycle Tirunelveli",
+        "Hercules ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "electric cycle 15+ Years",
-        "Electric",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Hercules Brute 27T FSDD EC | Electric Cycle | KTR Cycle World",
-      "description": "Buy Hercules Brute 27T FSDD EC at ₹30,000. Hercules Brute 27T FSDD EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lit…",
+      "description": "Buy Hercules Brute 27T FSDD EC at ₹29,500. Hercules Brute 27T FSDD EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lit…",
       "type": "product",
       "image": "/images/products/prod_029_1.jpg",
-      "url": "/product/brute-fsdd",
+      "url": "/product/montra-hypno-pro",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "Hercules Brute 27T FSDD EC | Electric Cycle | KTR Cycle World",
-      "description": "Buy Hercules Brute 27T FSDD EC at ₹30,000. Hercules Brute 27T FSDD EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lit…",
+      "description": "Buy Hercules Brute 27T FSDD EC at ₹29,500. Hercules Brute 27T FSDD EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lit…",
       "image": "/images/products/prod_029_1.jpg"
-    }
+    },
+    "cycle_size": "27.5T"
   },
   {
-    "id": "prod_030",
-    "product_id": "prod_030",
-    "slug": "popstar-florence-20t",
+    "id": "prod_022",
+    "product_id": "prod_022",
+    "slug": "bsa-viona-26t",
     "name": "POPSTAR FLORENCE 20T",
     "brand": "POPSTAR",
     "category_id": "cat_001",
@@ -1942,7 +1925,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 5200,
-    "discounted_price": 4800,
+    "discounted_price": 4700,
     "featured": false,
     "age_group": "8-12 Years",
     "short_description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
@@ -1986,39 +1969,39 @@
     ],
     "seo": {
       "title": "Popstar Florence 20T | Kids Cycle | KTR Cycle World",
-      "description": "Buy Popstar Florence 20T at ₹4,800. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and erg…",
-      "canonical": "/product/popstar-florence-20t",
+      "description": "Buy Popstar Florence 20T at ₹4,700. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and erg…",
+      "canonical": "/product/bsa-viona-26t",
       "keywords": [
         "Popstar Florence 20T",
         "Popstar cycle",
-        "Popstar kids cycle",
-        "Kids Cycle",
-        "kids cycle Tirunelveli",
+        "Popstar ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "kids cycle 8-12 Years",
+        " 8-12 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Popstar Florence 20T | Kids Cycle | KTR Cycle World",
-      "description": "Buy Popstar Florence 20T at ₹4,800. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and erg…",
+      "description": "Buy Popstar Florence 20T at ₹4,700. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and erg…",
       "type": "product",
       "image": "/images/products/prod_030_1.jpg",
-      "url": "/product/popstar-florence-20t",
+      "url": "/product/bsa-viona-26t",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "Popstar Florence 20T | Kids Cycle | KTR Cycle World",
-      "description": "Buy Popstar Florence 20T at ₹4,800. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and erg…",
+      "description": "Buy Popstar Florence 20T at ₹4,700. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and erg…",
       "image": "/images/products/prod_030_1.jpg"
-    }
+    },
+    "cycle_size": "20T"
   },
   {
-    "id": "prod_031",
-    "product_id": "prod_031",
+    "id": "prod_023",
+    "product_id": "prod_023",
     "slug": "ninety-one-champ-20t",
     "name": "NINETY ONE  CHAMP 20T",
     "brand": "NINETY ONE",
@@ -2029,7 +2012,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 7200,
-    "discounted_price": 6950,
+    "discounted_price": 6800,
     "featured": false,
     "age_group": "8-12 Years",
     "short_description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
@@ -2073,24 +2056,23 @@
     ],
     "seo": {
       "title": "Ninety One Champ 20T | Kids Cycle | KTR Cycle World",
-      "description": "Buy Ninety One Champ 20T at ₹6,950. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and erg…",
+      "description": "Buy Ninety One Champ 20T at ₹6,800. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and erg…",
       "canonical": "/product/ninety-one-champ-20t",
       "keywords": [
         "Ninety One Champ 20T",
         "Ninety One cycle",
-        "Ninety One kids cycle",
-        "Kids Cycle",
-        "kids cycle Tirunelveli",
+        "Ninety One ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "kids cycle 8-12 Years",
+        " 8-12 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Ninety One Champ 20T | Kids Cycle | KTR Cycle World",
-      "description": "Buy Ninety One Champ 20T at ₹6,950. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and erg…",
+      "description": "Buy Ninety One Champ 20T at ₹6,800. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and erg…",
       "type": "product",
       "image": "/images/products/prod_031_1.jpg",
       "url": "/product/ninety-one-champ-20t",
@@ -2099,14 +2081,15 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Ninety One Champ 20T | Kids Cycle | KTR Cycle World",
-      "description": "Buy Ninety One Champ 20T at ₹6,950. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and erg…",
+      "description": "Buy Ninety One Champ 20T at ₹6,800. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and erg…",
       "image": "/images/products/prod_031_1.jpg"
-    }
+    },
+    "cycle_size": "20T"
   },
   {
-    "id": "prod_032",
-    "product_id": "prod_032",
-    "slug": "hercules-hardstyle-pro-27t",
+    "id": "prod_024",
+    "product_id": "prod_024",
+    "slug": "raleigh-navarro-one-29t-ddisc",
     "name": "HERCULES HARDSTYLE PRO 27T EC",
     "brand": "HERCULES",
     "category_id": "cat_005",
@@ -2117,7 +2100,7 @@
     "frame_size": "",
     "original_price": 28900,
     "discounted_price": 28000,
-    "featured": false,
+    "featured": true,
     "age_group": "15+ Years",
     "short_description": "Hercules Hardstyle PRO 27T EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for long-range commutes across Tirunelveli.",
     "long_description": "Experience effortless commuting with the Hercules Hardstyle PRO 27T EC. Featuring a quiet 36V 250W BLDC motor, high-capacity removable battery, and dual riding modes (Pedal Assist & Throttle), this electric cycle offers up to 45km+ per charge. Complete with Front & Rear Mechanical Power Brakes, integrated LED light, and a reinforced High-Tensile Carbon Steel Frame for maximum safety in Tirunelveli.",
@@ -2178,17 +2161,15 @@
     "seo": {
       "title": "Hercules Hardstyle PRO 27T EC | Electric Cycle | KTR Cycle World",
       "description": "Buy Hercules Hardstyle PRO 27T EC at ₹28,000. Hercules Hardstyle PRO 27T EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removab…",
-      "canonical": "/product/hercules-hardstyle-pro-27t",
+      "canonical": "/product/raleigh-navarro-one-29t-ddisc",
       "keywords": [
         "Hercules Hardstyle PRO 27T EC",
         "Hercules cycle",
-        "Hercules electric cycle",
-        "Electric Cycle",
-        "electric cycle Tirunelveli",
+        "Hercules ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "electric cycle 15+ Years",
-        "Electric",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
@@ -2198,7 +2179,7 @@
       "description": "Buy Hercules Hardstyle PRO 27T EC at ₹28,000. Hercules Hardstyle PRO 27T EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removab…",
       "type": "product",
       "image": "/images/products/prod_032_1.jpg",
-      "url": "/product/hercules-hardstyle-pro-27t",
+      "url": "/product/raleigh-navarro-one-29t-ddisc",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
@@ -2206,12 +2187,13 @@
       "title": "Hercules Hardstyle PRO 27T EC | Electric Cycle | KTR Cycle World",
       "description": "Buy Hercules Hardstyle PRO 27T EC at ₹28,000. Hercules Hardstyle PRO 27T EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removab…",
       "image": "/images/products/prod_032_1.jpg"
-    }
+    },
+    "cycle_size": "27.5T"
   },
   {
-    "id": "prod_033",
-    "product_id": "prod_033",
-    "slug": "hercules-redeem-27t-dd-21s",
+    "id": "prod_025",
+    "product_id": "prod_025",
+    "slug": "maeve-26t",
     "name": "HERCULES REDEEM 27T DD 21S",
     "brand": "HERCULES",
     "category_id": "cat_003",
@@ -2221,7 +2203,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 13500,
-    "discounted_price": 12900,
+    "discounted_price": 12500,
     "featured": true,
     "age_group": "15+ Years",
     "short_description": "High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Brakes (Front & Rear), and a rigid High-Tensile Carbon Steel Frame for fast city and trail riding.",
@@ -2266,40 +2248,39 @@
     ],
     "seo": {
       "title": "Hercules Redeem 27T DD 21S | Geared Cycle | KTR Cycle World",
-      "description": "Buy Hercules Redeem 27T DD 21S at ₹12,900. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Brakes (F…",
-      "canonical": "/product/hercules-redeem-27t-dd-21s",
+      "description": "Buy Hercules Redeem 27T DD 21S at ₹12,500. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Brakes (F…",
+      "canonical": "/product/maeve-26t",
       "keywords": [
         "Hercules Redeem 27T DD 21S",
         "Hercules cycle",
-        "Hercules geared cycle",
-        "Geared Cycle",
-        "geared cycle Tirunelveli",
+        "Hercules ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "geared cycle 15+ Years",
-        "Gear",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Hercules Redeem 27T DD 21S | Geared Cycle | KTR Cycle World",
-      "description": "Buy Hercules Redeem 27T DD 21S at ₹12,900. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Brakes (F…",
+      "description": "Buy Hercules Redeem 27T DD 21S at ₹12,500. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Brakes (F…",
       "type": "product",
       "image": "/images/products/prod_033_1.jpg",
-      "url": "/product/hercules-redeem-27t-dd-21s",
+      "url": "/product/maeve-26t",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "Hercules Redeem 27T DD 21S | Geared Cycle | KTR Cycle World",
-      "description": "Buy Hercules Redeem 27T DD 21S at ₹12,900. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Brakes (F…",
+      "description": "Buy Hercules Redeem 27T DD 21S at ₹12,500. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Brakes (F…",
       "image": "/images/products/prod_033_1.jpg"
-    }
+    },
+    "cycle_size": "27.5T"
   },
   {
-    "id": "prod_034",
-    "product_id": "prod_034",
+    "id": "prod_026",
+    "product_id": "prod_026",
     "slug": "hercules-redeem-26t-vb-ibc",
     "name": "HERCULES REDEEM 26T VB IBC",
     "brand": "HERCULES",
@@ -2310,7 +2291,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 6800,
-    "discounted_price": 6550,
+    "discounted_price": 6400,
     "featured": false,
     "age_group": "15+ Years",
     "short_description": "Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sleek geometry for daily commutes and fitness rides.",
@@ -2354,25 +2335,23 @@
     ],
     "seo": {
       "title": "Hercules Redeem 26T VB IBC | Adult Cycle | KTR Cycle World",
-      "description": "Buy Hercules Redeem 26T VB IBC at ₹6,550. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and…",
+      "description": "Buy Hercules Redeem 26T VB IBC at ₹6,400. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and…",
       "canonical": "/product/hercules-redeem-26t-vb-ibc",
       "keywords": [
         "Hercules Redeem 26T VB IBC",
         "Hercules cycle",
-        "Hercules adult cycle",
-        "Adult Cycle",
-        "adult cycle Tirunelveli",
+        "Hercules ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "adult cycle 15+ Years",
-        "Adult",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Hercules Redeem 26T VB IBC | Adult Cycle | KTR Cycle World",
-      "description": "Buy Hercules Redeem 26T VB IBC at ₹6,550. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and…",
+      "description": "Buy Hercules Redeem 26T VB IBC at ₹6,400. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and…",
       "type": "product",
       "image": "/images/products/prod_034_1.jpg",
       "url": "/product/hercules-redeem-26t-vb-ibc",
@@ -2381,14 +2360,15 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Hercules Redeem 26T VB IBC | Adult Cycle | KTR Cycle World",
-      "description": "Buy Hercules Redeem 26T VB IBC at ₹6,550. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and…",
+      "description": "Buy Hercules Redeem 26T VB IBC at ₹6,400. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and…",
       "image": "/images/products/prod_034_1.jpg"
-    }
+    },
+    "cycle_size": "26T"
   },
   {
-    "id": "prod_035",
-    "product_id": "prod_035",
-    "slug": "piller-tuscan-14t-dlx",
+    "id": "prod_027",
+    "product_id": "prod_027",
+    "slug": "toronto-fraser-29-21-speed",
     "name": "PILLER TUSCAN 14T DLX",
     "brand": "PILLER",
     "category_id": "cat_001",
@@ -2398,7 +2378,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 3500,
-    "discounted_price": 3250,
+    "discounted_price": 3200,
     "featured": false,
     "age_group": "2-5 Years",
     "short_description": "Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
@@ -2442,39 +2422,39 @@
     ],
     "seo": {
       "title": "Piller Tuscan 14T DLX | Kids Cycle | KTR Cycle World",
-      "description": "Buy Piller Tuscan 14T DLX at ₹3,250. Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and erg…",
-      "canonical": "/product/piller-tuscan-14t-dlx",
+      "description": "Buy Piller Tuscan 14T DLX at ₹3,200. Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and erg…",
+      "canonical": "/product/toronto-fraser-29-21-speed",
       "keywords": [
         "Piller Tuscan 14T DLX",
         "Piller cycle",
-        "Piller kids cycle",
-        "Kids Cycle",
-        "kids cycle Tirunelveli",
+        "Piller ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "kids cycle 2-5 Years",
+        " 2-5 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Piller Tuscan 14T DLX | Kids Cycle | KTR Cycle World",
-      "description": "Buy Piller Tuscan 14T DLX at ₹3,250. Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and erg…",
+      "description": "Buy Piller Tuscan 14T DLX at ₹3,200. Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and erg…",
       "type": "product",
       "image": "/images/products/prod_035_1.jpg",
-      "url": "/product/piller-tuscan-14t-dlx",
+      "url": "/product/toronto-fraser-29-21-speed",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "Piller Tuscan 14T DLX | Kids Cycle | KTR Cycle World",
-      "description": "Buy Piller Tuscan 14T DLX at ₹3,250. Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and erg…",
+      "description": "Buy Piller Tuscan 14T DLX at ₹3,200. Sturdy and safe kids cycle designed for young riders (2-5 Years). Equipped with anti-skid tires, full chain guard, and erg…",
       "image": "/images/products/prod_035_1.jpg"
-    }
+    },
+    "cycle_size": "14T"
   },
   {
-    "id": "prod_036",
-    "product_id": "prod_036",
+    "id": "prod_028",
+    "product_id": "prod_028",
     "slug": "piller-tuscan-20t-dlx",
     "name": "PILLER TUSCAN 20T DLX",
     "brand": "PILLER",
@@ -2485,7 +2465,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 4200,
-    "discounted_price": 3950,
+    "discounted_price": 3800,
     "featured": false,
     "age_group": "8-12 Years",
     "short_description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
@@ -2529,24 +2509,23 @@
     ],
     "seo": {
       "title": "Piller Tuscan 20T DLX | Kids Cycle | KTR Cycle World",
-      "description": "Buy Piller Tuscan 20T DLX at ₹3,950. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and er…",
+      "description": "Buy Piller Tuscan 20T DLX at ₹3,800. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and er…",
       "canonical": "/product/piller-tuscan-20t-dlx",
       "keywords": [
         "Piller Tuscan 20T DLX",
         "Piller cycle",
-        "Piller kids cycle",
-        "Kids Cycle",
-        "kids cycle Tirunelveli",
+        "Piller ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "kids cycle 8-12 Years",
+        " 8-12 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Piller Tuscan 20T DLX | Kids Cycle | KTR Cycle World",
-      "description": "Buy Piller Tuscan 20T DLX at ₹3,950. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and er…",
+      "description": "Buy Piller Tuscan 20T DLX at ₹3,800. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and er…",
       "type": "product",
       "image": "/images/products/prod_036_1.jpg",
       "url": "/product/piller-tuscan-20t-dlx",
@@ -2555,14 +2534,15 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Piller Tuscan 20T DLX | Kids Cycle | KTR Cycle World",
-      "description": "Buy Piller Tuscan 20T DLX at ₹3,950. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and er…",
+      "description": "Buy Piller Tuscan 20T DLX at ₹3,800. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and er…",
       "image": "/images/products/prod_036_1.jpg"
-    }
+    },
+    "cycle_size": "20T"
   },
   {
-    "id": "prod_037",
-    "product_id": "prod_037",
-    "slug": "piller-tuscan-16t-dlx",
+    "id": "prod_029",
+    "product_id": "prod_029",
+    "slug": "brute-fsdd",
     "name": "PILLER TUSCAN 16T DLX",
     "brand": "PILLER",
     "category_id": "cat_001",
@@ -2572,7 +2552,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 3600,
-    "discounted_price": 3350,
+    "discounted_price": 3300,
     "featured": false,
     "age_group": "5-8 Years",
     "short_description": "Sturdy and safe kids cycle designed for young riders (5-8 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
@@ -2616,139 +2596,50 @@
     ],
     "seo": {
       "title": "Piller Tuscan 16T DLX | Kids Cycle | KTR Cycle World",
-      "description": "Buy Piller Tuscan 16T DLX at ₹3,350. Sturdy and safe kids cycle designed for young riders (5-8 Years). Equipped with anti-skid tires, full chain guard, and erg…",
-      "canonical": "/product/piller-tuscan-16t-dlx",
+      "description": "Buy Piller Tuscan 16T DLX at ₹3,300. Sturdy and safe kids cycle designed for young riders (5-8 Years). Equipped with anti-skid tires, full chain guard, and erg…",
+      "canonical": "/product/brute-fsdd",
       "keywords": [
         "Piller Tuscan 16T DLX",
         "Piller cycle",
-        "Piller kids cycle",
-        "Kids Cycle",
-        "kids cycle Tirunelveli",
+        "Piller ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "kids cycle 5-8 Years",
+        " 5-8 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Piller Tuscan 16T DLX | Kids Cycle | KTR Cycle World",
-      "description": "Buy Piller Tuscan 16T DLX at ₹3,350. Sturdy and safe kids cycle designed for young riders (5-8 Years). Equipped with anti-skid tires, full chain guard, and erg…",
+      "description": "Buy Piller Tuscan 16T DLX at ₹3,300. Sturdy and safe kids cycle designed for young riders (5-8 Years). Equipped with anti-skid tires, full chain guard, and erg…",
       "type": "product",
       "image": "/images/products/prod_037_1.jpg",
-      "url": "/product/piller-tuscan-16t-dlx",
+      "url": "/product/brute-fsdd",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "Piller Tuscan 16T DLX | Kids Cycle | KTR Cycle World",
-      "description": "Buy Piller Tuscan 16T DLX at ₹3,350. Sturdy and safe kids cycle designed for young riders (5-8 Years). Equipped with anti-skid tires, full chain guard, and erg…",
+      "description": "Buy Piller Tuscan 16T DLX at ₹3,300. Sturdy and safe kids cycle designed for young riders (5-8 Years). Equipped with anti-skid tires, full chain guard, and erg…",
       "image": "/images/products/prod_037_1.jpg"
-    }
+    },
+    "cycle_size": "16T"
   },
   {
-    "id": "prod_038",
-    "product_id": "prod_038",
-    "slug": "havoc-zx-26t-fsdd",
-    "name": "HAVOC ZX 26T FSDD",
-    "brand": "HERCULES",
-    "category_id": "cat_002",
-    "images": [
-      "/images/products/prod_038_1.jpg"
-    ],
-    "color": "",
-    "frame_size": "",
-    "original_price": 8200,
-    "discounted_price": 7950,
-    "featured": false,
-    "age_group": "15+ Years",
-    "short_description": "Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
-    "long_description": "The Havoc ZX 26T FSDD is engineered for daily dependability, low maintenance, and smooth riding performance. Built with a tough High-Tensile Carbon Steel Frame, responsive Dual Mechanical Disc Brakes (Front & Rear), and fast-rolling 26 Inches wheels, it guarantees comfort, balance, and reliability on every journey.",
-    "description": "Havoc ZX 26T FSDD - Adult Cycle by HERCULES (26 Inches, Dual Mechanical Disc Brakes (Front & Rear))",
-    "specifications": [
-      {
-        "label": "Wheel Size",
-        "value": "26 Inches"
-      },
-      {
-        "label": "Frame Material",
-        "value": "High-Tensile Carbon Steel Frame"
-      },
-      {
-        "label": "Brake System",
-        "value": "Dual Mechanical Disc Brakes (Front & Rear)"
-      },
-      {
-        "label": "Gears / Speed",
-        "value": "Single Speed Direct Drive"
-      },
-      {
-        "label": "Front Suspension",
-        "value": "Front Telescopic Suspension Fork"
-      },
-      {
-        "label": "Target Age Group",
-        "value": "15+ Years"
-      },
-      {
-        "label": "Ideal Location",
-        "value": "Urban Roads, Fitness Trails & City Commuting"
-      }
-    ],
-    "features": [
-      "Ergonomically engineered High-Tensile Carbon Steel Frame for strength, balance, and long service life.",
-      "High-stopping power Dual Mechanical Disc Brakes (Front & Rear) for reliable braking in dry and wet conditions.",
-      "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
-      "Anatomically designed PU cushioned saddle with quick-release height adjustment.",
-      "Smooth front shock absorber fork designed to neutralize road vibrations."
-    ],
-    "seo": {
-      "title": "Havoc ZX 26T FSDD | Adult Cycle | KTR Cycle World",
-      "description": "Buy Havoc ZX 26T FSDD at ₹7,950. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Rear), a…",
-      "canonical": "/product/havoc-zx-26t-fsdd",
-      "keywords": [
-        "Havoc ZX 26T FSDD",
-        "Hercules cycle",
-        "Hercules adult cycle",
-        "Adult Cycle",
-        "adult cycle Tirunelveli",
-        "buy cycle Tirunelveli",
-        "KTR Cycle World",
-        "adult cycle 15+ Years",
-        "Adult",
-        "cycles in Tirunelveli"
-      ],
-      "robots": "index,follow"
-    },
-    "og": {
-      "title": "Havoc ZX 26T FSDD | Adult Cycle | KTR Cycle World",
-      "description": "Buy Havoc ZX 26T FSDD at ₹7,950. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Rear), a…",
-      "type": "product",
-      "image": "/images/products/prod_038_1.jpg",
-      "url": "/product/havoc-zx-26t-fsdd",
-      "site_name": "KTR Cycle World"
-    },
-    "twitter": {
-      "card": "summary_large_image",
-      "title": "Havoc ZX 26T FSDD | Adult Cycle | KTR Cycle World",
-      "description": "Buy Havoc ZX 26T FSDD at ₹7,950. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Rear), a…",
-      "image": "/images/products/prod_038_1.jpg"
-    }
-  },
-  {
-    "id": "prod_039",
-    "product_id": "prod_039",
-    "slug": "hercules-rift-ic-fx-dd-24t",
+    "id": "prod_030",
+    "product_id": "prod_030",
+    "slug": "popstar-florence-20t",
     "name": "HERCULES RIFT FS DD 24T",
     "brand": "HERCULES",
     "category_id": "cat_002",
     "images": [
-      "/images/products/prod_039_1_1nPWMjoQJb4iSfNwzK5riXrpzhImenNGk.jpg"
+      "/images/products/prod_030_1_1qVziSjWYCGFf8R3oIKmAzKjvcNZu0KnG.jpg"
     ],
     "color": "",
     "frame_size": "",
-    "original_price": 8100,
-    "discounted_price": 7850,
+    "original_price": 8500,
+    "discounted_price": 7500,
     "featured": false,
     "age_group": "12-15 Years",
     "short_description": "Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
@@ -2788,46 +2679,44 @@
       "Ergonomically engineered High-Tensile Carbon Steel Frame for strength, balance, and long service life.",
       "High-stopping power Dual Mechanical Disc Brakes (Front & Rear) for reliable braking in dry and wet conditions.",
       "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
-      "Anatomically designed PU cushioned saddle with quick-release height adjustment.",
-      "Smooth front shock absorber fork designed to neutralize road vibrations."
+      "Anatomically designed PU cushioned saddle with quick-release height adjustment."
     ],
     "seo": {
       "title": "Hercules Rift FS DD 24T | Adult Cycle | KTR Cycle World",
-      "description": "Buy Hercules Rift FS DD 24T at ₹7,850. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Re…",
-      "canonical": "/product/hercules-rift-ic-fx-dd-24t",
+      "description": "Buy Hercules Rift FS DD 24T at ₹7,500. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Re…",
+      "canonical": "/product/popstar-florence-20t",
       "keywords": [
         "Hercules Rift FS DD 24T",
         "Hercules cycle",
-        "Hercules adult cycle",
-        "Adult Cycle",
-        "adult cycle Tirunelveli",
+        "Hercules ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "adult cycle 12-15 Years",
-        "Adult",
+        " 12-15 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Hercules Rift FS DD 24T | Adult Cycle | KTR Cycle World",
-      "description": "Buy Hercules Rift FS DD 24T at ₹7,850. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Re…",
+      "description": "Buy Hercules Rift FS DD 24T at ₹7,500. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Re…",
       "type": "product",
-      "image": "/images/products/prod_039_1_1nPWMjoQJb4iSfNwzK5riXrpzhImenNGk.jpg",
-      "url": "/product/hercules-rift-ic-fx-dd-24t",
+      "image": "/images/products/prod_030_1_1qVziSjWYCGFf8R3oIKmAzKjvcNZu0KnG.jpg",
+      "url": "/product/popstar-florence-20t",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "Hercules Rift FS DD 24T | Adult Cycle | KTR Cycle World",
-      "description": "Buy Hercules Rift FS DD 24T at ₹7,850. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Re…",
-      "image": "/images/products/prod_039_1_1nPWMjoQJb4iSfNwzK5riXrpzhImenNGk.jpg"
-    }
+      "description": "Buy Hercules Rift FS DD 24T at ₹7,500. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Re…",
+      "image": "/images/products/prod_030_1_1qVziSjWYCGFf8R3oIKmAzKjvcNZu0KnG.jpg"
+    },
+    "cycle_size": "24T"
   },
   {
-    "id": "prod_040",
-    "product_id": "prod_040",
-    "slug": "hercules-rift-ic-fx-dd-26t",
+    "id": "prod_031",
+    "product_id": "prod_031",
+    "slug": "ninety-one-champ-20t-2",
     "name": "HERCULES RIFT FS DD 26T",
     "brand": "HERCULES",
     "category_id": "cat_002",
@@ -2836,8 +2725,8 @@
     ],
     "color": "",
     "frame_size": "",
-    "original_price": 8200,
-    "discounted_price": 7950,
+    "original_price": 8600,
+    "discounted_price": 7600,
     "featured": false,
     "age_group": "15+ Years",
     "short_description": "Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
@@ -2877,56 +2766,55 @@
       "Ergonomically engineered High-Tensile Carbon Steel Frame for strength, balance, and long service life.",
       "High-stopping power Dual Mechanical Disc Brakes (Front & Rear) for reliable braking in dry and wet conditions.",
       "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
-      "Anatomically designed PU cushioned saddle with quick-release height adjustment.",
-      "Smooth front shock absorber fork designed to neutralize road vibrations."
+      "Anatomically designed PU cushioned saddle with quick-release height adjustment."
     ],
     "seo": {
       "title": "Hercules Rift FS DD 26T | Adult Cycle | KTR Cycle World",
-      "description": "Buy Hercules Rift FS DD 26T at ₹7,950. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Re…",
-      "canonical": "/product/hercules-rift-ic-fx-dd-26t",
+      "description": "Buy Hercules Rift FS DD 26T at ₹7,600. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Re…",
+      "canonical": "/product/ninety-one-champ-20t-2",
       "keywords": [
         "Hercules Rift FS DD 26T",
         "Hercules cycle",
-        "Hercules adult cycle",
-        "Adult Cycle",
-        "adult cycle Tirunelveli",
+        "Hercules ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "adult cycle 15+ Years",
-        "Adult",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Hercules Rift FS DD 26T | Adult Cycle | KTR Cycle World",
-      "description": "Buy Hercules Rift FS DD 26T at ₹7,950. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Re…",
+      "description": "Buy Hercules Rift FS DD 26T at ₹7,600. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Re…",
       "type": "product",
       "image": "/images/products/prod_040_1_1g-pYq_s7n50qf5m2eJN9l5r_v4edU99Z.jpg",
-      "url": "/product/hercules-rift-ic-fx-dd-26t",
+      "url": "/product/ninety-one-champ-20t-2",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "Hercules Rift FS DD 26T | Adult Cycle | KTR Cycle World",
-      "description": "Buy Hercules Rift FS DD 26T at ₹7,950. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Re…",
+      "description": "Buy Hercules Rift FS DD 26T at ₹7,600. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Re…",
       "image": "/images/products/prod_040_1_1g-pYq_s7n50qf5m2eJN9l5r_v4edU99Z.jpg"
-    }
+    },
+    "cycle_size": "26T"
   },
   {
-    "id": "prod_041",
-    "product_id": "prod_041",
-    "slug": "hercules-rift-ic-rf-vb-24t",
+    "id": "prod_032",
+    "product_id": "prod_032",
+    "slug": "hercules-hardstyle-pro-27t",
     "name": "HERCULES RIFT VB 24T",
     "brand": "HERCULES",
     "category_id": "cat_002",
     "images": [
-      "/images/products/prod_041_1.jpg"
+      "/images/products/prod_032_1_1rYYvmQpehc6qpBH7YOz0jT_aI1uTEsOQ.jpg",
+      "/images/products/prod_032_2_1qSfD9okHkQmY7E8OFcqcUlRURRiPHH8D.jpg"
     ],
     "color": "",
     "frame_size": "",
-    "original_price": 6900,
-    "discounted_price": 6650,
+    "original_price": 7100,
+    "discounted_price": 6700,
     "featured": false,
     "age_group": "12-15 Years",
     "short_description": "Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sleek geometry for daily commutes and fitness rides.",
@@ -2970,41 +2858,40 @@
     ],
     "seo": {
       "title": "Hercules Rift VB 24T | Adult Cycle | KTR Cycle World",
-      "description": "Buy Hercules Rift VB 24T at ₹6,650. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sleek…",
-      "canonical": "/product/hercules-rift-ic-rf-vb-24t",
+      "description": "Buy Hercules Rift VB 24T at ₹6,700. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sleek…",
+      "canonical": "/product/hercules-hardstyle-pro-27t",
       "keywords": [
         "Hercules Rift VB 24T",
         "Hercules cycle",
-        "Hercules adult cycle",
-        "Adult Cycle",
-        "adult cycle Tirunelveli",
+        "Hercules ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "adult cycle 12-15 Years",
-        "Adult",
+        " 12-15 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Hercules Rift VB 24T | Adult Cycle | KTR Cycle World",
-      "description": "Buy Hercules Rift VB 24T at ₹6,650. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sleek…",
+      "description": "Buy Hercules Rift VB 24T at ₹6,700. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sleek…",
       "type": "product",
-      "image": "/images/products/prod_041_1.jpg",
-      "url": "/product/hercules-rift-ic-rf-vb-24t",
+      "image": "/images/products/prod_032_1_1rYYvmQpehc6qpBH7YOz0jT_aI1uTEsOQ.jpg",
+      "url": "/product/hercules-hardstyle-pro-27t",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "Hercules Rift VB 24T | Adult Cycle | KTR Cycle World",
-      "description": "Buy Hercules Rift VB 24T at ₹6,650. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sleek…",
-      "image": "/images/products/prod_041_1.jpg"
-    }
+      "description": "Buy Hercules Rift VB 24T at ₹6,700. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sleek…",
+      "image": "/images/products/prod_032_1_1rYYvmQpehc6qpBH7YOz0jT_aI1uTEsOQ.jpg"
+    },
+    "cycle_size": "24T"
   },
   {
-    "id": "prod_042",
-    "product_id": "prod_042",
-    "slug": "hercules-redeem-26t-fsdd-21-gear",
+    "id": "prod_033",
+    "product_id": "prod_033",
+    "slug": "hercules-redeem-27t-dd-21s",
     "name": "HERCULES REDEEM 26T FSDD 21 GEAR",
     "brand": "HERCULES",
     "category_id": "cat_003",
@@ -3013,8 +2900,8 @@
     ],
     "color": "",
     "frame_size": "",
-    "original_price": 13000,
-    "discounted_price": 12750,
+    "original_price": 13400,
+    "discounted_price": 12500,
     "featured": false,
     "age_group": "15+ Years",
     "short_description": "High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Brakes (Front & Rear), and a rigid High-Tensile Carbon Steel Frame for fast city and trail riding.",
@@ -3055,46 +2942,44 @@
       "High-stopping power Dual Mechanical Disc Brakes (Front & Rear) for reliable braking in dry and wet conditions.",
       "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
       "Anatomically designed PU cushioned saddle with quick-release height adjustment.",
-      "Precision 21-Speed Gear System (Shimano / Microshift) for seamless shifting on steep hills and flat roads.",
-      "Smooth front shock absorber fork designed to neutralize road vibrations."
+      "Precision 21-Speed Gear System (Shimano / Microshift) for seamless shifting on steep hills and flat roads."
     ],
     "seo": {
       "title": "Hercules Redeem 26T FSDD 21 Gear | Geared Cycle | KTR Cycle World",
-      "description": "Buy Hercules Redeem 26T FSDD 21 Gear at ₹12,750. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Bra…",
-      "canonical": "/product/hercules-redeem-26t-fsdd-21-gear",
+      "description": "Buy Hercules Redeem 26T FSDD 21 Gear at ₹12,500. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Bra…",
+      "canonical": "/product/hercules-redeem-27t-dd-21s",
       "keywords": [
         "Hercules Redeem 26T FSDD 21 Gear",
         "Hercules cycle",
-        "Hercules geared cycle",
-        "Geared Cycle",
-        "geared cycle Tirunelveli",
+        "Hercules ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "geared cycle 15+ Years",
-        "Adult",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Hercules Redeem 26T FSDD 21 Gear | Geared Cycle | KTR Cycle World",
-      "description": "Buy Hercules Redeem 26T FSDD 21 Gear at ₹12,750. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Bra…",
+      "description": "Buy Hercules Redeem 26T FSDD 21 Gear at ₹12,500. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Bra…",
       "type": "product",
       "image": "/images/products/prod_042_1_1VGfMRvQitXL1aQYdeM933R_pw4jiJXss.jpg",
-      "url": "/product/hercules-redeem-26t-fsdd-21-gear",
+      "url": "/product/hercules-redeem-27t-dd-21s",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "Hercules Redeem 26T FSDD 21 Gear | Geared Cycle | KTR Cycle World",
-      "description": "Buy Hercules Redeem 26T FSDD 21 Gear at ₹12,750. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Bra…",
+      "description": "Buy Hercules Redeem 26T FSDD 21 Gear at ₹12,500. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Dual Mechanical Disc Bra…",
       "image": "/images/products/prod_042_1_1VGfMRvQitXL1aQYdeM933R_pw4jiJXss.jpg"
-    }
+    },
+    "cycle_size": "26T"
   },
   {
-    "id": "prod_043",
-    "product_id": "prod_043",
-    "slug": "hercules-shurveer",
+    "id": "prod_034",
+    "product_id": "prod_034",
+    "slug": "hercules-redeem-26t-vb-ibc-2",
     "name": "Hercules Shurveer EC",
     "brand": "HERCULES",
     "category_id": "cat_005",
@@ -3103,7 +2988,7 @@
     ],
     "color": "",
     "frame_size": "",
-    "original_price": 23500,
+    "original_price": 24000,
     "discounted_price": 23000,
     "featured": false,
     "age_group": "15+ Years",
@@ -3166,17 +3051,15 @@
     "seo": {
       "title": "Hercules Shurveer EC | Electric Cycle | KTR Cycle World",
       "description": "Buy Hercules Shurveer EC at ₹23,000. Hercules Shurveer EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery…",
-      "canonical": "/product/hercules-shurveer",
+      "canonical": "/product/hercules-redeem-26t-vb-ibc-2",
       "keywords": [
         "Hercules Shurveer EC",
         "Hercules cycle",
-        "Hercules electric cycle",
-        "Electric Cycle",
-        "electric cycle Tirunelveli",
+        "Hercules ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "electric cycle 15+ Years",
-        "Electric",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
@@ -3186,7 +3069,7 @@
       "description": "Buy Hercules Shurveer EC at ₹23,000. Hercules Shurveer EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery…",
       "type": "product",
       "image": "/images/products/prod_043_1_18abkEN_bcgrKPFHkF5ttxu6aWRIccoNj.jpg",
-      "url": "/product/hercules-shurveer",
+      "url": "/product/hercules-redeem-26t-vb-ibc-2",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
@@ -3194,12 +3077,13 @@
       "title": "Hercules Shurveer EC | Electric Cycle | KTR Cycle World",
       "description": "Buy Hercules Shurveer EC at ₹23,000. Hercules Shurveer EC is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery…",
       "image": "/images/products/prod_043_1_18abkEN_bcgrKPFHkF5ttxu6aWRIccoNj.jpg"
-    }
+    },
+    "cycle_size": "26T"
   },
   {
-    "id": "prod_044",
-    "product_id": "prod_044",
-    "slug": "raleigh-e-surge-ss-eco",
+    "id": "prod_035",
+    "product_id": "prod_035",
+    "slug": "piller-tuscan-14t-dlx",
     "name": "RALEIGH E-SURGE S/S ECO",
     "brand": "RALEIGH",
     "category_id": "cat_005",
@@ -3208,7 +3092,7 @@
     ],
     "color": "",
     "frame_size": "",
-    "original_price": 34000,
+    "original_price": 35000,
     "discounted_price": 33800,
     "featured": false,
     "age_group": "15+ Years",
@@ -3271,17 +3155,15 @@
     "seo": {
       "title": "Raleigh E-surge S/s Eco | Electric Cycle | KTR Cycle World",
       "description": "Buy Raleigh E-surge S/s Eco at ₹33,800. Raleigh E-surge S/s Eco is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium b…",
-      "canonical": "/product/raleigh-e-surge-ss-eco",
+      "canonical": "/product/piller-tuscan-14t-dlx",
       "keywords": [
         "Raleigh E-surge S/s Eco",
         "Raleigh cycle",
-        "Raleigh electric cycle",
-        "Electric Cycle",
-        "electric cycle Tirunelveli",
+        "Raleigh ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "electric cycle 15+ Years",
-        "Electric",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
@@ -3291,7 +3173,7 @@
       "description": "Buy Raleigh E-surge S/s Eco at ₹33,800. Raleigh E-surge S/s Eco is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium b…",
       "type": "product",
       "image": "/images/products/prod_044_1.jpg",
-      "url": "/product/raleigh-e-surge-ss-eco",
+      "url": "/product/piller-tuscan-14t-dlx",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
@@ -3299,12 +3181,13 @@
       "title": "Raleigh E-surge S/s Eco | Electric Cycle | KTR Cycle World",
       "description": "Buy Raleigh E-surge S/s Eco at ₹33,800. Raleigh E-surge S/s Eco is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium b…",
       "image": "/images/products/prod_044_1.jpg"
-    }
+    },
+    "cycle_size": "27.5T"
   },
   {
-    "id": "prod_046",
-    "product_id": "prod_046",
-    "slug": "friends-20t",
+    "id": "prod_036",
+    "product_id": "prod_036",
+    "slug": "piller-tuscan-20t-dlx-2",
     "name": "KEYSTO FRIENDS 20T",
     "brand": "KEYSTO",
     "category_id": "cat_001",
@@ -3314,7 +3197,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 5900,
-    "discounted_price": 5500,
+    "discounted_price": 4900,
     "featured": false,
     "age_group": "8-12 Years",
     "short_description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
@@ -3358,40 +3241,40 @@
     ],
     "seo": {
       "title": "Keysto Friends 20T | Kids Cycle | KTR Cycle World",
-      "description": "Buy Keysto Friends 20T at ₹5,500. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergon…",
-      "canonical": "/product/friends-20t",
+      "description": "Buy Keysto Friends 20T at ₹4,900. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergon…",
+      "canonical": "/product/piller-tuscan-20t-dlx-2",
       "keywords": [
         "Keysto Friends 20T",
         "Keysto cycle",
-        "Keysto kids cycle",
-        "Kids Cycle",
-        "kids cycle Tirunelveli",
+        "Keysto ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "kids cycle 8-12 Years",
+        " 8-12 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Keysto Friends 20T | Kids Cycle | KTR Cycle World",
-      "description": "Buy Keysto Friends 20T at ₹5,500. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergon…",
+      "description": "Buy Keysto Friends 20T at ₹4,900. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergon…",
       "type": "product",
       "image": "/images/products/prod_046_1_12-l0LZzxDB78A0b3ENPw61IPM1TbNp-e.jpg",
-      "url": "/product/friends-20t",
+      "url": "/product/piller-tuscan-20t-dlx-2",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "Keysto Friends 20T | Kids Cycle | KTR Cycle World",
-      "description": "Buy Keysto Friends 20T at ₹5,500. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergon…",
+      "description": "Buy Keysto Friends 20T at ₹4,900. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergon…",
       "image": "/images/products/prod_046_1_12-l0LZzxDB78A0b3ENPw61IPM1TbNp-e.jpg"
-    }
+    },
+    "cycle_size": "20T"
   },
   {
-    "id": "prod_047",
-    "product_id": "prod_047",
-    "slug": "hazel-lady-birld-24t",
+    "id": "prod_037",
+    "product_id": "prod_037",
+    "slug": "piller-tuscan-16t-dlx",
     "name": "BSA HAZEL LADY BIRLD 24T",
     "brand": "BSA",
     "category_id": "cat_004",
@@ -3403,7 +3286,7 @@
     "frame_size": "",
     "original_price": 8300,
     "discounted_price": 7800,
-    "featured": false,
+    "featured": true,
     "age_group": "12-15 Years",
     "short_description": "Elegant and comfortable girls cycle featuring low step-through frame, comfortable upright geometry, rear carrier, and smooth brake controls.",
     "long_description": "Designed for grace and daily comfort, the BSA Hazel Lady Birld 24T features a step-through High-Tensile Carbon Steel Frame that allows easy mounting and dismounting. Equipped with a spacious front basket, soft padded saddle, dress guard, and responsive Front & Rear Mechanical Power Brakes, it is ideal for school, college, and casual riding across town.",
@@ -3447,17 +3330,15 @@
     "seo": {
       "title": "BSA Hazel Lady Birld 24T | Girls Cycle | KTR Cycle World",
       "description": "Buy BSA Hazel Lady Birld 24T at ₹7,800. Elegant and comfortable girls cycle featuring low step-through frame, comfortable upright geometry, rear carrier, and s…",
-      "canonical": "/product/hazel-lady-birld-24t",
+      "canonical": "/product/piller-tuscan-16t-dlx",
       "keywords": [
         "BSA Hazel Lady Birld 24T",
         "BSA cycle",
-        "BSA girls cycle",
-        "Girls Cycle",
-        "girls cycle Tirunelveli",
+        "BSA ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "girls cycle 12-15 Years",
-        "Ladies Cycle",
+        " 12-15 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
@@ -3467,7 +3348,7 @@
       "description": "Buy BSA Hazel Lady Birld 24T at ₹7,800. Elegant and comfortable girls cycle featuring low step-through frame, comfortable upright geometry, rear carrier, and s…",
       "type": "product",
       "image": "/images/products/prod_047_1_12dXbchyMT1JX3me2LR2NMcyZY9LlvDvG.jpg",
-      "url": "/product/hazel-lady-birld-24t",
+      "url": "/product/piller-tuscan-16t-dlx",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
@@ -3475,12 +3356,13 @@
       "title": "BSA Hazel Lady Birld 24T | Girls Cycle | KTR Cycle World",
       "description": "Buy BSA Hazel Lady Birld 24T at ₹7,800. Elegant and comfortable girls cycle featuring low step-through frame, comfortable upright geometry, rear carrier, and s…",
       "image": "/images/products/prod_047_1_12dXbchyMT1JX3me2LR2NMcyZY9LlvDvG.jpg"
-    }
+    },
+    "cycle_size": "24T"
   },
   {
-    "id": "prod_048",
-    "product_id": "prod_048",
-    "slug": "hurricane-26t",
+    "id": "prod_038",
+    "product_id": "prod_038",
+    "slug": "havoc-zx-26t-fsdd",
     "name": "SUNCROSS HURRICANE FSDD 26T",
     "brand": "SUNCROSS",
     "category_id": "cat_002",
@@ -3489,8 +3371,8 @@
     ],
     "color": "",
     "frame_size": "",
-    "original_price": 14200,
-    "discounted_price": 13950,
+    "original_price": 15500,
+    "discounted_price": 14500,
     "featured": false,
     "age_group": "15+ Years",
     "short_description": "Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
@@ -3530,46 +3412,44 @@
       "Ergonomically engineered Lightweight Aircraft-Grade Alloy Frame for strength, balance, and long service life.",
       "High-stopping power Dual Mechanical Disc Brakes (Front & Rear) for reliable braking in dry and wet conditions.",
       "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
-      "Anatomically designed PU cushioned saddle with quick-release height adjustment.",
-      "Smooth front shock absorber fork designed to neutralize road vibrations."
+      "Anatomically designed PU cushioned saddle with quick-release height adjustment."
     ],
     "seo": {
       "title": "Suncross Hurricane FSDD 26T | Adult Cycle | KTR Cycle World",
-      "description": "Buy Suncross Hurricane FSDD 26T at ₹13,950. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Dual Mechanical Disc Brakes…",
-      "canonical": "/product/hurricane-26t",
+      "description": "Buy Suncross Hurricane FSDD 26T at ₹14,500. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Dual Mechanical Disc Brakes…",
+      "canonical": "/product/havoc-zx-26t-fsdd",
       "keywords": [
         "Suncross Hurricane FSDD 26T",
         "Suncross cycle",
-        "Suncross adult cycle",
-        "Adult Cycle",
-        "adult cycle Tirunelveli",
+        "Suncross ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "adult cycle 15+ Years",
-        "Adult",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Suncross Hurricane FSDD 26T | Adult Cycle | KTR Cycle World",
-      "description": "Buy Suncross Hurricane FSDD 26T at ₹13,950. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Dual Mechanical Disc Brakes…",
+      "description": "Buy Suncross Hurricane FSDD 26T at ₹14,500. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Dual Mechanical Disc Brakes…",
       "type": "product",
       "image": "/images/products/prod_048_1_1q9hYp6kdJYhpvmBvWxFKHGGbUYovFiXh.jpg",
-      "url": "/product/hurricane-26t",
+      "url": "/product/havoc-zx-26t-fsdd",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "Suncross Hurricane FSDD 26T | Adult Cycle | KTR Cycle World",
-      "description": "Buy Suncross Hurricane FSDD 26T at ₹13,950. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Dual Mechanical Disc Brakes…",
+      "description": "Buy Suncross Hurricane FSDD 26T at ₹14,500. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Dual Mechanical Disc Brakes…",
       "image": "/images/products/prod_048_1_1q9hYp6kdJYhpvmBvWxFKHGGbUYovFiXh.jpg"
-    }
+    },
+    "cycle_size": "26T"
   },
   {
-    "id": "prod_049",
-    "product_id": "prod_049",
-    "slug": "exalt-29t-ss",
+    "id": "prod_039",
+    "product_id": "prod_039",
+    "slug": "hercules-rift-ic-fx-dd-24t",
     "name": "RALEIGH EXALT 29T SS",
     "brand": "RALEIGH",
     "category_id": "cat_002",
@@ -3625,17 +3505,15 @@
     "seo": {
       "title": "Raleigh Exalt 29T SS | Adult Cycle | KTR Cycle World",
       "description": "Buy Raleigh Exalt 29T SS at ₹13,500. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Power Brak…",
-      "canonical": "/product/exalt-29t-ss",
+      "canonical": "/product/hercules-rift-ic-fx-dd-24t",
       "keywords": [
         "Raleigh Exalt 29T SS",
         "Raleigh cycle",
-        "Raleigh adult cycle",
-        "Adult Cycle",
-        "adult cycle Tirunelveli",
+        "Raleigh ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "adult cycle 15+ Years",
-        "Adult",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
@@ -3645,7 +3523,7 @@
       "description": "Buy Raleigh Exalt 29T SS at ₹13,500. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Power Brak…",
       "type": "product",
       "image": "/images/products/prod_049_1_17DZ0XXndgxQv-Za--OftlEZ4Jo9MLJLK.jpg",
-      "url": "/product/exalt-29t-ss",
+      "url": "/product/hercules-rift-ic-fx-dd-24t",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
@@ -3653,12 +3531,13 @@
       "title": "Raleigh Exalt 29T SS | Adult Cycle | KTR Cycle World",
       "description": "Buy Raleigh Exalt 29T SS at ₹13,500. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Power Brak…",
       "image": "/images/products/prod_049_1_17DZ0XXndgxQv-Za--OftlEZ4Jo9MLJLK.jpg"
-    }
+    },
+    "cycle_size": "29T"
   },
   {
-    "id": "prod_052",
-    "product_id": "prod_052",
-    "slug": "navarro-one-ms",
+    "id": "prod_040",
+    "product_id": "prod_040",
+    "slug": "hercules-rift-ic-fx-dd-26t",
     "name": "RALEIGH NAVARRO ONE 29T M/S",
     "brand": "RALEIGH",
     "category_id": "cat_003",
@@ -3668,7 +3547,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 20200,
-    "discounted_price": 19400,
+    "discounted_price": 19000,
     "featured": false,
     "age_group": "15+ Years",
     "short_description": "High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Front & Rear Mechanical Power Brakes, and a rigid Lightweight Aircraft-Grade Alloy Frame for fast city and trail riding.",
@@ -3713,41 +3592,40 @@
     ],
     "seo": {
       "title": "Raleigh Navarro One 29T M/s | Geared Cycle | KTR Cycle World",
-      "description": "Buy Raleigh Navarro One 29T M/s at ₹19,400. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Front & Rear Mechanical Power…",
-      "canonical": "/product/navarro-one-ms",
+      "description": "Buy Raleigh Navarro One 29T M/s at ₹19,000. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Front & Rear Mechanical Power…",
+      "canonical": "/product/hercules-rift-ic-fx-dd-26t",
       "keywords": [
         "Raleigh Navarro One 29T M/s",
         "Raleigh cycle",
-        "Raleigh geared cycle",
-        "Geared Cycle",
-        "geared cycle Tirunelveli",
+        "Raleigh ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "geared cycle 15+ Years",
-        "Gear",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Raleigh Navarro One 29T M/s | Geared Cycle | KTR Cycle World",
-      "description": "Buy Raleigh Navarro One 29T M/s at ₹19,400. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Front & Rear Mechanical Power…",
+      "description": "Buy Raleigh Navarro One 29T M/s at ₹19,000. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Front & Rear Mechanical Power…",
       "type": "product",
       "image": "/images/products/prod_052_1_105NvCgjVtXGtaeqUeDr858YjfsaNBmNa.jpg",
-      "url": "/product/navarro-one-ms",
+      "url": "/product/hercules-rift-ic-fx-dd-26t",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "Raleigh Navarro One 29T M/s | Geared Cycle | KTR Cycle World",
-      "description": "Buy Raleigh Navarro One 29T M/s at ₹19,400. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Front & Rear Mechanical Power…",
+      "description": "Buy Raleigh Navarro One 29T M/s at ₹19,000. High-performance geared cycle built with 21-Speed Gear System (Shimano / Microshift), Front & Rear Mechanical Power…",
       "image": "/images/products/prod_052_1_105NvCgjVtXGtaeqUeDr858YjfsaNBmNa.jpg"
-    }
+    },
+    "cycle_size": "29T"
   },
   {
-    "id": "prod_054",
-    "product_id": "prod_054",
-    "slug": "neutron-26-ms",
+    "id": "prod_041",
+    "product_id": "prod_041",
+    "slug": "hercules-rift-ic-rf-vb-24t",
     "name": "STRYDER NEUTRON 26 FSDD SS",
     "brand": "STRYDER",
     "category_id": "cat_003",
@@ -3798,23 +3676,20 @@
       "High-stopping power Dual Mechanical Disc Brakes (Front & Rear) for reliable braking in dry and wet conditions.",
       "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
       "Anatomically designed PU cushioned saddle with quick-release height adjustment.",
-      "Precision Multi-Speed Gear System for seamless shifting on steep hills and flat roads.",
-      "Smooth front shock absorber fork designed to neutralize road vibrations."
+      "Precision Multi-Speed Gear System for seamless shifting on steep hills and flat roads."
     ],
     "seo": {
       "title": "Stryder Neutron 26 FSDD SS | Geared Cycle | KTR Cycle World",
       "description": "Buy Stryder Neutron 26 FSDD SS at ₹12,800. High-performance geared cycle built with Multi-Speed Gear System, Dual Mechanical Disc Brakes (Front & Rear), and a…",
-      "canonical": "/product/neutron-26-ms",
+      "canonical": "/product/hercules-rift-ic-rf-vb-24t",
       "keywords": [
         "Stryder Neutron 26 FSDD SS",
         "Stryder cycle",
-        "Stryder geared cycle",
-        "Geared Cycle",
-        "geared cycle Tirunelveli",
+        "Stryder ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "geared cycle 15+ Years",
-        "Gear",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
@@ -3824,7 +3699,7 @@
       "description": "Buy Stryder Neutron 26 FSDD SS at ₹12,800. High-performance geared cycle built with Multi-Speed Gear System, Dual Mechanical Disc Brakes (Front & Rear), and a…",
       "type": "product",
       "image": "/images/products/prod_054_1.jpg",
-      "url": "/product/neutron-26-ms",
+      "url": "/product/hercules-rift-ic-rf-vb-24t",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
@@ -3832,12 +3707,13 @@
       "title": "Stryder Neutron 26 FSDD SS | Geared Cycle | KTR Cycle World",
       "description": "Buy Stryder Neutron 26 FSDD SS at ₹12,800. High-performance geared cycle built with Multi-Speed Gear System, Dual Mechanical Disc Brakes (Front & Rear), and a…",
       "image": "/images/products/prod_054_1.jpg"
-    }
+    },
+    "cycle_size": "26T"
   },
   {
-    "id": "prod_055",
-    "product_id": "prod_055",
-    "slug": "street-mamba",
+    "id": "prod_042",
+    "product_id": "prod_042",
+    "slug": "hercules-redeem-26t-fsdd-21-gear",
     "name": "AOKI STREET MAMBA",
     "brand": "AOKI",
     "category_id": "cat_005",
@@ -3847,8 +3723,8 @@
     ],
     "color": "",
     "frame_size": "",
-    "original_price": 70000,
-    "discounted_price": 62000,
+    "original_price": 75000,
+    "discounted_price": 67000,
     "featured": true,
     "age_group": "15+ Years",
     "short_description": "AOKI Street Mamba is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for long-range commutes across Tirunelveli.",
@@ -3909,42 +3785,40 @@
     ],
     "seo": {
       "title": "AOKI Street Mamba | Electric Cycle | KTR Cycle World",
-      "description": "Buy AOKI Street Mamba at ₹62,000. AOKI Street Mamba is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, desi…",
-      "canonical": "/product/street-mamba",
+      "description": "Buy AOKI Street Mamba at ₹67,000. AOKI Street Mamba is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, desi…",
+      "canonical": "/product/hercules-redeem-26t-fsdd-21-gear",
       "keywords": [
         "AOKI Street Mamba",
         "AOKI cycle",
-        "AOKI electric cycle",
-        "Electric Cycle",
-        "electric cycle Tirunelveli",
+        "AOKI ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "electric cycle 15+ Years",
-        "Aoki",
-        "Electric",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "AOKI Street Mamba | Electric Cycle | KTR Cycle World",
-      "description": "Buy AOKI Street Mamba at ₹62,000. AOKI Street Mamba is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, desi…",
+      "description": "Buy AOKI Street Mamba at ₹67,000. AOKI Street Mamba is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, desi…",
       "type": "product",
       "image": "/images/products/prod_055_1.jpg",
-      "url": "/product/street-mamba",
+      "url": "/product/hercules-redeem-26t-fsdd-21-gear",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "AOKI Street Mamba | Electric Cycle | KTR Cycle World",
-      "description": "Buy AOKI Street Mamba at ₹62,000. AOKI Street Mamba is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, desi…",
+      "description": "Buy AOKI Street Mamba at ₹67,000. AOKI Street Mamba is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, desi…",
       "image": "/images/products/prod_055_1.jpg"
-    }
+    },
+    "cycle_size": "20T"
   },
   {
-    "id": "prod_056",
-    "product_id": "prod_056",
-    "slug": "navarro-one",
+    "id": "prod_043",
+    "product_id": "prod_043",
+    "slug": "hercules-shurveer",
     "name": "RALEIGH NAVARRO ONE 29T SS",
     "brand": "RALEIGH",
     "category_id": "cat_002",
@@ -3954,7 +3828,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 13000,
-    "discounted_price": 13000,
+    "discounted_price": 12500,
     "featured": false,
     "age_group": "15+ Years",
     "short_description": "Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Power Brakes, and sleek geometry for daily commutes and fitness rides.",
@@ -3998,41 +3872,40 @@
     ],
     "seo": {
       "title": "Raleigh Navarro One 29T SS | Adult Cycle | KTR Cycle World",
-      "description": "Buy Raleigh Navarro One 29T SS at ₹13,000. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Powe…",
-      "canonical": "/product/navarro-one",
+      "description": "Buy Raleigh Navarro One 29T SS at ₹12,500. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Powe…",
+      "canonical": "/product/hercules-shurveer",
       "keywords": [
         "Raleigh Navarro One 29T SS",
         "Raleigh cycle",
-        "Raleigh adult cycle",
-        "Adult Cycle",
-        "adult cycle Tirunelveli",
+        "Raleigh ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "adult cycle 15+ Years",
-        "Adult",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "Raleigh Navarro One 29T SS | Adult Cycle | KTR Cycle World",
-      "description": "Buy Raleigh Navarro One 29T SS at ₹13,000. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Powe…",
+      "description": "Buy Raleigh Navarro One 29T SS at ₹12,500. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Powe…",
       "type": "product",
       "image": "/images/products/prod_056_1_1Ws3eOH-sOZouOZB14wePKR-eqO69kGwH.jpg",
-      "url": "/product/navarro-one",
+      "url": "/product/hercules-shurveer",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "Raleigh Navarro One 29T SS | Adult Cycle | KTR Cycle World",
-      "description": "Buy Raleigh Navarro One 29T SS at ₹13,000. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Powe…",
+      "description": "Buy Raleigh Navarro One 29T SS at ₹12,500. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Powe…",
       "image": "/images/products/prod_056_1_1Ws3eOH-sOZouOZB14wePKR-eqO69kGwH.jpg"
-    }
+    },
+    "cycle_size": "29T"
   },
   {
-    "id": "prod_057",
-    "product_id": "prod_057",
-    "slug": "alpha-bombay-26-fsdd",
+    "id": "prod_044",
+    "product_id": "prod_044",
+    "slug": "raleigh-e-surge-ss-eco",
     "name": "91 ALPHA BOMBAY 26T FSDD",
     "brand": "ALPHA",
     "category_id": "cat_002",
@@ -4043,7 +3916,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 8500,
-    "discounted_price": 8500,
+    "discounted_price": 7800,
     "featured": false,
     "age_group": "15+ Years",
     "short_description": "Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
@@ -4083,45 +3956,43 @@
       "Ergonomically engineered High-Tensile Carbon Steel Frame for strength, balance, and long service life.",
       "High-stopping power Dual Mechanical Disc Brakes (Front & Rear) for reliable braking in dry and wet conditions.",
       "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
-      "Anatomically designed PU cushioned saddle with quick-release height adjustment.",
-      "Smooth front shock absorber fork designed to neutralize road vibrations."
+      "Anatomically designed PU cushioned saddle with quick-release height adjustment."
     ],
     "seo": {
       "title": "91 Alpha Bombay 26T FSDD | Adult Cycle | KTR Cycle World",
-      "description": "Buy 91 Alpha Bombay 26T FSDD at ₹8,500. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & R…",
-      "canonical": "/product/alpha-bombay-26-fsdd",
+      "description": "Buy 91 Alpha Bombay 26T FSDD at ₹7,800. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & R…",
+      "canonical": "/product/raleigh-e-surge-ss-eco",
       "keywords": [
         "91 Alpha Bombay 26T FSDD",
         "Alpha cycle",
-        "Alpha adult cycle",
-        "Adult Cycle",
-        "adult cycle Tirunelveli",
+        "Alpha ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "adult cycle 15+ Years",
-        "Adult",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "91 Alpha Bombay 26T FSDD | Adult Cycle | KTR Cycle World",
-      "description": "Buy 91 Alpha Bombay 26T FSDD at ₹8,500. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & R…",
+      "description": "Buy 91 Alpha Bombay 26T FSDD at ₹7,800. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & R…",
       "type": "product",
       "image": "/images/products/prod_057_1_1k1yFIJJdHeoq9OAfD4q2lDOsT0I7j1Mf.jpg",
-      "url": "/product/alpha-bombay-26-fsdd",
+      "url": "/product/raleigh-e-surge-ss-eco",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "91 Alpha Bombay 26T FSDD | Adult Cycle | KTR Cycle World",
-      "description": "Buy 91 Alpha Bombay 26T FSDD at ₹8,500. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & R…",
+      "description": "Buy 91 Alpha Bombay 26T FSDD at ₹7,800. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & R…",
       "image": "/images/products/prod_057_1_1k1yFIJJdHeoq9OAfD4q2lDOsT0I7j1Mf.jpg"
-    }
+    },
+    "cycle_size": "26T"
   },
   {
-    "id": "prod_058",
-    "product_id": "prod_058",
+    "id": "prod_045",
+    "product_id": "prod_045",
     "slug": "alpha-bombay-24-vb",
     "name": "91 ALPHA BOMBAY 24T VB",
     "brand": "ALPHA",
@@ -4133,7 +4004,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 7300,
-    "discounted_price": 7300,
+    "discounted_price": 6800,
     "featured": false,
     "age_group": "12-15 Years",
     "short_description": "Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sleek geometry for daily commutes and fitness rides.",
@@ -4177,25 +4048,23 @@
     ],
     "seo": {
       "title": "91 Alpha Bombay 24T VB | Adult Cycle | KTR Cycle World",
-      "description": "Buy 91 Alpha Bombay 24T VB at ₹7,300. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sle…",
+      "description": "Buy 91 Alpha Bombay 24T VB at ₹6,800. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sle…",
       "canonical": "/product/alpha-bombay-24-vb",
       "keywords": [
         "91 Alpha Bombay 24T VB",
         "Alpha cycle",
-        "Alpha adult cycle",
-        "Adult Cycle",
-        "adult cycle Tirunelveli",
+        "Alpha ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "adult cycle 12-15 Years",
-        "Adult",
+        " 12-15 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "91 Alpha Bombay 24T VB | Adult Cycle | KTR Cycle World",
-      "description": "Buy 91 Alpha Bombay 24T VB at ₹7,300. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sle…",
+      "description": "Buy 91 Alpha Bombay 24T VB at ₹6,800. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sle…",
       "type": "product",
       "image": "/images/products/prod_058_1_19hv2ju_nqrZGcVFJCD0fotD41RiwWNuc.jpg",
       "url": "/product/alpha-bombay-24-vb",
@@ -4204,26 +4073,27 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "91 Alpha Bombay 24T VB | Adult Cycle | KTR Cycle World",
-      "description": "Buy 91 Alpha Bombay 24T VB at ₹7,300. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sle…",
+      "description": "Buy 91 Alpha Bombay 24T VB at ₹6,800. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, High-Performance V-Brake System, and sle…",
       "image": "/images/products/prod_058_1_19hv2ju_nqrZGcVFJCD0fotD41RiwWNuc.jpg"
-    }
+    },
+    "cycle_size": "24T"
   },
   {
-    "id": "prod_059",
-    "product_id": "prod_059",
-    "slug": "alpha-bombay24-fsdd",
+    "id": "prod_046",
+    "product_id": "prod_046",
+    "slug": "friends-20t",
     "name": "91 ALPHA BOMBAY 24T FSDD",
     "brand": "ALPHA",
     "category_id": "cat_002",
     "images": [
-      "/images/products/prod_059_1_1k1yFIJJdHeoq9OAfD4q2lDOsT0I7j1Mf.jpg",
-      "/images/products/prod_059_2_1iPIByYnUQzn3NtdOw85C-0Tfd93VRUsN.jpg",
-      "/images/products/prod_059_3_1iPIByYnUQzn3NtdOw85C-0Tfd93VRUsN.jpg"
+      "https://drive.google.com/file/d//view?usp=sharing",
+      "/images/products/prod_057_2_1iPIByYnUQzn3NtdOw85C-0Tfd93VRUsN.jpg",
+      "/images/products/prod_057_2_1iPIByYnUQzn3NtdOw85C-0Tfd93VRUsN.jpg"
     ],
     "color": "",
     "frame_size": "",
     "original_price": 8200,
-    "discounted_price": 8200,
+    "discounted_price": 7500,
     "featured": false,
     "age_group": "12-15 Years",
     "short_description": "Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
@@ -4263,46 +4133,44 @@
       "Ergonomically engineered High-Tensile Carbon Steel Frame for strength, balance, and long service life.",
       "High-stopping power Dual Mechanical Disc Brakes (Front & Rear) for reliable braking in dry and wet conditions.",
       "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
-      "Anatomically designed PU cushioned saddle with quick-release height adjustment.",
-      "Smooth front shock absorber fork designed to neutralize road vibrations."
+      "Anatomically designed PU cushioned saddle with quick-release height adjustment."
     ],
     "seo": {
       "title": "91 Alpha Bombay 24T FSDD | Adult Cycle | KTR Cycle World",
-      "description": "Buy 91 Alpha Bombay 24T FSDD at ₹8,200. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & R…",
-      "canonical": "/product/alpha-bombay24-fsdd",
+      "description": "Buy 91 Alpha Bombay 24T FSDD at ₹7,500. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & R…",
+      "canonical": "/product/friends-20t",
       "keywords": [
         "91 Alpha Bombay 24T FSDD",
         "Alpha cycle",
-        "Alpha adult cycle",
-        "Adult Cycle",
-        "adult cycle Tirunelveli",
+        "Alpha ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "adult cycle 12-15 Years",
-        "Adult",
+        " 12-15 Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "91 Alpha Bombay 24T FSDD | Adult Cycle | KTR Cycle World",
-      "description": "Buy 91 Alpha Bombay 24T FSDD at ₹8,200. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & R…",
+      "description": "Buy 91 Alpha Bombay 24T FSDD at ₹7,500. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & R…",
       "type": "product",
-      "image": "/images/products/prod_059_1_1k1yFIJJdHeoq9OAfD4q2lDOsT0I7j1Mf.jpg",
-      "url": "/product/alpha-bombay24-fsdd",
+      "image": "https://drive.google.com/file/d//view?usp=sharing",
+      "url": "/product/friends-20t",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "91 Alpha Bombay 24T FSDD | Adult Cycle | KTR Cycle World",
-      "description": "Buy 91 Alpha Bombay 24T FSDD at ₹8,200. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & R…",
-      "image": "/images/products/prod_059_1_1k1yFIJJdHeoq9OAfD4q2lDOsT0I7j1Mf.jpg"
-    }
+      "description": "Buy 91 Alpha Bombay 24T FSDD at ₹7,500. Durable and stylish adult cycle engineered with High-Tensile Carbon Steel Frame, Dual Mechanical Disc Brakes (Front & R…",
+      "image": "https://drive.google.com/file/d//view?usp=sharing"
+    },
+    "cycle_size": "24T"
   },
   {
-    "id": "prod_062",
-    "product_id": "prod_062",
-    "slug": "phase-pro-ss",
+    "id": "prod_047",
+    "product_id": "prod_047",
+    "slug": "hazel-lady-birld-24t",
     "name": "RALEIGH PHASE PRO 29TS/S",
     "brand": "RALEIGH",
     "category_id": "cat_002",
@@ -4357,17 +4225,15 @@
     "seo": {
       "title": "Raleigh Phase PRO 29ts/s | Adult Cycle | KTR Cycle World",
       "description": "Buy Raleigh Phase PRO 29ts/s at ₹12,800. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Power…",
-      "canonical": "/product/phase-pro-ss",
+      "canonical": "/product/hazel-lady-birld-24t",
       "keywords": [
         "Raleigh Phase PRO 29ts/s",
         "Raleigh cycle",
-        "Raleigh adult cycle",
-        "Adult Cycle",
-        "adult cycle Tirunelveli",
+        "Raleigh ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "adult cycle 15+ Years",
-        "Adult",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
@@ -4377,7 +4243,7 @@
       "description": "Buy Raleigh Phase PRO 29ts/s at ₹12,800. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Power…",
       "type": "product",
       "image": "/images/products/prod_062_1.jpg",
-      "url": "/product/phase-pro-ss",
+      "url": "/product/hazel-lady-birld-24t",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
@@ -4385,100 +4251,13 @@
       "title": "Raleigh Phase PRO 29ts/s | Adult Cycle | KTR Cycle World",
       "description": "Buy Raleigh Phase PRO 29ts/s at ₹12,800. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Power…",
       "image": "/images/products/prod_062_1.jpg"
-    }
+    },
+    "cycle_size": "29T"
   },
   {
-    "id": "prod_063",
-    "product_id": "prod_063",
-    "slug": "nytro-ss-29t",
-    "name": "SUNCROSS NYTRO S/S 29T",
-    "brand": "SUNCROSS",
-    "category_id": "cat_002",
-    "images": [
-      "/images/products/prod_063_1.jpg"
-    ],
-    "color": "",
-    "frame_size": "",
-    "original_price": 12500,
-    "discounted_price": 11500,
-    "featured": false,
-    "age_group": "15+ Years",
-    "short_description": "Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Power Brakes, and sleek geometry for daily commutes and fitness rides.",
-    "long_description": "The Suncross Nytro S/s 29T is engineered for daily dependability, low maintenance, and smooth riding performance. Built with a tough Lightweight Aircraft-Grade Alloy Frame, responsive Front & Rear Mechanical Power Brakes, and fast-rolling 29 Inches wheels, it guarantees comfort, balance, and reliability on every journey.",
-    "description": "Suncross Nytro S/s 29T - Adult Cycle by SUNCROSS (29 Inches, Front & Rear Mechanical Power Brakes)",
-    "specifications": [
-      {
-        "label": "Wheel Size",
-        "value": "29 Inches"
-      },
-      {
-        "label": "Frame Material",
-        "value": "Lightweight Aircraft-Grade Alloy Frame"
-      },
-      {
-        "label": "Brake System",
-        "value": "Front & Rear Mechanical Power Brakes"
-      },
-      {
-        "label": "Gears / Speed",
-        "value": "Single Speed Direct Drive"
-      },
-      {
-        "label": "Front Suspension",
-        "value": "Rigid Aerodynamic Steel Fork"
-      },
-      {
-        "label": "Target Age Group",
-        "value": "15+ Years"
-      },
-      {
-        "label": "Ideal Location",
-        "value": "Urban Roads, Fitness Trails & City Commuting"
-      }
-    ],
-    "features": [
-      "Ergonomically engineered Lightweight Aircraft-Grade Alloy Frame for strength, balance, and long service life.",
-      "High-stopping power Front & Rear Mechanical Power Brakes for reliable braking in dry and wet conditions.",
-      "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
-      "Anatomically designed PU cushioned saddle with quick-release height adjustment."
-    ],
-    "seo": {
-      "title": "Suncross Nytro S/s 29T | Adult Cycle | KTR Cycle World",
-      "description": "Buy Suncross Nytro S/s 29T at ₹11,500. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Power Br…",
-      "canonical": "/product/nytro-ss-29t",
-      "keywords": [
-        "Suncross Nytro S/s 29T",
-        "Suncross cycle",
-        "Suncross adult cycle",
-        "Adult Cycle",
-        "adult cycle Tirunelveli",
-        "buy cycle Tirunelveli",
-        "KTR Cycle World",
-        "adult cycle 15+ Years",
-        "Adult",
-        "cycles in Tirunelveli"
-      ],
-      "robots": "index,follow"
-    },
-    "og": {
-      "title": "Suncross Nytro S/s 29T | Adult Cycle | KTR Cycle World",
-      "description": "Buy Suncross Nytro S/s 29T at ₹11,500. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Power Br…",
-      "type": "product",
-      "image": "/images/products/prod_063_1.jpg",
-      "url": "/product/nytro-ss-29t",
-      "site_name": "KTR Cycle World"
-    },
-    "twitter": {
-      "card": "summary_large_image",
-      "title": "Suncross Nytro S/s 29T | Adult Cycle | KTR Cycle World",
-      "description": "Buy Suncross Nytro S/s 29T at ₹11,500. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Power Br…",
-      "image": "/images/products/prod_063_1.jpg"
-    }
-  },
-  {
-    "id": "prod_064",
-    "product_id": "prod_064",
-    "slug": "street-ghost",
+    "id": "prod_048",
+    "product_id": "prod_048",
+    "slug": "hurricane-26t",
     "name": "AOKI STREET GOST",
     "brand": "AOKI",
     "category_id": "cat_005",
@@ -4488,7 +4267,7 @@
     "color": "",
     "frame_size": "",
     "original_price": 73000,
-    "discounted_price": 73000,
+    "discounted_price": 65000,
     "featured": true,
     "age_group": "15+ Years",
     "short_description": "AOKI Street Gost is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for long-range commutes across Tirunelveli.",
@@ -4549,57 +4328,55 @@
     ],
     "seo": {
       "title": "AOKI Street Gost | Electric Cycle | KTR Cycle World",
-      "description": "Buy AOKI Street Gost at ₹73,000. AOKI Street Gost is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, design…",
-      "canonical": "/product/street-ghost",
+      "description": "Buy AOKI Street Gost at ₹65,000. AOKI Street Gost is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, design…",
+      "canonical": "/product/hurricane-26t",
       "keywords": [
         "AOKI Street Gost",
         "AOKI cycle",
-        "AOKI electric cycle",
-        "Electric Cycle",
-        "electric cycle Tirunelveli",
+        "AOKI ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "electric cycle 15+ Years",
-        "Aoki",
-        "Electric",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
       "title": "AOKI Street Gost | Electric Cycle | KTR Cycle World",
-      "description": "Buy AOKI Street Gost at ₹73,000. AOKI Street Gost is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, design…",
+      "description": "Buy AOKI Street Gost at ₹65,000. AOKI Street Gost is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, design…",
       "type": "product",
       "image": "/images/products/prod_064_1.jpg",
-      "url": "/product/street-ghost",
+      "url": "/product/hurricane-26t",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
       "title": "AOKI Street Gost | Electric Cycle | KTR Cycle World",
-      "description": "Buy AOKI Street Gost at ₹73,000. AOKI Street Gost is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, design…",
+      "description": "Buy AOKI Street Gost at ₹65,000. AOKI Street Gost is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, design…",
       "image": "/images/products/prod_064_1.jpg"
-    }
+    },
+    "cycle_size": "20T"
   },
   {
-    "id": "prod_066",
-    "product_id": "prod_066",
-    "slug": "hercules-hardstyle",
-    "name": "HERCULES HARDSTYLE 27T EC N SUS DD",
+    "id": "prod_049",
+    "product_id": "prod_049",
+    "slug": "exalt-29t-ss",
+    "name": "HERCULES HARDSTYLE 27.5T EC Non SUS DD",
     "brand": "HERCULES",
     "category_id": "cat_005",
     "images": [
-      "/images/placeholder.png"
+      "/images/products/prod_049_1_1ixyGkpCmUa9Md78oqjMOHj42I4tFqD0S.jpg"
     ],
     "color": "",
     "frame_size": "",
-    "original_price": 23500,
+    "original_price": 24000,
     "discounted_price": 23000,
     "featured": false,
     "age_group": "15+ Years",
-    "short_description": "Hercules Hardstyle 27T EC N Sus DD is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for long-range commutes across Tirunelveli.",
-    "long_description": "Experience effortless commuting with the Hercules Hardstyle 27T EC N Sus DD. Featuring a quiet 36V 250W BLDC motor, high-capacity removable battery, and dual riding modes (Pedal Assist & Throttle), this electric cycle offers up to 45km+ per charge. Complete with Dual Mechanical Disc Brakes (Front & Rear), integrated LED light, and a reinforced High-Tensile Carbon Steel Frame for maximum safety in Tirunelveli.",
-    "description": "Hercules Hardstyle 27T EC N Sus DD - Electric Cycle by HERCULES (27.5 Inches, Dual Mechanical Disc Brakes (Front & Rear))",
+    "short_description": "Hercules Hardstyle 27.5t EC Non Sus DD is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for long-range commutes across Tirunelveli.",
+    "long_description": "Experience effortless commuting with the Hercules Hardstyle 27.5t EC Non Sus DD. Featuring a quiet 36V 250W BLDC motor, high-capacity removable battery, and dual riding modes (Pedal Assist & Throttle), this electric cycle offers up to 45km+ per charge. Complete with Dual Mechanical Disc Brakes (Front & Rear), integrated LED light, and a reinforced High-Tensile Carbon Steel Frame for maximum safety in Tirunelveli.",
+    "description": "Hercules Hardstyle 27.5t EC Non Sus DD - Electric Cycle by HERCULES (27.5 Inches, Dual Mechanical Disc Brakes (Front & Rear))",
     "specifications": [
       {
         "label": "Wheel Size",
@@ -4654,48 +4431,47 @@
       "Dual riding modes with intelligent pedal assist sensors and LED battery dashboard."
     ],
     "seo": {
-      "title": "Hercules Hardstyle 27T EC N Sus DD | Electric Cycle | KTR Cycle World",
-      "description": "Buy Hercules Hardstyle 27T EC N Sus DD at ₹23,000. Hercules Hardstyle 27T EC N Sus DD is an advanced electric bicycle powered by a high-torque BLDC hub motor a…",
-      "canonical": "/product/hercules-hardstyle",
+      "title": "Hercules Hardstyle 27.5t EC Non Sus DD | KTR Cycle World",
+      "description": "Buy Hercules Hardstyle 27.5t EC Non Sus DD at ₹23,000. Hercules Hardstyle 27.5t EC Non Sus DD is an advanced electric bicycle powered by a high-torque BLDC hub…",
+      "canonical": "/product/exalt-29t-ss",
       "keywords": [
-        "Hercules Hardstyle 27T EC N Sus DD",
+        "Hercules Hardstyle 27.5t EC Non Sus DD",
         "Hercules cycle",
-        "Hercules electric cycle",
-        "Electric Cycle",
-        "electric cycle Tirunelveli",
+        "Hercules ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "electric cycle 15+ Years",
-        "Aoki",
-        "Electric",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
     },
     "og": {
-      "title": "Hercules Hardstyle 27T EC N Sus DD | Electric Cycle | KTR Cycle World",
-      "description": "Buy Hercules Hardstyle 27T EC N Sus DD at ₹23,000. Hercules Hardstyle 27T EC N Sus DD is an advanced electric bicycle powered by a high-torque BLDC hub motor a…",
+      "title": "Hercules Hardstyle 27.5t EC Non Sus DD | KTR Cycle World",
+      "description": "Buy Hercules Hardstyle 27.5t EC Non Sus DD at ₹23,000. Hercules Hardstyle 27.5t EC Non Sus DD is an advanced electric bicycle powered by a high-torque BLDC hub…",
       "type": "product",
-      "image": "/images/placeholder.png",
-      "url": "/product/hercules-hardstyle",
+      "image": "/images/products/prod_049_1_1ixyGkpCmUa9Md78oqjMOHj42I4tFqD0S.jpg",
+      "url": "/product/exalt-29t-ss",
       "site_name": "KTR Cycle World"
     },
     "twitter": {
       "card": "summary_large_image",
-      "title": "Hercules Hardstyle 27T EC N Sus DD | Electric Cycle | KTR Cycle World",
-      "description": "Buy Hercules Hardstyle 27T EC N Sus DD at ₹23,000. Hercules Hardstyle 27T EC N Sus DD is an advanced electric bicycle powered by a high-torque BLDC hub motor a…",
-      "image": "/images/placeholder.png"
-    }
+      "title": "Hercules Hardstyle 27.5t EC Non Sus DD | KTR Cycle World",
+      "description": "Buy Hercules Hardstyle 27.5t EC Non Sus DD at ₹23,000. Hercules Hardstyle 27.5t EC Non Sus DD is an advanced electric bicycle powered by a high-torque BLDC hub…",
+      "image": "/images/products/prod_049_1_1ixyGkpCmUa9Md78oqjMOHj42I4tFqD0S.jpg"
+    },
+    "cycle_size": "27.5T"
   },
   {
-    "id": "prod_067",
-    "product_id": "prod_067",
+    "id": "prod_050",
+    "product_id": "prod_050",
     "slug": "raleigh-captus",
     "name": "RALEIGH CAPTUS 29T FSDD SS",
     "brand": "RALEIGH",
     "category_id": "cat_002",
     "images": [
-      "/images/placeholder.png"
+      "/images/products/prod_050_1_168Y_oxmz0eUB7UldAykn2oXjREuOzDWJ.jpg",
+      "/images/products/prod_050_2_13OKzmHpJoh0_SJpkc89YiaGslaRe_ivZ.jpg"
     ],
     "color": "",
     "frame_size": "",
@@ -4740,8 +4516,7 @@
       "Ergonomically engineered Lightweight Aircraft-Grade Alloy Frame for strength, balance, and long service life.",
       "High-stopping power Dual Mechanical Disc Brakes (Front & Rear) for reliable braking in dry and wet conditions.",
       "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
-      "Anatomically designed PU cushioned saddle with quick-release height adjustment.",
-      "Smooth front shock absorber fork designed to neutralize road vibrations."
+      "Anatomically designed PU cushioned saddle with quick-release height adjustment."
     ],
     "seo": {
       "title": "Raleigh Captus 29T FSDD SS | Adult Cycle | KTR Cycle World",
@@ -4750,13 +4525,11 @@
       "keywords": [
         "Raleigh Captus 29T FSDD SS",
         "Raleigh cycle",
-        "Raleigh adult cycle",
-        "Adult Cycle",
-        "adult cycle Tirunelveli",
+        "Raleigh ",
+        " Tirunelveli",
         "buy cycle Tirunelveli",
         "KTR Cycle World",
-        "adult cycle 15+ Years",
-        "Adult",
+        " 15+ Years",
         "cycles in Tirunelveli"
       ],
       "robots": "index,follow"
@@ -4765,7 +4538,7 @@
       "title": "Raleigh Captus 29T FSDD SS | Adult Cycle | KTR Cycle World",
       "description": "Buy Raleigh Captus 29T FSDD SS at ₹14,900. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Dual Mechanical Disc Brakes…",
       "type": "product",
-      "image": "/images/placeholder.png",
+      "image": "/images/products/prod_050_1_168Y_oxmz0eUB7UldAykn2oXjREuOzDWJ.jpg",
       "url": "/product/raleigh-captus",
       "site_name": "KTR Cycle World"
     },
@@ -4773,7 +4546,112 @@
       "card": "summary_large_image",
       "title": "Raleigh Captus 29T FSDD SS | Adult Cycle | KTR Cycle World",
       "description": "Buy Raleigh Captus 29T FSDD SS at ₹14,900. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Dual Mechanical Disc Brakes…",
-      "image": "/images/placeholder.png"
-    }
+      "image": "/images/products/prod_050_1_168Y_oxmz0eUB7UldAykn2oXjREuOzDWJ.jpg"
+    },
+    "cycle_size": "29T"
+  },
+  {
+    "id": "prod_051",
+    "product_id": "prod_051",
+    "slug": "beeride-luminious-26t-fsdd",
+    "name": "BEERIDE Luminious 26T FSDD",
+    "brand": "BEERIDE",
+    "category_id": "cat_005",
+    "images": [
+      "/images/products/prod_051_1_1DofcHHbhKLTZgifImBQg5JxfboSO0BGC.jpg"
+    ],
+    "color": "",
+    "frame_size": "",
+    "original_price": 31000,
+    "discounted_price": 28000,
+    "featured": false,
+    "age_group": "15+ Years",
+    "short_description": "Beeride Luminious 26T FSDD is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lithium battery, designed for long-range commutes across Tirunelveli.",
+    "long_description": "Experience effortless commuting with the Beeride Luminious 26T FSDD. Featuring a quiet 36V 250W BLDC motor, high-capacity removable battery, and dual riding modes (Pedal Assist & Throttle), this electric cycle offers up to 45km+ per charge. Complete with Dual Mechanical Disc Brakes (Front & Rear), integrated LED light, and a reinforced High-Tensile Carbon Steel Frame for maximum safety in Tirunelveli.",
+    "description": "Beeride Luminious 26T FSDD - Electric Cycle by BEERIDE (26 Inches, Dual Mechanical Disc Brakes (Front & Rear))",
+    "specifications": [
+      {
+        "label": "Wheel Size",
+        "value": "26 Inches"
+      },
+      {
+        "label": "Frame Material",
+        "value": "High-Tensile Carbon Steel Frame"
+      },
+      {
+        "label": "Brake System",
+        "value": "Dual Mechanical Disc Brakes (Front & Rear)"
+      },
+      {
+        "label": "Gears / Speed",
+        "value": "Single Speed Direct Drive"
+      },
+      {
+        "label": "Front Suspension",
+        "value": "Front Telescopic Suspension Fork"
+      },
+      {
+        "label": "Target Age Group",
+        "value": "15+ Years"
+      },
+      {
+        "label": "Ideal Location",
+        "value": "Urban Roads, Fitness Trails & City Commuting"
+      },
+      {
+        "label": "Motor Type",
+        "value": "36V 250W High-Torque Rear Hub BLDC Motor"
+      },
+      {
+        "label": "Battery Unit",
+        "value": "Removable 36V Lithium-Ion LFP Battery Pack"
+      },
+      {
+        "label": "Riding Modes",
+        "value": "Pedal Assist (PAS) & Pure Throttle Mode"
+      },
+      {
+        "label": "Top Speed",
+        "value": "Up to 25 km/h"
+      }
+    ],
+    "features": [
+      "Ergonomically engineered High-Tensile Carbon Steel Frame for strength, balance, and long service life.",
+      "High-stopping power Dual Mechanical Disc Brakes (Front & Rear) for reliable braking in dry and wet conditions.",
+      "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
+      "Anatomically designed PU cushioned saddle with quick-release height adjustment.",
+      "Dual riding modes with intelligent pedal assist sensors and LED battery dashboard."
+    ],
+    "seo": {
+      "title": "Beeride Luminious 26T FSDD | Electric Cycle | KTR Cycle World",
+      "description": "Buy Beeride Luminious 26T FSDD at ₹28,000. Beeride Luminious 26T FSDD is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lit…",
+      "canonical": "/product/beeride-luminious-26t-fsdd",
+      "keywords": [
+        "Beeride Luminious 26T FSDD",
+        "Beeride cycle",
+        "Beeride ",
+        " Tirunelveli",
+        "buy cycle Tirunelveli",
+        "KTR Cycle World",
+        " 15+ Years",
+        "cycles in Tirunelveli"
+      ],
+      "robots": "index,follow"
+    },
+    "og": {
+      "title": "Beeride Luminious 26T FSDD | Electric Cycle | KTR Cycle World",
+      "description": "Buy Beeride Luminious 26T FSDD at ₹28,000. Beeride Luminious 26T FSDD is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lit…",
+      "type": "product",
+      "image": "/images/products/prod_051_1_1DofcHHbhKLTZgifImBQg5JxfboSO0BGC.jpg",
+      "url": "/product/beeride-luminious-26t-fsdd",
+      "site_name": "KTR Cycle World"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Beeride Luminious 26T FSDD | Electric Cycle | KTR Cycle World",
+      "description": "Buy Beeride Luminious 26T FSDD at ₹28,000. Beeride Luminious 26T FSDD is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lit…",
+      "image": "/images/products/prod_051_1_1DofcHHbhKLTZgifImBQg5JxfboSO0BGC.jpg"
+    },
+    "cycle_size": "26T"
   }
 ]

@@ -8,7 +8,7 @@ import ProductFilters from "@/components/ProductFilters";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
-import { getProducts, getAgeGroups, getAgeGroupForProduct } from "@/lib/products";
+import { getProducts, getAgeGroups, getAgeGroupForProduct, getCycleSizes, getCycleSizeForProduct } from "@/lib/products";
 import { getCategories } from "@/lib/categories";
 import { trackFilterApply } from "@/lib/analytics";
 
@@ -19,6 +19,7 @@ function ProductCatalogContent() {
   
   const categoryFromUrl = searchParams.get('category');
   const ageFromUrl = searchParams.get('age') || searchParams.get('age_group');
+  const sizeFromUrl = searchParams.get('size') || searchParams.get('cycle_size');
   
   const products = useMemo(() => getProducts(), []);
   const categories = useMemo(() => getCategories(), []);
@@ -30,6 +31,9 @@ function ProductCatalogContent() {
   const [selectedAgeGroups, setSelectedAgeGroups] = useState<string[]>(
     ageFromUrl ? [ageFromUrl] : []
   );
+  const [selectedSizes, setSelectedSizes] = useState<string[]>(
+    sizeFromUrl ? [sizeFromUrl] : []
+  );
   const [displayCount, setDisplayCount] = useState(12);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -39,6 +43,10 @@ function ProductCatalogContent() {
 
   const ageGroups = useMemo(() => {
     return getAgeGroups();
+  }, []);
+
+  const cycleSizes = useMemo(() => {
+    return getCycleSizes();
   }, []);
 
   const minPrice = useMemo(() => {
@@ -67,10 +75,16 @@ function ProductCatalogContent() {
     }
   }, [ageFromUrl]);
 
+  useEffect(() => {
+    if (sizeFromUrl) {
+      setSelectedSizes([sizeFromUrl]);
+    }
+  }, [sizeFromUrl]);
+
   // Reset display count when filters or search change
   useEffect(() => {
     setDisplayCount(12);
-  }, [selectedCategories, selectedBrands, selectedAgeGroups, priceRange, searchQuery]);
+  }, [selectedCategories, selectedBrands, selectedAgeGroups, selectedSizes, priceRange, searchQuery]);
 
   const categoryDetails = useMemo(() => {
     return categories.map((c) => ({ id: c.category_id, name: c.name }));
@@ -80,6 +94,7 @@ function ProductCatalogContent() {
     categories: categoryDetails,
     brands: brands,
     ageGroups: ageGroups,
+    sizes: cycleSizes,
     priceRange: [minPrice, maxPrice] as [number, number],
   };
 
@@ -98,6 +113,10 @@ function ProductCatalogContent() {
       const ageGroupMatch =
         selectedAgeGroups.length === 0 || selectedAgeGroups.includes(productAgeGroup);
 
+      const productSize = getCycleSizeForProduct(product);
+      const sizeMatch =
+        selectedSizes.length === 0 || selectedSizes.includes(productSize);
+
       const priceMatch =
         product.discounted_price >= priceRange[0] &&
         product.discounted_price <= priceRange[1];
@@ -108,11 +127,12 @@ function ProductCatalogContent() {
         product.brand.toLowerCase().includes(searchQuery.toLowerCase()) ||
         (product.category_name &&
           product.category_name.toLowerCase().includes(searchQuery.toLowerCase())) ||
-        productAgeGroup.toLowerCase().includes(searchQuery.toLowerCase());
+        productAgeGroup.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        productSize.toLowerCase().includes(searchQuery.toLowerCase());
 
-      return categoryMatch && brandMatch && ageGroupMatch && priceMatch && searchMatch;
+      return categoryMatch && brandMatch && ageGroupMatch && sizeMatch && priceMatch && searchMatch;
     });
-  }, [products, selectedCategories, selectedBrands, selectedAgeGroups, priceRange, searchQuery]);
+  }, [products, selectedCategories, selectedBrands, selectedAgeGroups, selectedSizes, priceRange, searchQuery]);
 
   // Track catalog filter application analytics
   useEffect(() => {
@@ -122,6 +142,7 @@ function ProductCatalogContent() {
           categories: selectedCategories,
           brands: selectedBrands,
           ageGroups: selectedAgeGroups,
+          sizes: selectedSizes,
           priceRange,
           searchQuery,
         },
@@ -130,7 +151,7 @@ function ProductCatalogContent() {
     }, 600);
 
     return () => clearTimeout(timer);
-  }, [selectedCategories, selectedBrands, selectedAgeGroups, priceRange, searchQuery, filteredProducts.length]);
+  }, [selectedCategories, selectedBrands, selectedAgeGroups, selectedSizes, priceRange, searchQuery, filteredProducts.length]);
 
   // Automatic Infinite Scroll loading trigger
   useEffect(() => {
@@ -161,6 +182,7 @@ function ProductCatalogContent() {
     setSelectedCategories([]);
     setSelectedBrands([]);
     setSelectedAgeGroups([]);
+    setSelectedSizes([]);
     setPriceRange([minPrice, maxPrice]);
     setSearchQuery("");
   };
@@ -199,10 +221,12 @@ function ProductCatalogContent() {
             selectedCategories={selectedCategories}
             selectedBrands={selectedBrands}
             selectedAgeGroups={selectedAgeGroups}
+            selectedSizes={selectedSizes}
             priceRange={priceRange}
             onCategoryChange={setSelectedCategories}
             onBrandChange={setSelectedBrands}
             onAgeGroupChange={setSelectedAgeGroups}
+            onSizeChange={setSelectedSizes}
             onPriceChange={setPriceRange}
             onClearAll={handleClearFilters}
           />

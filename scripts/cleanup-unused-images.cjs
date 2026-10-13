@@ -22,7 +22,7 @@ function cleanUnusedImages(options = { dryRun: false }) {
   products.forEach(prod => {
     const list = [
       ...(prod.images_list || []),
-      ...(prod.images ? prod.images.split(',') : []),
+      ...(Array.isArray(prod.images) ? prod.images : (prod.images ? prod.images.split(',') : [])),
       prod.image
     ].filter(Boolean);
 

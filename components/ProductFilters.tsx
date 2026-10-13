@@ -13,6 +13,7 @@ export interface FilterOptions {
   categories: { id: string; name: string }[];
   brands: string[];
   ageGroups?: string[];
+  sizes?: string[];
   priceRange: [number, number];
 }
 
@@ -21,10 +22,12 @@ export interface ProductFiltersProps {
   selectedCategories: string[];
   selectedBrands: string[];
   selectedAgeGroups?: string[];
+  selectedSizes?: string[];
   priceRange: [number, number];
   onCategoryChange: (categories: string[]) => void;
   onBrandChange: (brands: string[]) => void;
   onAgeGroupChange?: (ageGroups: string[]) => void;
+  onSizeChange?: (sizes: string[]) => void;
   onPriceChange: (range: [number, number]) => void;
   onClearAll: () => void;
 }
@@ -34,10 +37,12 @@ export default function ProductFilters({
   selectedCategories,
   selectedBrands,
   selectedAgeGroups = [],
+  selectedSizes = [],
   priceRange,
   onCategoryChange,
   onBrandChange,
   onAgeGroupChange,
+  onSizeChange,
   onPriceChange,
   onClearAll,
 }: ProductFiltersProps) {
@@ -47,6 +52,7 @@ export default function ProductFilters({
     categories: true,
     brands: true,
     ageGroups: true,
+    sizes: true,
     price: true,
   });
 
@@ -68,6 +74,7 @@ export default function ProductFilters({
     selectedCategories.length +
     selectedBrands.length +
     selectedAgeGroups.length +
+    selectedSizes.length +
     (priceRange[0] !== options.priceRange[0] || priceRange[1] !== options.priceRange[1] ? 1 : 0);
 
   const toggleCategory = (categoryId: string) => {
@@ -90,6 +97,14 @@ export default function ProductFilters({
       ? selectedAgeGroups.filter((a) => a !== age)
       : [...selectedAgeGroups, age];
     onAgeGroupChange(next);
+  };
+
+  const toggleSize = (size: string) => {
+    if (!onSizeChange) return;
+    const next = selectedSizes.includes(size)
+      ? selectedSizes.filter((s) => s !== size)
+      : [...selectedSizes, size];
+    onSizeChange(next);
   };
 
   const filterContent = (
@@ -158,6 +173,38 @@ export default function ProductFilters({
                   />
                   <Label htmlFor={`age-${age}`} className="text-sm font-normal cursor-pointer flex-1 flex items-center justify-between">
                     <span>{age}</span>
+                  </Label>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Cycle Size Filter */}
+      {options.sizes && options.sizes.length > 0 && (
+        <div className="space-y-3 pt-4 border-t border-border">
+          <button
+            className="flex items-center justify-between w-full font-medium text-sm text-foreground"
+            onClick={() => setExpandedSections((prev) => ({ ...prev, sizes: !prev.sizes }))}
+          >
+            <span className="flex items-center gap-1.5">
+              Cycle Size ({options.sizes.length})
+            </span>
+            <ChevronDown className={`w-4 h-4 transition-transform ${expandedSections.sizes ? 'rotate-180' : ''}`} />
+          </button>
+
+          {expandedSections.sizes && (
+            <div className="space-y-2 max-h-48 overflow-y-auto pr-2">
+              {options.sizes.map((size) => (
+                <div key={size} className="flex items-center space-x-2">
+                  <Checkbox
+                    id={`size-${size}`}
+                    checked={selectedSizes.includes(size)}
+                    onCheckedChange={() => toggleSize(size)}
+                  />
+                  <Label htmlFor={`size-${size}`} className="text-sm font-normal cursor-pointer flex-1 flex items-center justify-between">
+                    <span>{size}</span>
                   </Label>
                 </div>
               ))}

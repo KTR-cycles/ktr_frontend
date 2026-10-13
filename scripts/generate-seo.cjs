@@ -14,8 +14,19 @@ const fs = require('fs');
 const path = require('path');
 
 const PRODUCTS_PATH = path.join(__dirname, '..', 'data', 'products.json');
+const CATEGORIES_PATH = path.join(__dirname, '..', 'data', 'categories.json');
 const SITE_NAME = 'KTR Cycle World';
 const LOCATION = 'Tirunelveli';
+
+let categoriesMap = new Map();
+if (fs.existsSync(CATEGORIES_PATH)) {
+  try {
+    const rawCats = JSON.parse(fs.readFileSync(CATEGORIES_PATH, 'utf8'));
+    rawCats.forEach(c => {
+      categoriesMap.set(c.id || c.category_id, c.name);
+    });
+  } catch {}
+}
 
 // Tokens that must stay uppercase in SEO-facing titles
 const KEEP_UPPER = new Set([
@@ -129,7 +140,7 @@ function generateRealTimeProductData(p) {
   const name = prettyName(p);
   const rawName = (p.name || '').toUpperCase();
   const brand = (p.brand || 'KTR').trim();
-  const categoryName = (p.category_name || 'Bicycle').trim();
+  const categoryName = (p.category_name || categoriesMap.get(p.category_id) || 'Bicycle').trim();
   const ageGroup = (p.age_group || 'All Ages').trim();
   const tags = (p.tags || '').toUpperCase();
 
@@ -217,11 +228,24 @@ function generateRealTimeProductData(p) {
   if (isElectric) {
     features.push(`Dual riding modes with intelligent pedal assist sensors and LED battery dashboard.`);
   }
-  if (suspension.includes('Telescopic') || suspension.includes('Full')) {
-    features.push(`Smooth front shock absorber fork designed to neutralize road vibrations.`);
+  function parseCycleSize(name) {
+    const n = (name || '').toUpperCase();
+    if (n.includes('27.5T') || n.includes('27.5"') || n.includes('27.5') || n.includes('27T')) return '27.5T';
+    if (n.includes('29T') || n.includes('29"') || n.includes('29 ')) return '29T';
+    if (n.includes('26T') || n.includes('26"') || n.includes(' 26 ') || n.includes('26 FSDD')) return '26T';
+    if (n.includes('24T') || n.includes('24"') || n.includes(' 24 ')) return '24T';
+    if (n.includes('20T') || n.includes('20"') || n.includes(' 20 ')) return '20T';
+    if (n.includes('16T') || n.includes('16"')) return '16T';
+    if (n.includes('14T') || n.includes('14"')) return '14T';
+    if (n.includes('12T') || n.includes('12"')) return '12T';
+    if (n.includes('SHURVEER')) return '26T';
+    if (n.includes('E-SURGE')) return '27.5T';
+    if (n.includes('MAMBA') || n.includes('GOST')) return '20T';
+    return '26T';
   }
 
   return {
+    cycle_size: p.cycle_size || parseCycleSize(p.name),
     short_description: shortDesc,
     long_description: longDesc,
     description: desc,
@@ -236,7 +260,7 @@ function generateRealTimeProductData(p) {
 
 function generateSeoTitle(product) {
   const name = prettyName(product);
-  const category = toTitleCase(product.category_name || '');
+  const category = toTitleCase(product.category_name || categoriesMap.get(product.category_id) || '');
   const full = `${name} | ${category} | ${SITE_NAME}`;
   if (full.length <= 70) return full;
   return truncate(`${name} | ${SITE_NAME}`, 70);
@@ -299,7 +323,7 @@ function generateProductSeo(product) {
   const description = generateSeoDescription(product);
   const keywords = generateKeywords(product);
   const canonical = `/product/${product.slug}`;
-  const ogImage = (product.images_list && product.images_list[0]) || product.image || '/images/placeholder.png';
+  const ogImage = (Array.isArray(product.images) ? product.images[0] : (product.images_list && product.images_list[0]) || product.image) || '/images/placeholder.png';
 
   return {
     seo: {
@@ -366,8 +390,7 @@ function main() {
       ...realTimeData,
     };
 
-    // 2. Validation counters
-    const img = (updatedProduct.images_list && updatedProduct.images_list[0]) || updatedProduct.image || '';
+    const img = (Array.isArray(updatedProduct.images) ? updatedProduct.images[0] : (updatedProduct.images_list && updatedProduct.images_list[0]) || updatedProduct.image) || '';
     if (!img || img === '/images/placeholder.png') missingImages++;
 
     if ((updatedProduct.currentPrice || updatedProduct.discounted_price || updatedProduct.original_price || 0) === 0) {
