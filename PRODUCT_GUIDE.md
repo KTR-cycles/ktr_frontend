@@ -19,7 +19,7 @@ Managing products via Excel is the fastest and cleanest way to update the catalo
 
 ### Excel Columns in `store_inventory_template.xlsx`
 
-The **Products** sheet includes only the **11 essential columns**:
+The **Products** sheet includes only the **12 essential columns**:
 
 | Column Name | Type | Example | Description |
 | :--- | :--- | :--- | :--- |
@@ -33,6 +33,7 @@ The **Products** sheet includes only the **11 essential columns**:
 | **`featured`** | Text | `TRUE` / `FALSE` | Display on Homepage featured section. |
 | **`age_group`** | Text | `15+ Years` | Target rider age bracket. |
 | **`description`** | Text | `Durable single speed adult bicycle...` | Overview text (PDP summary). |
+| **`specifications`** | Text | `Wheel Size: 26 Inches \| Frame Material: Alloy Frame...` | Technical specs (pipe-separated or JSON). |
 | **`images`** | Text | `/images/products/prod_001_1.jpg` | Comma-separated image paths or Google Drive links. |
 
 > [!NOTE]
@@ -104,8 +105,11 @@ The **Categories** sheet has **4 clean columns**:
 
 ## 🔄 4. Update & Deployment Workflow
 
-1. Run `npm run excel:template` to generate the updated Excel spreadsheet.
+1. Run `npm run excel:template` to generate/export the current inventory spreadsheet with 12 essential columns.
 2. Edit product information in `store_inventory_template.xlsx`.
-3. Run `npm run excel:import` to sync changes into JSON, clean obsolete images, and regenerate SEO.
-4. Run `npm run check` or `npm run build` to verify builds.
-5. Push changes to GitHub (`git push`).
+3. Run `npm run excel:import` to sync Excel changes into JSON, download any new Google Drive images, clean unused images, and run **Smart / Conditional SEO**:
+   - Preserves all existing product SEO metadata without overwriting.
+   - Automatically generates complete SEO, OpenGraph, and Twitter tags for any new products or items missing SEO.
+4. *(Optional)* Run `npm run seo:generate:force` if you ever wish to re-generate SEO titles, descriptions, and keywords for *all* products from scratch.
+5. Run `npm run check` or `npm run build` to verify builds.
+6. Push changes to GitHub (`git push`).

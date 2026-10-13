@@ -215,9 +215,10 @@ async function runImport() {
     return categoryObj;
   });
 
-  // Load existing product slugs to preserve established URLs
+  // Load existing products and slugs to preserve established URLs & SEO
   const productsJsonPath = path.join(DATA_DIR, 'products.json');
   const existingSlugsMap = new Map();
+  const existingProductsMap = new Map();
   if (fs.existsSync(productsJsonPath)) {
     try {
       const existing = JSON.parse(fs.readFileSync(productsJsonPath, 'utf8'));
@@ -225,6 +226,10 @@ async function runImport() {
         if (p.product_id && p.slug) existingSlugsMap.set(p.product_id, p.slug);
         if (p.id && p.slug) existingSlugsMap.set(p.id, p.slug);
         if (p.name && p.slug) existingSlugsMap.set(p.name.trim().toLowerCase(), p.slug);
+
+        if (p.product_id) existingProductsMap.set(p.product_id, p);
+        if (p.id) existingProductsMap.set(p.id, p);
+        if (p.name) existingProductsMap.set(p.name.trim().toLowerCase(), p);
       });
     } catch {}
   }
@@ -331,7 +336,9 @@ async function runImport() {
       }
     }
 
-    formattedProducts.push({
+    const existingProd = existingProductsMap.get(productId) || existingProductsMap.get(name.toLowerCase());
+
+    const prodObj = {
       id: productId,
       product_id: productId,
       slug: slug,
@@ -339,21 +346,27 @@ async function runImport() {
       brand: String(item.brand || '').trim(),
       category_id: categoryId,
       images: imagesList,
-      color: String(item.color || '').trim(),
-      frame_size: String(item.frame_size || item.tire_size || '').trim(),
-      cycle_size: String(item.cycle_size || item.size || '').trim(),
+      color: String(item.color || existingProd?.color || '').trim(),
+      frame_size: String(item.frame_size || item.tire_size || existingProd?.frame_size || '').trim(),
+      cycle_size: String(item.cycle_size || item.size || existingProd?.cycle_size || '').trim(),
       original_price: originalPrice,
       discounted_price: discountedPrice,
       featured: parseBoolean(item.featured),
-      age_group: String(item.age_group || '').trim(),
+      age_group: String(item.age_group || existingProd?.age_group || '').trim(),
       short_description: shortDesc,
       long_description: longDesc,
       description: mainDesc,
-      specifications: specifications || '',
-      features: features || '',
-      seo_title: String(item.seo_title || item.meta_title || `${name} - KTR Cycle World`).trim(),
-      seo_description: String(item.seo_description || item.meta_description || shortDesc || mainDesc).trim()
-    });
+      specifications: specifications || existingProd?.specifications || '',
+      features: features || existingProd?.features || '',
+      seo_title: String(item.seo_title || item.meta_title || existingProd?.seo_title || `${name} - KTR Cycle World`).trim(),
+      seo_description: String(item.seo_description || item.meta_description || existingProd?.seo_description || shortDesc || mainDesc).trim()
+    };
+
+    if (existingProd?.seo) prodObj.seo = existingProd.seo;
+    if (existingProd?.og) prodObj.og = existingProd.og;
+    if (existingProd?.twitter) prodObj.twitter = existingProd.twitter;
+
+    formattedProducts.push(prodObj);
   }
 
   // Write files to data/

@@ -26,6 +26,14 @@ function getCycleSize(name) {
   return '';
 }
 
+function formatSpecs(specs) {
+  if (!specs) return '';
+  if (Array.isArray(specs)) {
+    return specs.map(s => `${s.label}: ${s.value}`).join(' | ');
+  }
+  return String(specs);
+}
+
 if (fs.existsSync(productsJsonPath)) {
   try {
     const rawProducts = JSON.parse(fs.readFileSync(productsJsonPath, 'utf8'));
@@ -40,6 +48,7 @@ if (fs.existsSync(productsJsonPath)) {
       featured: p.featured ? "TRUE" : "FALSE",
       age_group: p.age_group || '',
       description: p.short_description || p.description || p.long_description || '',
+      specifications: formatSpecs(p.specifications),
       images: Array.isArray(p.images) ? p.images.join(',') : (p.images || p.image || '')
     }));
     console.log(`Loaded ${productsData.length} existing products from products.json`);
@@ -99,7 +108,7 @@ const wb = XLSX.utils.book_new();
 const wsProducts = XLSX.utils.json_to_sheet(productsData);
 const wsCategories = XLSX.utils.json_to_sheet(categoriesData);
 
-// Set column widths for products sheet (11 essential columns)
+// Set column widths for products sheet (12 essential columns)
 wsProducts['!cols'] = [
   { wch: 14 }, // product_id
   { wch: 35 }, // name
@@ -111,6 +120,7 @@ wsProducts['!cols'] = [
   { wch: 12 }, // featured
   { wch: 16 }, // age_group
   { wch: 65 }, // description
+  { wch: 80 }, // specifications
   { wch: 50 }  // images
 ];
 

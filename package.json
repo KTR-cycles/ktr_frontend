@@ -11,6 +11,7 @@
     "excel:template": "node scripts/generate-excel-template.cjs",
     "excel:import": "node scripts/import-excel-to-json.cjs && npm run seo:generate",
     "seo:generate": "node scripts/generate-seo.cjs",
+    "seo:generate:force": "node scripts/generate-seo.cjs --force",
     "images:optimize": "npm run images:clean && node scripts/optimize-images.cjs ",
     "images:clean": "node scripts/cleanup-unused-images.cjs"
   },
