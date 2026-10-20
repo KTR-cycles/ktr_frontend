@@ -4653,5 +4653,441 @@
       "description": "Buy Beeride Luminious 26T FSDD at ₹28,000. Beeride Luminious 26T FSDD is an advanced electric bicycle powered by a high-torque BLDC hub motor and removable lit…",
       "image": "/images/products/prod_051_1_1DofcHHbhKLTZgifImBQg5JxfboSO0BGC.jpg"
     }
+  },
+  {
+    "id": "prod_052",
+    "product_id": "prod_052",
+    "slug": "bsa-bestie",
+    "name": "BSA Bestie",
+    "brand": "BSA",
+    "category_id": "cat_001",
+    "images": [
+      "/images/products/prod_052_1_1SwIHXNAx1-1RNrMZeQj-h975_irnf2oj.jpg"
+    ],
+    "color": "",
+    "frame_size": "",
+    "cycle_size": "20T",
+    "original_price": 7200,
+    "discounted_price": 6200,
+    "featured": true,
+    "age_group": "8-12 Years",
+    "short_description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
+    "long_description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
+    "description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
+    "specifications": [
+      {
+        "label": "Wheel Size",
+        "value": "20 Inches"
+      },
+      {
+        "label": "Frame Material",
+        "value": "High-Tensile Carbon Steel Frame"
+      },
+      {
+        "label": "Brake System",
+        "value": "Calibrated Caliper Brakes with Child-Safe Levers"
+      },
+      {
+        "label": "Gears / Speed",
+        "value": "Single Speed Direct Drive"
+      },
+      {
+        "label": "Front Suspension",
+        "value": "Rigid Aerodynamic Steel Fork"
+      },
+      {
+        "label": "Target Age Group",
+        "value": "8-12 Years"
+      },
+      {
+        "label": "Ideal Location",
+        "value": "Urban Roads, Fitness Trails & City Commuting"
+      }
+    ],
+    "features": [
+      "Ergonomically engineered High-Tensile Carbon Steel Frame for strength, balance, and long service life.",
+      "High-stopping power Calibrated Caliper Brakes with Child-Safe Levers for reliable braking in dry and wet conditions.",
+      "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
+      "Anatomically designed PU cushioned saddle with quick-release height adjustment."
+    ],
+    "seo": {
+      "title": "BSA Bestie | Kids Cycle | KTR Cycle World",
+      "description": "Buy BSA Bestie at ₹6,200. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic saf…",
+      "canonical": "/product/bsa-bestie",
+      "keywords": [
+        "BSA Bestie",
+        "BSA cycle",
+        "BSA ",
+        " Tirunelveli",
+        "buy cycle Tirunelveli",
+        "KTR Cycle World",
+        " 8-12 Years",
+        "cycles in Tirunelveli"
+      ],
+      "robots": "index,follow"
+    },
+    "og": {
+      "title": "BSA Bestie | Kids Cycle | KTR Cycle World",
+      "description": "Buy BSA Bestie at ₹6,200. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic saf…",
+      "type": "product",
+      "image": "/images/products/prod_052_1_1SwIHXNAx1-1RNrMZeQj-h975_irnf2oj.jpg",
+      "url": "/product/bsa-bestie",
+      "site_name": "KTR Cycle World"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "BSA Bestie | Kids Cycle | KTR Cycle World",
+      "description": "Buy BSA Bestie at ₹6,200. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic saf…",
+      "image": "/images/products/prod_052_1_1SwIHXNAx1-1RNrMZeQj-h975_irnf2oj.jpg"
+    }
+  },
+  {
+    "id": "prod_053",
+    "product_id": "prod_053",
+    "slug": "bsa-spinto",
+    "name": "BSA Spinto",
+    "brand": "BSA",
+    "category_id": "cat_001",
+    "images": [
+      "/images/products/prod_053_1_1TAlML_PCS-eRaUu9BEjNZBATMHJf4qLm.jpg",
+      "/images/products/prod_053_2_1D_MiIyBmh6v-5zDX312jB9_bBSfiG9F3.jpg"
+    ],
+    "color": "",
+    "frame_size": "",
+    "cycle_size": "20T",
+    "original_price": 6100,
+    "discounted_price": 5200,
+    "featured": false,
+    "age_group": "8-12 Years",
+    "short_description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
+    "long_description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
+    "description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
+    "specifications": [
+      {
+        "label": "Wheel Size",
+        "value": "20 Inches"
+      },
+      {
+        "label": "Frame Material",
+        "value": "High-Tensile Carbon Steel Frame"
+      },
+      {
+        "label": "Brake System",
+        "value": "Calibrated Caliper Brakes with Child-Safe Levers"
+      },
+      {
+        "label": "Gears / Speed",
+        "value": "Single Speed Direct Drive"
+      },
+      {
+        "label": "Front Suspension",
+        "value": "Rigid Aerodynamic Steel Fork"
+      },
+      {
+        "label": "Target Age Group",
+        "value": "8-12 Years"
+      },
+      {
+        "label": "Ideal Location",
+        "value": "Urban Roads, Fitness Trails & City Commuting"
+      }
+    ],
+    "features": [
+      "Ergonomically engineered High-Tensile Carbon Steel Frame for strength, balance, and long service life.",
+      "High-stopping power Calibrated Caliper Brakes with Child-Safe Levers for reliable braking in dry and wet conditions.",
+      "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
+      "Anatomically designed PU cushioned saddle with quick-release height adjustment."
+    ],
+    "seo": {
+      "title": "BSA Spinto | Kids Cycle | KTR Cycle World",
+      "description": "Buy BSA Spinto at ₹5,200. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic saf…",
+      "canonical": "/product/bsa-spinto",
+      "keywords": [
+        "BSA Spinto",
+        "BSA cycle",
+        "BSA ",
+        " Tirunelveli",
+        "buy cycle Tirunelveli",
+        "KTR Cycle World",
+        " 8-12 Years",
+        "cycles in Tirunelveli"
+      ],
+      "robots": "index,follow"
+    },
+    "og": {
+      "title": "BSA Spinto | Kids Cycle | KTR Cycle World",
+      "description": "Buy BSA Spinto at ₹5,200. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic saf…",
+      "type": "product",
+      "image": "/images/products/prod_053_1_1TAlML_PCS-eRaUu9BEjNZBATMHJf4qLm.jpg",
+      "url": "/product/bsa-spinto",
+      "site_name": "KTR Cycle World"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "BSA Spinto | Kids Cycle | KTR Cycle World",
+      "description": "Buy BSA Spinto at ₹5,200. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic saf…",
+      "image": "/images/products/prod_053_1_1TAlML_PCS-eRaUu9BEjNZBATMHJf4qLm.jpg"
+    }
+  },
+  {
+    "id": "prod_054",
+    "product_id": "prod_054",
+    "slug": "bsa-hacker",
+    "name": "BSA Hacker",
+    "brand": "BSA",
+    "category_id": "cat_001",
+    "images": [
+      "/images/products/prod_054_1_1mC9U0XWMr_EBsfgdphovjsPYMteb3eaT.jpg"
+    ],
+    "color": "",
+    "frame_size": "",
+    "cycle_size": "20T",
+    "original_price": 4600,
+    "discounted_price": 3900,
+    "featured": false,
+    "age_group": "8-12 Years",
+    "short_description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
+    "long_description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
+    "description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
+    "specifications": [
+      {
+        "label": "Wheel Size",
+        "value": "20 Inches"
+      },
+      {
+        "label": "Frame Material",
+        "value": "High-Tensile Carbon Steel Frame"
+      },
+      {
+        "label": "Brake System",
+        "value": "Calibrated Caliper Brakes with Child-Safe Levers"
+      },
+      {
+        "label": "Gears / Speed",
+        "value": "Single Speed Direct Drive"
+      },
+      {
+        "label": "Front Suspension",
+        "value": "Rigid Aerodynamic Steel Fork"
+      },
+      {
+        "label": "Target Age Group",
+        "value": "8-12 Years"
+      },
+      {
+        "label": "Ideal Location",
+        "value": "Urban Roads, Fitness Trails & City Commuting"
+      }
+    ],
+    "features": [
+      "Ergonomically engineered High-Tensile Carbon Steel Frame for strength, balance, and long service life.",
+      "High-stopping power Calibrated Caliper Brakes with Child-Safe Levers for reliable braking in dry and wet conditions.",
+      "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
+      "Anatomically designed PU cushioned saddle with quick-release height adjustment."
+    ],
+    "seo": {
+      "title": "BSA Hacker | Kids Cycle | KTR Cycle World",
+      "description": "Buy BSA Hacker at ₹3,900. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic saf…",
+      "canonical": "/product/bsa-hacker",
+      "keywords": [
+        "BSA Hacker",
+        "BSA cycle",
+        "BSA ",
+        " Tirunelveli",
+        "buy cycle Tirunelveli",
+        "KTR Cycle World",
+        " 8-12 Years",
+        "cycles in Tirunelveli"
+      ],
+      "robots": "index,follow"
+    },
+    "og": {
+      "title": "BSA Hacker | Kids Cycle | KTR Cycle World",
+      "description": "Buy BSA Hacker at ₹3,900. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic saf…",
+      "type": "product",
+      "image": "/images/products/prod_054_1_1mC9U0XWMr_EBsfgdphovjsPYMteb3eaT.jpg",
+      "url": "/product/bsa-hacker",
+      "site_name": "KTR Cycle World"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "BSA Hacker | Kids Cycle | KTR Cycle World",
+      "description": "Buy BSA Hacker at ₹3,900. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic saf…",
+      "image": "/images/products/prod_054_1_1mC9U0XWMr_EBsfgdphovjsPYMteb3eaT.jpg"
+    }
+  },
+  {
+    "id": "prod_055",
+    "product_id": "prod_055",
+    "slug": "bsa-ambush",
+    "name": "BSA Ambush",
+    "brand": "BSA",
+    "category_id": "cat_001",
+    "images": [
+      "/images/products/prod_055_1_1aBHgvroGst-BrSpkD4g7N_vNKrG7624V.jpg"
+    ],
+    "color": "",
+    "frame_size": "",
+    "cycle_size": "20T",
+    "original_price": 5700,
+    "discounted_price": 4900,
+    "featured": false,
+    "age_group": "8-12 Years",
+    "short_description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
+    "long_description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
+    "description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
+    "specifications": [
+      {
+        "label": "Wheel Size",
+        "value": "20 Inches"
+      },
+      {
+        "label": "Frame Material",
+        "value": "High-Tensile Carbon Steel Frame"
+      },
+      {
+        "label": "Brake System",
+        "value": "Calibrated Caliper Brakes with Child-Safe Levers"
+      },
+      {
+        "label": "Gears / Speed",
+        "value": "Single Speed Direct Drive"
+      },
+      {
+        "label": "Front Suspension",
+        "value": "Rigid Aerodynamic Steel Fork"
+      },
+      {
+        "label": "Target Age Group",
+        "value": "8-12 Years"
+      },
+      {
+        "label": "Ideal Location",
+        "value": "Urban Roads, Fitness Trails & City Commuting"
+      }
+    ],
+    "features": [
+      "Ergonomically engineered High-Tensile Carbon Steel Frame for strength, balance, and long service life.",
+      "High-stopping power Calibrated Caliper Brakes with Child-Safe Levers for reliable braking in dry and wet conditions.",
+      "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
+      "Anatomically designed PU cushioned saddle with quick-release height adjustment."
+    ],
+    "seo": {
+      "title": "BSA Ambush | Kids Cycle | KTR Cycle World",
+      "description": "Buy BSA Ambush at ₹4,900. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic saf…",
+      "canonical": "/product/bsa-ambush",
+      "keywords": [
+        "BSA Ambush",
+        "BSA cycle",
+        "BSA ",
+        " Tirunelveli",
+        "buy cycle Tirunelveli",
+        "KTR Cycle World",
+        " 8-12 Years",
+        "cycles in Tirunelveli"
+      ],
+      "robots": "index,follow"
+    },
+    "og": {
+      "title": "BSA Ambush | Kids Cycle | KTR Cycle World",
+      "description": "Buy BSA Ambush at ₹4,900. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic saf…",
+      "type": "product",
+      "image": "/images/products/prod_055_1_1aBHgvroGst-BrSpkD4g7N_vNKrG7624V.jpg",
+      "url": "/product/bsa-ambush",
+      "site_name": "KTR Cycle World"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "BSA Ambush | Kids Cycle | KTR Cycle World",
+      "description": "Buy BSA Ambush at ₹4,900. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic saf…",
+      "image": "/images/products/prod_055_1_1aBHgvroGst-BrSpkD4g7N_vNKrG7624V.jpg"
+    }
+  },
+  {
+    "id": "prod_056",
+    "product_id": "prod_056",
+    "slug": "bsa-roamer",
+    "name": "BSA Roamer",
+    "brand": "BSA",
+    "category_id": "cat_001",
+    "images": [
+      "/images/products/prod_056_1_1WRYU49dYg-337MK5lB1KgfTu2PFCtgOR.jpg"
+    ],
+    "color": "",
+    "frame_size": "",
+    "cycle_size": "20T",
+    "original_price": 5800,
+    "discounted_price": 5300,
+    "featured": false,
+    "age_group": "8-12 Years",
+    "short_description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
+    "long_description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
+    "description": "Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic safety grips.",
+    "specifications": [
+      {
+        "label": "Wheel Size",
+        "value": "20 Inches"
+      },
+      {
+        "label": "Frame Material",
+        "value": "High-Tensile Carbon Steel Frame"
+      },
+      {
+        "label": "Brake System",
+        "value": "Calibrated Caliper Brakes with Child-Safe Levers"
+      },
+      {
+        "label": "Gears / Speed",
+        "value": "Single Speed Direct Drive"
+      },
+      {
+        "label": "Front Suspension",
+        "value": "Rigid Aerodynamic Steel Fork"
+      },
+      {
+        "label": "Target Age Group",
+        "value": "8-12 Years"
+      },
+      {
+        "label": "Ideal Location",
+        "value": "Urban Roads, Fitness Trails & City Commuting"
+      }
+    ],
+    "features": [
+      "Ergonomically engineered High-Tensile Carbon Steel Frame for strength, balance, and long service life.",
+      "High-stopping power Calibrated Caliper Brakes with Child-Safe Levers for reliable braking in dry and wet conditions.",
+      "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
+      "Anatomically designed PU cushioned saddle with quick-release height adjustment."
+    ],
+    "seo": {
+      "title": "BSA Roamer | Kids Cycle | KTR Cycle World",
+      "description": "Buy BSA Roamer at ₹5,300. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic saf…",
+      "canonical": "/product/bsa-roamer",
+      "keywords": [
+        "BSA Roamer",
+        "BSA cycle",
+        "BSA ",
+        " Tirunelveli",
+        "buy cycle Tirunelveli",
+        "KTR Cycle World",
+        " 8-12 Years",
+        "cycles in Tirunelveli"
+      ],
+      "robots": "index,follow"
+    },
+    "og": {
+      "title": "BSA Roamer | Kids Cycle | KTR Cycle World",
+      "description": "Buy BSA Roamer at ₹5,300. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic saf…",
+      "type": "product",
+      "image": "/images/products/prod_056_1_1WRYU49dYg-337MK5lB1KgfTu2PFCtgOR.jpg",
+      "url": "/product/bsa-roamer",
+      "site_name": "KTR Cycle World"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "BSA Roamer | Kids Cycle | KTR Cycle World",
+      "description": "Buy BSA Roamer at ₹5,300. Sturdy and safe kids cycle designed for young riders (8-12 Years). Equipped with anti-skid tires, full chain guard, and ergonomic saf…",
+      "image": "/images/products/prod_056_1_1WRYU49dYg-337MK5lB1KgfTu2PFCtgOR.jpg"
+    }
   }
 ]
