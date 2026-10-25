@@ -5228,7 +5228,8 @@
     "brand": "RALEIGH",
     "category_id": "cat_003",
     "images": [
-      "/images/products/prod_052_1_105NvCgjVtXGtaeqUeDr858YjfsaNBmNa.jpg"
+      "/images/products/prod_052_1_105NvCgjVtXGtaeqUeDr858YjfsaNBmNa.jpg",
+      "images/products/prod_024_2.jpg"
     ],
     "color": "",
     "frame_size": "",
@@ -5859,22 +5860,22 @@
     "id": "prod_065",
     "product_id": "prod_065",
     "slug": "hercules-shurveer-2",
-    "name": "RALEIGH NAVARRO ONE 29T SS",
-    "brand": "RALEIGH",
-    "category_id": "cat_002",
+    "name": "SUNCROSS TOSCANO (21 SPEED) ALLOY",
+    "brand": "SUNCROSS",
+    "category_id": "cat_003",
     "images": [
-      "/images/products/prod_056_1_1Ws3eOH-sOZouOZB14wePKR-eqO69kGwH.jpg"
+      "/images/products/prod_065_1_1h6UEG4cGPgSi-oYXiNYmzuQLxD_Y5p-Q.jpg"
     ],
     "color": "",
     "frame_size": "",
     "cycle_size": "29T",
-    "original_price": 13000,
-    "discounted_price": 12500,
+    "original_price": 23000,
+    "discounted_price": 21000,
     "featured": false,
     "age_group": "15+ Years",
-    "short_description": "Durable and stylish adult cycle engineered with Hi-Ten Steel with Internal Cable Routing Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
-    "long_description": "Durable and stylish adult cycle engineered with Hi-Ten Steel with Internal Cable Routing Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
-    "description": "Durable and stylish adult cycle engineered with Hi-Ten Steel with Internal Cable Routing Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
+    "short_description": "High-performance geared cycle built with 21-Speed Gear System (Shimano), Dual Mechanical Disc Brakes (Front & Rear), and a rigid High-Tensile Steel Frame for fast city and trail riding.",
+    "long_description": "High-performance geared cycle built with 21-Speed Gear System (Shimano), Dual Mechanical Disc Brakes (Front & Rear), and a rigid High-Tensile Steel Frame for fast city and trail riding.",
+    "description": "High-performance geared cycle built with 21-Speed Gear System (Shimano), Dual Mechanical Disc Brakes (Front & Rear), and a rigid High-Tensile Steel Frame for fast city and trail riding.",
     "specifications": [
       {
         "label": "Wheel Size",
@@ -5882,19 +5883,19 @@
       },
       {
         "label": "Frame Material",
-        "value": "High-Tensile  Steel Frame Frame"
+        "value": "High-Tensile Alloy  Steel Frame"
       },
       {
         "label": "Brake System",
-        "value": "Dual Mechanical Disc Brakes"
+        "value": "Dual Mechanical Disc Brakes (Front & Rear)"
       },
       {
         "label": "Gears / Speed",
-        "value": "Single Speed Direct Drive"
+        "value": "21Speed Direct Drive"
       },
       {
         "label": "Front Suspension",
-        "value": "Suspension  Fork"
+        "value": "Front Telescopic Suspension Fork"
       },
       {
         "label": "Target Age Group",
@@ -5946,17 +5947,17 @@
     "id": "prod_066",
     "product_id": "prod_066",
     "slug": "raleigh-phase-pro-29t-ss",
-    "name": "RALEIGH PHASE PRO 29T S/S",
+    "name": "RALEIGH AVALANCHE 27.5T",
     "brand": "RALEIGH",
     "category_id": "cat_002",
     "images": [
-      "/images/products/prod_062_1.jpg"
+      "/images/products/prod_066_1_1vwrVwG-FmGwAcVKAPCRwA8A1OGRX6OvW.jpg"
     ],
     "color": "",
     "frame_size": "",
-    "cycle_size": "29T",
-    "original_price": 13100,
-    "discounted_price": 12800,
+    "cycle_size": "27.5T",
+    "original_price": 15000,
+    "discounted_price": 13900,
     "featured": false,
     "age_group": "15+ Years",
     "short_description": "Durable and stylish adult cycle engineered with Hi-Ten Steel with Internal Cable Routing Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
@@ -5965,11 +5966,11 @@
     "specifications": [
       {
         "label": "Wheel Size",
-        "value": "29 Inches"
+        "value": "27.5T Inches"
       },
       {
         "label": "Frame Material",
-        "value": "High-Tensile  Steel Frame"
+        "value": "High-Tensile  Steel Frame Frame"
       },
       {
         "label": "Brake System",
@@ -5981,7 +5982,7 @@
       },
       {
         "label": "Front Suspension",
-        "value": "Suspension Fork"
+        "value": "Suspension  Fork"
       },
       {
         "label": "Target Age Group",
@@ -6033,18 +6034,17 @@
     "id": "prod_067",
     "product_id": "prod_067",
     "slug": "hercules-rift-ic-fx-dd-24t-2",
-    "name": "RALEIGH EXALT 29T SS",
+    "name": "RALEIGH PHASE PRO 29T S/S",
     "brand": "RALEIGH",
     "category_id": "cat_002",
     "images": [
-      "/images/products/prod_049_1_17DZ0XXndgxQv-Za--OftlEZ4Jo9MLJLK.jpg",
-      "/images/products/prod_049_2_1qV2Wmetczbft1-kyA6E2yKZ-X_QJYHWM.jpg"
+      "/images/products/prod_062_1.jpg"
     ],
     "color": "",
     "frame_size": "",
     "cycle_size": "29T",
-    "original_price": 13995,
-    "discounted_price": 13500,
+    "original_price": 13100,
+    "discounted_price": 12800,
     "featured": false,
     "age_group": "15+ Years",
     "short_description": "Durable and stylish adult cycle engineered with Hi-Ten Steel with Internal Cable Routing Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
@@ -6121,20 +6121,19 @@
     "id": "prod_068",
     "product_id": "prod_068",
     "slug": "bsa-rocket-ic-20t-2",
-    "name": "RALEIGH NAVARRO ONE 29T (D/Disc)",
+    "name": "RALEIGH EXALT 29T SS",
     "brand": "RALEIGH",
     "category_id": "cat_002",
     "images": [
-      "/images/products/prod_024_1.jpg",
-      "/images/products/prod_024_2.jpg",
-      "/images/products/prod_024_3.jpg"
+      "/images/products/prod_049_1_17DZ0XXndgxQv-Za--OftlEZ4Jo9MLJLK.jpg",
+      "/images/products/prod_049_2_1qV2Wmetczbft1-kyA6E2yKZ-X_QJYHWM.jpg"
     ],
     "color": "",
     "frame_size": "",
     "cycle_size": "29T",
-    "original_price": 14175,
-    "discounted_price": 13925,
-    "featured": true,
+    "original_price": 13995,
+    "discounted_price": 13500,
+    "featured": false,
     "age_group": "15+ Years",
     "short_description": "Durable and stylish adult cycle engineered with Hi-Ten Steel with Internal Cable Routing Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
     "long_description": "Durable and stylish adult cycle engineered with Hi-Ten Steel with Internal Cable Routing Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
@@ -6149,12 +6148,8 @@
         "value": "High-Tensile  Steel Frame"
       },
       {
-        "label": "Specification",
-        "value": ""
-      },
-      {
         "label": "Brake System",
-        "value": "Dual Mechanical Disc Brakes (Front & Rear)"
+        "value": "Dual Mechanical Disc Brakes"
       },
       {
         "label": "Gears / Speed",
@@ -6214,18 +6209,18 @@
     "id": "prod_069",
     "product_id": "prod_069",
     "slug": "raleigh-captus-2",
-    "name": "RALEIGH CAPTUS 29T FSDD SS",
+    "name": "RALEIGH NAVARRO ONE 29T (D/Disc)",
     "brand": "RALEIGH",
     "category_id": "cat_002",
     "images": [
-      "/images/products/prod_050_1_168Y_oxmz0eUB7UldAykn2oXjREuOzDWJ.jpg",
-      "/images/products/prod_050_2_13OKzmHpJoh0_SJpkc89YiaGslaRe_ivZ.jpg"
+      "/images/products/prod_024_1.jpg",
+      "/images/products/prod_024_3.jpg"
     ],
     "color": "",
     "frame_size": "",
     "cycle_size": "29T",
-    "original_price": 15900,
-    "discounted_price": 14900,
+    "original_price": 14175,
+    "discounted_price": 13925,
     "featured": true,
     "age_group": "15+ Years",
     "short_description": "Durable and stylish adult cycle engineered with Hi-Ten Steel with Internal Cable Routing Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
@@ -6241,6 +6236,10 @@
         "value": "High-Tensile  Steel Frame"
       },
       {
+        "label": "Specification",
+        "value": ""
+      },
+      {
         "label": "Brake System",
         "value": "Dual Mechanical Disc Brakes (Front & Rear)"
       },
@@ -6250,7 +6249,7 @@
       },
       {
         "label": "Front Suspension",
-        "value": "Front Telescopic Suspension Fork"
+        "value": "Suspension Fork"
       },
       {
         "label": "Target Age Group",
@@ -6302,22 +6301,23 @@
     "id": "prod_070",
     "product_id": "prod_070",
     "slug": "lucifire-p-pro-12-29t",
-    "name": "LUCIFIRE P Pro 12 29T",
-    "brand": "LUCIFIRE",
+    "name": "RALEIGH CAPTUS 29T FSDD SS",
+    "brand": "RALEIGH",
     "category_id": "cat_002",
     "images": [
-      "/images/placeholder.png"
+      "/images/products/prod_050_1_168Y_oxmz0eUB7UldAykn2oXjREuOzDWJ.jpg",
+      "/images/products/prod_050_2_13OKzmHpJoh0_SJpkc89YiaGslaRe_ivZ.jpg"
     ],
     "color": "",
     "frame_size": "",
     "cycle_size": "29T",
-    "original_price": 17200,
-    "discounted_price": 16200,
-    "featured": false,
+    "original_price": 15900,
+    "discounted_price": 14900,
+    "featured": true,
     "age_group": "15+ Years",
-    "short_description": "Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Disc Brakes, and sleek geometry for daily commutes and fitness rides.",
-    "long_description": "Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Disc Brakes, and sleek geometry for daily commutes and fitness rides.",
-    "description": "Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Disc Brakes, and sleek geometry for daily commutes and fitness rides.",
+    "short_description": "Durable and stylish adult cycle engineered with Hi-Ten Steel with Internal Cable Routing Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
+    "long_description": "Durable and stylish adult cycle engineered with Hi-Ten Steel with Internal Cable Routing Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
+    "description": "Durable and stylish adult cycle engineered with Hi-Ten Steel with Internal Cable Routing Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
     "specifications": [
       {
         "label": "Wheel Size",
@@ -6383,6 +6383,184 @@
       "title": "Lucifire P PRO 12 29T | Adult Cycle | KTR Cycle World",
       "description": "Buy Lucifire P PRO 12 29T at ₹16,200. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Disc Brak…",
       "image": "/images/placeholder.png"
+    }
+  },
+  {
+    "id": "prod_071",
+    "product_id": "prod_071",
+    "slug": "lucifire-p-pro-12-29t-2",
+    "name": "LUCIFIRE P Pro 12 29T",
+    "brand": "LUCIFIRE",
+    "category_id": "cat_002",
+    "images": [
+      "/images/products/prod_071_1_127LKOEq44jMf3WgQ2mXYjDrPtVDvqcEm.jpg",
+      "/images/products/prod_071_2_1dYpBo_0kJConVPzMcXPBkYNr-maCmwAh.jpg"
+    ],
+    "color": "",
+    "frame_size": "",
+    "cycle_size": "29T",
+    "original_price": 17200,
+    "discounted_price": 16200,
+    "featured": false,
+    "age_group": "15+ Years",
+    "short_description": "Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Disc Brakes, and sleek geometry for daily commutes and fitness rides.",
+    "long_description": "Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Disc Brakes, and sleek geometry for daily commutes and fitness rides.",
+    "description": "Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Disc Brakes, and sleek geometry for daily commutes and fitness rides.",
+    "specifications": [
+      {
+        "label": "Wheel Size",
+        "value": "29 Inches"
+      },
+      {
+        "label": "Frame Material",
+        "value": "High-Tensile Alloy  Steel Frame"
+      },
+      {
+        "label": "Brake System",
+        "value": "Dual Mechanical Disc Brakes (Front & Rear)"
+      },
+      {
+        "label": "Gears / Speed",
+        "value": "Single Speed Direct Drive"
+      },
+      {
+        "label": "Front Suspension",
+        "value": "Front Telescopic Suspension Fork"
+      },
+      {
+        "label": "Target Age Group",
+        "value": "15+ Years"
+      },
+      {
+        "label": "Ideal Location",
+        "value": "Urban Roads, Fitness Trails & City Commuting"
+      }
+    ],
+    "features": [
+      "Ergonomically engineered High-Tensile Carbon Steel Frame for strength, balance, and long service life.",
+      "High-stopping power Front & Rear Mechanical Power Brakes for reliable braking in dry and wet conditions.",
+      "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
+      "Anatomically designed PU cushioned saddle with quick-release height adjustment."
+    ],
+    "seo": {
+      "title": "Lucifire P PRO 12 29T | Adult Cycle | KTR Cycle World",
+      "description": "Buy Lucifire P PRO 12 29T at ₹16,200. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Disc Brak…",
+      "canonical": "/product/lucifire-p-pro-12-29t-2",
+      "keywords": [
+        "Lucifire P PRO 12 29T",
+        "Lucifire cycle",
+        "Lucifire ",
+        " Tirunelveli",
+        "buy cycle Tirunelveli",
+        "KTR Cycle World",
+        " 15+ Years",
+        "cycles in Tirunelveli"
+      ],
+      "robots": "index,follow"
+    },
+    "og": {
+      "title": "Lucifire P PRO 12 29T | Adult Cycle | KTR Cycle World",
+      "description": "Buy Lucifire P PRO 12 29T at ₹16,200. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Disc Brak…",
+      "type": "product",
+      "image": "/images/placeholder.png",
+      "url": "/product/lucifire-p-pro-12-29t-2",
+      "site_name": "KTR Cycle World"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Lucifire P PRO 12 29T | Adult Cycle | KTR Cycle World",
+      "description": "Buy Lucifire P PRO 12 29T at ₹16,200. Durable and stylish adult cycle engineered with Lightweight Aircraft-Grade Alloy Frame, Front & Rear Mechanical Disc Brak…",
+      "image": "/images/placeholder.png"
+    }
+  },
+  {
+    "id": "prod_072",
+    "product_id": "prod_072",
+    "slug": "lucifire-morpheus-29t",
+    "name": "LUCIFIRE Morpheus 29T",
+    "brand": "LUCIFIRE",
+    "category_id": "cat_002",
+    "images": [
+      "/images/products/prod_072_1_1sTpQlE2fZZjItcmXNZQLDc1GeMYBO8qF.jpg",
+      "/images/products/prod_072_2_10orTYGKpp5M1GbLDJroOK3zVOm9DC5EZ.jpg",
+      "/images/products/prod_072_3_1bJmsmm8f3_GlmsgFBroHEsYtnGzF_Ewd.jpg",
+      "/images/products/prod_072_3_1bJmsmm8f3_GlmsgFBroHEsYtnGzF_Ewd.jpg"
+    ],
+    "color": "",
+    "frame_size": "",
+    "cycle_size": "29T",
+    "original_price": 14800,
+    "discounted_price": 13800,
+    "featured": false,
+    "age_group": "15+ Years",
+    "short_description": "Durable and stylish adult cycle engineered with Hi-Ten Steel with Internal Cable Routing Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
+    "long_description": "Durable and stylish adult cycle engineered with Hi-Ten Steel with Internal Cable Routing Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
+    "description": "Durable and stylish adult cycle engineered with Hi-Ten Steel with Internal Cable Routing Frame, Dual Mechanical Disc Brakes (Front & Rear), and sleek geometry for daily commutes and fitness rides.",
+    "specifications": [
+      {
+        "label": "Wheel Size",
+        "value": "29 Inches"
+      },
+      {
+        "label": "Frame Material",
+        "value": "High-Tensile  Steel Frame"
+      },
+      {
+        "label": "Brake System",
+        "value": "Dual Mechanical Disc Brakes (Front & Rear)"
+      },
+      {
+        "label": "Gears / Speed",
+        "value": "Single Speed Direct Drive"
+      },
+      {
+        "label": "Front Suspension",
+        "value": "Front Telescopic Suspension Fork"
+      },
+      {
+        "label": "Target Age Group",
+        "value": "15+ Years"
+      },
+      {
+        "label": "Ideal Location",
+        "value": "Urban Roads, Fitness Trails & City Commuting"
+      }
+    ],
+    "features": [
+      "Ergonomically engineered High-Tensile Carbon Steel Frame for strength, balance, and long service life.",
+      "High-stopping power Front & Rear Mechanical Power Brakes for reliable braking in dry and wet conditions.",
+      "Heavy-duty double-wall rims paired with high-grip, anti-skid rubber tires.",
+      "Anatomically designed PU cushioned saddle with quick-release height adjustment."
+    ],
+    "seo": {
+      "title": "Lucifire Morpheus 29T | Adult Cycle | KTR Cycle World",
+      "description": "Buy Lucifire Morpheus 29T at ₹13,800. Durable and stylish adult cycle engineered with Hi-Ten Steel with Internal Cable Routing Frame, Dual Mechanical Disc Brak…",
+      "canonical": "/product/lucifire-morpheus-29t",
+      "keywords": [
+        "Lucifire Morpheus 29T",
+        "Lucifire cycle",
+        "Lucifire ",
+        " Tirunelveli",
+        "buy cycle Tirunelveli",
+        "KTR Cycle World",
+        " 15+ Years",
+        "cycles in Tirunelveli"
+      ],
+      "robots": "index,follow"
+    },
+    "og": {
+      "title": "Lucifire Morpheus 29T | Adult Cycle | KTR Cycle World",
+      "description": "Buy Lucifire Morpheus 29T at ₹13,800. Durable and stylish adult cycle engineered with Hi-Ten Steel with Internal Cable Routing Frame, Dual Mechanical Disc Brak…",
+      "type": "product",
+      "image": "/images/products/prod_072_1_1sTpQlE2fZZjItcmXNZQLDc1GeMYBO8qF.jpg",
+      "url": "/product/lucifire-morpheus-29t",
+      "site_name": "KTR Cycle World"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Lucifire Morpheus 29T | Adult Cycle | KTR Cycle World",
+      "description": "Buy Lucifire Morpheus 29T at ₹13,800. Durable and stylish adult cycle engineered with Hi-Ten Steel with Internal Cable Routing Frame, Dual Mechanical Disc Brak…",
+      "image": "/images/products/prod_072_1_1sTpQlE2fZZjItcmXNZQLDc1GeMYBO8qF.jpg"
     }
   }
 ]
