@@ -11,7 +11,7 @@ import HomepageFAQ from "@/components/HomepageFAQ";
 import { homepageFaqs } from "@/data/faqs";
 
 export default function HomePage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ktrcycleworld.com';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ktrcycleworld.com';
   const heroSlides = [
     {
       image: '/images/banners/hercules_brute_banner.webp',

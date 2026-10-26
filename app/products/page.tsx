@@ -13,12 +13,12 @@ export const metadata: Metadata = {
     'KTR Cycle World catalog',
   ],
   alternates: {
-    canonical: 'https://ktrcycleworld.com/products',
+    canonical: 'https://www.ktrcycleworld.com/products',
   },
   openGraph: {
     title: 'Full Bicycles Catalog | KTR Cycle World Tirunelveli',
     description: 'Explore mountain, road, kids and electric cycles at KTR Cycle World, Tirunelveli.',
-    url: 'https://ktrcycleworld.com/products',
+    url: 'https://www.ktrcycleworld.com/products',
     siteName: 'KTR Cycle World',
     type: 'website',
   },

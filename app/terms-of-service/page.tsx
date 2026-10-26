@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Terms of Service | KTR Cycle World Tirunelveli',
   description: 'Read the terms of service and showroom guidelines for purchasing bicycles and services at KTR Cycle World.',
   alternates: {
-    canonical: 'https://ktrcycleworld.com/terms-of-service',
+    canonical: 'https://www.ktrcycleworld.com/terms-of-service',
   },
 };
 

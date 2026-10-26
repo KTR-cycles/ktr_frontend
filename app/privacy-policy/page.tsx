@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Privacy Policy | KTR Cycle World Tirunelveli',
   description: 'Read the privacy policy for KTR Cycle World. Learn how we handle and protect customer inquiry and showroom information.',
   alternates: {
-    canonical: 'https://ktrcycleworld.com/privacy-policy',
+    canonical: 'https://www.ktrcycleworld.com/privacy-policy',
   },
 };
 

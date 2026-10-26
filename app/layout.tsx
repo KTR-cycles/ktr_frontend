@@ -23,7 +23,7 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: 'swap',
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ktrcycleworld.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ktrcycleworld.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

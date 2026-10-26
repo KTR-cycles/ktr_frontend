@@ -245,9 +245,9 @@ async function runImport() {
     const name = String(item.name || '').trim();
 
     // Custom, existing, or auto-generated slug
-    let baseSlug = item.slug
+    let baseSlug = (item.slug && String(item.slug).trim())
       ? slugify(item.slug)
-      : (existingSlugsMap.get(productId) || existingSlugsMap.get(name.toLowerCase()) || slugify(name || `product-${productId}`));
+      : (existingSlugsMap.get(name.toLowerCase()) || slugify(name || `product-${productId}`));
     if (!baseSlug) baseSlug = `product-${productId}`;
     let slug = baseSlug;
     if (slugCounts.has(baseSlug)) {
@@ -336,7 +336,10 @@ async function runImport() {
       }
     }
 
-    const existingProd = existingProductsMap.get(productId) || existingProductsMap.get(name.toLowerCase());
+    const matchedById = existingProductsMap.get(productId);
+    const existingProd = (matchedById && matchedById.name && matchedById.name.toLowerCase() === name.toLowerCase())
+      ? matchedById
+      : existingProductsMap.get(name.toLowerCase());
 
     const prodObj = {
       id: productId,

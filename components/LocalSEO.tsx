@@ -1,7 +1,7 @@
 import { STORE_LOCATIONS } from "@/data/storeLocations";
 
 export default function LocalSEO() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ktrcycleworld.com';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ktrcycleworld.com';
   
   const schemaData = {
     "@context": "https://schema.org",
@@ -11,12 +11,12 @@ export default function LocalSEO() {
     "logo": `${siteUrl}/assets/generated_images/ktr_cycle_logo.jpg`,
     "@id": `${siteUrl}/#bicyclestore`,
     "url": siteUrl,
-    "telephone": "+91-9342727735",
+    "telephone": "+91 9342727735",
     "email": "ktrcycleworld006@gmail.com",
     "priceRange": "₹₹",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Nainar kulam road",
+      "streetAddress": "Nainar kulam road, Tirunelveli Town",
       "addressLocality": "Tirunelveli",
       "addressRegion": "Tamil Nadu",
       "postalCode": "627006",
@@ -48,9 +48,13 @@ export default function LocalSEO() {
       { "@type": "City", "name": "Kayathar" },
       { "@type": "City", "name": "Kalakkad" }
     ],
-    "hasPOS": STORE_LOCATIONS.map((loc) => ({
-      "@type": "Store",
+    "subOrganization": STORE_LOCATIONS.map((loc) => ({
+      "@type": "BicycleStore",
+      "@id": `${siteUrl}/#branch-${loc.id}`,
       "name": loc.name,
+      "url": siteUrl,
+      "telephone": loc.phone,
+      "hasMap": loc.googleMapsUrl,
       "address": {
         "@type": "PostalAddress",
         "streetAddress": loc.address,
@@ -64,8 +68,20 @@ export default function LocalSEO() {
         "latitude": loc.coordinates.lat,
         "longitude": loc.coordinates.lng
       },
-      "telephone": loc.phone,
-      "hasMap": loc.googleMapsUrl
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Sunday"],
+          "opens": "10:00",
+          "closes": "18:00"
+        }
+      ]
     })),
     "sameAs": [
       "https://www.instagram.com/ktr_cycleworld_tirunelveli"

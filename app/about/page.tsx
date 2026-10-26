@@ -11,12 +11,12 @@ export const metadata: Metadata = {
     'best cycle showroom South Tamil Nadu',
   ],
   alternates: {
-    canonical: 'https://ktrcycleworld.com/about',
+    canonical: 'https://www.ktrcycleworld.com/about',
   },
   openGraph: {
     title: 'About KTR Cycle World | Premier Cycle Store in Tirunelveli',
     description: 'South Tamil Nadu’s premier cycling destination offering top-grade bicycles, accessories, and expert maintenance.',
-    url: 'https://ktrcycleworld.com/about',
+    url: 'https://www.ktrcycleworld.com/about',
     siteName: 'KTR Cycle World',
     type: 'website',
   },
