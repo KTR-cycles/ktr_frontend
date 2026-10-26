@@ -12,12 +12,12 @@ export const metadata: Metadata = {
     'Palayankottai cycle store contact',
   ],
   alternates: {
-    canonical: 'https://ktrcycleworld.com/contact',
+    canonical: 'https://www.ktrcycleworld.com/contact',
   },
   openGraph: {
     title: 'Contact Us | KTR Cycle World Showroom Tirunelveli',
     description: 'Visit our bicycle showroom in Tirunelveli or contact us via WhatsApp for doorstep delivery and cycle inquiries.',
-    url: 'https://ktrcycleworld.com/contact',
+    url: 'https://www.ktrcycleworld.com/contact',
     siteName: 'KTR Cycle World',
     type: 'website',
   },

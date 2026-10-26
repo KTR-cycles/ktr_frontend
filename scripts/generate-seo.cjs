@@ -350,22 +350,44 @@ function generateProductSeo(product) {
   };
 }
 
+function slugify(text) {
+  return (text || '')
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\-]+/g, '')
+    .replace(/\-\-+/g, '-')
+    .replace(/^-+/, '')
+    .replace(/-+$/, '');
+}
+
 function hasValidSeo(p) {
-  return Boolean(
-    p &&
-    p.seo &&
-    typeof p.seo === 'object' &&
-    p.seo.title &&
-    p.seo.title.trim() &&
-    p.seo.description &&
-    p.seo.description.trim() &&
-    p.og &&
-    typeof p.og === 'object' &&
-    p.og.title &&
-    p.twitter &&
-    typeof p.twitter === 'object' &&
-    p.twitter.title
-  );
+  if (
+    !p ||
+    !p.seo ||
+    typeof p.seo !== 'object' ||
+    !p.seo.title ||
+    !p.seo.title.trim() ||
+    !p.seo.description ||
+    !p.seo.description.trim() ||
+    !p.og ||
+    typeof p.og !== 'object' ||
+    !p.og.title ||
+    !p.twitter ||
+    typeof p.twitter !== 'object' ||
+    !p.twitter.title
+  ) {
+    return false;
+  }
+
+  // Cross-product check: ensure the SEO title matches this actual product
+  const pName = (p.name || '').trim().toLowerCase();
+  const firstWord = pName.split(/\s+/)[0];
+  const secondWord = pName.split(/\s+/)[1] || '';
+  const titleLower = p.seo.title.toLowerCase();
+  const matches = (firstWord && titleLower.includes(firstWord)) || (secondWord && titleLower.includes(secondWord));
+  return Boolean(matches);
 }
 
 // ---------------------------------------------------------------------------
@@ -403,14 +425,34 @@ function main() {
   });
 
   // Step B: Generate real-time descriptions, specs, features, and SEO metadata
-  const slugSeen = new Set();
+  const slugCounts = new Map();
   const updatedProducts = products.map(product => {
-    // 1. Generate rich product descriptions & technical specs
+    // 1. Derive clean, accurate canonical slug from product name
+    const baseSlug = slugify(product.name) || `product-${product.id}`;
+    let canonicalSlug = baseSlug;
+    if (slugCounts.has(baseSlug)) {
+      const count = slugCounts.get(baseSlug) + 1;
+      slugCounts.set(baseSlug, count);
+      canonicalSlug = `${baseSlug}-${count}`;
+      dupSlugsFound++;
+    } else {
+      slugCounts.set(baseSlug, 1);
+    }
+
+    // Preserve previous slug in legacy_slugs if different so existing URLs continue to work
+    const legacySlugsSet = new Set(Array.isArray(product.legacy_slugs) ? product.legacy_slugs : []);
+    if (product.slug && product.slug !== canonicalSlug) {
+      legacySlugsSet.add(product.slug);
+    }
+
+    // 2. Generate rich product descriptions & technical specs
     const realTimeData = generateRealTimeProductData(product);
 
     const updatedProduct = {
       ...product,
       ...realTimeData,
+      slug: canonicalSlug,
+      legacy_slugs: Array.from(legacySlugsSet),
     };
 
     const img = (Array.isArray(updatedProduct.images) ? updatedProduct.images[0] : (updatedProduct.images_list && updatedProduct.images_list[0]) || updatedProduct.image) || '';
@@ -420,10 +462,7 @@ function main() {
       zeroPriceProducts++;
     }
 
-    if (slugSeen.has(updatedProduct.slug)) dupSlugsFound++;
-    else slugSeen.add(updatedProduct.slug);
-
-    // 2. Smart / Conditional SEO metadata
+    // 3. Smart / Conditional SEO metadata
     let seoData;
     const primaryImg = (Array.isArray(updatedProduct.images) ? updatedProduct.images[0] : (updatedProduct.images_list && updatedProduct.images_list[0]) || updatedProduct.image) || '/images/placeholder.png';
     const canonicalUrl = `/product/${updatedProduct.slug}`;

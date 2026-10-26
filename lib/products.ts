@@ -36,7 +36,11 @@ export function getProducts(): Product[] {
 export function getProductBySlug(slug: string): Product | undefined {
   const products = getProducts();
   return products.find(
-    (p) => p.slug === slug || p.id === slug || p.product_id === slug
+    (p) =>
+      p.slug === slug ||
+      p.id === slug ||
+      p.product_id === slug ||
+      (Array.isArray((p as any).legacy_slugs) && (p as any).legacy_slugs.includes(slug))
   );
 }
 

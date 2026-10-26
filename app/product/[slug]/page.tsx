@@ -16,6 +16,9 @@ export async function generateStaticParams() {
     if (product.slug) paramsSet.add(product.slug);
     if (product.id) paramsSet.add(product.id);
     if (product.product_id) paramsSet.add(product.product_id);
+    if (Array.isArray((product as any).legacy_slugs)) {
+      (product as any).legacy_slugs.forEach((s: string) => s && paramsSet.add(s));
+    }
   });
   return Array.from(paramsSet).map((slug) => ({ slug }));
 }
@@ -27,9 +30,9 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     return { title: 'Product Not Found' };
   }
 
-  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ?? 'https://ktrcycleworld.com';
+  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ?? 'https://www.ktrcycleworld.com';
 
-  // Use new structured SEO fields; fall back to legacy / raw fields
+  // Use structured SEO fields; fall back to legacy / raw fields
   const seo     = (product as any).seo;
   const ogData  = (product as any).og;
   const twData  = (product as any).twitter;
@@ -37,18 +40,27 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   const title       = seo?.title || (product as any).seo_title || `${product.name} | KTR Cycle World`;
   const description = seo?.description || (product as any).seo_description || product.short_description || product.description || `Buy ${product.name} at KTR Cycle World, Tirunelveli.`;
   const keywords    = seo?.keywords ?? [product.name, product.brand, product.category_name, 'KTR Cycle World', `cycles in Tirunelveli`].filter(Boolean);
-  const canonical   = seo?.canonical ? `${BASE_URL}${seo.canonical}` : `${BASE_URL}/product/${product.slug || product.id}`;
+  const canonical   = `${BASE_URL}/product/${product.slug || product.id}`;
 
-  const rawImage    = ogData?.image || (product as any).images_list?.[0] || product.image || '';
-  const imageUrl    = rawImage.startsWith('http') ? rawImage : rawImage ? `${BASE_URL}${rawImage}` : `${BASE_URL}/assets/generated_images/ktr_cycle_logo.jpg`;
+  const rawImage =
+    ogData?.image ||
+    (Array.isArray(product.images) && product.images[0]) ||
+    (product as any).images_list?.[0] ||
+    product.image ||
+    '';
+  const imageUrl = rawImage.startsWith('http')
+    ? rawImage
+    : rawImage
+    ? `${BASE_URL}${rawImage.startsWith('/') ? rawImage : `/${rawImage}`}`
+    : `${BASE_URL}/assets/generated_images/ktr_cycle_logo.jpg`;
 
   const ogTitle = ogData?.title || title;
   const ogDesc  = ogData?.description || description;
-  const ogUrl   = ogData?.url ? `${BASE_URL}${ogData.url}` : canonical;
+  const ogUrl   = canonical;
 
   const twTitle = twData?.title || ogTitle;
   const twDesc  = twData?.description || ogDesc;
-  const twImg   = twData?.image ? (twData.image.startsWith('http') ? twData.image : `${BASE_URL}${twData.image}`) : imageUrl;
+  const twImg   = twData?.image ? (twData.image.startsWith('http') ? twData.image : `${BASE_URL}${twData.image.startsWith('/') ? twData.image : `/${twData.image}`}`) : imageUrl;
 
   return {
     title,
@@ -90,35 +102,54 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
     notFound();
   }
 
+  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ?? 'https://www.ktrcycleworld.com';
   const currentPrice = product.discounted_price || product.original_price || 0;
-  const imageUrl = product.image ? `https://ktrcycleworld.com${product.image}` : 'https://ktrcycleworld.com/assets/generated_images/ktr_cycle_logo.jpg';
+  
+  const rawProductImage =
+    (Array.isArray(product.images) && product.images[0]) ||
+    (product as any).images_list?.[0] ||
+    product.image ||
+    '';
+  const productImageUrl = rawProductImage.startsWith('http')
+    ? rawProductImage
+    : rawProductImage
+    ? `${BASE_URL}${rawProductImage.startsWith('/') ? rawProductImage : `/${rawProductImage}`}`
+    : `${BASE_URL}/assets/generated_images/ktr_cycle_logo.jpg`;
 
-  const productSchema = {
+  const inStock = currentPrice > 0 && (product as any).stock !== false && (product as any).stock !== 0;
+  const availability = inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock";
+
+  const productSchema: Record<string, any> = {
     "@context": "https://schema.org/",
     "@type": "Product",
     "name": product.name,
-    "image": [imageUrl],
+    "image": [productImageUrl],
     "description": product.short_description || product.description || product.name,
     "sku": product.id || product.product_id,
-    "mpn": product.product_id || product.id,
     "brand": {
       "@type": "Brand",
       "name": product.brand || "KTR"
     },
     "offers": {
       "@type": "Offer",
-      "url": `https://ktrcycleworld.com/product/${product.slug || product.id}`,
+      "url": `${BASE_URL}/product/${product.slug || product.id}`,
       "priceCurrency": "INR",
       "price": currentPrice,
       "priceValidUntil": "2027-12-31",
       "itemCondition": "https://schema.org/NewCondition",
-      "availability": "https://schema.org/InStock",
+      "availability": availability,
       "seller": {
         "@type": "Organization",
-        "name": "KTR Cycle World"
+        "name": "KTR Cycle World",
+        "url": BASE_URL
       }
     }
   };
+
+  // Only assign mpn if a genuine manufacturer part number exists
+  if ((product as any).mpn) {
+    productSchema.mpn = (product as any).mpn;
+  }
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -128,19 +159,19 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://ktrcycleworld.com"
+        "item": BASE_URL
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Products",
-        "item": "https://ktrcycleworld.com/products"
+        "item": `${BASE_URL}/products`
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": product.name,
-        "item": `https://ktrcycleworld.com/product/${product.slug || product.id}`
+        "item": `${BASE_URL}/product/${product.slug || product.id}`
       }
     ]
   };

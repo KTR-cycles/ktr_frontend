@@ -29,12 +29,17 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
     return { title: 'Category Not Found' };
   }
 
+  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ?? 'https://www.ktrcycleworld.com';
   const rawTitle = (category as any).seo_title || category.name;
   const cleanTitle = rawTitle.replace(/\s*[\|-]\s*KTR Cycle World$/i, '').trim();
 
   const title = `${cleanTitle} | Best Range in Tirunelveli`;
   const description = (category as any).seo_description || category.description || `Browse top quality ${category.name} collection at KTR Cycle World, Tirunelveli, Vannarpettai & Palayankottai. Best prices guaranteed.`;
-  const canonicalUrl = `https://ktrcycleworld.com/category/${category.slug || category.category_id}`;
+  const canonicalUrl = `${BASE_URL}/category/${category.slug || category.category_id}`;
+
+  const categoryImageUrl = category.image
+    ? (category.image.startsWith('http') ? category.image : `${BASE_URL}${category.image.startsWith('/') ? category.image : `/${category.image}`}`)
+    : `${BASE_URL}/assets/generated_images/ktr_cycle_logo.jpg`;
 
   return {
     title,
@@ -57,7 +62,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
       siteName: 'KTR Cycle World',
       images: [
         {
-          url: category.image ? `https://ktrcycleworld.com${category.image}` : 'https://ktrcycleworld.com/assets/generated_images/ktr_cycle_logo.jpg',
+          url: categoryImageUrl,
           width: 800,
           height: 600,
           alt: category.name,
@@ -69,6 +74,7 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
       card: 'summary_large_image',
       title: `${cleanTitle} | KTR Cycle World`,
       description,
+      images: [categoryImageUrl],
     },
   };
 }
@@ -81,6 +87,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     notFound();
   }
 
+  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ?? 'https://www.ktrcycleworld.com';
   const categoryProducts = getProductsByCategory(category.category_id);
 
   const collectionSchema = {
@@ -88,7 +95,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     "@type": "CollectionPage",
     "name": category.name,
     "description": category.description || `Browse ${category.name} collection at KTR Cycle World Tirunelveli`,
-    "url": `https://ktrcycleworld.com/category/${category.slug || category.category_id}`,
+    "url": `${BASE_URL}/category/${category.slug || category.category_id}`,
   };
 
   const breadcrumbSchema = {
@@ -99,13 +106,13 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://ktrcycleworld.com"
+        "item": BASE_URL
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": category.name,
-        "item": `https://ktrcycleworld.com/category/${category.slug || category.category_id}`
+        "item": `${BASE_URL}/category/${category.slug || category.category_id}`
       }
     ]
   };

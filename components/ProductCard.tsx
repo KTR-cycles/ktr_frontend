@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { ImageOff } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
 import { getFirstImageUrl } from "@/utils/imageUtils";
 
 interface ProductCardProps {
@@ -45,15 +46,24 @@ export default function ProductCard({
   const savingsAmount = hasDiscount ? Number(originalPrice) - Number(discountedPrice) : 0;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.3 }}
-      className="group bg-white/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-md hover:shadow-xl transition-all flex flex-col h-full cursor-pointer hover:scale-[1.01] overflow-hidden"
-      data-testid={`product-card-${id}`}
-      onClick={() => onViewDetails?.(targetIdentifier)}
+    <Link
+      href={`/product/${targetIdentifier}`}
+      className="block h-full text-inherit no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-2xl"
+      onClick={(e) => {
+        if (onViewDetails) {
+          e.preventDefault();
+          onViewDetails(targetIdentifier);
+        }
+      }}
     >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.3 }}
+        className="group bg-white/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-md hover:shadow-xl transition-all flex flex-col h-full cursor-pointer hover:scale-[1.01] overflow-hidden"
+        data-testid={`product-card-${id}`}
+      >
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-muted flex-shrink-0">
         {cleanImageUrl && !imageError ? (
           <img
@@ -121,5 +131,6 @@ export default function ProductCard({
         </div>
       </div>
     </motion.div>
+  </Link>
   );
 }
