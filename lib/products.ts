@@ -34,13 +34,21 @@ export function getProducts(): Product[] {
 }
 
 export function getProductBySlug(slug: string): Product | undefined {
+  if (!slug) return undefined;
+  const decoded = decodeURIComponent(slug).toLowerCase().trim();
   const products = getProducts();
+
+  // 1. Primary canonical slug match
+  const matchSlug = products.find((p) => p.slug?.toLowerCase() === decoded);
+  if (matchSlug) return matchSlug;
+
+  // 2. ID match (e.g. prod_001)
+  const matchId = products.find((p) => p.id?.toLowerCase() === decoded || p.product_id?.toLowerCase() === decoded);
+  if (matchId) return matchId;
+
+  // 3. Legacy slugs fallback
   return products.find(
-    (p) =>
-      p.slug === slug ||
-      p.id === slug ||
-      p.product_id === slug ||
-      (Array.isArray((p as any).legacy_slugs) && (p as any).legacy_slugs.includes(slug))
+    (p) => Array.isArray((p as any).legacy_slugs) && (p as any).legacy_slugs.some((s: string) => s?.toLowerCase() === decoded)
   );
 }
 

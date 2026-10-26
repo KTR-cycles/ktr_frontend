@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
@@ -25,14 +25,21 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ktrcycleworld.com';
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#f59e0b',
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Cycles in Tirunelveli | KTR Cycle World',
+    default: 'Cycles in Tirunelveli | Best Bike Shop | KTR Cycle World',
     template: '%s | KTR Cycle World',
   },
   description:
-    "Shop bicycles in Tirunelveli at KTR Cycle World. Explore MTB, kids, geared, electric and women's cycles from leading brands with 4 local showrooms.",
+    'Shop cycles in Tirunelveli at KTR Cycle World. Explore MTB, geared, kids & electric bikes with 4 showrooms across town.',
   keywords: [
     'KTR Cycle',
     'KTR Cycle World',
@@ -60,6 +67,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: siteUrl,
+    languages: {
+      'en-IN': siteUrl,
+      'x-default': siteUrl,
+    },
   },
   icons: {
     icon: '/assets/generated_images/ktr_cycle_logo.jpg',
@@ -108,6 +119,15 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${plusJakarta.variable}`}>
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/images/banners/hercules_brute_banner.webp"
+          type="image/webp"
+          fetchPriority="high"
+        />
+      </head>
       <body suppressHydrationWarning className="min-h-screen flex flex-col bg-background font-sans antialiased">
         {gtmId && (
           <>

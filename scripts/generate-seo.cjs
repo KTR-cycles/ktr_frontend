@@ -362,6 +362,13 @@ function slugify(text) {
     .replace(/-+$/, '');
 }
 
+function isSlugRelevantToName(slug, name) {
+  if (!slug || !name) return false;
+  const nameClean = name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  const tokens = slug.toLowerCase().split('-').filter(t => t.length > 2 && !['cycle', 'world', 'ktr'].includes(t));
+  return tokens.length === 0 || tokens.some(t => nameClean.includes(t));
+}
+
 function hasValidSeo(p) {
   if (
     !p ||
@@ -439,9 +446,12 @@ function main() {
       slugCounts.set(baseSlug, 1);
     }
 
-    // Preserve previous slug in legacy_slugs if different so existing URLs continue to work
-    const legacySlugsSet = new Set(Array.isArray(product.legacy_slugs) ? product.legacy_slugs : []);
-    if (product.slug && product.slug !== canonicalSlug) {
+    // Preserve previous slug in legacy_slugs ONLY if relevant to this product
+    const legacySlugsSet = new Set(
+      (Array.isArray(product.legacy_slugs) ? product.legacy_slugs : [])
+        .filter(s => isSlugRelevantToName(s, product.name))
+    );
+    if (product.slug && product.slug !== canonicalSlug && isSlugRelevantToName(product.slug, product.name)) {
       legacySlugsSet.add(product.slug);
     }
 

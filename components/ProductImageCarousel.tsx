@@ -32,6 +32,10 @@ export default function ProductImageCarousel({ images, productName }: ProductIma
             key={selectedIndex}
             src={validImages[selectedIndex]}
             alt={`${productName} view ${selectedIndex + 1}`}
+            width={600}
+            height={450}
+            loading={selectedIndex === 0 ? "eager" : "lazy"}
+            decoding="async"
             className="w-full h-full object-contain p-4 cursor-zoom-in transition-opacity duration-300"
             onClick={() => setIsZoomed(true)}
             onError={() => setImageErrors((prev) => ({ ...prev, [selectedIndex]: true }))}
@@ -86,7 +90,15 @@ export default function ProductImageCarousel({ images, productName }: ProductIma
               }`}
               onClick={() => setSelectedIndex(idx)}
             >
-              <img src={img} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
+              <img
+                src={img}
+                alt={`Thumbnail ${idx + 1}`}
+                width={80}
+                height={80}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover"
+              />
             </button>
           ))}
         </div>

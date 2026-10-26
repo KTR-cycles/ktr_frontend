@@ -32,6 +32,50 @@ function parseBoolean(val) {
   return str === 'TRUE' || str === '1' || str === 'YES';
 }
 
+function isSlugRelevantToName(slug, name) {
+  if (!slug || !name) return false;
+  const nameClean = name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+  const tokens = slug.toLowerCase().split('-').filter(t => t.length > 2 && !['cycle', 'world', 'ktr'].includes(t));
+  return tokens.length === 0 || tokens.some(t => nameClean.includes(t));
+}
+
+function inferCycleSize(name) {
+  const n = (name || '').toUpperCase();
+  if (n.includes('27.5T') || n.includes('27.5"') || n.includes('27.5') || n.includes('27T')) return '27.5T';
+  if (n.includes('29T') || n.includes('29"') || n.includes('29 ')) return '29T';
+  if (n.includes('26T') || n.includes('26"') || n.includes(' 26 ') || n.includes('26 FSDD')) return '26T';
+  if (n.includes('24T') || n.includes('24"') || n.includes(' 24 ')) return '24T';
+  if (n.includes('20T') || n.includes('20"') || n.includes(' 20 ')) return '20T';
+  if (n.includes('16T') || n.includes('16"')) return '16T';
+  if (n.includes('14T') || n.includes('14"')) return '14T';
+  if (n.includes('12T') || n.includes('12"')) return '12T';
+  if (n.includes('SHURVEER')) return '26T';
+  if (n.includes('E-SURGE')) return '27.5T';
+  if (n.includes('MAMBA') || n.includes('GOST')) return '20T';
+  return '';
+}
+
+function inferAgeGroup(cycleSize, categoryName) {
+  const size = (cycleSize || '').toUpperCase();
+  const cat = (categoryName || '').toLowerCase();
+  if (size === '12T' || size === '14T') return '2-5 Years';
+  if (size === '16T') return '4-7 Years';
+  if (size === '20T') return '8-12 Years';
+  if (size === '24T') return '10-14 Years';
+  if (size === '26T' || size === '27.5T' || size === '27T' || size === '29T') return '15+ Years';
+  if (cat.includes('kid')) return '5-12 Years';
+  return '15+ Years';
+}
+
+function inferCategoryId(name) {
+  const n = (name || '').toLowerCase();
+  if (n.includes('electric') || n.includes('e-bike') || n.includes('e-surge') || n.includes('ec ')) return 'cat_005';
+  if (n.includes('lady') || n.includes('women') || n.includes('girl') || n.includes('hazel') || n.includes('diva') || n.includes('camila')) return 'cat_004';
+  if (n.includes('12t') || n.includes('14t') || n.includes('16t') || n.includes('20t') || n.includes('kid') || n.includes('junior') || n.includes('champ')) return 'cat_001';
+  if (n.includes('gear') || n.includes('speed') || n.includes('fsdd') || n.includes('shimano') || n.includes('dd 21s')) return 'cat_003';
+  return 'cat_002'; // Adult Cycle default
+}
+
 /**
  * Detect Google Drive URLs and return the direct download URL + file ID.
  * Supports:
@@ -185,13 +229,20 @@ async function runImport() {
 
   const productsSheetName = workbook.SheetNames.find(s => s.toLowerCase().includes('product')) || workbook.SheetNames[0];
   const categoriesSheetName = workbook.SheetNames.find(s => s.toLowerCase().includes('categor')) || workbook.SheetNames[1];
+  const instagramSheetName = workbook.SheetNames.find(s => {
+    const l = s.toLowerCase();
+    return l.includes('insta') || l.includes('reel');
+  });
 
   const rawProducts = XLSX.utils.sheet_to_json(workbook.Sheets[productsSheetName] || {});
   const rawCategories = categoriesSheetName && workbook.Sheets[categoriesSheetName]
     ? XLSX.utils.sheet_to_json(workbook.Sheets[categoriesSheetName])
     : [];
+  const rawInstagram = instagramSheetName && workbook.Sheets[instagramSheetName]
+    ? XLSX.utils.sheet_to_json(workbook.Sheets[instagramSheetName])
+    : [];
 
-  console.log('Found ' + rawProducts.length + ' products and ' + rawCategories.length + ' categories in Excel.');
+  console.log(`Found ${rawProducts.length} products, ${rawCategories.length} categories, and ${rawInstagram.length} Instagram reels in Excel.`);
 
   // 1. Process Categories
   const categoriesMap = new Map();
@@ -215,21 +266,21 @@ async function runImport() {
     return categoryObj;
   });
 
-  // Load existing products and slugs to preserve established URLs & SEO
+  // Load existing products keyed STRICTLY by lowercase product name to prevent row-shift mismatch
   const productsJsonPath = path.join(DATA_DIR, 'products.json');
-  const existingSlugsMap = new Map();
-  const existingProductsMap = new Map();
+  const existingByName = new Map();
+  let maxIdNum = 0;
+
   if (fs.existsSync(productsJsonPath)) {
     try {
       const existing = JSON.parse(fs.readFileSync(productsJsonPath, 'utf8'));
       existing.forEach(p => {
-        if (p.product_id && p.slug) existingSlugsMap.set(p.product_id, p.slug);
-        if (p.id && p.slug) existingSlugsMap.set(p.id, p.slug);
-        if (p.name && p.slug) existingSlugsMap.set(p.name.trim().toLowerCase(), p.slug);
-
-        if (p.product_id) existingProductsMap.set(p.product_id, p);
-        if (p.id) existingProductsMap.set(p.id, p);
-        if (p.name) existingProductsMap.set(p.name.trim().toLowerCase(), p);
+        if (p.name) existingByName.set(p.name.trim().toLowerCase(), p);
+        const m = (p.id || p.product_id || '').match(/prod_(\d+)/);
+        if (m) {
+          const num = parseInt(m[1], 10);
+          if (num > maxIdNum) maxIdNum = num;
+        }
       });
     } catch {}
   }
@@ -240,15 +291,40 @@ async function runImport() {
 
   for (let i = 0; i < rawProducts.length; i++) {
     const item = rawProducts[i];
-
-    const productId = String(item.product_id || item.id || `prod_${String(i + 1).padStart(3, '0')}`).trim();
     const name = String(item.name || '').trim();
 
-    // Custom, existing, or auto-generated slug
-    let baseSlug = (item.slug && String(item.slug).trim())
-      ? slugify(item.slug)
-      : (existingSlugsMap.get(name.toLowerCase()) || slugify(name || `product-${productId}`));
-    if (!baseSlug) baseSlug = `product-${productId}`;
+    if (!name) {
+      console.warn(`  ⚠️ Skipping row ${i + 1}: Missing product name`);
+      continue;
+    }
+
+    // Match existing product strictly by name!
+    const existingProd = existingByName.get(name.toLowerCase());
+
+    // Generate or preserve product ID
+    let productId = String(item.product_id || item.id || '').trim();
+    if (!productId) {
+      if (existingProd && (existingProd.product_id || existingProd.id)) {
+        productId = existingProd.product_id || existingProd.id;
+      } else {
+        maxIdNum++;
+        productId = `prod_${String(maxIdNum).padStart(3, '0')}`;
+      }
+    }
+
+    // Derive clean canonical slug directly from product name
+    const nameDerivedSlug = slugify(name);
+    let baseSlug = '';
+
+    if (item.slug && String(item.slug).trim()) {
+      const customSlug = slugify(item.slug);
+      baseSlug = isSlugRelevantToName(customSlug, name) ? customSlug : nameDerivedSlug;
+    } else if (existingProd && existingProd.slug && isSlugRelevantToName(existingProd.slug, name)) {
+      baseSlug = existingProd.slug;
+    } else {
+      baseSlug = nameDerivedSlug || `product-${productId}`;
+    }
+
     let slug = baseSlug;
     if (slugCounts.has(baseSlug)) {
       const count = slugCounts.get(baseSlug) + 1;
@@ -258,7 +334,13 @@ async function runImport() {
       slugCounts.set(baseSlug, 1);
     }
 
-    // Category matching
+    // Preserve previous slug in legacy_slugs ONLY if relevant to this product
+    const legacySlugsSet = new Set(Array.isArray(existingProd?.legacy_slugs) ? existingProd.legacy_slugs : []);
+    if (existingProd?.slug && existingProd.slug !== slug && isSlugRelevantToName(existingProd.slug, name)) {
+      legacySlugsSet.add(existingProd.slug);
+    }
+
+    // Category matching with automatic fallback inference
     let categoryId = String(item.category_id || item.category || '').trim();
     let categoryName = String(item.category_name || '').trim();
 
@@ -268,6 +350,20 @@ async function runImport() {
       const matchedCat = categoriesMap.get(categoryName.toLowerCase());
       categoryId = matchedCat.id;
       categoryName = matchedCat.name;
+    } else {
+      categoryId = inferCategoryId(name);
+      categoryName = categoriesMap.get(categoryId)?.name || 'Adult Cycle';
+    }
+
+    // Cycle size & age group auto-inference if omitted in Excel
+    let cycleSize = String(item.cycle_size || item.size || existingProd?.cycle_size || '').trim();
+    if (!cycleSize) {
+      cycleSize = inferCycleSize(name);
+    }
+
+    let ageGroup = String(item.age_group || existingProd?.age_group || '').trim();
+    if (!ageGroup) {
+      ageGroup = inferAgeGroup(cycleSize, categoryName);
     }
 
     // Image handling — parse comma-separated list then download Drive images
@@ -336,26 +432,22 @@ async function runImport() {
       }
     }
 
-    const matchedById = existingProductsMap.get(productId);
-    const existingProd = (matchedById && matchedById.name && matchedById.name.toLowerCase() === name.toLowerCase())
-      ? matchedById
-      : existingProductsMap.get(name.toLowerCase());
-
     const prodObj = {
       id: productId,
       product_id: productId,
       slug: slug,
+      legacy_slugs: Array.from(legacySlugsSet),
       name: name,
-      brand: String(item.brand || '').trim(),
+      brand: String(item.brand || existingProd?.brand || '').trim(),
       category_id: categoryId,
       images: imagesList,
       color: String(item.color || existingProd?.color || '').trim(),
       frame_size: String(item.frame_size || item.tire_size || existingProd?.frame_size || '').trim(),
-      cycle_size: String(item.cycle_size || item.size || existingProd?.cycle_size || '').trim(),
+      cycle_size: cycleSize,
       original_price: originalPrice,
       discounted_price: discountedPrice,
       featured: parseBoolean(item.featured),
-      age_group: String(item.age_group || existingProd?.age_group || '').trim(),
+      age_group: ageGroup,
       short_description: shortDesc,
       long_description: longDesc,
       description: mainDesc,
@@ -374,10 +466,44 @@ async function runImport() {
 
   // Write files to data/
   const categoriesJsonPath = path.join(DATA_DIR, 'categories.json');
+  const instagramJsonPath = path.join(DATA_DIR, 'instagramReels.json');
 
   fs.writeFileSync(productsJsonPath, JSON.stringify(formattedProducts, null, 2));
   if (formattedCategories.length > 0) {
     fs.writeFileSync(categoriesJsonPath, JSON.stringify(formattedCategories, null, 2));
+  }
+
+  // 3. Process & Write Instagram Reels if present in Excel
+  if (rawInstagram.length > 0) {
+    const formattedInstagram = rawInstagram.map((row, idx) => {
+      const rawUrl = String(row.url || row.instagram_url || row.reel_url || row.link || '').trim();
+      const match = rawUrl.match(/(?:reel|p)\/([A-Za-z0-9_-]+)/);
+      const reelId = String(row.reel_id || row.id || (match ? match[1] : `reel_${idx + 1}`)).trim();
+
+      let embedUrl = String(row.embed_url || row.embedUrl || '').trim();
+      if (!embedUrl && rawUrl) {
+        if (rawUrl.includes('/p/')) {
+          embedUrl = `https://www.instagram.com/p/${reelId}/embed/`;
+        } else {
+          embedUrl = `https://www.instagram.com/reel/${reelId}/embed/`;
+        }
+      }
+
+      return {
+        id: reelId,
+        url: rawUrl || `https://www.instagram.com/reel/${reelId}/`,
+        embedUrl: embedUrl || (rawUrl ? `${rawUrl.replace(/\/?$/, '')}/embed/` : ''),
+        title: String(row.title || `KTR Cycle World Reel #${idx + 1}`).trim(),
+        caption: String(row.caption || '').trim(),
+        aspectRatio: String(row.aspect_ratio || row.aspectRatio || '9/16').trim(),
+        thumbnailPlaceholder: String(row.thumbnail_placeholder || row.thumbnailPlaceholder || row.thumbnail || row.image || '').trim() || undefined
+      };
+    }).filter(r => r.url || r.id);
+
+    if (formattedInstagram.length > 0) {
+      fs.writeFileSync(instagramJsonPath, JSON.stringify(formattedInstagram, null, 2));
+      console.log('✅ Imported & updated ' + formattedInstagram.length + ' Instagram reels -> ' + instagramJsonPath);
+    }
   }
 
   console.log('\n🎉 SUCCESS!');

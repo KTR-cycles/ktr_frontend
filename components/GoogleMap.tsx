@@ -90,9 +90,9 @@ export default function GoogleMap({ defaultLocationId = "town" }: GoogleMapProps
             </div>
             <div className="p-4 bg-card/90 backdrop-blur-md border-t border-border flex flex-wrap items-center justify-between gap-3">
               <div>
-                <h4 className="font-bold text-sm sm:text-base text-foreground">
+                <h3 className="font-bold text-sm sm:text-base text-foreground">
                   {selectedLocation.name}
-                </h4>
+                </h3>
                 <p className="text-xs text-muted-foreground">{selectedLocation.address}</p>
               </div>
               <Button
@@ -132,14 +132,14 @@ export default function GoogleMap({ defaultLocationId = "town" }: GoogleMapProps
                         <MapPin className="w-4 h-4" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-sm text-foreground flex items-center gap-1.5">
+                        <h3 className="font-bold text-sm text-foreground flex items-center gap-1.5">
                           {loc.branchName}
                           {loc.isMain && (
                             <span className="text-[10px] font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full">
                               Main
                             </span>
                           )}
-                        </h4>
+                        </h3>
                         <span className="text-[11px] text-muted-foreground">{loc.tagline}</span>
                       </div>
                     </div>

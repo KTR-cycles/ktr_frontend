@@ -9,7 +9,7 @@ const kidsCycle = '/assets/generated_images/kids_cycle.jpeg';
 const adultCycle = '/assets/generated_images/adult_cycle.jpeg';
 const womenCycle = '/assets/generated_images/cycle_for_women.jpeg';
 const electricCycle = '/assets/generated_images/electric_cycle.jpg';
-const gearedCycle = '/assets/generated_images/geared_cycle.jpeg';
+const gearedCycle = '/assets/generated_images/geared_cycle.webp';
 
 export interface CategoryItem extends Category {
   badge?: string;
@@ -150,6 +150,10 @@ export default function CategoryCarousel() {
                       <img
                         src={imageUrl}
                         alt={category.name}
+                        width={80}
+                        height={80}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover group-hover:scale-110 group-hover:brightness-110 transition-all duration-500"
                       />
                     ) : (

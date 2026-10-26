@@ -11,9 +11,9 @@ export default function LocalSEOContent() {
             <MapPin className="w-3.5 h-3.5 text-amber-600" />
             Tirunelveli &amp; South Tamil Nadu
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-            Buy Cycles in Tirunelveli — Premier Showroom for Kids, Adults &amp; Electric Bicycles
-          </h2>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            Buy Cycles in Tirunelveli — KTR Cycle World Showrooms
+          </h1>
           <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
             Welcome to <strong className="text-slate-900">KTR Cycle World</strong>, Tirunelveli’s premier cycle destination. 
             Whether you are looking for mountain bikes, high-performance geared cycles, stylish women’s bicycles, 
@@ -140,7 +140,7 @@ export default function LocalSEOContent() {
               <Truck className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-xs font-bold text-slate-900">Local Delivery</h4>
+              <p className="text-xs font-bold text-slate-900">Local Delivery</p>
               <p className="text-[11px] text-slate-500">Tirunelveli &amp; nearby areas</p>
             </div>
           </div>
@@ -150,7 +150,7 @@ export default function LocalSEOContent() {
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-xs font-bold text-slate-900">100% Genuine Brands</h4>
+              <p className="text-xs font-bold text-slate-900">100% Genuine Brands</p>
               <p className="text-[11px] text-slate-500">Authorized manufacturer warranty</p>
             </div>
           </div>
@@ -160,7 +160,7 @@ export default function LocalSEOContent() {
               <Wrench className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-xs font-bold text-slate-900">Service &amp; Maintenance</h4>
+              <p className="text-xs font-bold text-slate-900">Service &amp; Maintenance</p>
               <p className="text-[11px] text-slate-500">Tune-ups &amp; pickup service</p>
             </div>
           </div>
@@ -170,7 +170,7 @@ export default function LocalSEOContent() {
               <Bike className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-xs font-bold text-slate-900">4 Showroom Locations</h4>
+              <p className="text-xs font-bold text-slate-900">4 Showroom Locations</p>
               <p className="text-[11px] text-slate-500">Town, Samathanapuram &amp; more</p>
             </div>
           </div>
