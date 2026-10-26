@@ -36,7 +36,7 @@ const cinematicScenes: CinematicScene[] = [
     subtitle: "Conquer Rugged Peaks & Dirt Trails",
     tagline: "Heavy-Duty Suspension & Extreme Off-Road Grip",
     description: "Tackle steep climbs and rocky descents with precision 21-speed Shimano index shifting and hydraulic disc brakes.",
-    image: "/assets/generated_images/Mountain_biking_adventure_scene_01077af1.png",
+    image: "/assets/generated_images/Mountain_biking_adventure_scene_01077af1.webp",
     badge: "🏔️ Off-Road & Trail",
     accentGradient: "from-amber-500 via-orange-600 to-red-600",
     specs: [
@@ -57,7 +57,7 @@ const cinematicScenes: CinematicScene[] = [
     subtitle: "Smooth City Commuting & Lifestyle",
     tagline: "Effortless Movement. Zero Stress.",
     description: "Designed for upright comfort, memory foam gel seating, and puncture-resistant city tread.",
-    image: "/assets/generated_images/Urban_cycling_lifestyle_shot_0317efee.png",
+    image: "/assets/generated_images/Urban_cycling_lifestyle_shot_0317efee.webp",
     badge: "🏙️ City & Lifestyle",
     accentGradient: "from-cyan-600 via-blue-600 to-indigo-700",
     specs: [
@@ -77,7 +77,7 @@ const cinematicScenes: CinematicScene[] = [
     subtitle: "Ride Together. Grow Together.",
     tagline: "Unite with Tirunelveli's Passionate Cyclists",
     description: "Join weekend group rides, scenic coastal spins, and fitness challenges across South Tamil Nadu.",
-    image: "/assets/generated_images/Group_cycling_community_scene_9b549ad4.png",
+    image: "/assets/generated_images/Group_cycling_community_scene_9b549ad4.webp",
     badge: "👥 Community & Fitness",
     accentGradient: "from-emerald-600 via-teal-600 to-cyan-600",
     specs: [
@@ -96,7 +96,7 @@ const cinematicScenes: CinematicScene[] = [
     subtitle: "Aerodynamic Speed & Sprinting",
     tagline: "Maximum Speed with Minimum Air Drag",
     description: "Lightweight road racing frame engineered for high-velocity endurance along coastal highways.",
-    image: "/assets/generated_images/Inspirational_cycling_sunset_silhouette_5fa0f6c8.png",
+    image: "/assets/generated_images/Inspirational_cycling_sunset_silhouette_5fa0f6c8.webp",
     badge: "🌅 Sunset Velocity",
     accentGradient: "from-fuchsia-600 via-purple-600 to-pink-600",
     specs: [
@@ -263,6 +263,10 @@ export default function AnimatedCycleHero() {
                 <img
                   src={activeScene.image}
                   alt={activeScene.title}
+                  width={600}
+                  height={450}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 
@@ -319,7 +323,8 @@ export default function AnimatedCycleHero() {
                                   e.stopPropagation();
                                   setActiveHotspot(null);
                                 }}
-                                className="text-slate-400 hover:text-white font-bold"
+                                className="text-slate-400 hover:text-white font-bold p-1 cursor-pointer"
+                                aria-label="Close hotspot detail"
                               >
                                 ✕
                               </button>

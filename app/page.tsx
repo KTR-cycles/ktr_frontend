@@ -43,7 +43,13 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "KTR Cycle World",
+    "description": "Leading bicycle showroom in Tirunelveli offering mountain bikes, geared cycles, kids bicycles, and electric bikes across 4 local showrooms.",
     "url": siteUrl,
+    "sameAs": [
+      "https://www.instagram.com/ktr_cycleworld_tirunelveli",
+      "https://www.facebook.com/ktrcycleworld",
+      "https://www.youtube.com/@ktrcycleworld"
+    ],
     "potentialAction": {
       "@type": "SearchAction",
       "target": `${siteUrl}/products?search={search_term_string}`,
@@ -55,6 +61,7 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "KTR Cycle World",
+    "description": "Premier bicycle retailer and authorized service center operating 4 showrooms across Tirunelveli, Samathanapuram, Kayathar, and Kalakkad.",
     "url": siteUrl,
     "logo": `${siteUrl}/assets/generated_images/ktr_cycle_logo.jpg`,
     "contactPoint": {
@@ -65,7 +72,9 @@ export default function HomePage() {
       "availableLanguage": ["English", "Tamil"]
     },
     "sameAs": [
-      "https://www.instagram.com/ktr_cycleworld_tirunelveli"
+      "https://www.instagram.com/ktr_cycleworld_tirunelveli",
+      "https://www.facebook.com/ktrcycleworld",
+      "https://www.youtube.com/@ktrcycleworld"
     ]
   };
 
@@ -96,7 +105,7 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div className="w-full">
+      <main className="w-full" id="main-content">
         {/* Category quick-access strip */}
         <CategoryCarousel />
 
@@ -128,7 +137,7 @@ export default function HomePage() {
 
         {/* Showroom map + hours */}
         <GoogleMap />
-      </div>
+      </main>
     </>
   );
 }

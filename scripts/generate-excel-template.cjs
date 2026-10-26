@@ -5,10 +5,12 @@ const fs = require('fs');
 const outputPath = path.join(__dirname, '..', 'store_inventory_template.xlsx');
 const productsJsonPath = path.join(__dirname, '..', 'data', 'products.json');
 const categoriesJsonPath = path.join(__dirname, '..', 'data', 'categories.json');
+const instagramJsonPath = path.join(__dirname, '..', 'data', 'instagramReels.json');
 
 // Default fallback sample data if JSON files don't exist
 let productsData = [];
 let categoriesData = [];
+let instagramData = [];
 
 function getCycleSize(name) {
   const n = (name || '').toUpperCase();
@@ -72,6 +74,22 @@ if (fs.existsSync(categoriesJsonPath)) {
   }
 }
 
+if (fs.existsSync(instagramJsonPath)) {
+  try {
+    const rawReels = JSON.parse(fs.readFileSync(instagramJsonPath, 'utf8'));
+    instagramData = rawReels.map(r => ({
+      reel_id: r.id || '',
+      url: r.url || '',
+      title: r.title || '',
+      caption: r.caption || '',
+      thumbnail_placeholder: r.thumbnailPlaceholder || r.thumbnail || ''
+    }));
+    console.log(`Loaded ${instagramData.length} existing Instagram reels from instagramReels.json`);
+  } catch (e) {
+    console.error('Could not parse instagramReels.json, using template headers only');
+  }
+}
+
 // Fallback sample data if empty
 if (productsData.length === 0) {
   productsData = [
@@ -101,12 +119,25 @@ if (categoriesData.length === 0) {
   ];
 }
 
+if (instagramData.length === 0) {
+  instagramData = [
+    {
+      reel_id: "DdEB1eVIP5Y",
+      url: "https://www.instagram.com/reel/DdEB1eVIP5Y/",
+      title: "Extreme Trail & Shimano Precision",
+      caption: "Heavy-duty off-road suspension, 21-speed Shimano index shifting & hydraulic disc brakes in action.",
+      thumbnail_placeholder: "/assets/generated_images/Mountain_biking_adventure_scene_01077af1.webp"
+    }
+  ];
+}
+
 // Create workbook
 const wb = XLSX.utils.book_new();
 
 // Convert JSON data to sheets
 const wsProducts = XLSX.utils.json_to_sheet(productsData);
 const wsCategories = XLSX.utils.json_to_sheet(categoriesData);
+const wsInstagram = XLSX.utils.json_to_sheet(instagramData);
 
 // Set column widths for products sheet (12 essential columns)
 wsProducts['!cols'] = [
@@ -132,12 +163,22 @@ wsCategories['!cols'] = [
   { wch: 50 }  // description
 ];
 
+// Set column widths for instagram sheet (5 essential columns)
+wsInstagram['!cols'] = [
+  { wch: 16 }, // reel_id
+  { wch: 45 }, // url
+  { wch: 35 }, // title
+  { wch: 60 }, // caption
+  { wch: 65 }  // thumbnail_placeholder
+];
+
 // Append sheets to workbook
 XLSX.utils.book_append_sheet(wb, wsProducts, "Products");
 XLSX.utils.book_append_sheet(wb, wsCategories, "Categories");
+XLSX.utils.book_append_sheet(wb, wsInstagram, "Instagram");
 
 // Write workbook to file
 XLSX.writeFile(wb, outputPath);
 
-console.log(`\n✅ Created full Excel Template with ${productsData.length} products and ${categoriesData.length} categories at:`);
+console.log(`\n✅ Created full Excel Template with ${productsData.length} products, ${categoriesData.length} categories, and ${instagramData.length} Instagram reels at:`);
 console.log(`   ${outputPath}\n`);

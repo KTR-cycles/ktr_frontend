@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
+import { FaInstagram, FaFacebook, FaYoutube } from "react-icons/fa6";
 import { EMAIL_ID, email_url } from "@/utils/config";
 import { STORE_LOCATIONS } from "@/data/storeLocations";
 
@@ -14,6 +15,27 @@ export default function Footer() {
     }
   };
 
+  const socialLinks = [
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/ktr_cycleworld_tirunelveli",
+      icon: FaInstagram,
+      label: "Visit KTR Cycle World on Instagram",
+    },
+    {
+      name: "Facebook",
+      href: "https://www.facebook.com/ktrcycleworld",
+      icon: FaFacebook,
+      label: "Visit KTR Cycle World on Facebook",
+    },
+    {
+      name: "YouTube",
+      href: "https://www.youtube.com/@ktrcycleworld",
+      icon: FaYoutube,
+      label: "Visit KTR Cycle World on YouTube",
+    },
+  ];
+
   return (
     <footer className="bg-accent/30 border-t border-border">
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-12">
@@ -23,6 +45,8 @@ export default function Footer() {
               <img 
                 src="/assets/generated_images/ktr_cycle_logo.jpg" 
                 alt="KTR Cycle World Logo" 
+                width={32}
+                height={32}
                 className="w-8 h-8 object-contain"
               />
               <span className="text-xl font-heading font-black text-foreground">
@@ -32,6 +56,23 @@ export default function Footer() {
             <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
               Your premium destination for high-quality bicycles across South Tamil Nadu. 4 Showrooms to serve you best!
             </p>
+            <div className="flex items-center gap-2 flex-wrap" aria-label="Social media profiles">
+              {socialLinks.map((s) => {
+                const Icon = s.icon;
+                return (
+                  <a
+                    key={s.name}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-background border border-border/80 text-muted-foreground hover:text-white hover:bg-primary hover:border-primary transition-all shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  >
+                    <Icon className="w-4 h-4" />
+                  </a>
+                );
+              })}
+            </div>
           </div>
 
           <div>
@@ -62,6 +103,20 @@ export default function Footer() {
                 <Link href="/contact" data-testid="link-footer-contact" onClick={scrollToTop}>
                   <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-sm">
                     Contact
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy" data-testid="link-footer-privacy" onClick={scrollToTop}>
+                  <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-sm">
+                    Privacy Policy
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms-of-service" data-testid="link-footer-terms" onClick={scrollToTop}>
+                  <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer text-sm">
+                    Terms of Service
                   </span>
                 </Link>
               </li>
@@ -112,6 +167,15 @@ export default function Footer() {
             <p className="text-muted-foreground text-sm text-center md:text-left">
               © {currentYear} KTR Cycle World. All rights reserved. Operating 4 showrooms in Tirunelveli Town, Samathanapuram, Kayathar & Kalakkad.
             </p>
+            <div className="flex items-center gap-4 text-xs text-muted-foreground">
+              <Link href="/privacy-policy" className="hover:text-primary transition-colors">
+                Privacy Policy
+              </Link>
+              <span>•</span>
+              <Link href="/terms-of-service" className="hover:text-primary transition-colors">
+                Terms of Service
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -68,6 +68,8 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
                 <img
                   src={slide.image}
                   alt={slide.alt || slide.title || `KTR Cycle World Banner ${index + 1}`}
+                  width={1920}
+                  height={1000}
                   loading={index === 0 ? "eager" : "lazy"}
                   fetchPriority={index === 0 ? "high" : "low"}
                   decoding="async"
@@ -93,9 +95,9 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
                           >
                             KTR CYCLE WORLD • TIRUNELVELI
                           </motion.span>
-                          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-3 sm:mb-4 drop-shadow-2xl max-w-4xl px-4 leading-tight tracking-tight">
+                          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-3 sm:mb-4 drop-shadow-2xl max-w-4xl px-4 leading-tight tracking-tight">
                             {slide.quote}
-                          </h1>
+                          </h2>
                           {slide.author && (
                             <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-white/90 font-light italic drop-shadow-lg px-4 mb-2">
                               — {slide.author}

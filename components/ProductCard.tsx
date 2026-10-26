@@ -64,13 +64,16 @@ export default function ProductCard({
         className="group bg-white/80 backdrop-blur-md rounded-2xl border border-border/50 shadow-md hover:shadow-xl transition-all flex flex-col h-full cursor-pointer hover:scale-[1.01] overflow-hidden"
         data-testid={`product-card-${id}`}
       >
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-muted flex-shrink-0">
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-white dark:bg-slate-900 flex-shrink-0">
         {cleanImageUrl && !imageError ? (
           <img
             src={cleanImageUrl}
             alt={name}
+            width={400}
+            height={300}
             loading="lazy"
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            decoding="async"
+            className="w-full h-full object-contain p-2.5 sm:p-3 transition-transform duration-500 group-hover:scale-105"
             onError={() => setImageError(true)}
           />
         ) : (

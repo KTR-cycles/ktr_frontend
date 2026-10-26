@@ -199,6 +199,10 @@ export default function InstagramReelsSection() {
                         <img
                           src={reel.thumbnailPlaceholder}
                           alt={reel.title}
+                          width={360}
+                          height={640}
+                          loading="lazy"
+                          decoding="async"
                           className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/poster:scale-110 opacity-40"
                         />
                       )}

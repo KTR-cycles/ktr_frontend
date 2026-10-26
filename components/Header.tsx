@@ -80,6 +80,8 @@ export default function Header() {
               <img 
                 src="/assets/generated_images/ktr_cycle_logo.jpg" 
                 alt="KTR Cycle World Logo" 
+                width={48}
+                height={40}
                 className="w-8 h-6 sm:w-10 sm:h-8 md:w-12 md:h-10 object-contain"
                 title="KTR Cycle World - Leading Cycle Shop in South Tamil Nadu"
               />
@@ -121,6 +123,7 @@ export default function Header() {
             className="md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             data-testid="button-menu-toggle"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </Button>

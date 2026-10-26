@@ -84,7 +84,9 @@ export default function LocalSEO() {
       ]
     })),
     "sameAs": [
-      "https://www.instagram.com/ktr_cycleworld_tirunelveli"
+      "https://www.instagram.com/ktr_cycleworld_tirunelveli",
+      "https://www.facebook.com/ktrcycleworld",
+      "https://www.youtube.com/@ktrcycleworld"
     ]
   };
 

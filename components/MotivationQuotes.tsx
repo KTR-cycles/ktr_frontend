@@ -44,6 +44,10 @@ export default function MotivationQuotes({ quotes, image }: MotivationQuotesProp
               <img
                 src={image}
                 alt="Cycling lifestyle"
+                width={600}
+                height={400}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto rounded-3xl shadow-lg"
               />
             </motion.div>
