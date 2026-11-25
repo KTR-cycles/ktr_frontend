@@ -13,7 +13,7 @@ Managing products via Excel is the fastest and cleanest way to update the catalo
 | Command | Action |
 | :--- | :--- |
 | `npm run excel:template` | Exports current inventory from `data/products.json` into `store_inventory_template.xlsx`. |
-| `npm run excel:import` | Imports `store_inventory_template.xlsx` into `data/products.json`, cleans unused images, and auto-generates SEO metadata. |
+| `npm run excel:import` | Downloads the latest Google Sheet into `store_inventory_template.xlsx`, imports it into `data/products.json`, cleans unused images, and auto-generates SEO metadata. Use `node scripts/import-excel-to-json.cjs --local` to import from the local Excel file without downloading. |
 
 ---
 
