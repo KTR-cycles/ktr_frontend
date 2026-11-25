@@ -4,8 +4,18 @@ const fs = require('fs');
 const https = require('https');
 const http = require('http');
 
+const DEFAULT_GOOGLE_SHEET_URL =
+  'https://docs.google.com/spreadsheets/d/19BuuRhUleL4wGdXLDRxE9w_kz-mUWNwYz9TDqbgTODM/edit?usp=sharing';
+
 const defaultExcelPath = path.join(__dirname, '..', 'store_inventory_template.xlsx');
-const inputPath = process.argv[2] ? path.resolve(process.argv[2]) : defaultExcelPath;
+const cliArgs = process.argv.slice(2);
+const useLocalOnly = cliArgs.includes('--local');
+const targetArg = cliArgs.find(arg => !arg.startsWith('--'));
+const isRemoteUrlArg = Boolean(targetArg && /^https?:\/\//i.test(targetArg));
+const inputPath = targetArg && !isRemoteUrlArg ? path.resolve(targetArg) : defaultExcelPath;
+const sheetSourceUrl = isRemoteUrlArg
+  ? targetArg
+  : (process.env.GOOGLE_SHEET_URL || DEFAULT_GOOGLE_SHEET_URL);
 
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const PUBLIC_IMG_DIR = path.join(__dirname, '..', 'public', 'images', 'products');
@@ -135,16 +145,20 @@ function downloadImage(url, destPath, redirectCount) {
     var file = fs.createWriteStream(destPath);
 
     var req = transport.get(url, {
+      agent: false,
       headers: { 'User-Agent': 'Mozilla/5.0 (compatible; KTR-Import-Bot/1.0)' }
     }, function(res) {
       // Follow redirects
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        var nextUrl = new URL(res.headers.location, url).href;
+        res.resume();
         file.close();
         if (fs.existsSync(destPath)) fs.unlinkSync(destPath);
-        return downloadImage(res.headers.location, destPath, redirectCount + 1).then(resolve);
+        return downloadImage(nextUrl, destPath, redirectCount + 1).then(resolve);
       }
 
       if (res.statusCode !== 200) {
+        res.resume();
         file.close();
         if (fs.existsSync(destPath)) fs.unlinkSync(destPath);
         console.warn('  ⚠️  HTTP ' + res.statusCode + ' for: ' + url);
@@ -152,7 +166,7 @@ function downloadImage(url, destPath, redirectCount) {
       }
 
       res.pipe(file);
-      file.on('finish', function() { file.close(); resolve(true); });
+      file.on('finish', function() { file.close(function() { resolve(true); }); });
       file.on('error', function(err) {
         file.close();
         if (fs.existsSync(destPath)) fs.unlinkSync(destPath);
@@ -176,6 +190,54 @@ function downloadImage(url, destPath, redirectCount) {
  * with their local path. Non-Drive URLs are kept as-is.
  * Returns a Promise resolving to an array of image path strings.
  */
+function resolveSheetExportUrl(url) {
+  if (!url) return url;
+  const sheetMatch = url.match(/docs\.google\.com\/spreadsheets\/d\/([^\/\?&]+)/i);
+  if (sheetMatch && sheetMatch[1]) {
+    return `https://docs.google.com/spreadsheets/d/${sheetMatch[1]}/export?format=xlsx`;
+  }
+  const driveInfo = resolveGoogleDriveUrl(url);
+  if (driveInfo) {
+    return `https://drive.google.com/uc?export=download&id=${driveInfo.fileId}`;
+  }
+  return url;
+}
+
+/**
+ * Download an Excel workbook from a URL (with redirect support) to destPath.
+ * Writes to a temporary file first and validates the XLSX workbook before replacing destPath.
+ */
+function downloadExcelWorkbook(url, destPath) {
+  const exportUrl = resolveSheetExportUrl(url);
+  const tmpPath = `${destPath}.tmp`;
+
+  return downloadImage(exportUrl, tmpPath).then((ok) => {
+    if (!ok || !fs.existsSync(tmpPath)) {
+      if (fs.existsSync(tmpPath)) fs.unlinkSync(tmpPath);
+      throw new Error(`Failed to download Excel file from: ${exportUrl}`);
+    }
+
+    try {
+      const wb = XLSX.readFile(tmpPath);
+      if (!wb || !Array.isArray(wb.SheetNames) || wb.SheetNames.length === 0) {
+        throw new Error('Downloaded file contains no worksheets.');
+      }
+      // Verify it's an actual spreadsheet (not an HTML error/login page parsed by xlsx)
+      const firstSheet = wb.Sheets[wb.SheetNames[0]];
+      const rows = XLSX.utils.sheet_to_json(firstSheet || {});
+      if (rows.length === 0) {
+        throw new Error('Downloaded first worksheet is empty.');
+      }
+    } catch (err) {
+      if (fs.existsSync(tmpPath)) fs.unlinkSync(tmpPath);
+      throw new Error(`Downloaded file is not a valid inventory workbook: ${err.message}`);
+    }
+
+    fs.renameSync(tmpPath, destPath);
+    return destPath;
+  });
+}
+
 async function processImages(productId, imagesList) {
   var resolved = [];
   for (var imgIdx = 0; imgIdx < imagesList.length; imgIdx++) {
@@ -188,7 +250,7 @@ async function processImages(productId, imagesList) {
 
       if (fs.existsSync(destPath)) {
         console.log('  ✅ Already exists, skipping: ' + filename);
-        resolved.push(publicPath);
+        if (!resolved.includes(publicPath)) resolved.push(publicPath);
         continue;
       }
 
@@ -197,7 +259,8 @@ async function processImages(productId, imagesList) {
       var existingMatch = diskFiles.find(function(f) { return f.includes(driveInfo.fileId); });
       if (existingMatch) {
         console.log('  ✅ Found existing image on disk for file ID ' + driveInfo.fileId + ' (' + existingMatch + '), reusing.');
-        resolved.push('/images/products/' + existingMatch);
+        var matchedPath = '/images/products/' + existingMatch;
+        if (!resolved.includes(matchedPath)) resolved.push(matchedPath);
         continue;
       }
 
@@ -205,19 +268,26 @@ async function processImages(productId, imagesList) {
       var success = await downloadImage(driveInfo.downloadUrl, destPath);
       if (success) {
         console.log('  ✅ Saved: ' + publicPath);
-        resolved.push(publicPath);
+        if (!resolved.includes(publicPath)) resolved.push(publicPath);
       } else {
         console.warn('  ❌ Failed to download image for ' + productId + ' (index ' + (imgIdx + 1) + '), keeping original URL.');
-        resolved.push(rawUrl);
+        if (!resolved.includes(rawUrl)) resolved.push(rawUrl);
       }
     } else {
-      resolved.push(rawUrl);
+      if (!resolved.includes(rawUrl)) resolved.push(rawUrl);
     }
   }
   return resolved;
 }
 
 async function runImport() {
+  const shouldDownloadRemote = !useLocalOnly && (!targetArg || isRemoteUrlArg);
+  if (shouldDownloadRemote) {
+    console.log('\n⬇️  Downloading latest Google Sheet → ' + inputPath);
+    await downloadExcelWorkbook(sheetSourceUrl, inputPath);
+    console.log('✅ Saved latest sheet locally: ' + inputPath);
+  }
+
   if (!fs.existsSync(inputPath)) {
     console.error('❌ File not found at: ' + inputPath);
     console.error("Please provide a valid Excel file or run 'npm run excel:template' first.");
@@ -366,9 +436,10 @@ async function runImport() {
       ageGroup = inferAgeGroup(cycleSize, categoryName);
     }
 
-    // Image handling — parse comma-separated list then download Drive images
+    // Image handling — parse comma-separated list (also split concatenated URLs) then download Drive images
     const rawImagesStr = String(item.images || item.image || '/images/placeholder.png').trim();
     let imagesList = rawImagesStr
+      .replace(/([^\s,])(https?:\/\/)/gi, '$1,$2')
       .split(',')
       .map(s => s.trim())
       .filter(Boolean);
@@ -521,8 +592,13 @@ async function runImport() {
   }
 }
 
-runImport().catch(function(err) {
-  console.error('❌ Import failed:', err);
-  process.exit(1);
-});
+runImport()
+  .then(function() {
+    https.globalAgent.destroy();
+    http.globalAgent.destroy();
+  })
+  .catch(function(err) {
+    console.error('❌ Import failed:', err);
+    process.exit(1);
+  });
 
